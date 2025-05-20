@@ -15,7 +15,7 @@ const Booking = () => {
   function handleClick(e) {
     e.preventDefault();
     axios
-      .post("http://127.0.0.1:3000/book", {
+      .post("https://travel-x-408k.onrender.com/book", {
         firstName,
         lastName,
         email,
