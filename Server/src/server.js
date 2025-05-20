@@ -28,6 +28,11 @@ app.get("/", (req, res) => {
   console.log(`We are on Homepage`);
 });
 
+app.get("/register", (req, res) => {
+  res.json("register");
+  console.log(`We are on register`);
+});
+
 app.post("/register", (req, res) => {
   UserLogin.create(req.body)
     .then((employee) => {
