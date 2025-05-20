@@ -13,7 +13,7 @@ export const Login = () => {
   function handleClick(e) {
     e.preventDefault();
     axios
-      .post("http://127.0.0.1:3000/login", { email, password })
+      .post("https://travel-x-408k.onrender.com/login", { email, password })
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {

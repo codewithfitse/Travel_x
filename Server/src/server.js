@@ -32,6 +32,10 @@ app.get("/register", (req, res) => {
   res.json("register");
   console.log(`We are on register`);
 });
+app.get("/login", (req, res) => {
+  res.json("Login");
+  console.log(`We are on Login`);
+});
 
 app.post("/register", (req, res) => {
   UserLogin.create(req.body)
