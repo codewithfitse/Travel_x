@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+  background-image: url(../public/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.landingBg {
+  width: 100%;
+  height: auto;
+  background-image: url(../public/landing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.btn {
+  padding: 1px 15px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  background: #2A7B9B;
+  background: linear-gradient(90deg, #2a7b9b 5%, #297f98 33%, #20c967 76%);  
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 10px #fff;
+  scale: 1.03;
+}
+
+@layer base {
+  :root {
+    --color-lum: #16fe01;
+  }
+}
+
+
+
+@layer card {
+  .card {
+    @apply backdrop-blur-[6px] rounded-4xl hover:shadow-[#16fe01] hover:shadow-2xl;
+  }
+  .box {
+    @apply bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg hover:scale-102
+  }
+  .container {
+    @apply backdrop-blur-[6px];
+  }
+}
