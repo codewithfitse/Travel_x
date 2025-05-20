@@ -11,7 +11,7 @@ const Header = () => {
           alt=""
           srcSet=""
         />
-        <h1 className="w-full text-[10px] mt-[1px] lg:mt-1.5 lg:text-3xl text-center absolute top-[5px] left-[20px] lg:top-[10px] lg:left-[48px] font-bold">
+        <h1 className="w-full text-[10px] mt-[1px] lg:mt-1.5 lg:text-3xl text-center absolute top-[5px] left-[16px] lg:top-[10px] lg:left-[48px] font-bold">
           RAVEL-X
         </h1>
       </div>
