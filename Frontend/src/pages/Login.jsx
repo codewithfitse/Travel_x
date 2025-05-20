@@ -52,7 +52,7 @@ export const Login = () => {
                   Password
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
