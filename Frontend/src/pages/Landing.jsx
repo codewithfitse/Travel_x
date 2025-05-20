@@ -5,7 +5,7 @@ import { Button } from "../components/Button";
 export const Landing = () => {
   return (
     <div className="w-full h-[100%] landingBg overflow-y-hidden">
-      <div className="pt-100 lg:pt-60 pl-5 lg:pl-15 pb-32 lg:pb-9 backdrop-blur-[5px]">
+      <div className="pt-130 lg:pt-60 pl-5 lg:pl-15 pb-32 lg:pb-9 backdrop-blur-[5px]">
         <h1 className="mb-3 text-[25px]/7 text-white font-serif lg:text-6xl/15 font-bold">
           <span className="text-[#16fe01]">Travel-X</span> <br />
           Car Rental Website
