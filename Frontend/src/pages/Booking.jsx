@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router";
+import { Button } from "../components/Button";
 import axios from "axios";
 
 const Booking = () => {
@@ -31,7 +32,7 @@ const Booking = () => {
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
 
-      <div className="py-[100px] px-[200px]">
+      <div className="py-[100px] lg:px-[200px]">
         <div className="p-10 card">
           <h1 className="text-[40px] font-bold text-center font-mono">
             Book Now❗
@@ -160,15 +161,18 @@ const Booking = () => {
         </div>
       </div>
 
-      <div className="mt-[90px] px-20 flex justify-between items-center">
-        <div>
-          <h1 className="text-[40px] font-bold">
-            Have more <span className="text-[#16fe01]">Questions?</span>
+      <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-[15px] lg:text-[40px] font-bold">
+            COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
           </h1>
+          <h2 className="text-[10px] lg:text-[20px] text-2xl">
+            We Always Have The Best Customer Services In Town
+          </h2>
         </div>
-        <div>
-          <Link to="/Contact">
-            <button className="btn">Contact Us Now</button>
+        <div className="lg:mt-7 flex justify-center items-center">
+          <Link to={"/Booking"}>
+            <Button text={"Book Now!"} />
           </Link>
         </div>
       </div>
