@@ -41,8 +41,8 @@ app.get("/login", (req, res) => {
 
 app.post("/register", (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
-  bcrypt.hash(password, 10).then((hash) => {
-    UserLogin.create({ firstName, lastName, email, phone, password: hash })
+  bcrypt.hash(password, 10).then((Hash) => {
+    UserLogin.create({ firstName, lastName, email, phone, password: Hash })
       .then((employee) => {
         res.json(employee);
       })
