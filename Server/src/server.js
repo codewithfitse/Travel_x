@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import bcrypt from "bcrypt";
 import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
@@ -16,7 +17,8 @@ app.use(
 app.use(express.json());
 const PORT = 3000;
 
-const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
+const MONGO_DB =
+  "mongodb://user:user123@ac-cg0zgxc-shard-00-00.ooin5ux.mongodb.net:27017,ac-cg0zgxc-shard-00-01.ooin5ux.mongodb.net:27017,ac-cg0zgxc-shard-00-02.ooin5ux.mongodb.net:27017/User?replicaSet=atlas-uvzhzw-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority";
 
 mongoose
   .connect(MONGO_DB)
@@ -38,11 +40,15 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  UserLogin.create(req.body)
-    .then((employee) => {
-      res.json(employee);
-    })
-    .catch((err) => res.json(err));
+  const { firstName, lastName, email, phone, password } = req.body;
+  bcrypt.hash(password, 10).then((hash) => {
+    UserLogin.create({ firstName, lastName, email, phone, password: hash })
+      .then((employee) => {
+        res.json(employee);
+      })
+      .catch((err) => res.json(err));
+  });
+
   console.log(`Posted Successfully`);
 });
 
