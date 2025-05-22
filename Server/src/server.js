@@ -41,14 +41,16 @@ app.get("/login", (req, res) => {
 
 app.post("/register", (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
-  bcrypt.hash(password, 10).then((Hash) => {
-    UserLogin.create({ firstName, lastName, email, phone, password: Hash })
-      .then((employee) => {
-        res.json(employee);
-      })
-      .catch((err) => res.json(err));
-  }).catch(err => console.log(err);
-  );
+  bcrypt
+    .hash(password, 10)
+    .then((Hash) => {
+      UserLogin.create({ firstName, lastName, email, phone, password: Hash })
+        .then((employee) => {
+          res.json(employee);
+        })
+        .catch((err) => res.json(err));
+    })
+    .catch((err) => console.log(err));
 
   console.log(`Posted Successfully`);
 });
