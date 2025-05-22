@@ -39,18 +39,15 @@ app.get("/login", (req, res) => {
   console.log(`We are on Login`);
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
-  bcrypt
-    .hash(password, 10)
-    .then((Hash) => {
-      UserLogin.create({ firstName, lastName, email, phone, password: Hash })
-        .then((employee) => {
-          res.json(employee);
-        })
-        .catch((err) => res.json(err));
+  const Hash = await bcrypt.hash(password, 10);
+
+  UserLogin.create({ firstName, lastName, email, phone, password: Hash })
+    .then((employee) => {
+      res.json(employee);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => res.json(err));
 
   console.log(`Posted Successfully`);
 });
