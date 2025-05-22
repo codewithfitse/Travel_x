@@ -47,7 +47,7 @@ app.post("/register", (req, res) => {
         res.json(employee);
       })
       .catch((err) => res.json(err));
-  }).catch(err => console.log(err);
+  }).catch(err => console.log(err)
   );
 
   console.log(`Posted Successfully`);
