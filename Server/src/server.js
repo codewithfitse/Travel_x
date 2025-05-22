@@ -17,8 +17,7 @@ app.use(
 app.use(express.json());
 const PORT = 3000;
 
-const MONGO_DB =
-  "mongodb://user:user123@ac-cg0zgxc-shard-00-00.ooin5ux.mongodb.net:27017,ac-cg0zgxc-shard-00-01.ooin5ux.mongodb.net:27017,ac-cg0zgxc-shard-00-02.ooin5ux.mongodb.net:27017/User?replicaSet=atlas-uvzhzw-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority";
+const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
 
 mongoose
   .connect(MONGO_DB)
@@ -39,16 +38,15 @@ app.get("/login", (req, res) => {
   console.log(`We are on Login`);
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
-  bcrypt.hash(password, 10).then((Hash) => {
-    UserLogin.create({ firstName, lastName, email, phone, password: Hash })
-      .then((employee) => {
-        res.json(employee);
-      })
-      .catch((err) => res.json(err));
-  }).catch(err => console.log(err)
-  );
+  const Hash = await bcrypt.hash(password, 10);
+
+  UserLogin.create({ firstName, lastName, email, phone, password: Hash })
+    .then((employee) => {
+      res.json(employee);
+    })
+    .catch((err) => res.json(err));
 
   console.log(`Posted Successfully`);
 });
