@@ -59,10 +59,10 @@ app.post("/login", (req, res) => {
     .then((users) => {
       const final = bcrypt.compare(password, users.password);
       if (users) {
-        if (!final) {
-          res.json("Wrong");
-        } else if (final) {
+        if (final) {
           res.json("Success");
+        } else if (final) {
+          res.json("Wrong");
         }
       } else {
         res.json("User not found");
