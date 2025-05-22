@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs";
 import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
@@ -17,6 +18,7 @@ app.use(
 app.use(express.json());
 const PORT = 3000;
 
+const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
 const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
 
 mongoose
@@ -39,7 +41,15 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
+app.post("/register", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
+  const Hash = await bcrypt.hash(password, 10);
+
+  UserLogin.create({ firstName, lastName, email, phone, password: Hash })
+    .then((employee) => {
+      res.json(employee);
+    })
+    .catch((err) => res.json(err));
   const Hash = await bcrypt.hash(password, 10);
 
   UserLogin.create({ firstName, lastName, email, phone, password: Hash })
@@ -53,6 +63,7 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
+  // const isValid = bcrypt.compare(password);
   // const isValid = bcrypt.compare(password);
 
   UserLogin.findOne({ email: email })
