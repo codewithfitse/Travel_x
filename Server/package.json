@@ -11,9 +11,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "c1": "file:",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -26,5 +25,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "description": ""
 }

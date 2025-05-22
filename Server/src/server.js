@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
@@ -17,8 +17,7 @@ app.use(
 app.use(express.json());
 const PORT = 3000;
 
-const MONGO_DB =
-  "mongodb://user:user123@ac-cg0zgxc-shard-00-00.ooin5ux.mongodb.net:27017,ac-cg0zgxc-shard-00-01.ooin5ux.mongodb.net:27017,ac-cg0zgxc-shard-00-02.ooin5ux.mongodb.net:27017/User?replicaSet=atlas-uvzhzw-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority";
+const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
 
 mongoose
   .connect(MONGO_DB)
@@ -52,20 +51,25 @@ app.post("/register", async (req, res) => {
   console.log(`Posted Successfully`);
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
+  // const isValid = bcrypt.compare(password);
 
-  UserLogin.findOne({ email: email }).then((users) => {
-    if (users) {
-      if (users.password === password) {
-        res.json("Success");
+  UserLogin.findOne({ email: email })
+    .then((users) => {
+      if (users) {
+        bcrypt.compare(password, users.password, (err, res) => {
+          if (err) {
+            res.json("Wrong");
+          } else if (res) {
+            res.json("Success");
+          }
+        });
       } else {
-        res.json("Wrong");
+        res.json("User not found");
       }
-    } else {
-      res.json("User not found");
-    }
-  });
+    })
+    .catch((err) => console.log(err));
   console.log(`Posted Successfully`);
 });
 

@@ -32,7 +32,7 @@ export const Login = () => {
           <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
             Login
           </h1>
-          <form onSubmit={handleClick} action="">
+          <form onSubmit={handleClick} method="post" action="">
             <div className="mt-8 flex flex-col justify-between space-y-4">
               <div className="w-[90%] flex flex-col">
                 <label htmlFor="" className="text-[18px] lg:text-[25px]">
