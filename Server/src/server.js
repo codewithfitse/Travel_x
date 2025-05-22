@@ -53,21 +53,22 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
-  const isValid = bcrypt.compare(password);
+  // const isValid = bcrypt.compare(password);
 
-  UserLogin.findOne({ email: email }).then((users) => {
-    if (users) {
-      bcrypt.compare(password, users.password, (err, res) => {
-        if (err) {
+  UserLogin.findOne({ email: email })
+    .then((users) => {
+      const final = bcrypt.compare(password, users.password);
+      if (users) {
+        if (!final) {
           res.json("Wrong");
-        }  if (res) {
+        } else if (final) {
           res.json("Success");
         }
-      });
-    } else {
-      res.json("User not found");
-    }
-  });
+      } else {
+        res.json("User not found");
+      }
+    })
+    .catch((err) => console.log(err));
   console.log(`Posted Successfully`);
 });
 
