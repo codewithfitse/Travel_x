@@ -51,13 +51,13 @@ app.post("/register", async (req, res) => {
   console.log(`Posted Successfully`);
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const isValid = bcrypt.compare(password);
 
   UserLogin.findOne({ email: email }).then((users) => {
     if (users) {
-      bcrypt.compare(password, users.password, (err, res) => {
+      await bcrypt.compare(password, users.password, (err, res) => {
         if (err) {
           res.json("Wrong");
         }  if (res) {
