@@ -60,7 +60,7 @@ app.post("/login", (req, res) => {
       bcrypt.compare(password, users.password, (err, res) => {
         if (err) {
           res.json("Wrong");
-        } else if (res) {
+        }  if (res) {
           res.json("Success");
         }
       });
