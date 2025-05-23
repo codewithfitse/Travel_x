@@ -55,7 +55,7 @@ export const SignUp = () => {
                   name="firstName"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-white b-4 text-black placeholder:text-[20px] placeholder:text-[#000]/8"
+                  className="py-2 px-3 text-2xl font-bold bg-white b-4 text-[#000] placeholder:text-[20px] placeholder:text-[#000]/8"
                   placeholder="Enter First Name"
                 />
               </div>
