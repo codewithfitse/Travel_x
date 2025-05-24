@@ -26,6 +26,12 @@ const Booking = () => {
       })
       .then((user) => console.log(user))
       .catch((err) => console.log(err));
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      setDestination("");
+      setMessage("");
   }
 
   return (
