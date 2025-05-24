@@ -20,6 +20,10 @@ const Contact = () => {
       })
       .then((user) => console.log(user))
       .catch((err) => console.log(err));
+    setFirstName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
   }
 
   return (
