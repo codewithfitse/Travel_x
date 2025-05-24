@@ -17,7 +17,7 @@ export const Login = () => {
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {
-          navigate("/Home");
+          navigate("/Dashboard");
         }
       })
       .catch((err) => console.log(err));
