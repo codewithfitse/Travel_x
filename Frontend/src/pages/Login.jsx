@@ -35,7 +35,10 @@ export const Login = () => {
           <form onSubmit={handleClick} method="post" action="">
             <div className="mt-8 flex flex-col justify-between space-y-4">
               <div className="w-[90%] flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
+                <label
+                  htmlFor=""
+                  className="text-[18px] font-bold lg:text-[25px]"
+                >
                   Email
                 </label>
                 <input
@@ -43,12 +46,15 @@ export const Login = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  className="input"
                   placeholder="Enter Email"
                 />
               </div>
               <div className="w-[90%] flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
+                <label
+                  htmlFor=""
+                  className="text-[18px] font-bold lg:text-[25px]"
+                >
                   Password
                 </label>
                 <input
@@ -56,7 +62,7 @@ export const Login = () => {
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  className="input"
                   placeholder="Enter Password"
                 />
               </div>
