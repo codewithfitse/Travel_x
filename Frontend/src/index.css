@@ -59,4 +59,7 @@ body {
   .container {
     @apply backdrop-blur-[6px];
   }
+  .input {
+    @apply py-2 px-3 text-2xl text-black font-bold bg-white rounded-[10px] placeholder:text-[20px] placeholder:text-gray-500 hover:border-4 hover:border-amber-400;
+  }
 }
