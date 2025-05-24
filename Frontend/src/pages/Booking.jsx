@@ -46,7 +46,7 @@ const Booking = () => {
           <form onSubmit={handleClick} action="">
             <div className="mt-8 flex justify-between space-x-2">
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[25px] font-bold">
                   First Name
                 </label>
                 <input
@@ -54,12 +54,12 @@ const Booking = () => {
                   name=""
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="input"
                   placeholder="Enter First Name"
                 />
               </div>
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[25px] font-bold">
                   Last Name
                 </label>
                 <input
@@ -67,14 +67,14 @@ const Booking = () => {
                   name=""
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
-                  placeholder="Enter First Name"
+                  className="input"
+                  placeholder="Enter Last Name"
                 />
               </div>
             </div>
             <div className="mt-8 flex justify-between space-x-2">
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[25px] font-bold">
                   Email
                 </label>
                 <input
@@ -82,12 +82,12 @@ const Booking = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="input"
                   placeholder="Enter Email"
                 />
               </div>
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[25px] font-bold">
                   Phone
                 </label>
                 <input
@@ -95,7 +95,7 @@ const Booking = () => {
                   name="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="input"
                   placeholder="Enter Phone"
                 />
               </div>
@@ -125,7 +125,7 @@ const Booking = () => {
 
             <div className="mt-10 flex justify-between space-x-2">
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[25px] font-bold">
                   If not in Addis Ababa where is the Destination
                 </label>
                 <input
@@ -133,7 +133,7 @@ const Booking = () => {
                   name="destination"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="input"
                   placeholder="destination"
                 />
               </div>
@@ -141,7 +141,7 @@ const Booking = () => {
 
             <div className="mt-10 flex justify-between space-x-2">
               <div className="flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[25px] font-bold">
                   Message or More info (optional)
                 </label>
                 <input
@@ -149,7 +149,7 @@ const Booking = () => {
                   name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="h-[100px]  py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="h-[100px]  input"
                   placeholder="destination"
                 />
               </div>
