@@ -25,7 +25,14 @@ body {
   background-position: center;
 }
 
-
+.menu {
+  width: 40px;
+  height: 40px;
+  background-image: url(../public/Icons/list.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 .btn {
   padding: 1px 15px;
