@@ -18,7 +18,7 @@ const Header = () => {
         </h1>
       </div>
 
-      <nav className="w-fit flex justify-center items-center text-[7px] lg:text-[15px] font-bold space-x-2 lg:space-x-5.5">
+      {/* <nav className="w-fit flex justify-center items-center text-[7px] lg:text-[15px] font-bold space-x-2 lg:space-x-5.5">
         <Link to="/Home">
           <h1 className="hover:text-[#16fe01]">HOME</h1>
         </Link>
@@ -43,7 +43,7 @@ const Header = () => {
         <Link to="/Login">
           <h1 className="hover:text-[#16fe01]">LOGIN</h1>
         </Link>
-      </nav>
+      </nav> */}
 
       <div
         className="flex flex-col text-center relative "
