@@ -13,6 +13,7 @@ import Contact from "./pages/Contact.jsx";
 import { Landing } from "./pages/Landing.jsx";
 import { SignUp } from "./pages/SignUp.jsx";
 import { Login } from "./pages/Login.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/SignUp",
     element: <SignUp />,
+  },
+  {
+    path: "/Dashboard",
+    element: <Dashboard />,
   },
 ]);
 
