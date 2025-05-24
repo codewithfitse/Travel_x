@@ -7,7 +7,7 @@ import { Button } from "../components/Button";
 const Dashboard = () => {
   return (
     <>
-      <div className="w-full overflow-x-hidden h-[100%] background text-amber-50">
+      <div className="w-full overflow-x-hidden h-100vh background text-amber-50">
         <Header />
         <div className="flex justify-center pt-[150px] lg:pt-[200px] pl-[20px] lg:pl-[40px] relative">
           <div className="w-full lg:w-[100%]">
