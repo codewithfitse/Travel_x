@@ -34,7 +34,10 @@ const Contact = () => {
           <form onSubmit={handleClick} action="">
             <div className="mt-8 flex flex-col justify-between space-y-4">
               <div className="w-[90%] flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
+                <label
+                  htmlFor=""
+                  className="text-[18px] font-bold lg:text-[25px]"
+                >
                   First Name
                 </label>
                 <input
@@ -42,12 +45,15 @@ const Contact = () => {
                   name="firstName"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  className="input"
                   placeholder="Enter First Name"
                 />
               </div>
               <div className="w-[90%] flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
+                <label
+                  htmlFor=""
+                  className="text-[18px] font-bold lg:text-[25px]"
+                >
                   Email
                 </label>
                 <input
@@ -55,12 +61,15 @@ const Contact = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  className="input"
                   placeholder="Enter Email"
                 />
               </div>
               <div className="w-[90%] flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
+                <label
+                  htmlFor=""
+                  className="text-[18px] font-bold lg:text-[25px]"
+                >
                   Phone
                 </label>
                 <input
@@ -68,12 +77,15 @@ const Contact = () => {
                   name="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  className="input"
                   placeholder="Enter Phone"
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
+                <label
+                  htmlFor=""
+                  className="text-[18px] font-bold lg:text-[25px]"
+                >
                   Message(feedback)
                 </label>
                 <textarea
@@ -81,7 +93,7 @@ const Contact = () => {
                   name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-[90%] h-[100px] py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  className="w-[90%] h-[100px] input"
                   placeholder="Message.."
                 />
               </div>
