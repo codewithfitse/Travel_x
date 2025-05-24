@@ -7,9 +7,9 @@ import { Button } from "../components/Button";
 const Dashboard = () => {
   return (
     <>
-      <div className="w-full overflow-x-hidden h-full background text-amber-50">
+      <div className="w-full overflow-hidden h-full background text-amber-50">
         <Header />
-        <div className="flex justify-center pt-[210px] lg:pt-[200px] pl-[20px] lg:pl-[40px] relative">
+        <div className="w-full h-[50vh] flex justify-center pt-[210px] lg:pt-[200px] pl-[20px] lg:pl-[40px] relative">
           <div className="w-full lg:w-[100%]">
             <h1 className="text-[30px] text-center lg:text-[45px]">
               <span className="text-[40px] lg:text-[60px] text-[#16fe01] font-bold">
@@ -29,7 +29,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="my-[100px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
+        <div className="my-[50px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
           <div className="flex flex-col justify-center">
             <h1 className="text-[15px] lg:text-[40px] font-bold">
               COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
