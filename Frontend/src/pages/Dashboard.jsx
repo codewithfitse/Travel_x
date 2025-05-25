@@ -4,15 +4,23 @@ import Footer from "../components/Footer";
 import { Link } from "react-router";
 import { Button } from "../components/Button";
 import UserLogin from "../../../Server/models/usersDb";
+import axios from "axios";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function loadData() {
-      const res = await fetch("http://localhost:3000/dashboard");
-      const json = await res.json();
-      setData(json);
+      axios
+        .post("http://localhost:3000/dashboard")
+        .then((result) => {
+          console.log(result);
+          setData(result);
+        })
+        .catch((err) => console.log(err));
+      // const res = await fetch("http://localhost:3000/");
+      // const json = await res.json();
+      // setData(json);
     }
     loadData();
   }, []);
