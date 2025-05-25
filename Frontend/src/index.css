@@ -26,8 +26,8 @@ body {
 }
 
 .menu {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-image: url(../public/Icons/list.png);
   background-repeat: no-repeat;
   background-size: cover;
