@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     async function loadData() {
       axios
-        .post("http://localhost:3000/dashboard")
+        .post("https://travel-x-408k.onrender.com/dashboard")
         .then((result) => {
           console.log(result);
           setData(result);
