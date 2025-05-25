@@ -1,53 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router";
 import { Button } from "../components/Button";
+import UserLogin from "../../../Server/models/usersDb";
 
 const Dashboard = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function loadData() {
+      const res = await fetch("http://localhost:3000/dashboard");
+      const json = await res.json();
+      setData(json);
+    }
+    loadData();
+  }, []);
+
   return (
-    <>
-      <div className="w-full overflow-hidden h-full background text-amber-50">
-        <Header />
-        <div className="w-full h-[50vh] flex justify-center pt-[210px] lg:pt-[200px] pl-[20px] lg:pl-[40px] relative">
-          <div className="w-full lg:w-[100%]">
-            <h1 className="text-[30px] text-center lg:text-[45px]">
-              <span className="text-[40px] lg:text-[60px] text-[#16fe01] font-bold">
-                Welcome
-              </span>{" "}
-              to Dashboard
-            </h1>
-            <h2 className="text-[25px] text-center lg:text-[40px]">
-              You Login Successfully👌
-            </h2>
-
-            <div className="flex justify-center mt-5 lg:mt-10 space-x-2.5">
-              <Link to={"/Home"}>
-                <Button text={"Go To HomePage"} />
-              </Link>
+    <div className="w-full h-full overflow-hidden bg-gray-900 text-amber-50">
+      <Header />
+      <div className="w-full h-full mt-50 flex bg-gray-800">
+        <div className="w-[200px] h-full bg-gray-800">
+          <h1 className="mx-4 mt-2 text-center border-b-2 border-amber-50">
+            Dashboard
+          </h1>
+        </div>
+        <div className="w-full h-full bg-gray-700">
+          <h1 className="w-[70%] px-3 mx-4 mt-2 text-center border-b-2 border-amber-50">
+            Users
+          </h1>
+          {data.map((user) => (
+            <div className="m-2 text-2xl">
+              <h1 className="capitalize">First Name: {user.firstName}</h1>
+              <h1 className="capitalize">Last Name: {user.lastName}</h1>
+              <h1>Email: {user.email}</h1>
+              <h1>Password: {user.password}</h1>
             </div>
-          </div>
+          ))}
         </div>
-
-        <div className="my-[50px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
-          <div className="flex flex-col justify-center">
-            <h1 className="text-[15px] lg:text-[40px] font-bold">
-              COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
-            </h1>
-            <h2 className="text-[10px] lg:text-[20px] text-2xl">
-              We Always Have The Best Customer Services In Town
-            </h2>
-          </div>
-          <div className="lg:mt-7 flex justify-center items-center">
-            <Link to={"/Booking"}>
-              <Button text={"Book Now!"} />
-            </Link>
-          </div>
-        </div>
-
-        <Footer />
       </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 
