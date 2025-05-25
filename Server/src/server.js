@@ -9,7 +9,7 @@ import UserBook from "../models/userBook.js";
 const app = express();
 app.use(
   cors({
-    origin: ["https://travel-x-kappa.vercel.app", "http://localhost:3000"],
+    origin: ["https://travel-x-kappa.vercel.app", "https://travel-x-408k.onrender.com"],
     methods: ["POST", "GET"],
     credentials: true,
   })
