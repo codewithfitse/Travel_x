@@ -15,7 +15,7 @@ const AdminDashboard = () => {
         .get("https://travel-x-408k.onrender.com/dashboard")
         .then((result) => {
           console.log(result);
-          setData(result);
+          setData(result.data);
         })
         .catch((err) => console.log(err));
       // const res = await fetch("http://localhost:3000/");
