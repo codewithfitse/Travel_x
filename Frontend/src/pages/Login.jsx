@@ -17,7 +17,7 @@ export const Login = () => {
       .then((result) => {
         console.log(result);
         if (result.data.user.isAdmin === true) {
-          navigate("/AdminDashboard");
+          navigate("/Admin");
         } else if (result.data.user.isAdmin === false) {
           navigate("/Dashboard");
         }
