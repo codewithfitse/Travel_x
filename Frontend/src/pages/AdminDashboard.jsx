@@ -6,7 +6,7 @@ import { Button } from "../components/Button";
 import UserLogin from "../../../Server/models/usersDb";
 import axios from "axios";
 
-const Dashboard = () => {
+const AdminDashboard = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -53,4 +53,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default AdminDashboard;
