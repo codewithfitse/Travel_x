@@ -43,7 +43,7 @@ const Dashboard = () => {
               <h1 className="capitalize">First Name: {user.firstName}</h1>
               <h1 className="capitalize">Last Name: {user.lastName}</h1>
               <h1>Email: {user.email}</h1>
-              <h1>Password: {user.password}</h1>
+              
             </div>
           ))}
         </div>
