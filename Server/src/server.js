@@ -65,20 +65,29 @@ app.post("/login", (req, res) => {
   const { email, password } = req.body;
   // const isValid = bcrypt.compare(password);
 
-  UserLogin.findOne({ email: email })
-    .then((users) => {
-      const final = bcrypt.compare(password, users.password);
-      if (users) {
-        if (final) {
-          res.json("Success");
-        } else if (final) {
-          res.json("Wrong");
-        }
-      } else {
-        res.json("User not found");
-      }
-    })
-    .catch((err) => console.log(err));
+  try {
+    const user = await UserLogin.findOne({ email: email });
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!user) {
+      res.json("User not found");
+    }
+
+    if (isMatch) {
+      res.json({
+        message: "Success",
+        user: {
+          username: user.email,
+          isAdmin: user.isAdmin,
+        },
+      });
+    } else if (isMatch) {
+      res.json("Invalid password");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+
   console.log(`Posted Successfully`);
 });
 
