@@ -16,8 +16,10 @@ export const Login = () => {
       .post("https://travel-x-408k.onrender.com/login", { email, password })
       .then((result) => {
         console.log(result);
-        if (result.data === "Success") {
+        if (result.data.user.isAdmin === true) {
           navigate("/Dashboard");
+        } else if (result.data.user.isAdmin === false) {
+          navigate("/Dash");
         }
       })
       .catch((err) => console.log(err));
