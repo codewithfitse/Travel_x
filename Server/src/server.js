@@ -61,7 +61,7 @@ app.post("/register", async (req, res) => {
     .catch((err) => res.json(err));
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   // const isValid = bcrypt.compare(password);
 
