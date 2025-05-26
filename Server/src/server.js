@@ -39,7 +39,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/dashboard", async (req, res) => {
-  const data = await UserLogin.find({}, {});
+  const data = await UserLogin.find({});
   res.json(data);
   console.log(`We are on Dashboard`);
 });
