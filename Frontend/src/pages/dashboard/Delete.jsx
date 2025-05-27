@@ -19,7 +19,7 @@ const DeleteDashboard = () => {
   async function handleClick(e) {
     e.preventDefault();
     try {
-      await axios.delete(`http://localhost:3000/dashboard/${user._id}`);
+      await axios.delete(`https://travel-x-408k.onrender.com/dashboard/${user._id}`);
       alert("User updated successfully!");
       navigate("/Admin"); // back to main admin dashboard
     } catch (err) {
