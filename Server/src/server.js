@@ -10,7 +10,7 @@ const app = express();
 app.use(
   cors({
     origin: ["https://travel-x-kappa.vercel.app", "http://localhost:3000"],
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -44,10 +44,32 @@ app.get("/dashboard", async (req, res) => {
   console.log(`We are on Dashboard`);
 });
 
-app.post("/dashboard", async (req, res) => {
-  const data = await UserLogin.find({}, {});
-  res.json(data);
-  console.log(`We are on Dashboard`);
+app.put("/dashboard/:id", async (req, res) => {
+  const { firstName, lastName, email, phone, password } = req.body;
+  const Hash = await bcrypt.hash(password, 10);
+  try {
+    const updatedUser = await UserLogin.findByIdAndUpdate(
+      req.params.id,
+      { firstName, lastName, email, phone, password: Hash },
+      { new: true } // returns the updated doc
+    );
+    res.status(200).json(updatedUser);
+    console.log(updatedUser);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to update user" });
+  }
+});
+
+app.delete("/dashboard/:id", async (req, res) => {
+  try {
+    const deleteUser = await UserLogin.findByIdAndDelete(req.params.id);
+    if (!deletedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json({ message: "User deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to update user" });
+  }
 });
 
 app.post("/register", async (req, res) => {
