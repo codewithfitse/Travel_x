@@ -39,11 +39,27 @@ const AdminDashboard = () => {
             Users
           </h1>
           {data.map((user) => (
-            <div className="m-2 text-2xl">
-              <h1 className="capitalize">First Name: {user.firstName}</h1>
-              <h1 className="capitalize">Last Name: {user.lastName}</h1>
-              <h1>Email: {user.email}</h1>
-              <h1>Password: {user.password}</h1>
+            <div className="m-2 pr-2 lg:text-2xl">
+              <h1 className=" font-bold capitalize">
+                ObjectId: <span className="font-semibold">{user._id}</span>
+              </h1>
+              <h1 className="font-bold capitalize">
+                First Name:{" "}
+                <span className="font-semibold">{user.firstName}</span>
+              </h1>
+              <h1 className="font-bold capitalize">
+                Last Name:{" "}
+                <span className="font-semibold">{user.lastName}</span>
+              </h1>
+              <h1 className="font-bold capitalize">
+                Email: <span className="font-semibold">{user.email}</span>{" "}
+              </h1>
+              <h1 className="font-bold capitalize">
+                Password: <span className="font-semibold">{user.password}</span>{" "}
+              </h1>
+              <h1 className="font-bold capitalize">
+                Admin: <span className="font-semibold">{user.isAdmin}</span>{" "}
+              </h1>
             </div>
           ))}
         </div>
