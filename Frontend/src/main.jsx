@@ -13,8 +13,11 @@ import Contact from "./pages/Contact.jsx";
 import { Landing } from "./pages/Landing.jsx";
 import { SignUp } from "./pages/SignUp.jsx";
 import { Login } from "./pages/Login.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import AdminDashboard from "./pages/AdminDashboard.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
+import AdminDashboard from "./pages/dashboard/AdminDashboard.jsx";
+import EditDashboard from "./pages/dashboard/Edit.jsx";
+import ViewDashboard from "./pages/dashboard/View.jsx";
+import DeleteDashboard from "./pages/dashboard/Delete.jsx";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +64,18 @@ const router = createBrowserRouter([
     {
     path: "/Admin",
     element: <AdminDashboard />,
+  },
+  {
+    path: "/Edit",
+    element: <EditDashboard />,
+  },
+  {
+    path: "/View",
+    element: <ViewDashboard />,
+  },
+  {
+    path: "/Delete",
+    element: <DeleteDashboard />,
   },
 ]);
 
