@@ -51,7 +51,7 @@ const Header = () => {
       >
         <img className="menu" alt="" srcset="" />
         {toggle && (
-          <div className="w-fit py-2 px-3 flex flex-col gap-2 justify-center text-[10px] lg:text-[15px] font-bold bg-gray-800 absolute top-12 -right-4">
+          <div className="w-fit py-2 px-3 flex flex-col gap-3 justify-center text-[15px] lg:text-[15px] font-bold bg-gray-800 absolute top-12 -right-4">
             <Link to="/Home">
               <h1 className="hover:text-[#16fe01]">HOME</h1>
             </Link>
