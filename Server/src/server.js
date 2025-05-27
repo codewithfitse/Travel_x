@@ -62,16 +62,19 @@ app.put("/dashboard/:id", async (req, res) => {
 
 app.delete("/dashboard/:id", async (req, res) => {
   try {
-    const deleteUser = await UserLogin.findByIdAndDelete(req.params.id);
+    const deletedUser = await UserLogin.findByIdAndDelete(req.params.id);
+
     if (!deletedUser) {
-      return res.json({ message: "User not found" });
+      return res.status(404).json({ error: "User not found" });
     }
-    res.json({ message: "User deleted successfully" });
-    console.log(deleteUser);
+
+    res.status(200).json({ message: "User deleted successfully" }); // ✅ THIS!
   } catch (err) {
-    res.status(500).json({ error: "Failed to update user" });
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 app.post("/register", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
