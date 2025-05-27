@@ -21,11 +21,11 @@ const DeleteDashboard = () => {
     try {
       await axios.delete(`http://localhost:3000/dashboard/${user._id}`);
 
-      alert("User updated successfully!");
+      alert("User delete successfully!");
       navigate("/Admin");
     } catch (err) {
       console.error(err);
-      alert("Update failed.");
+      alert("delete failed.");
     }
   }
 
