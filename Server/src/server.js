@@ -64,9 +64,9 @@ app.delete("/dashboard/:id", async (req, res) => {
   try {
     const deleteUser = await UserLogin.findByIdAndDelete(req.params.id);
     if (!deletedUser) {
-      return res.status(404).json({ message: "User not found" });
+      return res.json({ message: "User not found" });
     }
-    res.status(200).json({ message: "User deleted successfully" });
+    res.json({ message: "User deleted successfully" });
     console.log(deleteUser);
   } catch (err) {
     res.status(500).json({ error: "Failed to update user" });
