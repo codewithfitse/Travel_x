@@ -95,22 +95,26 @@ app.post("/login", async (req, res) => {
     const user = await UserLogin.findOne({ email: email });
 
     if (!user) {
-      res.json("User not found");
+      res.status(404).json({
+        message: "User not found",
+      });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     
+    
     if (isMatch) {
-      res.json({
-        message: "Success",
-        user: {
-          username: user.email,
-          isAdmin: user.isAdmin,
-        },
+        res.status(401).json({
+        message: "Incorrect password",
       });
-    } else if (isMatch) {
-      res.json("Incorrect password");
     }
+    return res.status(200).json({
+      message: "Success",
+      user: {
+        username: user.email,
+        isAdmin: user.isAdmin,
+      },
+    });
   } catch (err) {
     console.log("Server error:", err);
   }
