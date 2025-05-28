@@ -11,6 +11,7 @@ export const SignUp = () => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   // const [firstName, setFirstName] = useState("");
@@ -20,6 +21,7 @@ export const SignUp = () => {
 
   function handleClick(e) {
     e.preventDefault();
+    setIsLoading(true);
     axios
       .post("https://travel-x-408k.onrender.com/register", {
         firstName,
@@ -32,7 +34,10 @@ export const SignUp = () => {
         console.log(result);
         navigate("/login");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   return (
@@ -140,7 +145,11 @@ export const SignUp = () => {
                 type="submit"
                 className="w-full h-fit py-2 px-10 lg:py-3 lg:px-5 text-[13px] lg:text-[40px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
               >
-                Submit
+                {isLoading ? (
+                  <p className="text-center">Loading...</p>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </div>
           </form>
