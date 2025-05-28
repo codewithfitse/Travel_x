@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export const Login = () => {
+  const [err, setErr] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -14,17 +15,36 @@ export const Login = () => {
   function handleClick(e) {
     e.preventDefault();
     setIsLoading(true);
+    setErr("");
+
+    if (!email || !password) {
+      setErr("Please fill in both email and password.");
+      setIsLoading(false);
+      return;
+    }
+    
     axios
       .post("https://travel-x-408k.onrender.com/login", { email, password })
       .then((result) => {
         console.log(result);
-        if (result.data.user.isAdmin === true) {
+        const data = result.data;
+        if (data.user.isAdmin === true) {
           navigate("/Admin");
-        } else if (result.data.user.isAdmin === false) {
+        } else if (data.user.isAdmin === false) {
           navigate("/Dashboard");
         }
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        const msg = err.response?.data?.message;
+        console.log("Login Error:", msg);
+        if (msg === "User not found") {
+          setErr("Email doesn't exist. Try signing up.");
+        } else if (msg === "Incorrect password") {
+          setErr("Incorrect password. Try again.");
+        } else {
+          setErr("Something went wrong. Try again later.");
+        }
+      })
       .finally(() => {
         setIsLoading(false);
       });
@@ -72,6 +92,13 @@ export const Login = () => {
                   className="input"
                   placeholder="Enter Password"
                 />
+
+                {err && (
+                  <div className="text-red-500 mt-1 font-semibold text-[16px] lg:text-[18px]">
+                    {err}
+                  </div>
+                )}
+                
               </div>
 
               <div className="mt-5 px-5 flex justify-between">
