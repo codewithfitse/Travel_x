@@ -28,9 +28,9 @@ export const Login = () => {
       .then((result) => {
         console.log(result);
         const data = result.data;
-        if (data.user.isAdmin === true) {
+        if (data.user?.isAdmin === true) {
           navigate("/Admin");
-        } else if (data.user.isAdmin === false) {
+        } else if (data.user?.isAdmin === false) {
           navigate("/Dashboard");
         }
       })
