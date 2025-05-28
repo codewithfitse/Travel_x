@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export const Login = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
   function handleClick(e) {
     e.preventDefault();
+    setIsLoading(true);
     axios
       .post("https://travel-x-408k.onrender.com/login", { email, password })
       .then((result) => {
@@ -22,7 +24,10 @@ export const Login = () => {
           navigate("/Dashboard");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   return (
