@@ -87,7 +87,11 @@ export const Login = () => {
                 type="submit"
                 className="w-full h-fit py-2 px-10 lg:py-3 lg:px-5 text-[13px] lg:text-[40px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
               >
-                Submit
+                {err && (
+                  <div className="text-red-500 mt-1 font-semibold text-[16px] lg:text-[18px]">
+                    {err}
+                  </div>
+                )}
               </button>
             </div>
           </form>
