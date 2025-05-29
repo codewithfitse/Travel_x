@@ -44,6 +44,12 @@ app.get("/dashboard", async (req, res) => {
   console.log(`We are on Dashboard`);
 });
 
+app.get("/dashboard/admin", async (req, res) => {
+  const data = await UserLogin.find({ email: "user1234@gmail.com" });
+  res.json(data);
+  console.log(data);
+});
+
 app.put("/dashboard/:id", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
   const Hash = await bcrypt.hash(password, 10);
