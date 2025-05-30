@@ -69,7 +69,7 @@ const [data, setData] = useState([]);
                         <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                       </div>
                       <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                        {user.firstName}
+                        
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                         Admin
@@ -84,7 +84,7 @@ const [data, setData] = useState([]);
                           <div className="w-full flex flex-col lg:flex-row gap-1">
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Email</h1>
-                              <h1 className="font-semibold">{user.email}</h1>
+                              <h1 className="font-semibold">   </h1>
                             </div>
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Last Login</h1>
