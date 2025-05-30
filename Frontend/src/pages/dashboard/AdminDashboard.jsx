@@ -36,6 +36,12 @@ const Dashboard = () => {
               Dashboard
             </h1>
           </Link>
+          <Link
+            to="/Profile"
+            className="text-blue-400 ml-13 pt-10 text-center hover:underline"
+          >
+            Profile
+          </Link>
         </div>
         <div className="w-full h-full bg-gray-700">
           <h1 className="w-[70%] px-3 mx-4 mt-2 text-center border-b-2 border-amber-50">
