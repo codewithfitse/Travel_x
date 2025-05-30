@@ -13,7 +13,7 @@ const [data, setData] = useState([]);
     async function load() {
       try {
         await axios
-          .get("http://localhost:3000/dashboard/admin")
+          .get("https://travel-x-408k.onrender.com/dashboard/admin")
           .then((result) => {
             console.log(result.data);
             setData(result.data);
