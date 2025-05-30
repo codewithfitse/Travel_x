@@ -15,7 +15,7 @@ import { SignUp } from "./pages/SignUp.jsx";
 import { Login } from "./pages/Login.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import AdminDashboard from "./pages/dashboard/AdminDashboard.jsx";
-import { Profile } from "./pages/Profile.jsx";
+import Profile from "./pages/Profile.jsx";
 import EditDashboard from "./pages/dashboard/Edit.jsx";
 import ViewDashboard from "./pages/dashboard/View.jsx";
 import DeleteDashboard from "./pages/dashboard/Delete.jsx";
