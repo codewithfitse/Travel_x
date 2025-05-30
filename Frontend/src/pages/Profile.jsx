@@ -60,7 +60,7 @@ const [data, setData] = useState([]);
                   </div>
                 </div>
 
-                {data.map((user) => (
+                
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                       <div className="relative">
@@ -125,7 +125,7 @@ const [data, setData] = useState([]);
                       </div>
                     </div>
                   </div>
-                ))}
+                
 
                 <div className="w-full h-fit mt-8 p-5 bg-amber-600 rounded-2xl">
                   <div className="w-full h-full py-1 flex flex-col space-y-0.5 bg-amber-200">
