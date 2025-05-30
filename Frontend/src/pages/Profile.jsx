@@ -60,16 +60,15 @@ const [data, setData] = useState([]);
                   </div>
                 </div>
 
-                
+                {data.map((user) => (
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-{data.map((user) => (
                     <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                       <div className="relative">
                         <div className="w-30 h-30 flex justify-center bg-amber-900 border-4 border-gray-600 rounded-full"></div>
                         <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                       </div>
                       <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                        
+                        {user.email}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                         Admin
@@ -84,7 +83,7 @@ const [data, setData] = useState([]);
                           <div className="w-full flex flex-col lg:flex-row gap-1">
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Email</h1>
-                              <h1 className="font-semibold">   </h1>
+                              <h1 className="font-semibold">{user.email}</h1>
                             </div>
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Last Login</h1>
@@ -125,9 +124,8 @@ const [data, setData] = useState([]);
                         </div>
                       </div>
                     </div>
-});
                   </div>
-                
+                ))}
 
                 <div className="w-full h-fit mt-8 p-5 bg-amber-600 rounded-2xl">
                   <div className="w-full h-full py-1 flex flex-col space-y-0.5 bg-amber-200">
