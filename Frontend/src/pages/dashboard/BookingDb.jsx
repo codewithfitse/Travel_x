@@ -10,7 +10,7 @@ export const BookingDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/booking")
+          .get("https://travel-x-408k.onrender.com/dashboard/booking")
           .then((result) => {
             console.log(result.data);
             setData(result.data);
