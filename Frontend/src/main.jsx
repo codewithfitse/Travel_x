@@ -15,10 +15,14 @@ import { SignUp } from "./pages/SignUp.jsx";
 import { Login } from "./pages/Login.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import AdminDashboard from "./pages/dashboard/AdminDashboard.jsx";
-import Profile from "./pages/Profile.jsx";
 import EditDashboard from "./pages/dashboard/Edit.jsx";
 import ViewDashboard from "./pages/dashboard/View.jsx";
 import DeleteDashboard from "./pages/dashboard/Delete.jsx";
+import { Profile } from "./pages/dashboard/Profile.jsx";
+import { ContactDb } from "./pages/dashboard/ContactDb.jsx";
+import { BookingDb } from "./pages/dashboard/BookingDb.jsx";
+import { Dash } from "./pages/Dash.jsx";
+import { UserDb } from "./pages/dashboard/UserDb.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,10 +63,18 @@ const router = createBrowserRouter([
     element: <SignUp />,
   },
   {
+    path: "/Dash",
+    element: <Dash />,
+  },
+  {
     path: "/Dashboard",
     element: <Dashboard />,
   },
-    {
+  {
+    path: "/Profile",
+    element: <Profile />,
+  },
+  {
     path: "/Admin",
     element: <AdminDashboard />,
   },
@@ -78,9 +90,17 @@ const router = createBrowserRouter([
     path: "/Delete",
     element: <DeleteDashboard />,
   },
-    {
-    path: "/Profile",
-    element: <Profile />,
+  {
+    path: "/UserDb",
+    element: <UserDb />,
+  },
+  {
+    path: "/ContactDb",
+    element: <ContactDb />,
+  },
+  {
+    path: "/BookingDb",
+    element: <BookingDb />,
   },
 ]);
 
