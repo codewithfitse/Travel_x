@@ -22,7 +22,9 @@ const Footer = () => {
       </div>
       <div className="flex justify-around">
         <div className="w-[30%] pl-4 lg:pl-8 flex flex-col space-y-1">
-          <h1 className="text-[15px] lg:text-[28px] font-bold">TRAVEL-X</h1>
+          <h1 className="text-[15px] lg:text-[28px] font-bold">
+            <span className="text-[40px] font-serif">T</span>ime
+          </h1>
           <h2 className="text-[10px] lg:text-[16px]">
             Providing great care for customers is our brand!
           </h2>
