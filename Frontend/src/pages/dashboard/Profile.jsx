@@ -60,7 +60,7 @@ export const Profile = () => {
                         {user.firstName} {user.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {user.isAdmin === true ? "Admin" : "User"}:{" "}
+                        {user.isAdmin === true ? "Admin" : "User"}{" "}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
