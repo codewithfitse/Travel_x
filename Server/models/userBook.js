@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
   phone: String,
   destination: String,
   message: String,
-});
+},{ timestamps: true });
 
 const UserBook = mongoose.model("Books", UserSchema);
 export default UserBook;
