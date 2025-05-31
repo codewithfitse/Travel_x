@@ -22,7 +22,7 @@ import { Profile } from "./pages/dashboard/Profile.jsx";
 import { ContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb } from "./pages/dashboard/BookingDb.jsx";
 import { Dash } from "./pages/Dash.jsx";
-import { UserDb } from "./pages/dashboard/UserDb.jsx";
+import UserDb from "./pages/dashboard/UserDb.jsx";
 
 const router = createBrowserRouter([
   {
