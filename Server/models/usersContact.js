@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema({
   email: String,
   phone: String,
   message: String,
-});
+},{ timestamps: true });
 
 const UserContact = mongoose.model("Contacts", UserSchema);
 export default UserContact;
