@@ -30,7 +30,14 @@ export const Header = () => {
   return (
     <header className="w-screen h-16 flex justify-between pr-20 text-white text-[10px] lg:text-[20px] border-1 border-gray-700 fixed top-0 left-15 bg-white/5 backdrop-blur-sm z-20">
       <nav className="w-full px-5 flex justify-between items-center">
-        <div className="">Travel-x</div>
+        <div className="">
+          <img
+            src="/Logo/Time_white.png"
+            className="w-15 lg:w-23 h-full p-2"
+            alt=""
+            srcset=""
+          />  
+        </div>
         <div className="flex justify-between space-x-3">
           <Link to="/Admin">
             <div className="flex justify-between">Dashboard</div>
