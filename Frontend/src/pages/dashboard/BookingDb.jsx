@@ -60,7 +60,7 @@ export const BookingDb = () => {
                         {user.firstName} {user.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        Admin
+                        {user.isAdmin === true ? "Admin" : "User"}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         {/* Member since January 15, 2023{" "} */}
