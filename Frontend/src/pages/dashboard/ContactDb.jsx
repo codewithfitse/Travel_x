@@ -10,7 +10,7 @@ export const ContactDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/contact")
+          .get("https://travel-x-408k.onrender.com/dashboard/contact")
           .then((result) => {
             console.log(result.data);
             setData(result.data);
