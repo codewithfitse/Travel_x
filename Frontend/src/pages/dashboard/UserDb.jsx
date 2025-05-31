@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 import { useEffect, useState } from "react";
