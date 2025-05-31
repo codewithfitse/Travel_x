@@ -21,7 +21,7 @@ import DeleteDashboard from "./pages/dashboard/Delete.jsx";
 import { Profile } from "./pages/dashboard/Profile.jsx";
 import { ContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb } from "./pages/dashboard/BookingDb.jsx";
-import { Dash } from "./pages/Dash.jsx";
+// import { Dash } from "./pages/Dash.jsx";
 import UserDb from "./pages/dashboard/UserDb.jsx";
 
 const router = createBrowserRouter([
@@ -61,10 +61,6 @@ const router = createBrowserRouter([
   {
     path: "/SignUp",
     element: <SignUp />,
-  },
-  {
-    path: "/Dash",
-    element: <Dash />,
   },
   {
     path: "/Dashboard",
