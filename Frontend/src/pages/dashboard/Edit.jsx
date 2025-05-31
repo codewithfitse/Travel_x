@@ -23,7 +23,7 @@ const EditDashboard = () => {
   async function handleClick(e) {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/dashboard/${user._id}`, {
+      await axios.put(`https://travel-x-408k.onrender.com/dashboard/${user._id}`, {
         firstName,
         lastName,
         email,
