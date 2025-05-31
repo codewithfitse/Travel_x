@@ -51,7 +51,7 @@ const ViewDashboard = () => {
                       <span className="font-semibold">{user.password}</span>{" "}
                     </h1>
                     <h1 className="font-bold capitalize">
-                      Control:{" "}
+                      {user.isAdmin === true ? "Admin" : "User"}:{" "}
                       <span className="font-semibold">
                         <Link
                           to="/Edit"
