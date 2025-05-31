@@ -35,7 +35,10 @@ export const Header = () => {
           <Link to="/Admin">
             <div className="flex justify-between">Dashboard</div>
           </Link>
-          <div className="flex justify-between">Sign out</div>
+          <Link to="/Login">
+            <div className="flex justify-between">Sign out</div>
+          </Link>
+          
         </div>
       </nav>
       <div className="flex items-center">Profile</div>
