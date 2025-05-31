@@ -50,6 +50,18 @@ app.get("/dashboard/admin", async (req, res) => {
   console.log(data);
 });
 
+app.get("/dashboard/contact", async (req, res) => {
+  const data = await UserContact.find({});
+  res.json(data);
+  console.log(data);
+});
+
+app.get("/dashboard/booking", async (req, res) => {
+  const data = await UserBook.find({});
+  res.json(data);
+  console.log(data);
+});
+
 app.put("/dashboard/:id", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
   const Hash = await bcrypt.hash(password, 10);
@@ -114,15 +126,23 @@ app.post("/login", async (req, res) => {
         message: "Incorrect password",
       });
     }
+
+      user.lastLogin = new Date();
+      await user.save();
+    
     return res.status(200).json({
       message: "Success",
       user: {
         username: user.email,
         isAdmin: user.isAdmin,
+        lastLogin: user.lastLogin,
       },
     });
   } catch (err) {
     console.log("Server error:", err);
+    return res
+      .status(500)
+      .json({ message: "Server error. Please try again later." });
   }
 
   console.log(`Posted Successfully`);
