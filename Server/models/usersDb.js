@@ -26,7 +26,11 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-});
+  lastLogin: {
+      type: Date,
+      default: null,
+    },
+},{ timestamps: true });
 
 const UserLogin = mongoose.model("Logins", UserSchema);
 export default UserLogin;
