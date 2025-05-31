@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export const ContactDb = () => {
   const [data, setData] = useState([]);
