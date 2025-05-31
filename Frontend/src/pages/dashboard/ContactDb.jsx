@@ -25,7 +25,7 @@ export const ContactDb = () => {
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
-        <div className="w-full h-full flex bg-[#020817] text-white">
+        <div className="w-full h-screen flex bg-[#020817] text-white">
           <SideBar />
           <div className="ml-14 flex flex-col flex-1">
             <Header />
