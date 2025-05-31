@@ -3,7 +3,7 @@ import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const UserDb = () => {
+const UserDb = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -69,3 +69,4 @@ export const UserDb = () => {
     </section>
   );
 };
+export default UserDb
