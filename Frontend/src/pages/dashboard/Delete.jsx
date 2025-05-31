@@ -18,7 +18,7 @@ const DeleteDashboard = () => {
     e.preventDefault();
     try {
       await axios
-        .delete(`http://localhost:3000/dashboard/${user._id}`)
+        .delete(`https://travel-x-408k.onrender.com/dashboard/${user._id}`)
         .then((result) => {
           if (result.data.message === "deleted") {
             alert("User updated successfully!");
