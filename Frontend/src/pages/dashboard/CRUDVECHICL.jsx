@@ -222,7 +222,7 @@ export const Post = () => {
               <p>{img.filename}</p>
               <div className=" flex justify-center">
                 <img
-                  src={`http://localhost:3000${img.url}`}
+                  src={`https://travel-x-408k.onrender.com${img.url}`}
                   alt={img.filename}
                   className="w-50 h-100 bg-center rounded-[10px]"
                 />
