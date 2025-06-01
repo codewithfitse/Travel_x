@@ -20,6 +20,14 @@ import {
   ViewDashboard,
   DeleteDashboard,
 } from "./pages/dashboard/CRUDUSER.jsx";
+import {
+  Deletes,
+  Edits,
+  Views,
+  Post,
+  Get,
+} from "./pages/dashboard/CRUDVECHICL.jsx";
+import SubDashboard from "./pages/dashboard/SubAdminDashboard.jsx";
 import { Profile } from "./pages/dashboard/Profile.jsx";
 import { ContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb } from "./pages/dashboard/BookingDb.jsx";
@@ -76,6 +84,10 @@ const router = createBrowserRouter([
     path: "/Admin",
     element: <AdminDashboard />,
   },
+  {
+    path: "/SubAdmin",
+    element: <SubDashboard />,
+  },  
   {
     path: "/Edit",
     element: <EditDashboard />,
