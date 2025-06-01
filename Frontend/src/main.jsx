@@ -85,6 +85,10 @@ const router = createBrowserRouter([
     element: <AdminDashboard />,
   },
   {
+    path: "/Post",
+    element: <Post />,
+  },
+  {
     path: "/Get",
     element: <Get />,
   },
