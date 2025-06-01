@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import bcrypt from "bcryptjs";
+import multer from "multer";
 import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
@@ -15,6 +16,8 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", express.static("uploads"));
 const PORT = 3000;
 
 const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
@@ -23,6 +26,79 @@ mongoose
   .connect(MONGO_DB)
   .then(() => console.log(`Connected Successfully`))
   .catch((err) => console.log(`Err:`, err));
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, "uploads"),
+  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname),
+});
+
+const upload = multer({ storage });
+
+app.get("/api/images", async (req, res) => {
+  try {
+    const images = await UserPost.find().sort({ uploadedAt: -1 });
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch images" });
+  }
+});
+
+app.post("/api/upload", upload.single("photo"), async (req, res) => {
+  if (!req.file) return res.status(400).json({ error: "No file uploaded" });
+
+  const { name, item, description } = req.body;
+
+  const fileUrl = `/uploads/${req.file.filename}`;
+
+  // Save to MongoDB
+  const image = new UserPost({
+    filename: req.file.filename,
+    url: fileUrl,
+    name,
+    item,
+    description,
+  });
+
+  try {
+    await image.save();
+    res.json({ message: "Uploaded and saved to DB", image });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save in DB" });
+  }
+});
+
+app.put("/api/images/:id", async (req, res) => {
+  const { id } = req.params;
+  const { name, item, description } = req.body;
+
+  try {
+    const updatedPost = await UserPost.findByIdAndUpdate(
+      id,
+      { name, item, description },
+      { new: true } // return the updated document
+    );
+
+    if (!updatedPost) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+
+    res.json({ message: "Updated and saved to DB", data: updatedPost });
+  } catch (err) {
+    console.error("Update error:", err); // Add this for better debugging
+    res.status(500).json({ error: "Failed to update in DB" });
+  }
+});
+
+app.delete("/api/images/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await UserPost.findByIdAndDelete(id);
+    res.json({ message: "Deleted and saved to DB" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to delete in DB" });
+  }
+});
 
 app.get("/", (req, res) => {
   res.json("HomePage");
@@ -33,6 +109,7 @@ app.get("/register", (req, res) => {
   res.json("register");
   console.log(`We are on register`);
 });
+
 app.get("/login", (req, res) => {
   res.json("Login");
   console.log(`We are on Login`);
@@ -135,6 +212,7 @@ app.post("/login", async (req, res) => {
       user: {
         username: user.email,
         isAdmin: user.isAdmin,
+        isSubAdmin: user.isSubAdmin,
         lastLogin: user.lastLogin,
       },
     });
