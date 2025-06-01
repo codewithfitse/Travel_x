@@ -28,10 +28,14 @@ export const Login = () => {
       .then((result) => {
         console.log(result);
         const data = result.data;
-        if (data.user?.isAdmin === true) {
+         if (data.user?.isAdmin) {
           navigate("/Admin");
-        } else if (data.user?.isAdmin === false) {
+        } else if (data.user?.isSubAdmin) {
+          navigate("/SubAdmin");
+        } else if (data.user?.isSubAdmin === false) {
           navigate("/Dashboard");
+        } else {
+          setErr("Something went wrong. Go check it again!");
         }
       })
       .catch((err) => {
