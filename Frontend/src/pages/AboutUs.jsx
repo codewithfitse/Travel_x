@@ -46,7 +46,6 @@ const AboutUs = () => {
               src="Abel.jpg"
               className="w-full h-auto rounded-[15px]"
               alt=""
-              srcset=""
             />
           </div>
         </div>
