@@ -85,6 +85,22 @@ const router = createBrowserRouter([
     element: <AdminDashboard />,
   },
   {
+    path: "/Get",
+    element: <Get />,
+  },
+  {
+    path: "/Views",
+    element: <Views />,
+  },
+  {
+    path: "/Edits",
+    element: <Edits />,
+  },
+  {
+    path: "/Deletes",
+    element: <Deletes />,
+  },
+  {
     path: "/SubAdmin",
     element: <SubDashboard />,
   },  
