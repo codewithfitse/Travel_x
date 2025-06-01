@@ -10,7 +10,7 @@ export const Get = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/images");
+      const res = await axios.get("https://travel-x-408k.onrender.com/api/images");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -102,7 +102,7 @@ export const Post = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/upload",
+        "https://travel-x-408k.onrender.com/api/upload",
         formData
       );
       fetchImages();
@@ -120,7 +120,7 @@ export const Post = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/images");
+      const res = await axios.get("https://travel-x-408k.onrender.com/api/images");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -305,7 +305,7 @@ export const Edits = () => {
 
     try {
       await axios
-        .put(`http://localhost:3000/api/images/${img._id}`, {
+        .put(`https://travel-x-408k.onrender.com/api/images/${img._id}`, {
           name,
           item,
           description,
@@ -437,7 +437,7 @@ export const Deletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`http://localhost:3000/api/images/${_id}`)
+      .delete(`https://travel-x-408k.onrender.com/api/images/${_id}`)
       .then(() => {
         alert("successfully deleted");
         navigate("/Get");
