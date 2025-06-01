@@ -38,7 +38,8 @@ const Vehicles = () => {
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
-            <div className="w-full py-5 card">
+            <div key={img._id}
+ className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
                   src={`https://travel-x-408k.onrender.com${img.url}`}
