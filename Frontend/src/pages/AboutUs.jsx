@@ -35,17 +35,17 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="mt-[100px] flex justify-center">
-        <div className="w-0 lg:w-[30%]"></div>
-        <div className="w-full lg:w-[70%]">
-          <h1 className="text-[12px] lg:text-[22px]  pl-10 pr-1.5">
-            <span className="text-[20px] lg:text-[40px] text-[#16fe01] font-bold ">
-              We
-            </span>{" "}
-            understand choosing rental services might be difficult and time
-            consuming task. At TRAVEL-X Rental we always try to make it easier
-            by providing detailed information.
-          </h1>
+      <div className="mt-[100px] flex flex-col lg:flex-row lg:justify-center lg:items-center">
+        <div className="w-full lg:w-[30%] mb-5 lg:mb-0">
+          <div className="w-full h-full px-6">
+            <img
+              src="Abel.jpg"
+              className="w-full h-auto rounded-[15px]"
+              alt=""
+              srcset=""
+            />
+          </div>
+        </div>
           <div className="mt-10 grid lg:grid-cols-2 gap-2">
             <div className="w-full h-[200px] pl-5 flex items-center space-x-5 card">
               <div className="p-3 flex item-center bg-[#16fe01] rounded-full">
