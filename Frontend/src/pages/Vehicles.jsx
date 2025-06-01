@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
 
@@ -11,12 +11,15 @@ const Vehicles = () => {
   const navigate = useNavigate();
 
   const fetchImages = async () => {
+    setIsloading(true);
     try {
       const res = await axios.get("https://travel-x-408k.onrender.com/api/images");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
-    }
+    } finally {
+    setIsloading(false); // <-- and this
+  }
   };
 
   useEffect(() => {
@@ -60,108 +63,7 @@ const Vehicles = () => {
             </div>
           ))
         )}
-        {/* <div className="w-full py-5 card">
-          <div className="flex justify-center">
-            <img src="economy2.png" alt="" srcset="" />
-          </div>
-          <div className="pl-5">
-            <h1 className="text-[40px] text-[#16fe01] font-bold">Economy</h1>
-            <h2>Starting $60</h2>
-            <h2>Toyota VITZ or Similar</h2>
-            <h2>Vehicle Feature</h2>
-            <ul>
-              <li>° 4 Person Seat</li>
-              <li>° Automatic</li>
-              <li>° Perfect for in city</li>
-              <li>° Pick up at airport</li>
-            </ul>
-          </div>
-        </div>
-        <div className="w-full py-5 card">
-          <div className="flex justify-center">
-            <img src="standard.png" alt="" srcset="" />
-          </div>
-          <div className="pl-5">
-            <h1 className="text-[40px] text-[#16fe01] font-bold">Standard</h1>
-            <h2>Starting $60</h2>
-            <h2>Toyota VITZ or Similar</h2>
-            <h2>Vehicle Feature</h2>
-            <ul>
-              <li>° 4 Person Seat</li>
-              <li>° Automatic</li>
-              <li>° Perfect for in city</li>
-              <li>° Pick up at airport</li>
-            </ul>
-          </div>
-        </div>
-        <div className="w-full py-5 card">
-          <div className="pt-4 flex justify-center">
-            <img src="midsizesuv.png" alt="" srcset="" />
-          </div>
-          <div className="pl-5">
-            <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Suv</h1>
-            <h2>Starting $60</h2>
-            <h2>Toyota VITZ or Similar</h2>
-            <h2>Vehicle Feature</h2>
-            <ul>
-              <li>° 4 Person Seat</li>
-              <li>° Automatic</li>
-              <li>° Perfect for in city</li>
-              <li>° Pick up at airport</li>
-            </ul>
-          </div>
-        </div>
-        <div className="w-full py-5 card">
-          <div className="pb-15 flex justify-center">
-            <img src="fullsizesuv.png" alt="" srcset="" />
-          </div>
-          <div className="pl-5">
-            <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
-            <h2>Starting $60</h2>
-            <h2>Toyota VITZ or Similar</h2>
-            <h2>Vehicle Feature</h2>
-            <ul>
-              <li>° 4 Person Seat</li>
-              <li>° Automatic</li>
-              <li>° Perfect for in city</li>
-              <li>° Pick up at airport</li>
-            </ul>
-          </div>
-        </div>
-        <div className="w-full py-5 card">
-          <div className="flex justify-center">
-            <img src="minivan.png" alt="" srcset="" />
-          </div>
-          <div className="pl-5">
-            <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Van</h1>
-            <h2>Starting $60</h2>
-            <h2>Toyota VITZ or Similar</h2>
-            <h2>Vehicle Feature</h2>
-            <ul>
-              <li>° 4 Person Seat</li>
-              <li>° Automatic</li>
-              <li>° Perfect for in city</li>
-              <li>° Pick up at airport</li>
-            </ul>
-          </div>
-        </div>
-        <div className="w-full py-8 card">
-          <div className="pb-15 flex justify-center">
-            <img src="pickup.png" alt="" srcset="" />
-          </div>
-          <div className="pl-5">
-            <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
-            <h2>Starting $60</h2>
-            <h2>Toyota VITZ or Similar</h2>
-            <h2>Vehicle Feature</h2>
-            <ul>
-              <li>° 4 Person Seat</li>
-              <li>° Automatic</li>
-              <li>° Perfect for in city</li>
-              <li>° Pick up at airport</li>
-            </ul>
-          </div>
-        </div> */}
+        
       </div>
 
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
