@@ -56,7 +56,7 @@ const AboutUs = () => {
               We
             </span>{" "}
             understand choosing rental services might be difficult and time
-            consuming task. At TRAVEL-X Rental we always try to make it easier
+            consuming task. At TIME Rental we always try to make it easier
             by providing detailed information.
           </h1>
           <div className="mt-10 grid lg:grid-cols-2 gap-2">
