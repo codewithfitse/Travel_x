@@ -26,6 +26,10 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  isSubAdmin: {
+    type: Boolean,
+    default: false,
+  },
   lastLogin: {
       type: Date,
       default: null,
