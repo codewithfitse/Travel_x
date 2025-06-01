@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
 
 const AboutUs = () => {
@@ -11,7 +11,11 @@ const AboutUs = () => {
 
       <div className="pt-[100px] lg:pt-[150px] flex flex-col items-center">
         <h1 className="text-[25px] lg:text-[40px] text-center font-bold">
-          We are TRAVEL-X Car Rentals
+          We are{" "}
+          <span className="text-[25px] lg:text-[50px] text-[#16fe01] font-bold ">
+            Time
+          </span>{" "}
+          Car Rentals
         </h1>
         <p className="w-[90%] mt-5 text-[14px] text-center lg:text-[20px]">
           We are a full Car Rental service provider in Addis Ababa, Ethiopia
@@ -46,6 +50,15 @@ const AboutUs = () => {
             />
           </div>
         </div>
+        <div className="w-full lg:w-[70%]">
+          <h1 className="text-[12px] lg:text-[22px]  pl-10 pr-1.5">
+            <span className="text-[20px] lg:text-[40px] text-[#16fe01] font-bold ">
+              We
+            </span>{" "}
+            understand choosing rental services might be difficult and time
+            consuming task. At TRAVEL-X Rental we always try to make it easier
+            by providing detailed information.
+          </h1>
           <div className="mt-10 grid lg:grid-cols-2 gap-2">
             <div className="w-full h-[200px] pl-5 flex items-center space-x-5 card">
               <div className="p-3 flex item-center bg-[#16fe01] rounded-full">
