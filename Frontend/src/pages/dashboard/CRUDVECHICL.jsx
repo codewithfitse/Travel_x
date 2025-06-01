@@ -64,7 +64,7 @@ export const Get = () => {
 
                       <div className="flex justify-center mt-2">
                         <img
-                          src={`http://localhost:3000${img.url}`}
+                          src={`https://travel-x-408k.onrender.com/${img.url}`}
                           alt={img.filename}
                           className="w-full h-auto object-cover rounded-[10px]"
                         />
