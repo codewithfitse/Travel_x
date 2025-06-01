@@ -18,7 +18,8 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
-    "mongoose": "^8.13.2",
+    "mongoose": "^8.13.2",    
+    "multer": "^2.0.0",
     "mongoose-connect": "^0.0.3",
     "passport": "^0.7.0",
     "passport-discord": "^0.1.4"
