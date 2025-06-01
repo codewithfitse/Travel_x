@@ -6,6 +6,7 @@ import multer from "multer";
 import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
+import UserPost from "../models/UserPost.js";
 
 const app = express();
 app.use(
