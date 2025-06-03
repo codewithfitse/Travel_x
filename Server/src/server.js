@@ -18,7 +18,7 @@ app.use(
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const PORT = 3000;
 
 const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
