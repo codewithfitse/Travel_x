@@ -1,11 +1,22 @@
 import mongoose from "mongoose";
 
 const ImageSchema = new mongoose.Schema({
-  filename: String,
-  url: String,
-  name: String,
-  item: String,
-  description: String,
+  name: {
+    type: String,
+    required: true,
+  },
+  item: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  url: {
+    type: String,
+    required: true,
+  },
   createdAt: { type: Date, default: Date.now },
 });
 
