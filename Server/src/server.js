@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import path from "path";
 import bcrypt from "bcryptjs";
 import multer from "multer";
 import UserLogin from "../models/usersDb.js";
