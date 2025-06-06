@@ -108,6 +108,7 @@ const Booking = () => {
               <select
                 name=""
                 id=""
+                value={item}
                 className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
                 onChange={(e) => setItem(e.target.value)}
               >
