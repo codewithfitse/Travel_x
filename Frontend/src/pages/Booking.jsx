@@ -10,6 +10,7 @@ const Booking = () => {
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
+  const [item, setItem] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
 
@@ -21,6 +22,7 @@ const Booking = () => {
         lastName,
         email,
         phone,
+        item,
         destination,
         message,
       })
@@ -103,14 +105,18 @@ const Booking = () => {
 
             <div className="mt-10">
               <h1 className="text-[30px]">Car choice</h1>
-              <ul className="pl-2">
-                <li>Economy</li>
-                <li>Standard</li>
-                <li>Mid Full Suv</li>
-                <li>Full Suv</li>
-                <li>Minivan</li>
-                <li>Pickup</li>
-              </ul>
+              <select
+                name=""
+                id=""
+                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+                onChange={(e) => setItem(e.target.value)}
+              >
+                <option value="suv">Suv</option>
+                <option value="midsuv">MidSuv</option>
+                <option value="fullsuv">FullSuv</option>
+                <option value="pickup">Pickup</option>
+                <option value="minivan">Minivan</option>
+              </select>
             </div>
 
             <div className="mt-10">
