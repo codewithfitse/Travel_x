@@ -190,7 +190,7 @@ export const Post = () => {
               type="file"
               name='image'
               accept="image/*"
-              onChange={(e) => setPhoto(e.target.files[0])}
+              onChange={(e) => setImage(e.target.files[0])}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose File"
             />
