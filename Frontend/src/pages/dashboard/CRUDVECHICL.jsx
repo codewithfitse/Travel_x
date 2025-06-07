@@ -93,7 +93,7 @@ export const Post = () => {
   const handleUpload = async (e) => {
     e.preventDefault();
     setIsloading(true);
-    if (!photo) return;
+    if (!image) return;
 
     const formData = new FormData();
     formData.append('name', name); 
@@ -110,7 +110,7 @@ export const Post = () => {
       fetchImages();
       setName("");
       setItem("");
-      setPrice("");
+      setImage("");
       setPhoto(null);
     } catch (err) {
       console.error(err);
