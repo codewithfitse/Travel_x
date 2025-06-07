@@ -51,7 +51,7 @@ app.post("/uploads", upload.single('image'), async (req, res) => {
     const result = await cloudinary.uploader.upload(req.file.path, {
       folder: "uploads", // Optional
     });
-    const savedImage = new UserPost({ name, item, price ,url: result.secure_url });
+    const savedImage = new UserPost({ name, item, price, url: result.secure_url });
     await savedImage.save();
     console.log("Posted", req.file);
     res.status(200).json({
