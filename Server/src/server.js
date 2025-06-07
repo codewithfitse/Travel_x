@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bcrypt from "bcryptjs";
 import multer from "multer";
+import fs from 'fs';
+import { cloudinary, storage } from "../config/Cloudinary.js";
 import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
@@ -27,6 +29,40 @@ mongoose
   .then(() => console.log(`Connected Successfully`))
   .catch((err) => console.log(`Err:`, err));
 
+const uploadDir = 'uploads';
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
+const upload = multer({ storage: storage })
+
+app.get("/uploads", async (req, res) => {
+  try {
+    const images = await UserPost.find().sort({ createdAt: -1 }); // newest first
+    res.status(200).json(images);
+  } catch (err) {
+    res.status(500).json({ msg: "Failed to fetch images", error: err.message });
+  }
+});
+
+app.post("/uploads", upload.single('image'), async (req, res) => {
+  const {name, item, price} = req.body;
+  try {
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "uploads", // Optional
+    });
+    const savedImage = new UserPost({ name, item, price ,url: result.secure_url });
+    await savedImage.save();
+    console.log("Posted", req.file);
+    res.status(200).json({
+      msg: "Uploaded and saved to DB!",
+      imageUrl: result.secure_url,
+    });
+  } catch (error) {
+    console.log(error);
+    
+  }
+})
 
 app.get("/api/images", async (req, res) => {
   try {
