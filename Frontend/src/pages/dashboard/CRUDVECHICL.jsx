@@ -308,7 +308,7 @@ export const Edits = () => {
 
     try {
       await axios
-        .put(`https://travel-x-408k.onrender.com/api/images/${img._id}`, {
+        .put(`https://travel-x-408k.onrender.com/uploads/${img._id}`, {
           name,
           item,
           description,
@@ -440,7 +440,7 @@ export const Deletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`https://travel-x-408k.onrender.com/api/images/${_id}`)
+      .delete(`https://travel-x-408k.onrender.com/uploads/${_id}`)
       .then(() => {
         alert("successfully deleted");
         navigate("/Get");
