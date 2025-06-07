@@ -217,7 +217,7 @@ export const Post = () => {
                 <strong>Item:</strong> {img.item}
               </p>
               <p>
-                <strong>Description:</strong> {img.description}
+                <strong>Price:</strong> {img.price}
               </p>
 
               <p>{img.filename}</p>
@@ -301,9 +301,9 @@ export const Edits = () => {
     
 
     const formData = new FormData();
-    formData.append("name", "New Name");
-    formData.append("item", "Updated Item");
-    formData.append("price", "123");
+    formData.append("name", name);
+    formData.append("item", item);
+    formData.append("price", price);
     if (image) {
       formData.append("image", image);
     }
