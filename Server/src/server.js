@@ -76,12 +76,12 @@ app.put("/uploads/:id", upload.single("image"), async (req, res) => {
     // If there's a new image, delete old one from Cloudinary
     let updatedData = { name, item, price };
     if (req.file) {
-      await cloudinary.uploader.destroy(existingPost.public_id);
+      await cloudinary.uploader.destroy(existingPost._id);
       const result = await cloudinary.uploader.upload(req.file.path, {
         folder: "uploads"
       });
       updatedData.url = result.secure_url;
-      updatedData.public_id = result.public_id;
+      updatedData._id = result._id;
     }
 
     const updatedPost = await UserPost.findByIdAndUpdate(postId, updatedData, { new: true });
@@ -101,7 +101,7 @@ app.delete("/uploads/:id", async (req, res) => {
     if (!post) return res.status(404).json({ msg: "Post not found" });
 
     // Remove from Cloudinary
-    await cloudinary.uploader.destroy(post.public_id);
+    await cloudinary.uploader.destroy(post._id);
 
     // Remove from MongoDB
     await UserPost.findByIdAndDelete(postId);
