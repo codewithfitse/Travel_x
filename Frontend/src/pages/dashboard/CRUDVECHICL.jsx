@@ -53,7 +53,7 @@ export const Get = () => {
                         <strong>Item:</strong> {img.item}
                       </p>
                       <p>
-                        <strong>Description:</strong> {img.price}
+                        <strong>Price:</strong> {img.price}
                       </p>
 
                       <Link to="/Views" state={{ img }}>
