@@ -112,6 +112,7 @@ export const Post = () => {
       setItem("");
       setPrice("");
       setImage("");
+      alert("Upload Success");      
     } catch (err) {
       console.error(err);
       alert("Upload failed");
