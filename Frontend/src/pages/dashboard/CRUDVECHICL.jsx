@@ -41,6 +41,7 @@ export const Get = () => {
 
                 <div className="flex flex-wrap gap-4">
                   {images.map((img) => (
+                    <Link to="/Views" state={{ img }}>
                     <div
                       key={img._id}
                       className="flex-[1_1_calc(50%-1rem)] min-w-[300px] p-4 bg-gray-800 rounded-2xl"
@@ -71,6 +72,7 @@ export const Get = () => {
                         />
                       </div>
                     </div>
+                      <Link />
                   ))}
                 </div>
               </div>
@@ -258,7 +260,7 @@ export const Views = () => {
               <strong>Item:</strong> {img?.item}
             </p>
             <p>
-              <strong>Description:</strong> {img?.description}
+              <strong>Price:</strong> {img?.price}
             </p>
             <div className="flex space-x-4">
               <Link to="/Edits" state={{ img }}>
@@ -272,7 +274,7 @@ export const Views = () => {
             <p>{img?.filename}</p>
             <div className=" flex justify-center">
               <img
-                src={`https://travel-x-408k.onrender.com${img.url}`}
+                src={img.url}
                 alt={img?.filename}
                 className="w-50 h-50 bg-center rounded-[10px]"
               />
