@@ -110,8 +110,8 @@ export const Post = () => {
       fetchImages();
       setName("");
       setItem("");
+      setPrice("");
       setImage("");
-      setPhoto(null);
     } catch (err) {
       console.error(err);
       alert("Upload failed");
