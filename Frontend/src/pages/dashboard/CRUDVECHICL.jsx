@@ -286,10 +286,10 @@ export const Views = () => {
 
 export const Edits = () => {
   const [isloading, setIsloading] = useState(false);
-  //const [photo, setPhoto] = useState(null);
+  const [image, setImage] = useState(null);
   const [name, setName] = useState("");
   const [item, setItem] = useState("");
-  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState();
   const [images, setImages] = useState([]);
   const location = useLocation();
   const img = location?.state?.img;
@@ -298,19 +298,20 @@ export const Edits = () => {
   async function updatePost(e) {
     e.preventDefault();
     setIsloading(true);
+    
 
-    //const formData = new FormData();
-    //formData.append("name", name);
-    //formData.append("item", item);
-    //formData.append("description", description);
+    const formData = new FormData();
+    formData.append("name", "New Name");
+    formData.append("item", "Updated Item");
+    formData.append("price", "123");
+    if (newFile) {
+      formData.append("image", newFile);
+    }
+
 
     try {
       await axios
-        .put(`https://travel-x-408k.onrender.com/uploads/${img._id}`, {
-          name,
-          item,
-          description,
-        })
+        .put(`https://travel-x-408k.onrender.com/uploads/${img._id}`, formData)
         .then(() => navigate("/Get"))
         .catch((err) => console.log(err));
     } catch (error) {
@@ -359,20 +360,26 @@ export const Edits = () => {
             <label htmlFor="" className="text-[30px] font-semibold">
               Item:
             </label>
-            <input
-              type="text"
-              onChange={(e) => setItem(e.target.value)}
-              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
-              placeholder="Choose Item"
-            />
+              <select
+                name="item"
+                type="text"
+                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+                onChange={(e) => setItem(e.target.value)}
+              >
+                <option value="suv">suv</option>
+                <option value="midsuv">midSuv</option>
+                <option value="fullsuv">fullSuv</option>
+                <option value="pickup">pickup</option>
+                <option value="minivan">minivan</option>
+              </select>
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
-              Description:
+              Price:
             </label>
             <input
               type="text"
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Description"
             />
