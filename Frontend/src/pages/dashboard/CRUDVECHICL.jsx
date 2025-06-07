@@ -8,16 +8,17 @@ export const Get = () => {
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
-  const fetchImages = async () => {
-    try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/api/images");
-      setImages(res.data);
-    } catch (err) {
-      console.error("Fetching images failed:", err);
-    }
-  };
-
   useEffect(() => {
+    // Fetch images from backend
+    const fetchImages = async () => {
+      try {
+        const res = await axios.get("https://travel-x-408k.onrender.com/uploads");
+        setImages(res.data);
+      } catch (err) {
+        console.error("Error fetching images:", err);
+      }
+    };
+
     fetchImages();
   }, []);
 
@@ -51,7 +52,7 @@ export const Get = () => {
                         <strong>Item:</strong> {img.item}
                       </p>
                       <p>
-                        <strong>Description:</strong> {img.description}
+                        <strong>Description:</strong> {img.price}
                       </p>
 
                       <Link to="/Views" state={{ img }}>
@@ -83,10 +84,10 @@ export const Get = () => {
 
 export const Post = () => {
   const [isloading, setIsloading] = useState(false);
-  const [photo, setPhoto] = useState(null);
-  const [name, setName] = useState("");
-  const [item, setItem] = useState("");
-  const [description, setDescription] = useState("");
+  const [image, setImage] = useState();
+  const [name, setName] = useState();
+  const [price, setPrice] = useState();
+  const [item, setItem] = useState();
   const [images, setImages] = useState([]);
 
   const handleUpload = async (e) => {
@@ -95,20 +96,21 @@ export const Post = () => {
     if (!photo) return;
 
     const formData = new FormData();
-    formData.append("photo", photo);
-    formData.append("name", name);
-    formData.append("item", item);
-    formData.append("description", description);
+    formData.append('name', name); 
+    formData.append('item', item); 
+    formData.append('price', price); 
+    formData.append('image', image); 
 
     try {
-      const res = await axios.post(
-        "https://travel-x-408k.onrender.com/api/upload",
-        formData
-      );
+      const res = await axios.post("https://travel-x-408k.onrender.com/uploads", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });      
       fetchImages();
       setName("");
       setItem("");
-      setDescription("");
+      setPrice("");
       setPhoto(null);
     } catch (err) {
       console.error(err);
@@ -120,7 +122,7 @@ export const Post = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/api/images");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -139,22 +141,13 @@ export const Post = () => {
           onSubmit={handleUpload}
           className="flex flex-col space-y-3"
         >
-          {/* <div className="w-full flex flex-col relative">
-            <label htmlFor="" className="text-[30px] font-semibold">
-              Name:
-            </label>
-            <input
-              type="text"
-              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
-              placeholder="Name File"
-            />
-          </div> */}
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
               Name:
             </label>
             <input
               type="text"
+              name='name'
               onChange={(e) => setName(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Name"
@@ -164,20 +157,27 @@ export const Post = () => {
             <label htmlFor="" className="text-[30px] font-semibold">
               Item:
             </label>
-            <input
-              type="text"
-              onChange={(e) => setItem(e.target.value)}
-              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
-              placeholder="Choose Item"
-            />
+          <select
+                name="item"
+                type="text"
+                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+                onChange={(e) => setItem(e.target.value)}
+              >
+                <option value="suv">suv</option>
+                <option value="midsuv">midSuv</option>
+                <option value="fullsuv">fullSuv</option>
+                <option value="pickup">pickup</option>
+                <option value="minivan">minivan</option>
+              </select>
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
-              Description:
+              Price:
             </label>
             <input
               type="text"
-              onChange={(e) => setDescription(e.target.value)}
+              name='price'
+              onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Description"
             />
@@ -188,6 +188,7 @@ export const Post = () => {
             </label>
             <input
               type="file"
+              name='image'
               accept="image/*"
               onChange={(e) => setPhoto(e.target.files[0])}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
