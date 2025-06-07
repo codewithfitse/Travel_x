@@ -304,8 +304,8 @@ export const Edits = () => {
     formData.append("name", "New Name");
     formData.append("item", "Updated Item");
     formData.append("price", "123");
-    if (newFile) {
-      formData.append("image", newFile);
+    if (image) {
+      formData.append("image", image);
     }
 
 
