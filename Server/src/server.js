@@ -64,6 +64,56 @@ app.post("/uploads", upload.single('image'), async (req, res) => {
   }
 })
 
+// Update route - Update image and/or text
+app.put("/uploads/:id", upload.single("image"), async (req, res) => {
+  const { name, item, price } = req.body;
+  const postId = req.params.id;
+
+  try {
+    const existingPost = await UserPost.findById(postId);
+    if (!existingPost) return res.status(404).json({ msg: "Post not found" });
+
+    // If there's a new image, delete old one from Cloudinary
+    let updatedData = { name, item, price };
+    if (req.file) {
+      await cloudinary.uploader.destroy(existingPost.public_id);
+      const result = await cloudinary.uploader.upload(req.file.path, {
+        folder: "uploads"
+      });
+      updatedData.url = result.secure_url;
+      updatedData.public_id = result.public_id;
+    }
+
+    const updatedPost = await UserPost.findByIdAndUpdate(postId, updatedData, { new: true });
+    res.status(200).json({ msg: "Post updated!", updatedPost });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Update failed", error: err.message });
+  }
+});
+
+app.delete("/uploads/:id", async (req, res) => {
+  const postId = req.params.id;
+
+  try {
+    const post = await UserPost.findById(postId);
+    if (!post) return res.status(404).json({ msg: "Post not found" });
+
+    // Remove from Cloudinary
+    await cloudinary.uploader.destroy(post.public_id);
+
+    // Remove from MongoDB
+    await UserPost.findByIdAndDelete(postId);
+
+    res.status(200).json({ msg: "Post and image deleted" });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Delete failed", error: err.message });
+  }
+});
+
 app.get("/api/images", async (req, res) => {
   try {
     const images = await UserPost.find().sort({ uploadedAt: -1 });
