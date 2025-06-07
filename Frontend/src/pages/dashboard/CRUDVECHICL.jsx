@@ -41,7 +41,6 @@ export const Get = () => {
 
                 <div className="flex flex-wrap gap-4">
                   {images.map((img) => (
-                    <Link to="/Views" state={{ img }}>
                     <div
                       key={img._id}
                       className="flex-[1_1_calc(50%-1rem)] min-w-[300px] p-4 bg-gray-800 rounded-2xl"
@@ -72,7 +71,6 @@ export const Get = () => {
                         />
                       </div>
                     </div>
-                      <Link />
                   ))}
                 </div>
               </div>
