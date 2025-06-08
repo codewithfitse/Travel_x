@@ -107,7 +107,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/MidSuvVehicles" state={{ MidSuv }}>
+        <Link to="/FullSuvVehicles" state={{ MidSuv }}>
           Ecomony
           <div className="w-full py-5 card">
             <div className="pb-15 flex justify-center">
@@ -127,7 +127,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/SuvVehicles" state={{ Suv }}>
+        <Link to="/MiniVanVehicles" state={{ Suv }}>
           Ecomony
           <div className="w-full py-5 card">
             <div className="flex justify-center">
