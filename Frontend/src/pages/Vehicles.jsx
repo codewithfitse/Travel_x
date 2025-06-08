@@ -68,7 +68,11 @@ const Vehicles = () => {
 
         <div className="w-full py-5 card">
               <div className="flex justify-center">
-                
+                <img
+                  src="/public/economy"
+                  alt={img.filename}
+                  className="w-full h-auto object-cover rounded-[10px]"
+                />
               </div>
               <div className="pl-5">
                 <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
