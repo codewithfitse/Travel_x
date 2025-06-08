@@ -7,7 +7,13 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs.jsx";
 import NotFound from "./pages/404.jsx";
 import Booking from "./pages/Booking.jsx";
-import Vehicles from "./pages/Vehicles.jsx";
+import Vehicles, {
+  SuvVehicles,
+  MidSuvVehicles,
+  FullSuvVehicles,
+  MiniVanVehicles,
+  PickUpVehicles,
+} from "./pages/Vehicles.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
 import { Landing } from "./pages/Landing.jsx";
@@ -55,6 +61,26 @@ const router = createBrowserRouter([
   {
     path: "/Vehicles",
     element: <Vehicles />,
+  },
+  {
+    path: "/SuvVehicles",
+    element: <SuvVehicles />,
+  },
+  {
+    path: "/MidSuvVehicles",
+    element: <MidSuvVehicles />,
+  },
+  {
+    path: "/FullSuvVehicles",
+    element: <FullSuvVehicles />,
+  },
+  {
+    path: "/MiniVanVehicles",
+    element: <MiniVanVehicles />,
+  },
+  {
+    path: "/PickUpVehicles",
+    element: <PickUpVehicles />,
   },
   {
     path: "/Services",
