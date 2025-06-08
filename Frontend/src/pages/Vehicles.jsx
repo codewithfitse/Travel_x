@@ -204,7 +204,7 @@ export const SuvVehicles = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/images/suv");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/suv");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -286,7 +286,7 @@ export const MidSuvVehicles = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/images/midsuv");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/midsuv");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -368,7 +368,7 @@ export const FullSuvVehicles = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/images/pickup");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/fullsuv");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -450,7 +450,7 @@ export const MiniVanVehicles = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/images/pickup");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/minivan");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -532,7 +532,7 @@ export const PickUpVehicles = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/images/pickup");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/pickup");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
