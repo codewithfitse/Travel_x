@@ -48,12 +48,12 @@ const Vehicles = () => {
                 />
               </div>
               <div className="pl-5">
-                <h1 className="text-[40px] text-[#16fe01] font-bold">
+                <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
                   {img.name}
                 </h1>
-                <h2>Starting $60</h2>
+                <h2>Starting ${img.price}</h2>
                 <h2>Toyota VITZ or Similar</h2>
-                <h2>Vehicle Feature</h2>
+                <h2>Vehicle Feature {img.item}</h2>
                 <ul>
                   <li>° 4 Person Seat</li>
                   <li>° Automatic</li>
