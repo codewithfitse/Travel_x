@@ -9,6 +9,7 @@ const Vehicles = () => {
   const [isloading, setIsloading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
+  const Suv = "";
 
   const fetchImages = async () => {
     setIsloading(true);
