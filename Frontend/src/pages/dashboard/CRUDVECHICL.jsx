@@ -471,7 +471,7 @@ export const Deletes = () => {
               <strong>Item:</strong> {img.item}
             </p>
             <p>
-              <strong>Description:</strong> {img.description}
+              <strong>Price:</strong> {img.price}
             </p>
             <div className="flex space-x-4">
               <p>Are you sure:</p>
