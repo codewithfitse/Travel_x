@@ -36,30 +36,134 @@ const Vehicles = () => {
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
 
 
-        <div className="w-full py-5 card">
-              <div className="flex justify-center">
-                <img
-                  src="/public/economy"
-                  alt={img.filename}
-                  className="w-full h-auto object-cover rounded-[10px]"
-                />
-              </div>
-              <div className="pl-5">
-                <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
-                  Suv
-                </h1>
-                <h2>Starting $3456h2>
-                <h2>Toyota VITZ or Similar</h2>
-                <h2>Vehicle Feature </h2>
-                <ul>
-                  <li>° 4 Person Seat</li>
-                  <li>° Automatic</li>
-                  <li>° Perfect for in city</li>
-                  <li>° Pick up at airport</li>
-                  <Link to="/Home"><li>Home</li></Link>                                    
-                </ul>
-              </div>
+        <Link to="/SuvVehicles" state={{ Suv }}>
+          Suv
+          <div className="w-full py-5 card">
+            <div className="flex justify-center">
+              <img src="economy2.png" alt="" srcset="" />
             </div>
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Economy</h1>
+              <h2>Starting $60</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+
+              <Link to="/MidSuvVehicles" state={{ MidSuv }}>
+                Mid Suv
+              </Link>
+              <Link to="/PickUpVehicles" state={{ FullSuv }}>
+                Pick UP
+              </Link>
+            </div>
+          </div>
+        </Link>
+
+        <Link to="/SuvVehicles" state={{ Suv }}>
+          Ecomony
+          <div className="w-full py-5 card">
+            <div className="flex justify-center">
+              <img src="standard.png" alt="" srcset="" />
+            </div>
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Standard</h1>
+              <h2>Starting $60</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+            </div>
+          </div>
+        </Link>
+        <Link to="/MidSuvVehicles" state={{ Suv }}>
+          Ecomony
+          <div className="w-full py-5 card">
+            <div className="pt-4 flex justify-center">
+              <img src="midsizesuv.png" alt="" srcset="" />
+            </div>
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Suv</h1>
+              <h2>Starting $60</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+            </div>
+          </div>
+        </Link>
+        <Link to="/MidSuvVehicles" state={{ MidSuv }}>
+          Ecomony
+          <div className="w-full py-5 card">
+            <div className="pb-15 flex justify-center">
+              <img src="fullsizesuv.png" alt="" srcset="" />
+            </div>
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
+              <h2>Starting $60</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+            </div>
+          </div>
+        </Link>
+        <Link to="/SuvVehicles" state={{ Suv }}>
+          Ecomony
+          <div className="w-full py-5 card">
+            <div className="flex justify-center">
+              <img src="minivan.png" alt="" srcset="" />
+            </div>
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Van</h1>
+              <h2>Starting $60</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+            </div>
+          </div>
+        </Link>
+        <Link to="/PickUpVehicles" state={{ Suv }}>
+          Ecomony
+          <div className="w-full py-8 card">
+            <div className="pb-15 flex justify-center">
+              <img src="pickup.png" alt="" srcset="" />
+            </div>
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
+              <h2>Starting $60</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+            </div>
+          </div>
+        </Link>
         
       </div>
 
