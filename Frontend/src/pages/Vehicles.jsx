@@ -13,7 +13,7 @@ const Vehicles = () => {
   const fetchImages = async () => {
     setIsloading(true);
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/api/images");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
