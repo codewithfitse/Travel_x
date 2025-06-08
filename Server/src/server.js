@@ -94,23 +94,31 @@ app.put("/uploads/:id", upload.single("image"), async (req, res) => {
 });
 
 app.delete("/uploads/:id", async (req, res) => {
-  const postId = req.params.id;
+  const { id } = req.params;
 
   try {
-    const post = await UserPost.findById(postId);
-    if (!post) return res.status(404).json({ msg: "Post not found" });
+    // Step 1: Find the image document in MongoDB
+    const imageDoc = await UserPost.findById(id);
+    if (!imageDoc) {
+      return res.status(404).json({ msg: "Image not found" });
+    }
 
-    // Remove from Cloudinary
-    await cloudinary.uploader.destroy(post._id);
+    // Step 2: Extract public_id from Cloudinary URL
+    // Example URL: https://res.cloudinary.com/demo/image/upload/v1234567890/upload/filename.jpg
+    const urlParts = imageDoc.url.split("/");
+    const publicIdWithExt = urlParts[urlParts.length - 1]; // filename.jpg
+    const publicId = `upload/${publicIdWithExt.split(".")[0]}`; // upload/filename
 
-    // Remove from MongoDB
-    await UserPost.findByIdAndDelete(postId);
+    // Step 3: Delete from Cloudinary
+    await cloudinary.uploader.destroy(publicId);
 
-    res.status(200).json({ msg: "Post and image deleted" });
+    // Step 4: Delete from MongoDB
+    await UserPost.findByIdAndDelete(id);
 
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ msg: "Delete failed", error: err.message });
+    res.status(200).json({ msg: "Image deleted from DB and Cloudinary" });
+  } catch (error) {
+    console.error("❌ Delete failed:", error);
+    res.status(500).json({ msg: "Failed to delete image", error: error.message });
   }
 });
 
