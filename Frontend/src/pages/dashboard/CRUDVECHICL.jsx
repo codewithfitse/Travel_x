@@ -419,13 +419,13 @@ export const Edits = () => {
                 <strong>Item:</strong> {img.item}
               </p>
               <p>
-                <strong>Description:</strong> {img.description}
+                <strong>Price:</strong> {img.price}
               </p>
 
               <p>{img.filename}</p>
               <div className=" flex justify-center">
                 <img
-                  src={`https://travel-x-408k.onrender.com${img.url}`}
+                  src={img.url}
                   alt={img.filename}
                   className="w-50 h-100 bg-center rounded-[10px]"
                 />
@@ -487,7 +487,7 @@ export const Deletes = () => {
             <p>{img.filename}</p>
             <div className=" flex justify-center">
               <img
-                src={`https://travel-x-408k.onrender.com${img.url}`}
+                src={img.url}
                 alt={img.filename}
                 className="w-50 h-50 bg-center rounded-[10px]"
               />
