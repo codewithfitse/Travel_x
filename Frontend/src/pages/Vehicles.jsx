@@ -60,6 +60,7 @@ const Vehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
+                 <Link to="/Home">Home</Link>
               </div>
             </div>
           ))
