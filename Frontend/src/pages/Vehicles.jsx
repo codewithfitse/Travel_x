@@ -42,7 +42,7 @@ const Vehicles = () => {
  className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
-                  src={`https://travel-x-408k.onrender.com${img.url}`}
+                  src={img.url}
                   alt={img.filename}
                   className="w-full h-auto object-cover rounded-[10px]"
                 />
