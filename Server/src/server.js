@@ -45,6 +45,60 @@ app.get("/uploads", async (req, res) => {
   }
 });
 
+app.get("/uploads/suv", async (req, res) => {
+  try {
+    const images = await UserPost.find({ item: "suv" }).sort({
+      uploadedAt: -1,
+    });
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch images" });
+  }
+});
+
+app.get("/uploads/midsuv", async (req, res) => {
+  try {
+    const images = await UserPost.find({ item: "midsuv" }).sort({
+      uploadedAt: -1,
+    });
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch images" });
+  }
+});
+
+app.get("/uploads/fullsuv", async (req, res) => {
+  try {
+    const images = await UserPost.find({ item: "fullsuv" }).sort({
+      uploadedAt: -1,
+    });
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch images" });
+  }
+});
+app.get("/uploads/minivan", async (req, res) => {
+  try {
+    const images = await UserPost.find({ item: "minivan" }).sort({
+      uploadedAt: -1,
+    });
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch images" });
+  }
+});
+
+app.get("/uploads/pickup", async (req, res) => {
+  try {
+    const images = await UserPost.find({ item: "pickup" }).sort({
+      uploadedAt: -1,
+    });
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch images" });
+  }
+});
+
 app.post("/uploads", upload.single('image'), async (req, res) => {
   const {name, item, price} = req.body;
   try {
