@@ -64,6 +64,27 @@ const Vehicles = () => {
             </div>
           ))
         )}
+
+        <div className="w-full py-5 card">
+              <div className="flex justify-center">
+                
+              </div>
+              <div className="pl-5">
+                <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
+                  Suv
+                </h1>
+                <h2>Starting $3456h2>
+                <h2>Toyota VITZ or Similar</h2>
+                <h2>Vehicle Feature </h2>
+                <ul>
+                  <li>° 4 Person Seat</li>
+                  <li>° Automatic</li>
+                  <li>° Perfect for in city</li>
+                  <li>° Pick up at airport</li>
+                </ul>
+                  <Link to="/Home">Home</Link>
+              </div>
+            </div>
         
       </div>
 
