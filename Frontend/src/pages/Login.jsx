@@ -28,13 +28,14 @@ export const Login = () => {
         { email, password },
         { withCredentials: true })
       .then((result) => {
-        console.log(result);
         const data = result.data;
-         if (data.user?.isAdmin) {
+        console.log("Response data:", data);
+        localStorage.setItem("user", JSON.stringify(email));
+
+        console.log(result);
+        if (data.user?.isAdmin || data.user?.isSubAdmin) {
           navigate("/Admin");
-        } else if (data.user?.isSubAdmin) {
-          navigate("/SubAdmin");
-        } else if (data.user?.isSubAdmin === false) {
+        } else if (data.user) {
           navigate("/Dashboard");
         } else {
           setErr("Something went wrong. Go check it again!");
