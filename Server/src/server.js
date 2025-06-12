@@ -378,6 +378,22 @@ app.post("/login", async (req, res) => {
   console.log(`Posted Successfully`);
 });
 
+app.post("/logout", (req, res) => {
+  try {
+    // Clear cookies
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: false,
+      sameSite: "None",
+      path: "/",
+    });
+
+    return res.status(200).json({ message: "Logged out" }); // ✅
+  } catch (err) {
+    return res.status(500).json({ message: "Logout failed" }); // 💥
+  }
+});
+
 app.post("/contact", (req, res) => {
   UserContact.create(req.body)
     .then((employee) => {
