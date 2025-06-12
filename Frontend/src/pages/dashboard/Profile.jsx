@@ -48,6 +48,7 @@ export const Profile = () => {
                     </button>
                   </div>
                 </div>
+                {loading ? "loading" : null}
 
                 {user && (
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
