@@ -11,7 +11,7 @@ const Dashboard = () => {
     //if (!token) return;
     async function load() {
       try {
-        const result = await axios.get(`https://travel-x-408k.onrender.com/dashboards`, {
+        const result = await axios.get(`${process.env.BACKEND_SERVER}/dashboards`, {
           withCredentials: true, // if your server uses cookies and you want to send cookies too
         });
         setData(result.data);
