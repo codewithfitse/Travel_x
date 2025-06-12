@@ -5,23 +5,28 @@ import { Link } from "react-router";
 import { Header, SideBar } from "../dashboard/component";
 
 export const Profile = () => {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const user = data[0];
+
+
   useEffect(() => {
+    //if (!token) return;
     async function load() {
       try {
-        await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/admin")
-          .then((result) => {
-            console.log(result.data);
-            setData(result.data);
-            //console.log(data);
-          });
+        const result = await axios.get(`https://travel-x-408k.onrender.com/dashboards`, {
+          withCredentials: true, // if your server uses cookies and you want to send cookies too
+        });
+        setData(result.data);
       } catch (error) {
-        console.log(error);
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
       }
     }
     load();
-  }, []);
+  }, []);  
+  
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
