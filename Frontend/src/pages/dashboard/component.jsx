@@ -27,6 +27,12 @@ export const SideBar = () => {
 };
 
 export const Header = () => {
+  async function handleLogout() {
+    await axios.post("http://localhost:3000/logout", {
+      withCredentials: true,
+    });
+    console.log("Logout Successfully");
+  }  
   return (
     <header className="w-screen h-16 flex justify-between pr-20 text-white text-[10px] lg:text-[20px] border-1 border-gray-700 fixed top-0 left-15 bg-white/5 backdrop-blur-sm z-20">
       <nav className="w-full px-5 flex justify-between items-center">
@@ -43,7 +49,9 @@ export const Header = () => {
             <div className="flex justify-between">Dashboard</div>
           </Link>
           <Link to="/Login">
-            <div className="flex justify-between">Sign out</div>
+            <div className="flex justify-between" onClick={handleLogout}>
+              Sign out
+            </div>
           </Link>
         </div>
       </nav>
