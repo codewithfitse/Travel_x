@@ -8,21 +8,23 @@ import axios from "axios";
 
 const AdminDashboard = () => {
   const [data, setData] = useState([]);
+  const user = data[0];
 
-  useEffect(() => {
-    async function loadData() {
-      axios
-        .get("https://travel-x-408k.onrender.com/dashboard")
-        .then((result) => {
-          console.log(result);
-          setData(result.data);
-        })
-        .catch((err) => console.log(err));
-      // const res = await fetch("http://localhost:3000/");
-      // const json = await res.json();
-      // setData(json);
+    useEffect(() => {
+    //if (!token) return;
+    async function load() {
+      try {
+        const result = await axios.get(`https://travel-x-408k.onrender.com/dashboards`, {
+          withCredentials: true, // if your server uses cookies and you want to send cookies too
+        });
+        setData(result.data);
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
+      }
     }
-    loadData();
+    load();
   }, []);
 
   return (
