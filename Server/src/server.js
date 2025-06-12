@@ -9,6 +9,8 @@ import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
 import UserPost from "../models/UserPost.js";
+import Vehicles from "../routes/AuthVehicles.js";
+import authSign from "../routes/AuthSign.js";
 
 const app = express();
 app.use(
@@ -20,6 +22,8 @@ app.use(
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", Vehicles);
+app.use("/auth", authSign);
 const PORT = 3000;
 
 const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
