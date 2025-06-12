@@ -45,7 +45,7 @@ export const Header = () => {
           />
         </div>
         <div className="flex justify-between space-x-3">
-          <Link to="/SubAdmin">
+          <Link to="/Admin">
             <div className="flex justify-between">Dashboard</div>
           </Link>
           <Link to="/Login">
