@@ -49,23 +49,18 @@ export const Profile = () => {
                   </div>
                 </div>
 
-                {data.map((user) => (
+                {user && (
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                       <div className="relative">
-                        <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                          <h1 className="font-bold text-[40px]">
-                            {user.firstName?.charAt(0).toUpperCase()}{" "}
-                            {user.lastName?.charAt(0).toUpperCase()}
-                          </h1>
-                        </div>
+                        <div className="w-30 h-30 flex justify-center bg-amber-900 border-4 border-gray-600 rounded-full"></div>
                         <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                       </div>
                       <h1 className="mt-2 text-2xl capitalize text-white text-center font-bold">
                         {user.firstName} {user.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {user.isAdmin === true ? "Admin" : "User"}{" "}
+                        Admin
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
@@ -122,7 +117,7 @@ export const Profile = () => {
                       </div>
                     </div>
                   </div>
-                ))}
+                )}
 
                 <div className="w-full h-fit mt-8 p-5 bg-amber-600 rounded-2xl">
                   <div className="w-full h-full py-1 flex flex-col space-y-0.5 bg-amber-200">
