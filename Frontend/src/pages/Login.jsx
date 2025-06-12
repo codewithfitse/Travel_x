@@ -24,7 +24,7 @@ export const Login = () => {
     }
     
     axios
-      .post("https://travel-x-408k.onrender.com/login", { email, password })
+      .post("https://travel-x-408k.onrender.com/auth/login", { email, password })
       .then((result) => {
         console.log(result);
         const data = result.data;
