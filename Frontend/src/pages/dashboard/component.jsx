@@ -28,7 +28,7 @@ export const SideBar = () => {
 
 export const Header = () => {
   async function handleLogout() {
-    await axios.post("http://localhost:3000/logout", {
+    await axios.post("https://travel-x-408k.onrender.com/auth/logout", {
       withCredentials: true,
     });
     console.log("Logout Successfully");
