@@ -245,6 +245,15 @@ app.get("/dashboard", async (req, res) => {
   console.log(`We are on Dashboard`);
 });
 
+app.get("/dashboards", authMiddleware, async (req, res) => {
+  const data = await UserLogin.find(
+    { email: req.user.email },
+    { password: false }
+  );
+  res.json(data);
+  console.log(data);
+});
+
 app.get("/dashboard/admin", async (req, res) => {
   const data = await UserLogin.find({ email: "user1234@gmail.com" });
   res.json(data);
