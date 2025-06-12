@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import bcrypt from "bcryptjs";
 import multer from "multer";
 import fs from 'fs';
@@ -22,6 +23,7 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", Vehicles);
 app.use("/auth", authSign);
