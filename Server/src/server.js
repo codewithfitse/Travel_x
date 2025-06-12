@@ -11,6 +11,7 @@ import UserBook from "../models/userBook.js";
 import UserPost from "../models/UserPost.js";
 import Vehicles from "../routes/AuthVehicles.js";
 import authSign from "../routes/AuthSign.js";
+import jwt from "jsonwebtoken";
 
 const app = express();
 app.use(
