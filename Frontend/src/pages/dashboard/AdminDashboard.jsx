@@ -5,21 +5,23 @@ import axios from "axios";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
+  const user = data[0];
 
   useEffect(() => {
-    async function loadData() {
-      axios
-        .get("https://travel-x-408k.onrender.com/dashboard")
-        .then((result) => {
-          console.log(result);
-          setData(result.data);
-        })
-        .catch((err) => console.log(err));
-      // const res = await fetch("http://localhost:3000/");
-      // const json = await res.json();
-      // setData(json);
+    //if (!token) return;
+    async function load() {
+      try {
+        const result = await axios.get(`https://travel-x-408k.onrender.com/dashboards`, {
+          withCredentials: true, // if your server uses cookies and you want to send cookies too
+        });
+        setData(result.data);
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
+      }
     }
-    loadData();
+    load();
   }, []);
 
   return (
@@ -44,42 +46,49 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                <Link to="/UserDb">
-                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                    <div className="w-full px-5 flex justify-between items-center">
-                      <h1 className="text-[30px] font-bold">User</h1>
-                      <i class="fa fa-group w-2 !text-[30px]"></i>
+                {user?.isAdmin === true && (
+                  <Link to="/UserDb" key={user._id}>
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">User</h1>
+                        <i className="fa fa-group w-2 !text-[30px]"></i>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                )}
 
-                <Link to="/ContactDb">
-                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                    <div className="w-full px-5 flex justify-between items-center">
-                      <h1 className="text-[30px] font-bold">Contact</h1>
-                      <i class="fa fa-group w-2 !text-[30px]"></i>
+                {user?.isAdmin === true && (
+                  <Link to="/ContactDb">
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">Contact</h1>
+                        <i class="fa fa-address-book w-2 !text-[30px]"></i>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                )}
 
-                <Link to="/BookingDb">
-                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                    <div className="w-full px-5 flex justify-between items-center">
-                      <h1 className="text-[30px] font-bold">Booking</h1>
-                      <i class="fa fa-group w-2 !text-[30px]"></i>
+                {user?.isAdmin === true && (
+                  <Link to="/BookingDb">
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">Booking</h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                )}
 
-                <Link to="/Get">
-                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                    <div className="w-full px-5 flex justify-between items-center">
-                      <h1 className="text-[30px] font-bold">Post vehicles</h1>
-                      <i class="fa fa-bookmark w-2 !text-[30px]"></i>
+                {(user?.isAdmin || user?.isSubAdmin) && (
+                  <Link to="/Get">
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">Post vehicles</h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-
+                  </Link>
+                )}
                 <Link to="/Get">
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full px-5 flex justify-between items-center">
