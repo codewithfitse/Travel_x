@@ -33,7 +33,6 @@ import {
   Post,
   Get,
 } from "./pages/dashboard/CRUDVECHICL.jsx";
-import SubDashboard from "./pages/dashboard/SubAdminDashboard.jsx";
 import { Profile } from "./pages/dashboard/Profile.jsx";
 import { ContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb } from "./pages/dashboard/BookingDb.jsx";
@@ -130,10 +129,6 @@ const router = createBrowserRouter([
     path: "/Deletes",
     element: <Deletes />,
   },
-  {
-    path: "/SubAdmin",
-    element: <SubDashboard />,
-  },  
   {
     path: "/Edit",
     element: <EditDashboard />,
