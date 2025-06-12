@@ -26,7 +26,7 @@ app.use("/uploads", Vehicles);
 app.use("/auth", authSign);
 const PORT = 3000;
 
-const MONGO_DB = "mongodb+srv://user:user123@cluster0.ooin5ux.mongodb.net/User";
+const MONGO_DB = process.env.MONGO_URI;
 
 mongoose
   .connect(MONGO_DB)
