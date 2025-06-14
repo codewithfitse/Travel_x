@@ -39,7 +39,7 @@ const Dashboard = () => {
                     <h1 className="text-[30px] text-white font-bold">
                       DataBase
                     </h1>
-                    <h1 className="text-[30px] text-white font-bold">
+                    <h1 className="mt-10 text-[30px] text-center text-white font-bold">
                       {loading ? "Loading..." : null}
                     </h1>
                   </div>
@@ -92,25 +92,7 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </Link>
-                )}
-                <Link to="/Get">
-                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                    <div className="w-full px-5 flex justify-between items-center">
-                      <h1 className="text-[30px] font-bold">See Posts</h1>
-                      <i class="fa fa-group w-2 !text-[30px]"></i>
-                    </div>
-                  </div>
-                </Link>
-
-                <Link to="/Post">
-                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                    <div className="w-full px-5 flex justify-between items-center">
-                      <h1 className="text-[30px] font-bold">Post</h1>
-                      <i class="fa fa-address-book w-2 !text-[30px]"></i>
-                    </div>
-                  </div>
-                </Link>
-                
+                )}                
               </div>
             </main>
           </div>
