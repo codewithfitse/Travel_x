@@ -137,7 +137,7 @@ export const Get = () => {
 };
 
 export const Post = () => {
-  const [isLoading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState();
   const [name, setName] = useState();
   const [price, setPrice] = useState();
