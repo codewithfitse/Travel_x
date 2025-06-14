@@ -4,6 +4,7 @@ import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 
 const Dashboard = () => {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const user = data[0];
 
@@ -37,6 +38,9 @@ const Dashboard = () => {
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
                       DataBase
+                    </h1>
+                    <h1 className="text-[30px] text-white font-bold">
+                      {loading ? "Loading..." : null}
                     </h1>
                   </div>
                   <div className="w-fit h-full">
