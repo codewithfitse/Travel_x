@@ -17,7 +17,7 @@ export const Get = () => {
       } catch (err) {
         console.error("Error fetching images:", err);
       } finally {
-        setIsloading(false)
+        setIsloading(false);
     };
 
     fetchImages();
