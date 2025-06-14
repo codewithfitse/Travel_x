@@ -218,6 +218,7 @@ export const Post = () => {
                 className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
                 onChange={(e) => setItem(e.target.value)}
               >
+                <option value="none">Choose here!</option>                            
                 <option value="suv">suv</option>
                 <option value="midsuv">midSuv</option>
                 <option value="fullsuv">fullSuv</option>
