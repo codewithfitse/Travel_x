@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header, SideBar } from "./component";
 
 export const Get = () => {
-  const [isLoading, setIsloading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ export const Get = () => {
       } catch (err) {
         console.error("Error fetching images:", err);
       } finally {
-        setIsloading(false);
+        setIsLoading(false);
     };
 
     fetchImages();
@@ -87,7 +87,7 @@ export const Get = () => {
 };
 
 export const Post = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
   const [image, setImage] = useState();
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -96,7 +96,7 @@ export const Post = () => {
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    setIsloading(true);
+    setIsLoading(true);
     if (!image) return;
 
     const formData = new FormData();
@@ -121,7 +121,7 @@ export const Post = () => {
       console.error(err);
       alert("Upload failed");
     } finally {
-      setIsloading(false);
+      setIsLoading(false);
     }
   };
 
@@ -205,7 +205,7 @@ export const Post = () => {
               type="submit"
               className="py-2 px-3 bg-gray-700 rounded-[10px]"
             >
-              {isloading ? "Loading..." : "Submit"}
+              {isLoading ? "Loading..." : "Submit"}
             </button>
           </div>
         </form>
@@ -242,7 +242,7 @@ export const Post = () => {
 };
 
 export const Views = () => {
-  const [isloading, setIsloading] = useState(false);
+  //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
 
@@ -290,7 +290,7 @@ export const Views = () => {
 };
 
 export const Edits = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
   const [item, setItem] = useState("");
@@ -302,7 +302,7 @@ export const Edits = () => {
 
   async function updatePost(e) {
     e.preventDefault();
-    setIsloading(true);
+    setIsLoading(true);
     
 
     const formData = new FormData();
@@ -322,7 +322,7 @@ export const Edits = () => {
     } catch (error) {
       console.log(error);
     } finally {
-      setIsloading(false);
+      setIsLoading(false);
     }
   }
 
@@ -407,7 +407,7 @@ export const Edits = () => {
               type="submit"
               className="py-2 px-3 bg-gray-700 rounded-[10px]"
             >
-              {isloading ? "Loading..." : "Submit"}
+              {isLoading ? "Loading..." : "Submit"}
             </button>
           </div>
         </form>
@@ -444,7 +444,7 @@ export const Edits = () => {
 };
 
 export const Deletes = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
