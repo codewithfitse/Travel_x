@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { SubHeader, SubSideBar } from "./component";
+import { Header, SideBar } from "./component";
 
 export const Get = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isloading, setIsloading] = useState(true);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -16,7 +16,8 @@ export const Get = () => {
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
-      }
+      } finally {
+        setloading(false)
     };
 
     fetchImages();
@@ -26,15 +27,18 @@ export const Get = () => {
     <>
       <section className="min-h-full overflow-x-hidden">
         <div className="w-full h-full flex bg-[#020817] text-white">
-          <SubSideBar />
-          <div className="ml-14 flex flex-col flex-1">
-            <SubHeader />
+        <SideBar />
+        <div className="ml-14 flex flex-col flex-1">
+          <Header />
             <main className="pt-20 p-5 bg-transparent">
               <div className="w-full h-full p-5 lg:px-10 bg-gray-900">
                 <div className="w-full h-fit flex flex-col justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
                       Cars Collection DataBase
+                    </h1>
+                    <h1 className="text-[30px] text-white font-bold">
+                      {loading ? "Loading..." : null }
                     </h1>
                   </div>
                 </div>
