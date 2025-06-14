@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [data, setData] = useState([]);
   const user = data[0];
 
@@ -29,9 +30,9 @@ const Dashboard = () => {
     <>
       <section className="min-h-screen overflow-x-hidden">
         <div className="w-full h-screen flex bg-[#020817] text-white">
-          <SideBar />
+          <SideBar toggle={toggle} setToggle={setToggle} />
           <div className="ml-14 flex flex-col flex-1">
-            <Header />
+            <Header toggle={toggle} />
             <main className="pt-20 p-5 bg-transparent">
               <div className="w-full h-full p-5 lg:px-30 bg-gray-900">
                 <div className="w-full h-fit flex justify-between items-center">
