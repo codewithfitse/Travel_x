@@ -17,7 +17,7 @@ export const Get = () => {
       } catch (err) {
         console.error("Error fetching images:", err);
       } finally {
-        setloading(false)
+        setIsloading(false)
     };
 
     fetchImages();
@@ -38,7 +38,7 @@ export const Get = () => {
                       Cars Collection DataBase
                     </h1>
                     <h1 className="text-[30px] text-white font-bold">
-                      {loading ? "Loading..." : null }
+                      {isLoading ? "Loading..." : null }
                     </h1>
                   </div>
                 </div>
