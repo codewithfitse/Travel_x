@@ -27,6 +27,7 @@ import {
   DeleteDashboard,
 } from "./pages/dashboard/CRUDUSER.jsx";
 import {
+  LandingVehicle,  
   Deletes,
   Edits,
   Views,
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
     path: "/Admin",
     element: <AdminDashboard />,
   },
+  {
+    path: "/LandingVehicle",
+    element: <LandingVehicle />,
+  },  
   {
     path: "/Post",
     element: <Post />,
