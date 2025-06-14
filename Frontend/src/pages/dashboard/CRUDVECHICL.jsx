@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header, SideBar } from "./component";
 
 export const Get = () => {
-  const [isloading, setIsloading] = useState(true);
+  const [isLoading, setIsloading] = useState(true);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
