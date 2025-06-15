@@ -35,7 +35,7 @@ import {
   Get,
 } from "./pages/dashboard/CRUDVECHICL.jsx";
 import { Profile } from "./pages/dashboard/Profile.jsx";
-import { ContactDb } from "./pages/dashboard/ContactDb.jsx";
+import { ContactDb, EditContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb, EditBookingDb } from "./pages/dashboard/BookingDb.jsx";
 // import { Dash } from "./pages/Dash.jsx";
 import UserDb from "./pages/dashboard/UserDb.jsx";
@@ -154,6 +154,10 @@ const router = createBrowserRouter([
     path: "/ContactDb",
     element: <ContactDb />,
   },
+  {
+    path: "/EditContactDb",
+    element: <EditContactDb />,
+  },  
   {
     path: "/BookingDb",
     element: <BookingDb />,
