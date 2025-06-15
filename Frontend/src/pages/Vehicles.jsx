@@ -194,7 +194,7 @@ const Vehicles = () => {
 export default Vehicles;
 
 export const SuvVehicles = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -203,11 +203,14 @@ export const SuvVehicles = () => {
   const FullSuv = "Suv";
 
   const fetchImages = async () => {
+    setIsLoading(true);
     try {
       const res = await axios.get("https://travel-x-408k.onrender.com/uploads/suv");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -223,7 +226,7 @@ export const SuvVehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {isloading ? (
+        {isLoading ? (
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
@@ -278,7 +281,7 @@ export const SuvVehicles = () => {
 };
 
 export const MidSuvVehicles = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -287,11 +290,14 @@ export const MidSuvVehicles = () => {
   const FullSuv = "Suv";
 
   const fetchImages = async () => {
+    setIsLoading(true);
     try {
       const res = await axios.get("https://travel-x-408k.onrender.com/uploads/midsuv");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -307,7 +313,7 @@ export const MidSuvVehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-                {isloading ? (
+                {isLoading ? (
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
@@ -362,7 +368,7 @@ export const MidSuvVehicles = () => {
 };
 
 export const FullSuvVehicles = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -371,11 +377,14 @@ export const FullSuvVehicles = () => {
   const FullSuv = "Suv";
 
   const fetchImages = async () => {
+    setIsLoading(true);
     try {
       const res = await axios.get("https://travel-x-408k.onrender.com/uploads/fullsuv");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -391,7 +400,7 @@ export const FullSuvVehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {isloading ? (
+        {isLoading ? (
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
@@ -446,7 +455,7 @@ export const FullSuvVehicles = () => {
 };
 
 export const MiniVanVehicles = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -455,11 +464,14 @@ export const MiniVanVehicles = () => {
   const FullSuv = "Suv";
 
   const fetchImages = async () => {
+    setIsLoading(true);
     try {
       const res = await axios.get("https://travel-x-408k.onrender.com/uploads/minivan");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -475,7 +487,7 @@ export const MiniVanVehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {isloading ? (
+        {isLoading ? (
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
@@ -530,7 +542,7 @@ export const MiniVanVehicles = () => {
 };
 
 export const PickUpVehicles = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -539,11 +551,14 @@ export const PickUpVehicles = () => {
   const FullSuv = "Suv";
 
   const fetchImages = async () => {
+    setIsLoading(true);
     try {
       const res = await axios.get("https://travel-x-408k.onrender.com/uploads/pickup");
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -559,7 +574,7 @@ export const PickUpVehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {isloading ? (
+        {isLoading ? (
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
