@@ -52,7 +52,7 @@ export const SideBar = ({ toggle, setToggle }) => {
 
 export const Header = ({ toggle }) => {
   async function handleLogout() {
-    await axios.post("https://travel-x-408k.onrender.com/auth/logout", {
+    await axios.post("https://travel-x-408k.onrender.com/auth/logout", {}, {
       withCredentials: true,
     });
     console.log("Logout Successfully");
