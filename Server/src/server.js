@@ -398,7 +398,7 @@ app.post("/logout", (req, res) => {
       httpOnly: true,
       secure: true, // ✅ must match login
       sameSite: "none",
-      //domain: "travel-x-408k.onrender.com",
+      domain: "travel-x-408k.onrender.com",
       path: "/",
     });
 
