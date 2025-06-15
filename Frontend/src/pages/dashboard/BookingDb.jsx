@@ -136,7 +136,7 @@ export const EditBookingDb = () => {
 
   async function handleDelete(_id) {
     try {
-      await axios.delete(`http://localhost:3000/dashboard/booking/${_id}`);
+      await axios.delete(`https://travel-x-408k.onrender.com/dashboard/booking/${_id}`);
       alert("Successfully Deleted!");
       navigate("/BookingDb");
     } catch (error) {
@@ -177,7 +177,7 @@ export const EditBookingDb = () => {
                           </h1>
                         </div>
                       <div
-                        className="w-7 h-7 lg:w-10 lg:h-10 bg-red-100 flex justify-center items-center rounded-[10px] absolute -top-7 -left-3 lg:-top-7 lg:-left-12"
+                        className="w-7 h-7 lg:w-10 lg:h-10 bg-red-100 flex justify-center items-center rounded-[10px] absolute -top-7 -left-10 lg:-top-7 lg:-left-12"
                         onClick={() => handleDelete(_id)}
                       >
                         <i class="fa fa-trash w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
