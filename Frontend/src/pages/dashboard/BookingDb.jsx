@@ -129,6 +129,7 @@ export const EditBookingDb = () => {
     phone,
     destination,
     message,
+    item,
     isAdmin,
   } = location?.state?.user;
   const navigate = useNavigate();
