@@ -368,7 +368,7 @@ app.post("/login", async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      domain: "https://travel-x-408k.onrender.com",
+      domain: "travel-x-408k.onrender.com",
       path: "/",
       maxAge: 2 * 60 * 60 * 1000, // 2 hours
     });
@@ -398,7 +398,7 @@ app.post("/logout", (req, res) => {
       httpOnly: true,
       secure: true, // ✅ must match login
       sameSite: "none",
-      domain: "https://travel-x-408k.onrender.com",
+      domain: "travel-x-408k.onrender.com",
       path: "/",
     });
 
