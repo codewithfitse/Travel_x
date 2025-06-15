@@ -90,9 +90,9 @@ export const Header = ({ toggle }) => {
             <div className="flex justify-between">Dashboard</div>
           </Link>
 
-            <div className="flex justify-between" onClick={handleLogout}>
+            <button className="flex justify-between" onClick={handleLogout}>
               Sign out
-            </div>
+            </button>
 
           <div className="flex items-center">Profile</div>
         </div>
