@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SideBar = ({ toggle, setToggle }) => {
 
@@ -52,14 +52,20 @@ export const SideBar = ({ toggle, setToggle }) => {
 };
 
 export const Header = ({ toggle }) => {
+  const navigate = useNavigate();
+
   async function handleLogout() {
-    await axios.post(
-      "https://travel-x-408k.onrender.com/logout",
-      {},
-      {
-        withCredentials: true,
-      }
-    );  
+    try {
+      await axios.post(
+        "https://travel-x-408k.onrender.com/logout",
+        {},
+        { withCredentials: true }
+      );
+      navigate("/Login"); // ✅ redirect AFTER cookie is cleared
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };  
   return (
     <header
       className={`w-full h-16 flex justify-between pr-20 text-white text-[10px] lg:text-[20px] border-1 border-gray-700 fixed top-0 left-15 bg-white/5 backdrop-blur-sm z-20 ${
@@ -83,11 +89,11 @@ export const Header = ({ toggle }) => {
           <Link to="/SubAdmin">
             <div className="flex justify-between">Dashboard</div>
           </Link>
-          <Link to="/Login">
+
             <div className="flex justify-between" onClick={handleLogout}>
               Sign out
             </div>
-          </Link>
+
           <div className="flex items-center">Profile</div>
         </div>
       </nav>
