@@ -334,26 +334,22 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  // const isValid = bcrypt.compare(password);
 
   try {
-    const user = await UserLogin.findOne({ email: email });
+    // Find the user
+    const user = await UserLogin.findOne({ email });
 
     if (!user) {
-      res.status(404).json({
-        message: "User not found",
-      });
+      return res.status(404).json({ message: "User not found" });
     }
 
+    // Compare password
     const isMatch = await bcrypt.compare(password, user.password);
-    
-    
     if (!isMatch) {
-        res.status(401).json({
-        message: "Incorrect password",
-      });
+      return res.status(401).json({ message: "Incorrect password" });
     }
 
+    // Update last login timestamp
     user.lastLogin = new Date();
     await user.save();
 
@@ -366,34 +362,32 @@ app.post("/login", async (req, res) => {
       },
       process.env.JWT_SECRET,
       { expiresIn: "2h" }
-    );    
+    );
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "lax",
+      secure: true, // ✅ HTTPS required
+      sameSite: "lax", // lax is good for most use cases
       path: "/",
       maxAge: 2 * 60 * 60 * 1000, // 2 hours
     });
 
-    
     return res.status(200).json({
       message: "Success",
       user: {
-        username: user.email,
+        id: user._id,
+        email: user.email,
         isAdmin: user.isAdmin,
         isSubAdmin: user.isSubAdmin,
         lastLogin: user.lastLogin,
       },
     });
   } catch (err) {
-    console.log("Server error:", err);
+    console.error("Server error:", err);
     return res
       .status(500)
       .json({ message: "Server error. Please try again later." });
   }
-
-  console.log(`Posted Successfully`);
 });
 
 app.post("/logout", (req, res) => {
@@ -401,7 +395,7 @@ app.post("/logout", (req, res) => {
     // Clear cookies
     res.clearCookie("token", {
       httpOnly: true,
-      secure: true,
+      secure: true, // ✅ must match login
       sameSite: "lax",
       path: "/",
     });
