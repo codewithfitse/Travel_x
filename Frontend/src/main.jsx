@@ -36,7 +36,7 @@ import {
 } from "./pages/dashboard/CRUDVECHICL.jsx";
 import { Profile } from "./pages/dashboard/Profile.jsx";
 import { ContactDb } from "./pages/dashboard/ContactDb.jsx";
-import { BookingDb } from "./pages/dashboard/BookingDb.jsx";
+import { BookingDb, EditBookingDb } from "./pages/dashboard/BookingDb.jsx";
 // import { Dash } from "./pages/Dash.jsx";
 import UserDb from "./pages/dashboard/UserDb.jsx";
 
@@ -158,6 +158,10 @@ const router = createBrowserRouter([
     path: "/BookingDb",
     element: <BookingDb />,
   },
+  {
+    path: "/EditBookingDb",
+    element: <EditBookingDb />,
+  },  
 ]);
 
 createRoot(document.getElementById("root")).render(
