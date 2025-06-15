@@ -179,7 +179,7 @@ export const EditContactDb = () => {
                         </h1>
                       </div>
                       <div
-                        className="w-8 h-8 lg:w-10 lg:h-10 bg-red-100 flex justify-center items-center rounded-[10px] absolute -top-7 -left-15 lg:-top-7 lg:-left-12"
+                        className="w-8 h-8 lg:w-10 lg:h-10 bg-red-100 flex justify-center items-center rounded-[10px] absolute -top-7 -left-15  sm:-top-7 sm:-left-40 md:-top-7 md:-left-60 lg:-top-7 lg:-left-12"
                         onClick={() => handleDelete(_id)}
                       >
                         <i class="fa fa-trash w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
