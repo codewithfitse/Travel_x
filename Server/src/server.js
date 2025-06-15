@@ -367,7 +367,7 @@ app.post("/login", async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: true, // ✅ HTTPS required
-      sameSite: "lax", // lax is good for most use cases
+      sameSite: "none", // lax is good for most use cases
       path: "/",
       maxAge: 2 * 60 * 60 * 1000, // 2 hours
     });
@@ -396,7 +396,7 @@ app.post("/logout", (req, res) => {
     res.clearCookie("token", {
       httpOnly: true,
       secure: true, // ✅ must match login
-      sameSite: "lax",
+      sameSite: "none",
       path: "/",
     });
 
