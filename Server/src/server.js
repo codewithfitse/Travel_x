@@ -208,8 +208,6 @@ app.get("/api/images", async (req, res) => {
   }
 });
 
-
-
 app.put("/api/images/:id", async (req, res) => {
   const { id } = req.params;
   const { name, item, description } = req.body;
@@ -410,6 +408,34 @@ app.post("/book", (req, res) => {
     })
     .catch((err) => res.json(err));
   console.log(`Posted Successfully`);
+});
+
+app.get("/dashboard/booking/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await UserBook.find({ _id: id });
+    res.json(data);
+    console.log("Sorted bookings:", data);
+  } catch (err) {
+    console.error("Failed to fetch bookings:", err);
+    res
+      .status(500)
+      .json({ message: "Error fetching bookings", error: err.message });
+  }
+});
+
+app.delete("/dashboard/booking/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await UserBook.findByIdAndDelete(id);
+    res.json(data);
+    console.log("Deleted bookings:", data);
+  } catch (err) {
+    console.error("Failed to fetch bookings:", err);
+    res
+      .status(500)
+      .json({ message: "Error fetching bookings", error: err.message });
+  }
 });
 
 app.listen(PORT, () => console.log(`Server is running on Port:${PORT}`));
