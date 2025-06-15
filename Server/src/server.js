@@ -278,13 +278,13 @@ app.get("/dashboard/admin", async (req, res) => {
 });
 
 app.get("/dashboard/contact", async (req, res) => {
-  const data = await UserContact.find({});
+  const data = await UserContact.find({}).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
 
 app.get("/dashboard/booking", async (req, res) => {
-  const data = await UserBook.find({});
+  const data = await UserBook.find({}).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
