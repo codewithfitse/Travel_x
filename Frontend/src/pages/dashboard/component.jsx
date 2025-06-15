@@ -52,11 +52,13 @@ export const SideBar = ({ toggle, setToggle }) => {
 
 export const Header = ({ toggle }) => {
   async function handleLogout() {
-    await axios.post("https://travel-x-408k.onrender.com/logout", {}, {
-      withCredentials: true,
-    });
-    console.log("Logout Successfully");
-  }  
+    await axios.post(
+      "https://travel-x-408k.onrender.com/logout",
+      {},
+      {
+        withCredentials: true,
+      }
+    );  
   return (
     <header
       className={`w-full h-16 flex justify-between pr-20 text-white text-[10px] lg:text-[20px] border-1 border-gray-700 fixed top-0 left-15 bg-white/5 backdrop-blur-sm z-20 ${
