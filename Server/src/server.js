@@ -354,8 +354,28 @@ app.post("/login", async (req, res) => {
       });
     }
 
-      user.lastLogin = new Date();
-      await user.save();
+    user.lastLogin = new Date();
+    await user.save();
+
+    const token = jwt.sign(
+      {
+        id: user._id,
+        email: user.email,
+        isAdmin: user.isAdmin,
+        isSubAdmin: user.isSubAdmin,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "2h" }
+    );    
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "lax",
+      path: "/",
+      maxAge: 2 * 60 * 60 * 1000, // 2 hours
+    });
+
     
     return res.status(200).json({
       message: "Success",
@@ -381,8 +401,8 @@ app.post("/logout", (req, res) => {
     // Clear cookies
     res.clearCookie("token", {
       httpOnly: true,
-      secure: false,
-      sameSite: "None",
+      secure: true,
+      sameSite: "lax",
       path: "/",
     });
 
