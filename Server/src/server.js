@@ -366,8 +366,9 @@ app.post("/login", async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // ✅ HTTPS required
-      sameSite: "none", // lax is good for most use cases
+      secure: true,
+      sameSite: "none",
+      domain: "https://travel-x-408k.onrender.com",
       path: "/",
       maxAge: 2 * 60 * 60 * 1000, // 2 hours
     });
@@ -397,6 +398,7 @@ app.post("/logout", (req, res) => {
       httpOnly: true,
       secure: true, // ✅ must match login
       sameSite: "none",
+      domain: "https://travel-x-408k.onrender.com",
       path: "/",
     });
 
