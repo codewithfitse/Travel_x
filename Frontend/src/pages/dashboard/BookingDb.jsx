@@ -129,6 +129,7 @@ export const EditBookingDb = () => {
     phone,
     destination,
     message,
+    isAdmin,
   } = location?.state?.user;
   const navigate = useNavigate();
 
@@ -165,14 +166,13 @@ export const EditBookingDb = () => {
                   </div>
                 </div>
 
-                {data.map((user) => (
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                       <div className="relative">
                         <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
                           <h1 className="font-bold text-[40px]">
-                            {user.firstName?.charAt(0).toUpperCase()}{" "}
-                            {user.lastName?.charAt(0).toUpperCase()}
+                            {firstName?.charAt(0).toUpperCase()}{" "}
+                            {lastName?.charAt(0).toUpperCase()}
                           </h1>
                         </div>
                       <div
@@ -184,14 +184,14 @@ export const EditBookingDb = () => {
                         <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                       </div>
                       <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                        {user.firstName} {user.lastName}
+                        {firstName} {lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {user.isAdmin === true ? "Admin" : "User"}
+                        {isAdmin === true ? "Admin" : "User"}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         {/* Member since January 15, 2023{" "} */}
-                        {new Date(user.createdAt).toLocaleString("en-GB")}
+                        {new Date(createdAt).toLocaleString("en-GB")}
                       </h1>
                     </div>
                     <div className="w-full h-full py-5 px-5 bg-gray-800">
@@ -200,23 +200,23 @@ export const EditBookingDb = () => {
                           <div className="w-full flex flex-col lg:flex-row gap-1">
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Email</h1>
-                              <h1 className="font-semibold">{user.email}</h1>
+                              <h1 className="font-semibold">{email}</h1>
                             </div>
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Phone</h1>
-                              <h1 className="font-semibold">{user.phone}</h1>
+                              <h1 className="font-semibold">{phone}</h1>
                             </div>
                           </div>
                           <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Destination</h1>
                               <h1 className="font-semibold">
-                                {user.destination}
+                                {destination}
                               </h1>
                             </div>
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Car type</h1>
-                              <h1 className="font-semibold">{user.item}</h1>
+                              <h1 className="font-semibold">{item}</h1>
                             </div>
                           </div>
                         </div>
@@ -227,13 +227,12 @@ export const EditBookingDb = () => {
                             </h1>
                           </div>
                           <div className="w-full h-fit flex gap-3">
-                            <h1 className="">{user.message}</h1>
+                            <h1 className="">{message}</h1>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
               </div>
             </main>
           </div>
