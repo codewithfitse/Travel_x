@@ -155,31 +155,36 @@ app.post("/uploads", upload.single('image'), async (req, res) => {
 
 // Update route - Update image and/or text
 app.put("/uploads/:id", upload.single("image"), async (req, res) => {
-  const { name, item, price } = req.body;
-  const postId = req.params.id;
-
   try {
-    const existingPost = await UserPost.findById(postId);
-    if (!existingPost) return res.status(404).json({ msg: "Post not found" });
+    const { id } = req.params;
+    const { name, item, price } = req.body;
 
-    // If there's a new image, delete old one from Cloudinary
-    let updatedData = { name, item, price };
+    const post = await UserPost.findById(id);
+    if (!post) return res.status(404).json({ error: 'Post not found' });
+
+    // If there's a new image uploaded, delete old image from Cloudinary and upload new one
     if (req.file) {
-      await cloudinary.uploader.destroy(existingPost._id);
-      const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: "uploads"
-      });
-      updatedData.url = result.secure_url;
-      updatedData._id = result._id;
+      // Delete old image from Cloudinary
+      await cloudinary.uploader.destroy(post.public_id);
+
+      // Update with new image info
+      post.url = req.file.path;
+      post.public_id = req.file.filename;
     }
 
-    const updatedPost = await UserPost.findByIdAndUpdate(postId, updatedData, { new: true });
-    res.status(200).json({ msg: "Post updated!", updatedPost });
+    // Update other fields
+    post.name = name || post.name;
+    post.item = item || post.item;
+    post.price = price || post.price;
 
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ msg: "Update failed", error: err.message });
+    await post.save();
+
+    res.json({ message: 'Post updated successfully', data: post });
+  } catch (error) {
+    console.error('PUT update error:', error);
+    res.status(500).json({ error: 'Failed to update post' });
   }
+
 });
 
 app.delete("/uploads/:id", async (req, res) => {
