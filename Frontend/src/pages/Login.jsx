@@ -57,12 +57,25 @@ export const Login = () => {
       });
   }
 
+    async function handleOauth() {
+    window.location.href = "https://travel-x-408k.onrender.com/auth/google";
+  }
+
   return (
     <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
       <Header />
 
       <div className="py-[100px] px-5 lg:px-[200px]">
         <div className="p-5 lg:p-10 card">
+           <div className="flex">
+            <div
+              className="w-full p-2 text-black bg-amber-100 rounded-2xl"
+              onClick={handleOauth}
+            >
+              Google
+            </div>
+            <div className="w-full p-2 bg-amber-200 rounded-2xl">G</div>
+          </div>         
           <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
             Login
           </h1>
