@@ -13,6 +13,10 @@ import UserPost from "../models/UserPost.js";
 import Vehicles from "../routes/AuthVehicles.js";
 import authSign from "../routes/AuthSign.js";
 import jwt from "jsonwebtoken";
+import passport from "passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import session from "express-session";
+import UserOauth from "../models/UserOauth.js";
 
 const app = express();
 app.use(
@@ -35,6 +39,98 @@ mongoose
   .connect(MONGO_DB)
   .then(() => console.log(`Connected Successfully`))
   .catch((err) => console.log(`Err:`, err));
+
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false },
+  })
+);
+
+const ClientId =
+  "849375548974-gil8qk4hvm3ie3hicrbtr6drs7po4667.apps.googleusercontent.com";
+const ClientSecret = "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";
+const callBack = "https://travel-x-408k.onrender.com/api/google/profile";
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: ClientId,
+      clientSecret: ClientSecret,
+      callbackURL: callBack,
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      try {
+        const existingUser = await User.findOne({ googleId: profile.id });
+
+        if (existingUser) {
+          return done(null, existingUser); // login
+        }
+
+        // Register new user
+        const newUser = new UserOauth({
+          googleId: profile.id,
+          name: profile.displayName,
+          email: profile.emails?.[0].value,
+          avatar: profile.photos?.[0].value,
+        });
+
+        await newUser.save();
+        return done(null, newUser);
+      } catch (err) {
+        console.error("Google Strategy Error:", err);
+        return done(err, null);
+      }
+    }
+  )
+);
+
+passport.serializeUser((user, done) => {
+  done(null, user._id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err, null);
+  }
+});
+
+app.get("/google", (req, res) => {
+  res.send("<a href='/auth/google'>Google</a>");
+});
+
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+app.get(
+  "/auth/profile",
+  passport.authenticate("google", {
+    failureRedirect: "/google",
+    successRedirect: "/api/google/profile",
+  })
+);
+
+app.get("/api/google/profile", (req, res) => {
+  //if (!req.user) return res.redirect("/auth/google");
+
+  res.send(`
+    <h1>Welcome ${req.user.displayName}</h1>
+    ${req.user.email ? `<p>Email: ${req.user.email}</p>` : ""}
+    ${req.user.avatar ? `<img src="${req.user.avatar}" width="100">` : ""}
+    <a href="/">Home</a> | 
+    <a href="/logout">Logout</a>
+  `);
+});
 
 const uploadDir = 'uploads';
 if (!fs.existsSync(uploadDir)) {
