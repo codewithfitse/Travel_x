@@ -123,21 +123,33 @@ app.get("/uploads/pickup", async (req, res) => {
 });
 
 app.post("/uploads", upload.single('image'), async (req, res) => {
-  const {name, item, price} = req.body;
+  const { name, item, price } = req.body;
+
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
   try {
-    const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: "uploads", // Optional
+    // req.file now contains Cloudinary info
+    const savedPost = new UserPost({
+      name,
+      item,
+      price,
+      url: req.file.path, // already the Cloudinary URL
+      public_id: req.file.filename, // this is the Cloudinary ID
     });
-    const savedImage = new UserPost({ name, item, price, url: result.secure_url, public_id: req.file.filename, });
-    await savedImage.save();
-    console.log("Posted", req.file);
+
+    await savedPost.save();
+
+    console.log("✅ Uploaded to Cloudinary via Multer:", req.file.path);
+
     res.status(200).json({
       msg: "Uploaded and saved to DB!",
-      imageUrl: result.secure_url,
+      imageUrl: req.file.path,
     });
   } catch (error) {
-    console.log(error);
-    
+    console.error("❌ Upload failed:", error);
+    res.status(500).json({ error: "Upload failed" });
   }
 })
 
