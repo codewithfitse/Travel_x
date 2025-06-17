@@ -27,6 +27,7 @@
     "mongoose-connect": "^0.0.3",
     "passport": "^0.7.0",
     "passport-discord": "^0.1.4"
+    "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
