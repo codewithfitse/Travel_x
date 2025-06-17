@@ -116,7 +116,7 @@ app.get(
   "/auth/profile",
   passport.authenticate("google", {
     failureRedirect: "/google",
-    successRedirect: "/api/google/profile",
+    successRedirect: "/Dashboard",
   })
 );
 
