@@ -72,14 +72,14 @@ export const Login = () => {
               className="w-full h-fit py-1 px-2 flex justify-start items-center text-black backdrop-blur-2xl bg-white/10 shadow-white-50 rounded-2xl"
               onClick={handleOauth}
             >
-              <i className="fa fa-google-plus mr-3 !text-[25px] text-red"></i>
+              <i className="fa fa-google-plus mr-3 !text-[25px] !text-red-500"></i>
               <h1 className="text-[20px]">Google</h1>
             </div>
             <div
               className="w-full h-fit py-1 px-2 flex justify-start items-center text-black backdrop-blur-2xl bg-white/10 shadow-white-50 rounded-2xl"
               onClick={handleOauth}
             >
-              <i className="fab fa-facebook-f mr-3 !text-[25px] text-red"></i>
+              <i className="fab fa-facebook-f mr-3 !text-[25px] !text-blue-600"></i>
               <h1 className="text-[20px]">Facebook</h1>
             </div>
           </div>         
