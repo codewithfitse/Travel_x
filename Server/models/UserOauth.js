@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   avatar: String,
-  isAdmin: { type: boolean, default: true },
+  isAdmin: { type: Boolean, default: true },
 });
 
 export default mongoose.model("UserOauth", userSchema);
