@@ -67,14 +67,21 @@ export const Login = () => {
 
       <div className="py-[100px] px-5 lg:px-[200px]">
         <div className="p-5 lg:p-10 card">
-           <div className="flex">
+          <div className="flex mb-2 space-x-2">
             <div
-              className="w-full p-2 text-black bg-amber-100 rounded-2xl"
+              className="w-full h-fit py-1 px-2 flex justify-start items-center text-black backdrop-blur-2xl bg-white/10 shadow-white-50 rounded-2xl"
               onClick={handleOauth}
             >
-              Google
+              <i className="fa fa-google-plus mr-3 !text-[25px] text-red"></i>
+              <h1 className="text-[20px]">Google</h1>
             </div>
-            <div className="w-full p-2 bg-amber-200 rounded-2xl">G</div>
+            <div
+              className="w-full h-fit py-1 px-2 flex justify-start items-center text-black backdrop-blur-2xl bg-white/10 shadow-white-50 rounded-2xl"
+              onClick={handleOauth}
+            >
+              <i className="fab fa-facebook-f mr-3 !text-[25px] text-red"></i>
+              <h1 className="text-[20px]">Facebook</h1>
+            </div>
           </div>         
           <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
             Login
