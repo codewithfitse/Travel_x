@@ -116,20 +116,15 @@ app.get(
   "/api/google/profile",
   passport.authenticate("google", {
     failureRedirect: "/google",
-    successRedirect: "/Dashboard",
+    successRedirect: "/profile",
   })
 );
 
-app.get("/api/google/profile", (req, res) => {
+app.get("/profile", (req, res) => {
   //if (!req.user) return res.redirect("/auth/google");
 
   res.send(`
-    <h1>Welcome ${req.user.displayName}</h1>
-    ${req.user.email ? `<p>Email: ${req.user.email}</p>` : ""}
-    ${req.user.avatar ? `<img src="${req.user.avatar}" width="100">` : ""}
-    <a href="/">Home</a> | 
-    <a href="/logout">Logout</a>
-  `);
+    <h1>Welcome to Dashboard its underconstruction...</h1>`);
 });
 
 const uploadDir = 'uploads';
