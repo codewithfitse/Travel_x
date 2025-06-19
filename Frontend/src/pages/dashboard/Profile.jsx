@@ -150,10 +150,10 @@ export const Profile = () => {
                         <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                       </div>
                       <h1 className="mt-2 text-2xl capitalize text-white text-center font-bold">
-                        {users?.firstName} {users?.lastName}
+                        {users?.name} {users?.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        Admin
+                        {users?.isAdmin ? "Admin" : "SubAdmin"]
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
