@@ -526,6 +526,14 @@ app.post("/logout", (req, res) => {
       path: "/",
     });
 
+    res.clearCookie("connect.sid", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      domain: "travel-x-408k.onrender.com",
+      path: "/",
+    });
+
     return res.status(200).json({ message: "Logged out" }); // ✅
   } catch (err) {
     return res.status(500).json({ message: "Logout failed" }); // 💥
