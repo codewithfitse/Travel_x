@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false);
   const [data, setData] = useState([]);
-  const [user1, setUser1] = useState(null);
+  const [users, setUsers] = useState(null);
   const user = data[0];
 
   useEffect(() => {
@@ -27,11 +27,23 @@ const Dashboard = () => {
     load();
   }, []);
 
-    useEffect( () =>  {
-    const res = axios.get("https://travel-x-408k.onrender.com/profile", {withCredentials: true}).then(() => {
-        setUser1(res.data.user);
-    })
-  }, [])
+  useEffect(() => {
+    async function loadProfile() {
+      try {
+        const res = await axios.get("https://travel-x-408k.onrender.com/profile", {
+          withCredentials: true,
+        });
+        // console.log(res.data.user); // for debugging
+        setUsers(res.data.user);
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProfile();
+  }, []);
 
   return (
     <>
@@ -64,7 +76,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                {user1?.isAdmin === true && (
+                {users?.isAdmin === true && (
                   <Link to="/UserDb" key={user._id}>
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
