@@ -1,8 +1,13 @@
 import express from "express";
 import UserBook from "../models/userBook.js";
-import multer from "multer";
 
 const router = express.Router();
+
+router.get("/booking", async (req, res) => {
+  const data = await UserBook.find({}).sort({ createdAt: -1 });
+  res.json(data);
+  console.log(data);
+});
 
 router.post("/book", (req, res) => {
   UserBook.create(req.body)
