@@ -33,7 +33,7 @@ const Dashboard = () => {
         const res = await axios.get("https://travel-x-408k.onrender.com/profile", {
           withCredentials: true,
         });
-        // console.log(res.data.user); // for debugging
+         console.log(res.data.user); // for debugging
         setUsers(res.data.user);
       } catch (error) {
         console.error("Error fetching profile:", error);
