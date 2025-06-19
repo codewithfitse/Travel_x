@@ -17,7 +17,7 @@ const Booking = () => {
   function handleClick(e) {
     e.preventDefault();
     axios
-      .post("https://travel-x-408k.onrender.com/book", {
+      .post("https://travel-x-408k.onrender.com/dashboard/book", {
         firstName,
         lastName,
         email,
