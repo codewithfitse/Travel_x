@@ -121,11 +121,14 @@ app.get(
   })
 );
 
-app.get("/profile", (req, res) => {
-  //if (!req.user) return res.redirect("/auth/google");
+function isAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.status(401).json({ message: "Login required" });
+}
 
-  res.send(`
-    <h1>Welcome to Dashboard its underconstruction...</h1>`);
+
+app.get("/profile", isAuthenticated, (req, res) => {
+  res.json({ message: "Welcome Admin", user: req.user });
 });
 
 const uploadDir = 'uploads';
