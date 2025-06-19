@@ -7,9 +7,8 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false);
   const [data, setData] = useState([]);
-  const [data1, setData1] = useState([]);
+  const [user1, setUser1] = useState(null);
   const user = data[0];
-  const user1 = data1[0];
 
   useEffect(() => {
     //if (!token) return;
@@ -30,7 +29,7 @@ const Dashboard = () => {
 
     useEffect( () =>  {
     const res = axios.get("https://travel-x-408k.onrender.com/profile", {withCredentials: true}).then(() => {
-        setData1(res.data.user);
+        setUser1(res.data.user);
     })
   }, [])
 
