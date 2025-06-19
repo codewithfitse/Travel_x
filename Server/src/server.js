@@ -6,8 +6,7 @@ import cookieParser from "cookie-parser";
 import bcrypt from "bcryptjs";
 import multer from "multer";
 import fs from 'fs';
-import { cloudinary, storage } from "../config/Cloudinary.js";
-import UserLogin from "../models/usersDb.js";
+import UserInfo from "../routes/ApiUser.js";
 import Booking from "../routes/ApiBooking.js";
 import Contact from "../routes/ApiContact.js";
 import Vehicles from "../routes/AuthVehicles.js";
@@ -32,6 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", Vehicles);
 app.use("/dashboard", Booking);
 app.use("/dashboard", Contact);
+app.use("/dashboard", UserInfo);
 app.use("/auth", authSign);
 const PORT = 3000;
 
