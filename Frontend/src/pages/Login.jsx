@@ -62,7 +62,7 @@ export const Login = () => {
   }
 
   useEffect(() => {
-  axios.get("https://travel-x-408k.onrender.com/api/google/profile", { withCredentials: true })
+  axios.get("https://travel-x-408k.onrender.com/profile", { withCredentials: true })
     .then((res) => {
       const user = res.data?.user;
       if (user?.isAdmin || user?.isSubAdmin) {
