@@ -3,7 +3,7 @@ import UserContact from "../models/UserContact.js";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/contact", async (req, res) => {
   const data = await UserContact.find({}).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
