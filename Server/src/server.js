@@ -113,13 +113,23 @@ app.get(
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-app.get(
-  "/api/google/profile",
-  passport.authenticate("google", {
-    failureRedirect: "/google",
-    successRedirect: "/profile",
-  })
-);
+app.get("/api/google/profile", passport.authenticate("google", {
+  failureRedirect: "/Login",
+  session: true,
+}), (req, res) => {
+  // You can set a cookie with the user’s role or ID
+  const { _id, isAdmin, isSubAdmin } = req.user;
+
+  // Set a cookie (not HttpOnly so frontend can read it)
+  res.cookie("userRole", isAdmin ? "admin" : isSubAdmin ? "subadmin" : "user", {
+    maxAge: 1000 * 60 * 60 * 24,
+    sameSite: "None",
+    secure: true,
+  });
+
+  // Redirect to frontend login (which will check the cookie)
+  res.redirect("https://travel-x-kappa.vercel.app/Login");
+});
 
 function isAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();
