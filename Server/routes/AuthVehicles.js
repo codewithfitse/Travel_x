@@ -7,7 +7,7 @@ const router = express.Router();
 
 const upload = multer({ dest: "uploads/" });
 
-router.get("/uploads", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const images = await UserPost.find({}).sort({
       uploadedAt: -1,
