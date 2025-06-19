@@ -143,8 +143,7 @@ function isAuthenticated(req, res, next) {
 }
 
 app.get("/profile", (req, res) => {
-  //res.redirect("https://travel-x-kappa.vercel.app/Login");
-  res.json({ message: "Welcome Admin", user: req.user });
+  res.status(200).json({ message: "Welcome Admin", user: req.user });
 });
 
 const uploadDir = 'uploads';
