@@ -154,7 +154,7 @@ if (!fs.existsSync(uploadDir)) {
 const upload = multer({ storage: storage })
 
 function authMiddleware(req, res, next) {
-  const token = req.cookies.connect.sid; // 👈 get the token from the cookie
+  const token = req.cookies.token; // 👈 get the token from the cookie
 
   
   if (!token) {
@@ -481,7 +481,7 @@ app.post("/login", async (req, res) => {
       { expiresIn: "2h" }
     );
 
-    res.cookie("connect.sid", token, {
+    res.cookie("token", token, {
       httpOnly: true,
       secure: true,
       sameSite: "none",
@@ -518,7 +518,7 @@ app.post("/logout", (req, res) => {
     });
           
     // Clear cookies
-    res.clearCookie("connect.sid", {
+    res.clearCookie("token", {
       httpOnly: true,
       secure: true, // ✅ must match login
       sameSite: "none",
