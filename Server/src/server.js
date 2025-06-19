@@ -137,7 +137,7 @@ function isAuthenticated(req, res, next) {
 }
 
 
-app.get("/profile", (req, res) => {
+app.get("/profile", isAuthenticated, (req, res) => {
   //res.redirect("https://travel-x-kappa.vercel.app/Login");
   res.json({ message: "Welcome Admin", user: req.user });
 });
