@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import MongoStore from "connect-mongo";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import bcrypt from "bcryptjs";
