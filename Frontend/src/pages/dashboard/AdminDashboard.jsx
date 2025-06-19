@@ -101,7 +101,7 @@ const Dashboard = () => {
                   </Link>
                 )}
                 
-                {user?.isAdmin === true && (
+                {(user?.isAdmin === true || users?.isAdmin === true) && (
                   <Link to="/UserDb" key={user._id}>
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
