@@ -126,16 +126,15 @@ app.get("/api/google/profile", passport.authenticate("google", {
       maxAge: 1000 * 60 * 60 * 24,
       sameSite: "None",
       secure: true,
-            domain: "travel-x-408k.onrender.com",
     });
     console.log("✅ Logged in user:", req.user); // should show user data
-  console.log("💾 Session:", req.session);     
+    console.log("💾 Session:", req.session);     
 
   // Redirect to frontend login (which will check the cookie)
   if (isAdmin === true) {
-    res.redirect("https://travel-x-kappa.vercel.app/Admin");
+    return res.redirect("https://travel-x-kappa.vercel.app/Admin");
   }
-  res.redirect("https://travel-x-kappa.vercel.app/Login");
+  return res.redirect("https://travel-x-kappa.vercel.app/Login");
 });
 
 function isAuthenticated(req, res, next) {
