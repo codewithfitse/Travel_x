@@ -26,6 +26,12 @@ const Dashboard = () => {
     load();
   }, []);
 
+    useEffect( () =>  {
+    const res = axios.get("http://localhost:3000/api/google/profile", {withCredentials: true}).then(() => {
+        setData(result.data);
+    })
+  }, [])
+
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
