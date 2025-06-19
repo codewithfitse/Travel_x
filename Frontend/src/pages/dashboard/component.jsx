@@ -57,7 +57,7 @@ export const Header = ({ toggle }) => {
   async function handleLogout() {
     try {
       await axios.post(
-        "https://travel-x-408k.onrender.com/logout",
+        "https://travel-x-408k.onrender.com/auth/logout",
         {},
         { withCredentials: true }
       );
