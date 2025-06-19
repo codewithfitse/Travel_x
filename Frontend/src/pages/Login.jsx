@@ -61,18 +61,30 @@ export const Login = () => {
     window.location.href = "https://travel-x-408k.onrender.com/auth/google";
   }
 
-  useEffect(() => {
-  axios.get("https://travel-x-408k.onrender.com/profile", { withCredentials: true })
-    .then((res) => {
-      const user = res.data?.user;
-      if (user?.isAdmin || user?.isSubAdmin) {
-        navigate("/Admin");
-      } else if (user) {
-        navigate("/Dashboard");
-      }
-    })
-    .catch(() => {});
-}, []);
+    useEffect(() => {
+    axios
+      .get("https://travel-x-408k.onrender.com/profile", {
+        withCredentials: true, // ⚠️ super important to get the session cookie
+      })
+      .then((res) => {
+        const user = res.data.user;
+
+        // Debug log (optional)
+        console.log("Logged-in user:", user);
+
+        if (user?.isAdmin) {
+          navigate("/Admin");
+        } else if (user?.isSubAdmin) {
+          navigate("/SubAdmin");
+        } else {
+          navigate("/Dashboard");
+        }
+      })
+      .catch((err) => {
+        console.log("Not logged in:", err.message);
+        // optionally navigate to login or show message
+      });
+  }, []);
 
 
   return (
