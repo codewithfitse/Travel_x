@@ -481,7 +481,7 @@ app.post("/login", async (req, res) => {
       { expiresIn: "2h" }
     );
 
-    res.cookie("token", token, {
+    res.cookie("connect.sid", token, {
       httpOnly: true,
       secure: true,
       sameSite: "none",
@@ -510,8 +510,13 @@ app.post("/login", async (req, res) => {
 
 app.post("/logout", (req, res) => {
   try {
+        req.session.destroy((err) => {
+      if (err) {
+        console.error("Session destroy error:", err);
+        return res.status(500).json({ message: "Logout failed" });
+      }
     // Clear cookies
-    res.clearCookie("token", {
+    res.clearCookie("connect.sid", {
       httpOnly: true,
       secure: true, // ✅ must match login
       sameSite: "none",
