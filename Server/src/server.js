@@ -8,10 +8,8 @@ import multer from "multer";
 import fs from 'fs';
 import { cloudinary, storage } from "../config/Cloudinary.js";
 import UserLogin from "../models/usersDb.js";
-import UserContact from "../models/usersContact.js";
-import UserBook from "../models/userBook.js";
-import UserPost from "../models/UserPost.js";
 import Booking from "../routes/ApiBooking.js";
+import Contact from "../routes/ApiContact.js";
 import Vehicles from "../routes/AuthVehicles.js";
 import authSign from "../routes/AuthSign.js";
 import jwt from "jsonwebtoken";
@@ -33,6 +31,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", Vehicles);
 app.use("/dashboard", Booking);
+app.use("/dashboard", Contact);
 app.use("/auth", authSign);
 const PORT = 3000;
 
@@ -208,11 +207,6 @@ app.get("/dashboard/admin", async (req, res) => {
   console.log(data);
 });
 
-app.get("/dashboard/contact", async (req, res) => {
-  const data = await UserContact.find({}).sort({ createdAt: -1 });
-  res.json(data);
-  console.log(data);
-});
 
 app.put("/dashboard/:id", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
@@ -347,43 +341,5 @@ app.post("/logout", (req, res) => {
     return res.status(500).json({ message: "Logout failed" }); // 💥
   }
 });
-
-app.post("/contact", (req, res) => {
-  UserContact.create(req.body)
-    .then((employee) => {
-      res.json(employee);
-    })
-    .catch((err) => res.json(err));
-  console.log(`Posted Successfully`);
-});
-
-app.get("/dashboard/contact/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const data = await UserContact.find({ _id: id });
-    res.json(data);
-    console.log("Sorted bookings:", data);
-  } catch (err) {
-    console.error("Failed to fetch bookings:", err);
-    res
-      .status(500)
-      .json({ message: "Error fetching bookings", error: err.message });
-  }
-});
-
-app.delete("/dashboard/contact/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const data = await UserContact.findByIdAndDelete(id);
-    res.json(data);
-    console.log("Deleted bookings:", data);
-  } catch (err) {
-    console.error("Failed to fetch bookings:", err);
-    res
-      .status(500)
-      .json({ message: "Error fetching bookings", error: err.message });
-  }
-});
-
 
 app.listen(PORT, () => console.log(`Server is running on Port:${PORT}`));
