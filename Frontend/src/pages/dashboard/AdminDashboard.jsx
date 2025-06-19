@@ -7,7 +7,9 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false);
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
   const user = data[0];
+  const user1 = data1[0];
 
   useEffect(() => {
     //if (!token) return;
@@ -28,7 +30,7 @@ const Dashboard = () => {
 
     useEffect( () =>  {
     const res = axios.get("http://localhost:3000/api/google/profile", {withCredentials: true}).then(() => {
-        setData(result.data);
+        setData1(result.data);
     })
   }, [])
 
@@ -63,6 +65,31 @@ const Dashboard = () => {
                   </div>
                 </div>
 
+                {user1?.isAdmin === true && (
+                  <Link to="/UserDb" key={user._id}>
+                    <div
+                      className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                        toggle
+                          ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
+                          : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
+                      }`}
+                    >
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1
+                          className={`font-bold transition-all duration-300 ease-in-out ${
+                            toggle
+                              ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                              : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                          }`}
+                        >
+                          User
+                        </h1>
+                        <i className="fa fa-group w-2 !text-[30px]"></i>
+                      </div>
+                    </div>
+                  </Link>
+                )}
+                
                 {user?.isAdmin === true && (
                   <Link to="/UserDb" key={user._id}>
                     <div
