@@ -118,33 +118,28 @@ app.get("/api/google/profile", passport.authenticate("google", {
   failureRedirect: "/Login",
   session: true,
 }), (req, res) => {
-  // You can set a cookie with the user’s role or ID
-  const { _id, isAdmin, isSubAdmin } = req.user;
-
-  // Set a cookie (not HttpOnly so frontend can read it)
-    //res.cookie("token", req.user, {
-    //  maxAge: 1000 * 60 * 60 * 24,
-    //  sameSite: "None",
-    //  secure: true,
-    //});
-    console.log("✅ Logged in user:", req.user); // should show user data
-    console.log("💾 Session:", req.session);     
-
-  // Redirect to frontend login (which will check the cookie)
-  if (isAdmin === true) {
-    return res.redirect("https://travel-x-kappa.vercel.app/Admin");
+  if (!req.user) {
+    return res.redirect("/Login");
   }
-  if (isSubAdmin === true) {
-    return res.redirect("https://travel-x-kappa.vercel.app/Admin");
-  }
-  return res.redirect("https://travel-x-kappa.vercel.app/Login");
+
+  req.session.save(() => {
+    const { _id, isAdmin, isSubAdmin } = req.user;
+
+    console.log("✅ Logged in user:", req.user);
+    console.log("💾 Session:", req.session);
+
+    if (isAdmin || isSubAdmin) {
+      return res.redirect("https://travel-x-kappa.vercel.app/Admin");
+    }
+
+    return res.redirect("https://travel-x-kappa.vercel.app/Login");
+  });
 });
 
 function isAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.status(401).json({ message: "Login required" });
 }
-
 
 app.get("/profile", (req, res) => {
   //res.redirect("https://travel-x-kappa.vercel.app/Login");
