@@ -132,7 +132,7 @@ app.get("/api/google/profile", passport.authenticate("google", {
   console.log("💾 Session:", req.session);     
 
   // Redirect to frontend login (which will check the cookie)
-  if (isAdmin  === true) {
+  if (isAdmin === true) {
     res.redirect("https://travel-x-kappa.vercel.app/Admin");
   }
   res.redirect("https://travel-x-kappa.vercel.app/Login");
