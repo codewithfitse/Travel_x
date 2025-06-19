@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import bcrypt from "bcryptjs";
 import multer from "multer";
 import fs from 'fs';
+import UserLogin from "../models/UserDb.js";
 import UserInfo from "../routes/ApiUser.js";
 import Booking from "../routes/ApiBooking.js";
 import Contact from "../routes/ApiContact.js";
@@ -152,8 +153,6 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
 
-const upload = multer({ storage: storage })
-
 function authMiddleware(req, res, next) {
   const token = req.cookies.token; // 👈 get the token from the cookie
 
@@ -186,12 +185,6 @@ app.get("/login", (req, res) => {
   console.log(`We are on Login`);
 });
 
-app.get("/dashboard", async (req, res) => {
-  const data = await UserLogin.find({});
-  res.json(data);
-  console.log(`We are on Dashboard`);
-});
-
 app.get("/dashboards", authMiddleware, async (req, res) => {
   const data = await UserLogin.find(
     { email: req.user.email },
@@ -200,13 +193,6 @@ app.get("/dashboards", authMiddleware, async (req, res) => {
   res.json(data);
   console.log(data);
 });
-
-app.get("/dashboard/admin", async (req, res) => {
-  const data = await UserLogin.find({ email: "user1234@gmail.com" });
-  res.json(data);
-  console.log(data);
-});
-
 
 app.put("/dashboard/:id", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
