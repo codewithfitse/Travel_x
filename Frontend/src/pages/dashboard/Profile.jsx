@@ -147,7 +147,7 @@ export const Profile = () => {
                     <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                       <div className="relative">
                         <div className="w-30 h-30 flex justify-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                        <img src={`${users?.avator}`} className='w-full h-full' alt="Profile Pic"></img >
+                        <img src={`${users?.avatar}`} className='w-full h-full' alt="Profile Pic"></img >
                         </div>
                         <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                       </div>
