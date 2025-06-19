@@ -61,6 +61,20 @@ export const Login = () => {
     window.location.href = "https://travel-x-408k.onrender.com/auth/google";
   }
 
+  useEffect(() => {
+  axios.get("https://travel-x-408k.onrender.com/api/google/profile", { withCredentials: true })
+    .then((res) => {
+      const user = res.data?.user;
+      if (user?.isAdmin || user?.isSubAdmin) {
+        navigate("/Admin");
+      } else if (user) {
+        navigate("/Dashboard");
+      }
+    })
+    .catch(() => {});
+}, []);
+
+
   return (
     <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
       <Header />
