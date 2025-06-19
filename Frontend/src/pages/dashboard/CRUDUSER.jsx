@@ -109,7 +109,7 @@ export const EditDashboard = () => {
   async function handleClick(e) {
     e.preventDefault();
     try {
-      await axios.put(`https://travel-x-408k.onrender.com/dashboard/${user._id}`, {
+      await axios.put(`https://travel-x-408k.onrender.com/dashboard/user/${user._id}`, {
         firstName,
         lastName,
         email,
@@ -275,7 +275,7 @@ export const DeleteDashboard = () => {
     e.preventDefault();
     try {
       await axios
-        .delete(`https://travel-x-408k.onrender.com/dashboard/${user._id}`)
+        .delete(`https://travel-x-408k.onrender.com/dashboard/user/${user._id}`)
         .then((result) => {
           if (result.data.message === "deleted") {
             alert("User updated successfully!");
