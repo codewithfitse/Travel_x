@@ -45,7 +45,12 @@ app.use(
     secret: "secret",
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false },
+    store: MongoStore.create({ mongoUrl: MONGO_URI }),
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24,
+      httpOnly: true,
+      secure: false, // true in production with HTTPS
+    },
   })
 );
 
@@ -66,24 +71,19 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const existingUser = await UserOauth.findOne({ googleId: profile.id });
+        let user = await UserOauth.findOne({ googleId: profile.id });
+        if (user) return done(null, user);
 
-        if (existingUser) {
-          return done(null, existingUser); // login
-        }
-
-        // Register new user
-        const newUser = new UserOauth({
+        user = await UserOauth.create({
           googleId: profile.id,
           name: profile.displayName,
           email: profile.emails?.[0].value,
           avatar: profile.photos?.[0].value,
         });
 
-        await newUser.save();
-        return done(null, newUser);
+        return done(null, user);
       } catch (err) {
-        console.error("Google Strategy Error:", err);
+        console.error("Error in Google Strategy", err);
         return done(err, null);
       }
     }
