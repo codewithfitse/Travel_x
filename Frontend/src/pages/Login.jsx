@@ -72,7 +72,7 @@ export const Login = () => {
         // Debug log (optional)
         console.log("Logged-in user:", user);
 
-        if (user?.isAdmin) {
+        if (user.isAdmin) {
           navigate("/Admin");
         } else if (user?.isSubAdmin) {
           navigate("/SubAdmin");
