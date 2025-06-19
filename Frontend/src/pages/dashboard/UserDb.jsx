@@ -9,7 +9,7 @@ const UserDb = () => {
   useEffect(() => {
     async function loadData() {
       axios
-        .get("https://travel-x-408k.onrender.com/dashboard")
+        .get("https://travel-x-408k.onrender.com/dashboard/user")
         .then((result) => {
           console.log(result);
           setData(result.data);
