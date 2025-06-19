@@ -40,6 +40,7 @@ mongoose
   .connect(MONGO_DB)
   .then(() => console.log(`Connected Successfully`))
   .catch((err) => console.log(`Err:`, err));
+app.set('trust proxy', 1); // for secure cookies to work behind a proxy (like Render)
 
 app.use(
   session({
