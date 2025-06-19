@@ -11,6 +11,7 @@ import UserLogin from "../models/usersDb.js";
 import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
 import UserPost from "../models/UserPost.js";
+import Booking from "../routes/ApiBooking.js";
 import Vehicles from "../routes/AuthVehicles.js";
 import authSign from "../routes/AuthSign.js";
 import jwt from "jsonwebtoken";
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", Vehicles);
+app.use("/dashboard", Booking);
 app.use("/auth", authSign);
 const PORT = 3000;
 
@@ -212,12 +214,6 @@ app.get("/dashboard/contact", async (req, res) => {
   console.log(data);
 });
 
-app.get("/dashboard/booking", async (req, res) => {
-  const data = await UserBook.find({}).sort({ createdAt: -1 });
-  res.json(data);
-  console.log(data);
-});
-
 app.put("/dashboard/:id", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
   const Hash = await bcrypt.hash(password, 10);
@@ -389,41 +385,5 @@ app.delete("/dashboard/contact/:id", async (req, res) => {
   }
 });
 
-app.post("/book", (req, res) => {
-  UserBook.create(req.body)
-    .then((employee) => {
-      res.json(employee);
-    })
-    .catch((err) => res.json(err));
-  console.log(`Posted Successfully`);
-});
-
-app.get("/dashboard/booking/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const data = await UserBook.find({ _id: id });
-    res.json(data);
-    console.log("Sorted bookings:", data);
-  } catch (err) {
-    console.error("Failed to fetch bookings:", err);
-    res
-      .status(500)
-      .json({ message: "Error fetching bookings", error: err.message });
-  }
-});
-
-app.delete("/dashboard/booking/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const data = await UserBook.findByIdAndDelete(id);
-    res.json(data);
-    console.log("Deleted bookings:", data);
-  } catch (err) {
-    console.error("Failed to fetch bookings:", err);
-    res
-      .status(500)
-      .json({ message: "Error fetching bookings", error: err.message });
-  }
-});
 
 app.listen(PORT, () => console.log(`Server is running on Port:${PORT}`));
