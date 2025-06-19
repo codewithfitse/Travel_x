@@ -153,7 +153,7 @@ export const Profile = () => {
                         {users?.name} {users?.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {users?.isAdmin ? "Admin" : "SubAdmin"]
+                        {users?.isAdmin ? "Admin" : "SubAdmin"}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
