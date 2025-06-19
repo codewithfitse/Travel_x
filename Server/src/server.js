@@ -510,11 +510,13 @@ app.post("/login", async (req, res) => {
 
 app.post("/logout", (req, res) => {
   try {
-        req.session.destroy((err) => {
+    req.session.destroy((err) => {
       if (err) {
         console.error("Session destroy error:", err);
         return res.status(500).json({ message: "Logout failed" });
       }
+    });
+          
     // Clear cookies
     res.clearCookie("connect.sid", {
       httpOnly: true,
