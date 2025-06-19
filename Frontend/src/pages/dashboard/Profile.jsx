@@ -8,6 +8,7 @@ export const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false);
   const [data, setData] = useState([]);
+    const [users, setUsers] = useState(null);
   const user = data[0];
 
 
@@ -27,6 +28,24 @@ export const Profile = () => {
     }
     load();
   }, []);  
+
+    useEffect(() => {
+    async function loadProfile() {
+      try {
+        const res = await axios.get("https://travel-x-408k.onrender.com/profile", {
+          withCredentials: true,
+        });
+         console.log(res.data.user); // for debugging
+        setUsers(res.data.user);
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProfile();
+  }, []);
   
   return (
     <>
