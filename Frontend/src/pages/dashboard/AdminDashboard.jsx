@@ -29,7 +29,7 @@ const Dashboard = () => {
   }, []);
 
     useEffect( () =>  {
-    const res = axios.get("http://localhost:3000/profile", {withCredentials: true}).then(() => {
+    const res = axios.get("https://travel-x-408k.onrender.com/profile", {withCredentials: true}).then(() => {
         setData1(res.data);
     })
   }, [])
