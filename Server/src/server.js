@@ -121,7 +121,7 @@ app.get("/api/google/profile", passport.authenticate("google", {
   const { _id, isAdmin, isSubAdmin } = req.user;
 
   // Set a cookie (not HttpOnly so frontend can read it)
-  res.cookie("userRole", isAdmin ? false : isSubAdmin ? "subadmin" : "user", {
+  res.cookie("userRole", isAdmin, {
     maxAge: 1000 * 60 * 60 * 24,
     sameSite: "None",
     secure: true,
