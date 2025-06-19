@@ -134,6 +134,9 @@ app.get("/api/google/profile", passport.authenticate("google", {
   if (isAdmin === true) {
     return res.redirect("https://travel-x-kappa.vercel.app/Admin");
   }
+  if (isSubAdmin === true) {
+    return res.redirect("https://travel-x-kappa.vercel.app/Admin");
+  }
   return res.redirect("https://travel-x-kappa.vercel.app/Login");
 });
 
