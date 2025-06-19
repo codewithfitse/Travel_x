@@ -1,5 +1,5 @@
 import express from "express";
-import {cloudinary} from "../config/Cloudinary.js";
+import { cloudinary, storage } from "../config/Cloudinary.js";
 import UserPost from "../models/UserPost.js";
 import multer from "multer";
 
