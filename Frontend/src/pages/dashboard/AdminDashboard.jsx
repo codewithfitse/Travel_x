@@ -30,7 +30,7 @@ const Dashboard = () => {
 
     useEffect( () =>  {
     const res = axios.get("http://localhost:3000/api/google/profile", {withCredentials: true}).then(() => {
-        setData1(result.data);
+        setData1(res.data);
     })
   }, [])
 
