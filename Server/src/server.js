@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", Vehicles);
 app.use("/dashboard", Booking);
-app.use("/dashboard", Contact);
+app.use("/dashboard/contact", Contact);
 app.use("/auth", authSign);
 const PORT = 3000;
 
