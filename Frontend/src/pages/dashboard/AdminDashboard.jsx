@@ -30,7 +30,7 @@ const Dashboard = () => {
 
     useEffect( () =>  {
     const res = axios.get("https://travel-x-408k.onrender.com/profile", {withCredentials: true}).then(() => {
-        setData1(res.data);
+        setData1(res.data.user);
     })
   }, [])
 
