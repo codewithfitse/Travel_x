@@ -122,11 +122,9 @@ app.get("/api/google/profile", passport.authenticate("google", {
   const { _id, isAdmin, isSubAdmin } = req.user;
 
   // Set a cookie (not HttpOnly so frontend can read it)
-  res.cookie("userRole", isAdmin, {
-    maxAge: 1000 * 60 * 60 * 24,
-    sameSite: "None",
-    secure: true,
-  });
+
+    console.log("✅ Logged in user:", req.user); // should show user data
+  console.log("💾 Session:", req.session);     
 
   // Redirect to frontend login (which will check the cookie)
   res.redirect("https://travel-x-kappa.vercel.app/Login");
