@@ -9,7 +9,7 @@ router.get("/contact", async (req, res) => {
   console.log(data);
 });
 
-router.post("/", (req, res) => {
+router.post("/contact", (req, res) => {
   UserContact.create(req.body)
     .then((employee) => {
       res.json(employee);
