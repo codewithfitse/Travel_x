@@ -170,14 +170,7 @@ function authMiddleware(req, res, next) {
   });
 }
 
-app.get("/uploads", async (req, res) => {
-  try {
-    const images = await UserPost.find().sort({ createdAt: -1 }); // newest first
-    res.status(200).json(images);
-  } catch (err) {
-    res.status(500).json({ msg: "Failed to fetch images", error: err.message });
-  }
-});
+
 
 app.get("/uploads/suv", async (req, res) => {
   try {
