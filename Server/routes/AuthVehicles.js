@@ -5,7 +5,7 @@ import multer from "multer";
 
 const router = express.Router();
 
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ storage: storage })
 
 router.get("/", async (req, res) => {
   try {
@@ -77,81 +77,86 @@ router.get("/pickup", async (req, res) => {
   }
 });
 
-router.post("/uploads", upload.single("image"), async (req, res) => {
+router.post("/", upload.single('image'), async (req, res) => {
+  const { name, item, price } = req.body;
+
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
   try {
-    if (!req.file) {
-      return res.status(400).json({ error: "No file uploaded" });
-    }
-    const result = await cloudinary.uploader.upload(req.file.path);
-    const newImage = new Image({
-      url: result.secure_url,
-      public_id: result.public_id,
+    // req.file now contains Cloudinary info
+    const savedPost = new UserPost({
+      name,
+      item,
+      price,
+      url: req.file.path, // already the Cloudinary URL
+      public_id: req.file.filename, // this is the Cloudinary ID
     });
 
-    await newImage.save();
-    fs.unlinkSync(req.file.path); // cleanup
+    await savedPost.save();
 
-    res.json(req.file);
-    console.log(req.file);
+    console.log("✅ Uploaded to Cloudinary via Multer:", req.file.path);
+
+    res.status(200).json({
+      msg: "Uploaded and saved to DB!",
+      imageUrl: req.file.path,
+    });
   } catch (error) {
-    console.log(error);
+    console.error("❌ Upload failed:", error);
+    res.status(500).json({ error: "Upload failed" });
   }
-});
+})
 
-router.post("/api/upload", upload.single("photo"), async (req, res) => {
-  if (!req.file) return res.status(400).json({ error: "No file uploaded" });
-
-  const { name, item, description } = req.body;
-
-  const fileUrl = `/uploads/${req.file.filename}`;
-
-  // Save to MongoDB
-  const image = new UserPost({
-    filename: req.file.filename,
-    url: fileUrl,
-    name,
-    item,
-    description,
-  });
-
+// Update route - Update image and/or text
+router.put("/:id", upload.single("image"), async (req, res) => {
   try {
-    await image.save();
-    res.json({ message: "Uploaded and saved to DB", image });
-  } catch (err) {
-    res.status(500).json({ error: "Failed to save in DB" });
-  }
-});
+    const { id } = req.params;
+    const { name, item, price } = req.body;
 
-router.put("/api/images/:id", async (req, res) => {
-  const { id } = req.params;
-  const { name, item, description } = req.body;
+    const post = await UserPost.findById(id);
+    if (!post) return res.status(404).json({ error: 'Post not found' });
 
-  try {
-    const updatedPost = await UserPost.findByIdAndUpdate(
-      id,
-      { name, item, description },
-      { new: true } // return the updated document
-    );
+    // If there's a new image uploaded, delete old image from Cloudinary and upload new one
+    if (req.file) {
+      // Delete old image from Cloudinary
+      await cloudinary.uploader.destroy(post.public_id);
 
-    if (!updatedPost) {
-      return res.status(404).json({ error: "Post not found" });
+      // Update with new image info
+      post.url = req.file.path;
+      post.public_id = req.file.filename;
     }
 
-    res.json({ message: "Updated and saved to DB", data: updatedPost });
-  } catch (err) {
-    console.error("Update error:", err); // Add this for better debugging
-    res.status(500).json({ error: "Failed to update in DB" });
+    // Update other fields
+    post.name = name || post.name;
+    post.item = item || post.item;
+    post.price = price || post.price;
+
+    await post.save();
+
+    res.json({ message: 'Post updated successfully', data: post });
+  } catch (error) {
+    console.error('PUT update error:', error);
+    res.status(500).json({ error: 'Failed to update post' });
   }
+
 });
 
-router.delete("/api/images/:id", async (req, res) => {
-  const { id } = req.params;
-
+router.delete("/:id", async (req, res) => {
   try {
-    await UserPost.findByIdAndDelete(id);
-    res.json({ message: "Deleted and saved to DB" });
+    const post = await UserPost.findById(req.params.id);
+    if (!post) return res.status(404).json({ error: "Post not found" });
+
+    // Delete from Cloudinary
+    await cloudinary.uploader.destroy(post.public_id);
+
+    // Delete from MongoDB
+    await UserPost.findByIdAndDelete(req.params.id);
+
+    res.json({ message: "Image deleted from Cloudinary and DB" });
   } catch (err) {
-    res.status(500).json({ error: "Failed to delete in DB" });
+    console.error("Delete error:", err);
+    res.status(500).json({ error: "Failed to delete image" });
   }
 });
 
