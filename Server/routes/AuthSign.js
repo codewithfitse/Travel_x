@@ -102,11 +102,27 @@ router.post("/login", async (req, res) => {
 
 router.post("/logout", (req, res) => {
   try {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Session destroy error:", err);
+        return res.status(500).json({ message: "Logout failed" });
+      }
+    });
+          
     // Clear cookies
     res.clearCookie("token", {
       httpOnly: true,
-      secure: false,
-      sameSite: "None",
+      secure: true, // ✅ must match login
+      sameSite: "none",
+      domain: "travel-x-408k.onrender.com",
+      path: "/",
+    });
+
+    res.clearCookie("connect.sid", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      domain: "travel-x-408k.onrender.com",
       path: "/",
     });
 
