@@ -154,7 +154,7 @@ if (!fs.existsSync(uploadDir)) {
 const upload = multer({ storage: storage })
 
 function authMiddleware(req, res, next) {
-  const token = req.cookies.token; // 👈 get the token from the cookie
+  const token = req.cookies.connect.sid; // 👈 get the token from the cookie
 
   
   if (!token) {
