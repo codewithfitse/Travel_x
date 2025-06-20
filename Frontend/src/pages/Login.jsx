@@ -24,7 +24,7 @@ export const Login = () => {
     }
     
     axios
-      .post("https://travel-x-408k.onrender.com/auths/login", 
+      .post("https://travel-x-408k.onrender.com/login", 
         { email, password },
         { withCredentials: true })
       .then((result) => {
@@ -63,7 +63,7 @@ export const Login = () => {
 
     useEffect(() => {
     axios
-      .get("https://travel-x-408k.onrender.com/auths/profile", {
+      .get("https://travel-x-408k.onrender.com/profile", {
         withCredentials: true, // ⚠️ super important to get the session cookie
       })
       .then((res) => {
