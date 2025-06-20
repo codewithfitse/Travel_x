@@ -1,9 +1,134 @@
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import UserLogin from "../models/UserDb.js";
+import UserLogin from "../models/usersDb.js";
+import passport from "passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import session from "express-session";
+import UserOauth from "../models/UserOauth.js";
+import MongoStore from "connect-mongo";
 
 const router = express.Router();
+
+const MONGO_DB = process.env.MONGO_URI;
+
+const ClientId =
+  "849375548974-gil8qk4hvm3ie3hicrbtr6drs7po4667.apps.googleusercontent.com";
+const ClientSecret = "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";
+const callBack = "https://travel-x-408k.onrender.com/auth/google/profile";
+
+router.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: MONGO_DB }),
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24,
+      httpOnly: true,
+      sameSite: "None",      
+      secure: true, // true in production with HTTPS
+    },
+  })
+);
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: ClientId,
+      clientSecret: ClientSecret,
+      callbackURL: callBack,
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      try {
+        let user = await UserOauth.findOne({ googleId: profile.id });
+        if (user) return done(null, user);
+
+        user = await UserOauth.create({
+          googleId: profile.id,
+          name: profile.displayName,
+          email: profile.emails?.[0].value,
+          avatar: profile.photos?.[0].value,
+        });
+
+        return done(null, user);
+      } catch (err) {
+        console.error("Error in Google Strategy", err);
+        return done(err, null);
+      }
+    }
+  )
+);
+
+passport.serializeUser((user, done) => {
+  done(null, user._id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await UserOauth.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err, null);
+  }
+});
+
+router.get("/api/google", (req, res) => {
+  res.send("<a href='/auth/google'>Google</a>");
+});
+
+router.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+router.get("/google/profile", passport.authenticate("google", {
+  failureRedirect: "/Login",
+  session: true,
+}), (req, res) => {
+  if (!req.user) {
+    return res.redirect("/Login");
+  }
+
+  req.session.save(() => {
+    const { _id, isAdmin, isSubAdmin } = req.user;
+
+    console.log("✅ Logged in user:", req.user);
+    console.log("💾 Session:", req.session);
+
+    if (isAdmin || isSubAdmin) {
+      return res.redirect("https://travel-x-kappa.vercel.app/Admin");
+    }
+
+    return res.redirect("https://travel-x-kappa.vercel.app/Login");
+  });
+});
+
+function isAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.status(401).json({ message: "Login required" });
+}
+
+router.get("/profile", (req, res) => {
+  res.status(200).json({ message: "Welcome Admin", user: req.user });
+});
+
+
+function authMiddleware(req, res, next) {
+  const token = req.cookies.token; // 👈 get the token from the cookie
+
+  
+  if (!token) {
+    return res.status(401).json({ message: "Unauthorized: Missing token!" });
+  }
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, decodedUser) => {
+    if (err) {
+      return res.status(403).json({ message: "Forbidden: Invalid token" });
+    }
+    req.user = decodedUser; // 🎯 attach the user info to request
+    next();
+  });
 
 router.post("/register", async (req, res) => {
   try {
