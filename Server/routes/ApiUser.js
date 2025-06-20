@@ -1,10 +1,17 @@
 import express from "express";
 import UserLogin from "../models/UserDb.js";
+import UserOauth from "../models/UserOauth.js";
 
 const router = express.Router();
 
 router.get("/user", async (req, res) => {
   const data = await UserLogin.find({}).sort({ createdAt: -1 });
+  res.json(data);
+  console.log(`We are on Dashboard`);
+});
+
+router.get("/userGoogle", async (req, res) => {
+  const data = await UserOauth.find({}).sort({ createdAt: -1 });
   res.json(data);
   console.log(`We are on Dashboard`);
 });
