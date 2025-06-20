@@ -17,7 +17,7 @@ const MONGO_DB = process.env.MONGO_URI;
 const ClientId =
   "849375548974-h4f7a5u743ag5r2qler5317t3qdni9rb.apps.googleusercontent.com";
 const ClientSecret = "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";
-const callBack = "https://travel-x-408k.onrender.com/auth/google/profile";
+const callBack = "https://travel-x-408k.onrender.com/auths/google/profile";
 
 passport.use(
   new GoogleStrategy(
