@@ -29,11 +29,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use("/uploads", Vehicles);
-app.use("/dashboard", Booking);
-app.use("/dashboard", Contact);
-app.use("/dashboard", UserInfo);
-app.use("/auth", authSign);
+
 const PORT = 3000;
 
 const MONGO_DB = process.env.MONGO_URI;
@@ -285,5 +281,11 @@ app.post("/logout", (req, res) => {
     return res.status(500).json({ message: "Logout failed" }); // 💥
   }
 });
+
+app.use("/uploads", Vehicles);
+app.use("/dashboard", Booking);
+app.use("/dashboard", Contact);
+app.use("/dashboard", UserInfo);
+app.use("/auth", authSign);
 
 app.listen(PORT, () => console.log(`Server is running on Port:${PORT}`));
