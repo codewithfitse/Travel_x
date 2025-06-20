@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const UserDb = () => {
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
 
   useEffect(() => {
     async function loadData() {
@@ -21,6 +22,25 @@ const UserDb = () => {
     }
     loadData();
   }, []);
+  useEffect(() => {
+    setIsLoading(true);
+    try {
+      async function loadData() {
+        axios
+          .get("https://travel-x-408k.onrender.com/dashboard/userGoogle")
+          .then((result) => {
+            console.log(result);
+            setData1(result.data);
+          })
+          .catch((err) => console.log(err));
+      }
+      loadData();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);  
   return (
     <section className="min-h-screen overflow-x-hidden">
       <div className="w-full h-screen flex bg-[#020817] text-white">
@@ -62,6 +82,37 @@ const UserDb = () => {
                   </div>
                 </div>
               ))}
+              {(isLoading && <h1 className="text-[50px]"></h1>) ||
+                data1.map((user) => (
+                  <div
+                    className={`h-fit mt-8 p-3 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl `}
+                  >
+                    <div
+                      className={`w-full h-auto px-5 flex justify-between items-center`}
+                    >
+                      <h1
+                        className={`font-bold transition-all duration-300 ease-in-out ${
+                          toggle
+                            ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                            : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                        }`}
+                      >
+                        {user.firstName} {user.lastName}
+                      </h1>
+                      <div className="w-fit flex space-x-3 lg:space-x-7 items-center">
+                        <Link to="/View" state={{ user }}>
+                          <i class="fas fa-eye w-7 !text-[25px] lg:!text-[30px]"></i>
+                        </Link>
+                        <Link to="/Edit" state={{ user }}>
+                          <i class="fas fa-edit w-7 !text-[25px] lg:!text-[30px]"></i>
+                        </Link>
+                        <Link to="/Delete" state={{ user }}>
+                          <i class="fa fa-trash w-7 !text-[25px] lg:!text-[30px]"></i>{" "}
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}              
             </div>
           </main>
         </div>
