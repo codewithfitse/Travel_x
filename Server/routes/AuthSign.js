@@ -15,8 +15,8 @@ router.use(cookieParser());
 const MONGO_DB = process.env.MONGO_URI;
 
 const ClientId =
-  "849375548974-h4f7a5u743ag5r2qler5317t3qdni9rb.apps.googleusercontent.com";
-const ClientSecret = "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";
+  "849375548974-97jotmu60nhgei3hlv7f41fumieevmhj.apps.googleusercontent.com";
+const ClientSecret = "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";
 const callBack = "https://travel-x-408k.onrender.com/auths/google/profile";
 
 passport.use(
