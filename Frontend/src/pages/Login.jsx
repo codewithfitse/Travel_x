@@ -58,7 +58,7 @@ export const Login = () => {
   }
 
     async function handleOauth() {
-    window.location.href = "https://travel-x-408k.onrender.com/api/google";
+    window.location.href = "https://travel-x-408k.onrender.com/auth/google";
   }
 
     useEffect(() => {
