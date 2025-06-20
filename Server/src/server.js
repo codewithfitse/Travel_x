@@ -4,8 +4,6 @@ import MongoStore from "connect-mongo";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import bcrypt from "bcryptjs";
-import multer from "multer";
-import fs from 'fs';
 import UserLogin from "../models/UserDb.js";
 import UserInfo from "../routes/ApiUser.js";
 import Booking from "../routes/ApiBooking.js";
@@ -38,8 +36,10 @@ mongoose
   .connect(MONGO_DB)
   .then(() => console.log(`Connected Successfully`))
   .catch((err) => console.log(`Err:`, err));
+
 app.set('trust proxy', 1); // for secure cookies to work behind a proxy (like Render)
 
+// this session used for soring on mongoDb session storage!
 app.use(
   session({
     secret: "secret",
@@ -50,7 +50,7 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: true,
       sameSite: "None",      
-      secure: true, // true in production with HTTPS
+      secure: true,
     },
   })
 );
@@ -60,7 +60,8 @@ const ClientId =
 const ClientSecret = "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";
 const callBack = "https://travel-x-408k.onrender.com/auths/google/profile";
 
-app.use(passport.initialize());
+
+app.use(passport.initialize()); // as i understood this will instialize passport for use!
 app.use(passport.session());
 
 passport.use(
@@ -104,15 +105,13 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-app.get("/google", (req, res) => {
-  res.send("<a href='/auth/google'>Google</a>");
-});
-
+//I make this to login with Oauth with Google to direte me google Oauth box!
 app.get(
   "/auths/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
+// yes i this will pay the big Part on Oauth it diffrenciate the routes admin, subAdmin,user and rediret you based on session data best ever i bulid fr!
 app.get("/auths/google/profile", passport.authenticate("google", {
   failureRedirect: "/Login",
   session: true,
@@ -140,15 +139,12 @@ function isAuthenticated(req, res, next) {
   res.status(401).json({ message: "Login required" });
 }
 
+// i create this b/c i want too make simlify for user profile data after all the login is done and to feach it frontend!
 app.get("/profile", (req, res) => {
   res.status(200).json({ message: "Welcome Admin", user: req.user });
 });
 
-const uploadDir = 'uploads';
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
-}
-
+// i been too creative about this idea i want to make it it used to to autheticate if cooki of tooken is present!
 function authMiddleware(req, res, next) {
   const token = req.cookies.token; // 👈 get the token from the cookie
 
@@ -166,11 +162,13 @@ function authMiddleware(req, res, next) {
   });
 }
 
+// my first Page 😊 proud of it!
 app.get("/", (req, res) => {
   res.json("HomePage");
   console.log(`We are on Homepage`);
 });
 
+// this will feached if the middle ware is correct means if the cookie is present!
 app.get("/dashboards", authMiddleware, async (req, res) => {
   const data = await UserLogin.find(
     { email: req.user.email },
@@ -180,8 +178,10 @@ app.get("/dashboards", authMiddleware, async (req, res) => {
   console.log(data);
 });
 
+// this is for new user.
 app.post("/register", async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
+  // this will increapt the password! bye hacker it takes time days...
   const Hash = await bcrypt.hash(password, 10);
 
   UserLogin.create({ firstName, lastName, email, phone, password: Hash })
@@ -191,6 +191,7 @@ app.post("/register", async (req, res) => {
     .catch((err) => res.json(err));
 });
 
+// this is the login part
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -208,7 +209,7 @@ app.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Incorrect password" });
     }
 
-    // Update last login timestamp
+    // Update last login timestamp really usefull make this app cool!
     user.lastLogin = new Date();
     await user.save();
 
@@ -223,6 +224,7 @@ app.post("/login", async (req, res) => {
       { expiresIn: "2h" }
     );
 
+    // this will setup the cookie of named token!
     res.cookie("token", token, {
       httpOnly: true,
       secure: true,
@@ -250,6 +252,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
+// logout part was easy i simplay remover cookie and session!
 app.post("/logout", (req, res) => {
   try {
     req.session.destroy((err) => {
@@ -262,12 +265,12 @@ app.post("/logout", (req, res) => {
     // Clear cookies
     res.clearCookie("token", {
       httpOnly: true,
-      secure: true, // ✅ must match login
+      secure: true,
       sameSite: "none",
       domain: "travel-x-408k.onrender.com",
       path: "/",
     });
-
+    // clear the Oauth Session!
     res.clearCookie("connect.sid", {
       httpOnly: true,
       secure: true,
