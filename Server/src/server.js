@@ -109,7 +109,7 @@ app.get("/google", (req, res) => {
 });
 
 app.get(
-  "/auth/google",
+  "/auths/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
