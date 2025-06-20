@@ -113,7 +113,7 @@ app.get(
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-app.get("/api/google/profile", passport.authenticate("google", {
+app.get("/auths/google/profile", passport.authenticate("google", {
   failureRedirect: "/Login",
   session: true,
 }), (req, res) => {
