@@ -56,9 +56,9 @@ app.use(
 );
 
 const ClientId =
-  "849375548974-gil8qk4hvm3ie3hicrbtr6drs7po4667.apps.googleusercontent.com";
-const ClientSecret = "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";
-const callBack = "https://travel-x-408k.onrender.com/api/google/profile";
+  "849375548974-97jotmu60nhgei3hlv7f41fumieevmhj.apps.googleusercontent.com";
+const ClientSecret = "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";
+const callBack = "https://travel-x-408k.onrender.com/auths/google/profile";
 
 app.use(passport.initialize());
 app.use(passport.session());
