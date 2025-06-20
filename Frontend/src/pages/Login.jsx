@@ -63,7 +63,7 @@ export const Login = () => {
 
     useEffect(() => {
     axios
-      .get("https://travel-x-408k.onrender.com/auth/profile", {
+      .get("https://travel-x-408k.onrender.com/auths/profile", {
         withCredentials: true, // ⚠️ super important to get the session cookie
       })
       .then((res) => {
