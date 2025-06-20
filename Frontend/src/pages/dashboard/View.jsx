@@ -37,7 +37,7 @@ const ViewDashboard = () => {
                     <h1 className="font-bold capitalize">
                       Name:{" "}
                       <span className="font-semibold">
-                        {user.firstName} {user.lastName}
+                        {user.firstName} {user.lastName} {user.name}
                       </span>
                     </h1>
                     <h1 className="font-bold capitalize">
