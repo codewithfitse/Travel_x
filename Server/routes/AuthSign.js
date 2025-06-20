@@ -1,5 +1,6 @@
 import express from "express";
 import bcrypt from "bcryptjs";
+import cookieParser from "cookie-parser";
 import jwt from "jsonwebtoken";
 import UserLogin from "../models/UserDb.js";
 import passport from "passport";
