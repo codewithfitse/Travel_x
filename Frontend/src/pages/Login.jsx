@@ -58,12 +58,12 @@ export const Login = () => {
   }
 
     async function handleOauth() {
-    window.location.href = "https://travel-x-408k.onrender.com/auth/google";
+    window.location.href = "https://travel-x-408k.onrender.com/api/google";
   }
 
     useEffect(() => {
     axios
-      .get("https://travel-x-408k.onrender.com/profile", {
+      .get("https://travel-x-408k.onrender.com/auth/profile", {
         withCredentials: true, // ⚠️ super important to get the session cookie
       })
       .then((res) => {
