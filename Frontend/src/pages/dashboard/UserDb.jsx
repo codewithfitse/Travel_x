@@ -83,37 +83,27 @@ const UserDb = () => {
                   </div>
                 </div>
               ))}
-              {(isLoading && <h1 className="text-[50px]"></h1>) ||
-                data1.map((user) => (
-                  <div
-                    className={`h-fit mt-8 p-3 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl `}
-                  >
-                    <div
-                      className={`w-full h-auto px-5 flex justify-between items-center`}
-                    >
-                      <h1
-                        className={`font-bold transition-all duration-300 ease-in-out ${
-                          toggle
-                            ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                            : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
-                        }`}
-                      >
-                        {user.firstName} {user.lastName}
-                      </h1>
-                      <div className="w-fit flex space-x-3 lg:space-x-7 items-center">
-                        <Link to="/View" state={{ user }}>
-                          <i class="fas fa-eye w-7 !text-[25px] lg:!text-[30px]"></i>
-                        </Link>
-                        <Link to="/Edit" state={{ user }}>
-                          <i class="fas fa-edit w-7 !text-[25px] lg:!text-[30px]"></i>
-                        </Link>
-                        <Link to="/Delete" state={{ user }}>
-                          <i class="fa fa-trash w-7 !text-[25px] lg:!text-[30px]"></i>{" "}
-                        </Link>
-                      </div>
+              {data1.map((user) => (
+                <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                  <div className="w-full px-5 flex justify-between items-center">
+                    <h1 className="w-full text-[30px] font-bold">
+                      {user?.displayName} {user.lastName}
+                    </h1>
+                    <div className="w-fit flex space-x-3 lg:space-x-7 items-center">
+                      <Link to="/View" state={{ user }}>
+                        <i class="fas fa-eye w-7 !text-[25px] lg:!text-[30px]"></i>
+                      </Link>
+                      <Link to="/Edit" state={{ user }}>
+                        <i class="fas fa-edit w-7 !text-[25px] lg:!text-[30px]"></i>
+                      </Link>
+                      <Link to="/Delete" state={{ user }}>
+                        <i class="fa fa-trash w-7 !text-[25px] lg:!text-[30px]"></i>{" "}
+                      </Link>
                     </div>
                   </div>
-                ))}              
+                </div>
+              ))}
+
             </div>
           </main>
         </div>
