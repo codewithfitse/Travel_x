@@ -9,6 +9,7 @@ import UserOauth from "../models/UserOauth.js";
 import MongoStore from "connect-mongo";
 
 const router = express.Router();
+router.use(cookieParser());
 
 const MONGO_DB = process.env.MONGO_URI;
 
