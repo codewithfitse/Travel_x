@@ -17,6 +17,9 @@ const ClientId =
 const ClientSecret = "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";
 const callBack = "https://travel-x-408k.onrender.com/auth/google/profile";
 
+router.use(passport.initialize());
+router.use(passport.session());
+
 router.use(
   session({
     secret: "secret",
