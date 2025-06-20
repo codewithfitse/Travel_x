@@ -87,7 +87,7 @@ const UserDb = () => {
                 <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                   <div className="w-full px-5 flex justify-between items-center">
                     <h1 className="w-full text-[30px] font-bold">
-                      {user?.displayName} {user.lastName}
+                      {user?.Name} 
                     </h1>
                     <div className="w-fit flex space-x-3 lg:space-x-7 items-center">
                       <Link to="/View" state={{ user }}>
