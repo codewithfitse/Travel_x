@@ -42,6 +42,8 @@ router.delete("/user/:id", async (req, res) => {
 
     if (!deletedUser) {
       return res.status(404).json({ error: "User not found" });
+    } else {
+      const deletedUserOauth = await UserOauth.findByIdAndDelete(req.params.id);
     }
 
     res.status(200).json({ message: "User deleted successfully" }); 
