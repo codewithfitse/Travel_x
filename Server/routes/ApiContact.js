@@ -3,12 +3,14 @@ import UserContact from "../models/UserContact.js";
 
 const router = express.Router();
 
+// I make this to list all Conatcts 
 router.get("/contact", async (req, res) => {
   const data = await UserContact.find({}).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
 
+// I make this to post Contacts to mongoDb
 router.post("/contact", (req, res) => {
   UserContact.create(req.body)
     .then((employee) => {
@@ -18,6 +20,7 @@ router.post("/contact", (req, res) => {
   console.log(`Posted Successfully`);
 });
 
+// I make this to get Contacts list by id  
 router.get("/contact/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -32,6 +35,7 @@ router.get("/contact/:id", async (req, res) => {
   }
 });
 
+// I make this to delete Contacts list by id 
 router.delete("/contact/:id", async (req, res) => {
   const { id } = req.params;
   try {
