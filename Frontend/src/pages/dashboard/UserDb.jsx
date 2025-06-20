@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UserDb = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
 
