@@ -286,6 +286,6 @@ app.use("/uploads", Vehicles);
 app.use("/dashboard", Booking);
 app.use("/dashboard", Contact);
 app.use("/dashboard", UserInfo);
-//app.use("/auths", authSign);
+app.use("/auths", authSign);
 
 app.listen(PORT, () => console.log(`Server is running on Port:${PORT}`));
