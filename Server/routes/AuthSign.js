@@ -74,7 +74,7 @@ passport.deserializeUser(async (id, done) => {
 });
 
 router.get("/api/google", (req, res) => {
-  res.send("<a href='/auth/google'>Google</a>");
+  res.send("<a href='/api/google'>Google</a>");
 });
 
 router.get(
