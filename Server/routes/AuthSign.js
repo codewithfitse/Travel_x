@@ -19,24 +19,6 @@ const ClientId =
 const ClientSecret = "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";
 const callBack = "https://travel-x-408k.onrender.com/auth/google/profile";
 
-router.use(passport.initialize());
-router.use(passport.session());
-
-router.use(
-  session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: MONGO_DB }),
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
-      httpOnly: true,
-      sameSite: "None",      
-      secure: true, // true in production with HTTPS
-    },
-  })
-);
-
 passport.use(
   new GoogleStrategy(
     {
