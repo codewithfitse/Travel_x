@@ -7,6 +7,7 @@ const router = express.Router();
 
 const upload = multer({ storage: storage })
 
+// I make this to list All Photos from Cloudinarey! 
 router.get("/", async (req, res) => {
   try {
     const images = await UserPost.find({}).sort({
@@ -20,6 +21,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// I make this to list of suv Photos from Cloudinarey! 
 router.get("/suv", async (req, res) => {
   try {
     const images = await UserPost.find({ item: "suv" }).sort({
@@ -33,6 +35,7 @@ router.get("/suv", async (req, res) => {
   }
 });
 
+// I make this to list of Midsuv Photos from Cloudinarey!
 router.get("/midsuv", async (req, res) => {
   try {
     const images = await UserPost.find({ item: "midsuv" }).sort({
@@ -44,6 +47,7 @@ router.get("/midsuv", async (req, res) => {
   }
 });
 
+// I make this to list of Fullsuv Photos from Cloudinarey!
 router.get("/fullsuv", async (req, res) => {
   try {
     const images = await UserPost.find({ item: "fullsuv" }).sort({
@@ -55,6 +59,7 @@ router.get("/fullsuv", async (req, res) => {
   }
 });
 
+// I make this to list of Minisuv Photos from Cloudinarey!
 router.get("/minivan", async (req, res) => {
   try {
     const images = await UserPost.find({ item: "minivan" }).sort({
@@ -66,6 +71,7 @@ router.get("/minivan", async (req, res) => {
   }
 });
 
+// I make this to list of Picksuv Photos from Cloudinarey!
 router.get("/pickup", async (req, res) => {
   try {
     const images = await UserPost.find({ item: "pickup" }).sort({
@@ -77,6 +83,7 @@ router.get("/pickup", async (req, res) => {
   }
 });
 
+// I make this Post to upload to cloudeary cloud storage!
 router.post("/", upload.single('image'), async (req, res) => {
   const { name, item, price } = req.body;
 
@@ -90,8 +97,8 @@ router.post("/", upload.single('image'), async (req, res) => {
       name,
       item,
       price,
-      url: req.file.path, // already the Cloudinary URL
-      public_id: req.file.filename, // this is the Cloudinary ID
+      url: req.file.path, // already the Cloudinary URL, user to feach image to frontend!
+      public_id: req.file.filename, // this is the Cloudinary ID , userd to update and delete from cloudnarey
     });
 
     await savedPost.save();
@@ -142,6 +149,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
 
 });
 
+// I make this to delete Photos from Cloudinarey and database too!
 router.delete("/:id", async (req, res) => {
   try {
     const post = await UserPost.findById(req.params.id);
