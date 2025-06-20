@@ -3,12 +3,14 @@ import UserBook from "../models/userBook.js";
 
 const router = express.Router();
 
+// I make this to list all booking 
 router.get("/booking", async (req, res) => {
   const data = await UserBook.find({}).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
 
+// I make this to post booking to mongoDb
 router.post("/book", (req, res) => {
   UserBook.create(req.body)
     .then((employee) => {
@@ -18,6 +20,7 @@ router.post("/book", (req, res) => {
   console.log(`Posted Successfully`);
 });
 
+// I make this to get booking list by id  
 router.get("/booking/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -32,6 +35,7 @@ router.get("/booking/:id", async (req, res) => {
   }
 });
 
+// I make this to delete booking list by id 
 router.delete("/booking/:id", async (req, res) => {
   const { id } = req.params;
   try {
