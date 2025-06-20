@@ -24,7 +24,7 @@ export const Login = () => {
     }
     
     axios
-      .post("https://travel-x-408k.onrender.com/auth/login", 
+      .post("https://travel-x-408k.onrender.com/auths/login", 
         { email, password },
         { withCredentials: true })
       .then((result) => {
@@ -58,7 +58,7 @@ export const Login = () => {
   }
 
     async function handleOauth() {
-    window.location.href = "https://travel-x-408k.onrender.com/auth/google";
+    window.location.href = "https://travel-x-408k.onrender.com/auths/google";
   }
 
     useEffect(() => {
