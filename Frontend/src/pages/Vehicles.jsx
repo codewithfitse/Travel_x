@@ -6,7 +6,7 @@ import { Button } from "../components/Button";
 import axios from "axios";
 
 const Vehicles = () => {
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const Vehicles = () => {
     // Fetch images from backend
     
     const fetchImages = async () => {
-         setIsloading(true);
+         setIsLoading(true);
       try {
         const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
         setData(res.data);
