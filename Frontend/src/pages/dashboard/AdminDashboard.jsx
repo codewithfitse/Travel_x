@@ -180,7 +180,7 @@ const Dashboard = () => {
                   </div>
                 </Link>     
                 
-                <Link to="/DemoDb">
+                <Link to="/OneLandingVehicle">
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full px-5 flex justify-between items-center">
                       <h1
@@ -190,7 +190,7 @@ const Dashboard = () => {
                             : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                         }`}
                       >
-                        DemoPostImage
+                        OneDemoPostImage
                       </h1>
                       <i class="fa fa-address-book w-2 !text-[30px]"></i>
                     </div>
