@@ -13,6 +13,7 @@ import Vehicles, {
   FullSuvVehicles,
   MiniVanVehicles,
   PickUpVehicles,
+  OneDayVehicles,
 } from "./pages/Vehicles.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
   {
     path: "/PickUpVehicles",
     element: <PickUpVehicles />,
+  },
+  {
+    path: "/OneDayVehicles",
+    element: <OneDayVehicles />,
   },
   {
     path: "/Services",
