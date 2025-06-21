@@ -61,7 +61,7 @@ export const OneGet = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one");
+        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true, });
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
