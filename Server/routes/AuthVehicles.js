@@ -237,10 +237,12 @@ router.post("/one", authMiddleware, upload.single('image'), async (req, res) => 
 })
 
 // Update route - Update image and/or text
-router.put("/one/:id", upload.single("image"), async (req, res) => {
+router.put("/one/:id", authMiddleware, upload.single("image"), async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, item, price } = req.body;
+    const { name, item, price } = req.body;  
+    // this conatines mongoDb id and it will save user info in booking that will have acces to only user access!
+    const userId = req.user.id;
 
     const post = await UserPostOne.findById(id);
     if (!post) return res.status(404).json({ error: 'Post not found' });
@@ -259,6 +261,8 @@ router.put("/one/:id", upload.single("image"), async (req, res) => {
     post.name = name || post.name;
     post.item = item || post.item;
     post.price = price || post.price;
+    post.model = model || post.model;
+
 
     await post.save();
 
