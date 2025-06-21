@@ -14,21 +14,6 @@ const Vehicles = () => {
   const MidSuv = "";
   const FullSuv = "";
 
-  const fetchImages = async () => {
-    setIsloading(true);
-    try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads");
-      setImages(res.data);
-    } catch (err) {
-      console.error("Fetching images failed:", err);
-    } finally {
-    setIsloading(false); // <-- and this
-  }
-  };
-
-  useEffect(() => {
-    fetchImages();
-  }, []);
 
 
   useEffect(() => {
