@@ -1,23 +1,12 @@
 import mongoose from "mongoose";
 
 const ImageSchema = new mongoose.Schema({
-  public_id: String,  
-  name: {
-    type: String,
-    required: true,
-  },
-  item: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-  url: {
-    type: String,
-    required: true,
-  },
+  public_id: String,
+  filename: String,
+  url: String,
+  name: String,
+  item: String,
+  description: String,
   createdAt: { type: Date, default: Date.now },
 });
 
