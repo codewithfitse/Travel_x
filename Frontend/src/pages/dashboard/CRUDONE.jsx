@@ -61,7 +61,7 @@ export const OneGet = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true, });
+        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -181,7 +181,7 @@ export const OnePost = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one");
+      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -392,7 +392,7 @@ export const OneEdits = () => {
 
     try {
       await axios
-        .put(`https://travel-x-408k.onrender.com/uploads/one/${img._id}`, formData, { withCredentials: true, })
+        .put(`https://travel-x-408k.onrender.com/uploads/one/${img._id}`, formData, { withCredentials: true })
         .then(() => navigate("/OneGet"))
         .catch((err) => console.log(err));
     } catch (error) {
@@ -553,7 +553,7 @@ export const OneDeletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, { withCredentials: true, })
+      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, { withCredentials: true })
       .then(() => {
         alert("successfully deleted");
         navigate("/OneGet");
