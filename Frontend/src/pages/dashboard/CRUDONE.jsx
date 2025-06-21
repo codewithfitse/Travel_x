@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header, SideBar } from "./component";
 
-export const LandingVehicle = () => {
+export const OneLandingVehicle = () => {
   const [isloading, setIsloading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ export const LandingVehicle = () => {
   );
 };
 
-export const Get = () => {
+export const OneGet = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
@@ -136,7 +136,7 @@ export const Get = () => {
   );
 };
 
-export const Post = () => {
+export const OnePost = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState();
   const [name, setName] = useState();
@@ -307,7 +307,7 @@ export const Post = () => {
   );
 };
 
-export const Views = () => {
+export const OneViews = () => {
   //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
@@ -358,7 +358,7 @@ export const Views = () => {
   );
 };
 
-export const Edits = () => {
+export const OneEdits = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
@@ -541,7 +541,7 @@ export const Edits = () => {
   );
 };
 
-export const Deletes = () => {
+export const OneDeletes = () => {
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
