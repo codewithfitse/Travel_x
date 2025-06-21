@@ -7,7 +7,7 @@ import axios from "axios";
 
 const Vehicles = () => {
   const [isloading, setIsloading] = useState(false);
-  const [datas, setDatas] = useState([]);
+  const [data, setData] = useState([]);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
   const Suv = "";
@@ -36,7 +36,7 @@ const Vehicles = () => {
     const fetchImages = async () => {
       try {
         const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
-        setDatas(res.data);
+        setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
       } finally {
@@ -187,7 +187,7 @@ const Vehicles = () => {
           </div>
         </Link>
 
-      {datas && datas.map((user) => (
+      {data && data.map((user) => (
         <Link to=""}>
           {user?.name}
           <div className="w-full py-8 card">
