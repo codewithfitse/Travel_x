@@ -189,7 +189,7 @@ router.get("/suvOne", async (req, res) => {
 
 // I make this Post to upload to cloudeary cloud storage!
 router.post("/one", authMiddleware, upload.single('image'), async (req, res) => {
-  const { name, item, price } = req.body;
+  const { name, item, price, model } = req.body;
   // this conatines mongoDb id and it will save user info in booking that will have acces to only user access!
   const userId = req.user.id;
   if (!req.file) {
