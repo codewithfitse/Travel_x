@@ -173,6 +173,20 @@ router.delete("/:id", async (req, res) => {
 
 
 // I make this to list of suv Photos from Cloudinarey! 
+router.get("/One", async (req, res) => {
+  try {
+    const images = await UserPostOne.find({  }).sort({
+      uploadedAt: -1,
+    });
+    console.log("Here is work product!");
+
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch images" });
+  }
+});
+
+// I make this to list of suv Photos from Cloudinarey! 
 router.get("/suvOne", async (req, res) => {
   try {
     const images = await UserPostOne.find({ item: "suv" }).sort({
