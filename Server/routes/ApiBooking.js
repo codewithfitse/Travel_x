@@ -52,7 +52,7 @@ router.delete("/booking/:id", async (req, res) => {
   }
 });
 
-
+// i made this b/c to list all bookings
 router.get("/demos", authMiddleware, async (req, res) => {
   const userId = req.user.id;
   const data = await UserDemo.find({ }).sort({ createdAt: -1 });
@@ -60,15 +60,19 @@ router.get("/demos", authMiddleware, async (req, res) => {
   console.log(data);
 });
 
+// i made this b/c to list all bookings the user have
 router.get("/demo", authMiddleware, async (req, res) => {
+  // this is cookie that hold user info mongodb id.
   const userId = req.user.id;
   const data = await UserDemo.find({ userId }).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
 
+// This one i use to separet users on there own.
 router.post("/demo", authMiddleware, (req, res) => {
   const { fullName, email, phone, item, destination } = req.body;
+  // this conatines mongoDb id and it will save user info in booking that will have acces to only user access!
   const userId = req.user.id;
   UserDemo.create({ fullName, email, phone, item, destination, userId: userId })
     .then((employee) => {
@@ -78,6 +82,7 @@ router.post("/demo", authMiddleware, (req, res) => {
   console.log(`Posted Successfully`);
 });
 
+// Specific booking 
 router.get("/demo/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -92,6 +97,7 @@ router.get("/demo/:id", async (req, res) => {
   }
 });
 
+// i use patch to edit status of booking!
 router.patch("/demo/:id", async (req, res) => {
   const { id } = req.params;
   const { stat } = req.body;
@@ -107,6 +113,7 @@ router.patch("/demo/:id", async (req, res) => {
   }
 });
 
+// to delete booking from databse!
 router.delete("/demo/:id", async (req, res) => {
   const { id } = req.params;
   try {
