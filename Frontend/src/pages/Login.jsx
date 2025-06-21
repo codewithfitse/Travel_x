@@ -33,8 +33,12 @@ export const Login = () => {
         localStorage.setItem("user", JSON.stringify(email));
 
         console.log(result);
-        if (data.user?.isAdmin || data.user?.isSubAdmin) {
+        //if (data.user?.isAdmin || data.user?.isSubAdmin) {
+        if (data.user?.isAdmin) {
           navigate("/Admin");
+        } else if (data.user?.isSubAdmin) {
+          navigate("/SubAdmin");
+        } else {
         } else if (data.user) {
           navigate("/Dashboard");
         } else {
@@ -74,7 +78,7 @@ export const Login = () => {
 
         if (user.isAdmin) {
           navigate("/Admin");
-        } else if (user?.isSubAdmin) {
+        } else if (user.isSubAdmin) {
           navigate("/SubAdmin");
         } else {
           navigate("/Dashboard");
