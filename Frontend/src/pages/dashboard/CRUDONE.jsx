@@ -392,7 +392,7 @@ export const OneEdits = () => {
 
     try {
       await axios
-        .put(`https://travel-x-408k.onrender.com/uploads/one/${img._id}`, formData)
+        .put(`https://travel-x-408k.onrender.com/uploads/one/${img._id}`, formData, { withCredentials: true, })
         .then(() => navigate("/OneGet"))
         .catch((err) => console.log(err));
     } catch (error) {
@@ -553,7 +553,7 @@ export const OneDeletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`)
+      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, { withCredentials: true, })
       .then(() => {
         alert("successfully deleted");
         navigate("/OneGet");
