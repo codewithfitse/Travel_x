@@ -175,9 +175,9 @@ const Vehicles = () => {
         </Link>
 
       {data && data.map((user) => (
-        <Link to=""}>
+        <Link to="/">
           {user?.name}
-          <div className="w-full py-8 card">
+          <div className="w-full py-8 card" key="user._id">
             <div className="pb-15 flex justify-center">
               <img src={user?.url} alt="" srcset="" />
             </div>
