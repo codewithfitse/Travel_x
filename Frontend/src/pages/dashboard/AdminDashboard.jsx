@@ -161,7 +161,23 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </Link>
-                )}                
+                )}
+                <Link to="/DemoDb">
+                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                    <div className="w-full px-5 flex justify-between items-center">
+                      <h1
+                        className={`font-bold transition-all duration-300 ease-in-out ${
+                          toggle
+                            ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                            : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                        }`}
+                      >
+                        Demo
+                      </h1>
+                      <i class="fa fa-address-book w-2 !text-[30px]"></i>
+                    </div>
+                  </div>
+                </Link>                
               </div>
             </main>
           </div>
