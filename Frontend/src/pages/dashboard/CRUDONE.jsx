@@ -158,7 +158,7 @@ export const OnePost = () => {
     formData.append('image', image); 
 
     try {
-      const res = await axios.post("https://travel-x-408k.onrender.com/uploads/one", formData, {
+      const res = await axios.post("https://travel-x-408k.onrender.com/uploads/one", formData, { withCredentials: true }, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
