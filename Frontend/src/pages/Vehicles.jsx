@@ -189,14 +189,14 @@ const Vehicles = () => {
 
       {datas && datas.map((user) => (
         <Link to=""}>
-          {user.name}
+          {user?.name}
           <div className="w-full py-8 card">
             <div className="pb-15 flex justify-center">
-              <img src={user.url} alt="" srcset="" />
+              <img src={user?.url} alt="" srcset="" />
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
-              <h2>Starting ${user.price}</h2>
+              <h2>Starting ${user?.price}</h2>
               <h2>Toyota VITZ or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
