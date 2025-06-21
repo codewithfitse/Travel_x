@@ -13,7 +13,7 @@ export const DemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/demo", {
+          .get("https://travel-x-408k.onrender.com/dashboard/demos", {
             withCredentials: true,
           })
           .then((result) => {
