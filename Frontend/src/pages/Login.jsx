@@ -38,7 +38,6 @@ export const Login = () => {
           navigate("/Admin");
         } else if (data.user?.isSubAdmin) {
           navigate("/SubAdmin");
-        } else {
         } else if (data.user) {
           navigate("/Dashboard");
         } else {
