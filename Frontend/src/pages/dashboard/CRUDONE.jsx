@@ -159,8 +159,8 @@ export const OnePost = () => {
 
     try {
       const res = await axios.post("https://travel-x-408k.onrender.com/uploads/one", formData, {
+        withCredentials: true,
         headers: {
-          withCredentials: true,
           "Content-Type": "multipart/form-data",
         },
       });      
