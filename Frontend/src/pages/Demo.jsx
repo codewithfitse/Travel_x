@@ -16,7 +16,7 @@ const Demo = () => {
     e.preventDefault();
     axios
       .post(
-        "http://localhost:3000/dashboard/demo",
+        "https://travel-x-408k.onrender.com/dashboard/demo",
         {
           fullName,
           email,
