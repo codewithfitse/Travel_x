@@ -13,7 +13,7 @@ export const DemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("http://localhost:3000/dashboard/demo", {
+          .get("https://travel-x-408k.onrender.com/dashboard/demo", {
             withCredentials: true,
           })
           .then((result) => {
@@ -147,7 +147,7 @@ export const UserDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("http://localhost:3000/dashboard/demo", {
+          .get("https://travel-x-408k.onrender.com/dashboard/demo", {
             withCredentials: true,
           })
           .then((result) => {
@@ -288,7 +288,7 @@ export const EditDemoDb = () => {
 
   async function handleDelete(_id) {
     try {
-      await axios.delete(`http://localhost:3000/dashboard/demo/${_id}`, {
+      await axios.delete(`https://travel-x-408k.onrender.com/dashboard/demo/${_id}`, {
         withCredentials: true,
       });
       alert("Successfully Deleted!");
@@ -301,7 +301,7 @@ export const EditDemoDb = () => {
 
   async function handleStatus(_id) {
     try {
-      await axios.patch(`http://localhost:3000/dashboard/demo/${_id}`, {
+      await axios.patch(`https://travel-x-408k.onrender.com/dashboard/demo/${_id}`, {
         stat,
       });
       navigate("/DemoDb");
