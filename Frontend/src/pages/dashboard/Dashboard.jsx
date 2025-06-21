@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
+import { Header, SideBar } from "../dashboard/component";
+import axios from "axios";
 import { Button } from "../../components/Button";
 
 const Dashboard = () => {
