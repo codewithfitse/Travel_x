@@ -7,6 +7,7 @@ import axios from "axios";
 
 const Vehicles = () => {
   const [isloading, setIsloading] = useState(false);
+  const [datas, setDatas] = useState([]);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
   const Suv = "";
@@ -28,6 +29,24 @@ const Vehicles = () => {
   useEffect(() => {
     fetchImages();
   }, []);
+
+
+  useEffect(() => {
+    // Fetch images from backend
+    const fetchImages = async () => {
+      try {
+        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
+        setDatas(res.data);
+      } catch (err) {
+        console.error("Error fetching images:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, []);
+  
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
@@ -167,8 +186,37 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
+
+      {datas.map((user) => (
+        <Link to=""}>
+          {user.name}
+          <div className="w-full py-8 card">
+            <div className="pb-15 flex justify-center">
+              <img src={user.url} alt="" srcset="" />
+            </div>
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
+              <h2>Starting ${user.price}</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+            </div>
+          </div>
+        </Link>
+        ))}
+
+        
+        
         
       </div>
+
+      
+      
 
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
