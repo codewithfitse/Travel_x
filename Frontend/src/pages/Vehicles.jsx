@@ -33,7 +33,9 @@ const Vehicles = () => {
 
   useEffect(() => {
     // Fetch images from backend
+    
     const fetchImages = async () => {
+         setIsloading(true);
       try {
         const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
         setData(res.data);
