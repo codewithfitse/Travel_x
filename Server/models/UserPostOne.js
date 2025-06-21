@@ -6,9 +6,9 @@ const ImageSchema = new mongoose.Schema({
   url: String,
   name: String,
   item: String,
-  description: String,
+  model: String,
   createdAt: { type: Date, default: Date.now },
 });
 
-const UserPost = mongoose.model("Images", ImageSchema);
-export default UserPost;
+const UserPostOne = mongoose.model("oneImages", ImageSchema);
+export default UserPostOne;
