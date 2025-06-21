@@ -187,7 +187,7 @@ const Vehicles = () => {
           </div>
         </Link>
 
-      {datas.map((user) => (
+      {datas && datas.map((user) => (
         <Link to=""}>
           {user.name}
           <div className="w-full py-8 card">
@@ -210,14 +210,9 @@ const Vehicles = () => {
         </Link>
         ))}
 
-        
-        
-        
       </div>
 
       
-      
-
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
