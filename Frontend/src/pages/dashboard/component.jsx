@@ -86,7 +86,7 @@ export const Header = ({ toggle }) => {
             toggle ? "pr-[70px]" : "ml-0"
           }`}
         >
-          <Link to="/SubAdmin">
+          <Link to="/Home">
             <div className="flex justify-between">Dashboard</div>
           </Link>
 
