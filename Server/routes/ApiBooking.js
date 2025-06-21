@@ -53,6 +53,13 @@ router.delete("/booking/:id", async (req, res) => {
 });
 
 
+router.get("/demos", authMiddleware, async (req, res) => {
+  const userId = req.user.id;
+  const data = await UserDemo.find({ }).sort({ createdAt: -1 });
+  res.json(data);
+  console.log(data);
+});
+
 router.get("/demo", authMiddleware, async (req, res) => {
   const userId = req.user.id;
   const data = await UserDemo.find({ userId }).sort({ createdAt: -1 });
