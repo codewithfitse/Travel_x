@@ -35,6 +35,14 @@ import {
   Post,
   Get,
 } from "./pages/dashboard/CRUDVECHICL.jsx";
+import {
+  OneLandingVehicle,  
+  OneDeletes,
+  OneEdits,
+  OneViews,
+  OnePost,
+  OneGet,
+} from "./pages/dashboard/CRUDONE.jsx";
 import { Profile } from "./pages/dashboard/Profile.jsx";
 import { ContactDb, EditContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb, EditBookingDb } from "./pages/dashboard/BookingDb.jsx";
@@ -144,6 +152,30 @@ const router = createBrowserRouter([
   {
     path: "/Deletes",
     element: <Deletes />,
+  },
+  {
+    path: "/OneLandingVehicle",
+    element: <OneLandingVehicle />,
+  },  
+  {
+    path: "/OnePost",
+    element: <OnePost />,
+  },
+  {
+    path: "/OneGet",
+    element: <OneGet />,
+  },
+  {
+    path: "/OneViews",
+    element: <OneViews />,
+  },
+  {
+    path: "/OneEdits",
+    element: <OneEdits />,
+  },
+  {
+    path: "/OneDeletes",
+    element: <OneDeletes />,
   },
   {
     path: "/Edit",
