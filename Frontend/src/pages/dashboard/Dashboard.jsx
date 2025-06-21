@@ -5,47 +5,51 @@ import { Link } from "react-router";
 import { Button } from "../../components/Button";
 
 const Dashboard = () => {
-  return (
-    <div className="w-full h-full overflow-hidden background text-amber-50">
-      <Header />
-      <div className="w-full h-[50vh] flex justify-center pt-[210px] lg:pt-[200px] pl-[20px] lg:pl-[40px]">
-        <div className="w-full h-full lg:w-[100%]">
-          <h1 className="text-[30px] text-center lg:text-[45px]">
-            <span className="text-[40px] lg:text-[60px] text-[#16fe01] font-bold">
-              Welcome
-            </span>{" "}
-            to Dashboard
-          </h1>
-          <h2 className="text-[25px] text-center lg:text-[40px]">
-            You Login Successfully👌
-          </h2>
+  const [loading, setLoading] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
-          <div className="flex justify-center mt-5 lg:mt-10 space-x-2.5">
-            <Link to={"/Home"}>
-              <Button text={"Go To HomePage"} />
-            </Link>
+  
+  return (
+    <>
+      <section className="min-h-screen overflow-x-hidden">
+        <div className="w-full h-screen flex bg-[#020817] text-white">
+          <SideBar toggle={toggle} setToggle={setToggle} />
+          <div className="ml-14 flex flex-col flex-1">
+            <Header toggle={toggle} />
+            <main className="w-full h-full pt-20 p-5 bg-transparent">
+              <div
+                className={`h-full lg:px-30 bg-gray-900 ${
+                  toggle
+                    ? "w-auto ml-22 p-3 text-[10px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                    : " p-5 text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]"
+                }`}
+              >
+                <div className="w-full h-fit flex justify-between items-center">
+                  <div className="w-fit h-full py-1">
+                    <h1 className="text-[30px] text-white font-bold">
+                      DataBase
+                    </h1>
+                    <h1 className="mt-10 text-[30px] text-center text-white font-bold">
+                      {loading ? "Loading..." : null}
+                    </h1>
+                  </div>
+                  <div className="w-fit h-full">
+                  </div>
+                </div>
+                <Link to="/UserDemoDb">
+                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                    <div className="w-full px-5 flex justify-between items-center">
+                      <h1 className="text-[30px] font-bold">Booking Demo</h1>
+                      <i class="fa fa-group w-2 !text-[30px]"></i>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </main>
           </div>
         </div>
-      </div>
-
-      <div className="my-[50px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
-          </h1>
-          <h2 className="text-[10px] lg:text-[20px] text-2xl">
-            We Always Have The Best Customer Services In Town
-          </h2>
-        </div>
-        <div className="lg:mt-7 flex justify-center items-center">
-          <Link to={"/Booking"}>
-            <Button text={"Book Now!"} />
-          </Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
+      </section>
+    </>
   );
 };
 
