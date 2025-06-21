@@ -244,14 +244,14 @@ export const OnePost = () => {
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
-              Price:
+              Model:
             </label>
             <input
               type="text"
               name='model'
               onChange={(e) => setModel(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
-              placeholder="Choose Description"
+              placeholder="Choose Model"
             />
           </div>
           <div className="w-full flex flex-col relative">
