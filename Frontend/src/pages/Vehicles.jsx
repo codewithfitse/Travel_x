@@ -172,14 +172,13 @@ const Vehicles = () => {
         </Link>
 
         <Link to="/OneDayVehicles">
-          OneDay
           <div className="w-full py-8 card" key="user._id">
             <div className="pb-15 flex justify-center">
               <img src="send.jpg" alt="" srcset="" />
             </div>
             <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
-              <h2>Starting $000</h2>
+              <h1 className="text-[40px] text-[#16fe01] font-bold">One Day with Driver!</h1>
+              <h2>Starting 2200Br - 5000Br</h2>
               <h2>Toyota VITZ or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
