@@ -109,7 +109,7 @@ export const OneGet = () => {
                         <strong>Price:</strong> {img.price}
                       </p>
 
-                      <Link to="/Views" state={{ img }}>
+                      <Link to="/OneViews" state={{ img }}>
                         <button className="text-blue-300 text-2xl font-semibold">
                           Views
                         </button>
@@ -290,6 +290,9 @@ export const OnePost = () => {
               <p>
                 <strong>Price:</strong> {img.price}
               </p>
+              <p>
+                <strong>Model:</strong> {img.model}
+              </p>
 
               <p>{img.filename}</p>
               <div className=" flex justify-center">
@@ -335,10 +338,10 @@ export const OneViews = () => {
               <strong>Model:</strong> {img?.model}
             </p>
             <div className="flex space-x-4">
-              <Link to="/Edits" state={{ img }}>
+              <Link to="/OneEdits" state={{ img }}>
                 Update
               </Link>
-              <Link to="/Deletes" state={{ img }}>
+              <Link to="/OneDeletes" state={{ img }}>
                 Delete
               </Link>
             </div>
@@ -389,7 +392,7 @@ export const OneEdits = () => {
     try {
       await axios
         .put(`https://travel-x-408k.onrender.com/uploads/one/${img._id}`, formData)
-        .then(() => navigate("/Get"))
+        .then(() => navigate("/OneGet"))
         .catch((err) => console.log(err));
     } catch (error) {
       console.log(error);
@@ -552,7 +555,7 @@ export const OneDeletes = () => {
       .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`)
       .then(() => {
         alert("successfully deleted");
-        navigate("/Get");
+        navigate("/OneGet");
       })
       .catch((err) => console.log(err));
   }
