@@ -20,7 +20,7 @@ import Contact from "./pages/Contact.jsx";
 import { Landing } from "./pages/Landing.jsx";
 import { SignUp } from "./pages/SignUp.jsx";
 import { Login } from "./pages/Login.jsx";
-import Dashboard from "./pages/dashboard/Dashboard.jsx";
+import UserDashboard from "./pages/dashboard/UserDashboard.jsx";
 import AdminDashboard from "./pages/dashboard/AdminDashboard.jsx";
 import SubDashboard from "./pages/dashboard/SubAdminDashboard.jsx";
 import {
@@ -44,13 +44,24 @@ import {
   OnePost,
   OneGet,
 } from "./pages/dashboard/CRUDONE.jsx";
-import { Profile } from "./pages/dashboard/Profile.jsx";
+import {
+  Profile,
+  SubProfile,
+  UserProfile,
+} from "./pages/dashboard/Profile.jsx";
 import { ContactDb, EditContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb, EditBookingDb } from "./pages/dashboard/BookingDb.jsx";
-// import { Dash } from "./pages/Dash.jsx";
 import UserDb from "./pages/dashboard/UserDb.jsx";
 import Demo from "./pages/Demo.jsx";
-import { DemoDb, EditDemoDb, UserDemoDb } from "./pages/dashboard/DemoDb.jsx";
+import {
+  CancledDemoDb,
+  AllDemoDb,
+  EditDemoDb,
+  LandingDemoDb,
+  PendingDemoDb,
+  SucessfullDemoDb,
+  UserDemoDb,
+} from "./pages/dashboard/DemoDb.jsx";
 
 const router = createBrowserRouter([
   {
@@ -128,11 +139,7 @@ const router = createBrowserRouter([
   }, 
   {
     path: "/Dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/Profile",
-    element: <Profile />,
+    element: <UserDashboard />,
   },
   {
     path: "/LandingVehicle",
@@ -215,8 +222,24 @@ const router = createBrowserRouter([
     element: <EditBookingDb />,
   },
   {
-    path: "/DemoDb",
-    element: <DemoDb />,
+    path: "/LandingDemoDb",
+    element: <LandingDemoDb />,
+  },
+  {
+    path: "/AllDemoDb",
+    element: <AllDemoDb />,
+  },
+  {
+    path: "/PendingDemoDb",
+    element: <PendingDemoDb />,
+  },
+  {
+    path: "/SucessfullDemoDb",
+    element: <SucessfullDemoDb />,
+  },
+  {
+    path: "/CancledDemoDb",
+    element: <CancledDemoDb />,
   },
   {
     path: "/UserDemoDb",
@@ -225,6 +248,18 @@ const router = createBrowserRouter([
   {
     path: "/EditDemoDb",
     element: <EditDemoDb />,
+  },
+  {
+    path: "/Profile",
+    element: <Profile />,
+  },
+  {
+    path: "/UserProfile",
+    element: <UserProfile />,
+  },
+  {
+    path: "/SubProfile",
+    element: <SubProfile />,
   },  
 ]);
 
