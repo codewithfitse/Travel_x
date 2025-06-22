@@ -163,7 +163,7 @@ const Dashboard = () => {
                   </Link>
                 )}
                 
-                <Link to="/DemoDb">
+                <Link to="/LandingDemoDb">
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full px-5 flex justify-between items-center">
                       <h1
