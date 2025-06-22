@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Header, SideBar } from "../dashboard/component";
 import { UserHeader, UserSideBar } from "../dashboard/component";
 import { SubHeader, SubSideBar } from "../dashboard/component";
