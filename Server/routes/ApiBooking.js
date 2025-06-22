@@ -26,6 +26,33 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   console.log(`Posted Successfully`);
 });
 
+router.get("/OneDayVehiclesBook/Pending", authMiddleware, async (req, res) => {
+  const userId = req.user.id;
+  const data = await UserDemo.find({ status: "pending" }).sort({
+    createdAt: -1,
+  });
+  res.json(data);
+  console.log(data);
+});
+
+router.get("/OneDayVehiclesBook/Successful", authMiddleware, async (req, res) => {
+  const userId = req.user.id;
+  const data = await UserDemo.find({ status: "successful" }).sort({
+    createdAt: -1,
+  });
+  res.json(data);
+  console.log(data);
+});
+
+router.get("/OneDayVehiclesBook/Canceled", authMiddleware, async (req, res) => {
+  const userId = req.user.id;
+  const data = await UserDemo.find({ status: "canceled" }).sort({
+    createdAt: -1,
+  });
+  res.json(data);
+  console.log(data);
+});
+
 // Specific booking 
 router.get("/OneDayVehiclesBook/:id", async (req, res) => {
   const { id } = req.params;
