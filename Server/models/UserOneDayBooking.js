@@ -3,10 +3,16 @@ import mongoose from "mongoose";
 const ImageSchema = new mongoose.Schema({
   userId: String,
   url: String,
-  name: String,
+  ownerName: String,
+  customName: String,
+  email: String,
   item: String,
   price: String,
   model: String,
+  status: {
+    type: String,
+    default: "Pending",
+  },  
   createdAt: { type: Date, default: Date.now },
 });
 
