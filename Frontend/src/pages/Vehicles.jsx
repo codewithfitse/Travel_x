@@ -751,8 +751,8 @@ export const OneDayVehiclesBook = () => {
       await axios.post(`https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`, user, {
         withCredentials: true,
       });
-      alert("Successfully Deleted!");
-      navigate("/LandingDemoDb");
+      alert("Successfully Booked!");
+      navigate("/UserDashboard");
     } catch (error) {
       alert("Not Deleted Try Again!");
       console.log(error);
