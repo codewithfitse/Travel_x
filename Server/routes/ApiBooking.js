@@ -12,7 +12,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   const { url, name, price, item, model } = req.body;
   const {id, firstName, email} = req.user;
 
-  UserOneDay.create({ url, ownerName:name, customName:firstName, price, item, model, userId: id, userEmail: email, })
+  UserOneDay.create({ url, ownerName:name, customName:firstName, price, item, model, userId: id, email: email, })
     .then((employee) => {
       res.json(employee);
     })
