@@ -947,7 +947,7 @@ export const EditDemoDb = () => {
                       <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                     </div>
                     <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                      Customer:{user.customName} Owner:{user.ownerName}
+                      Customer:{customName}
                     </h1>
                     <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                       {model}
@@ -972,7 +972,7 @@ export const EditDemoDb = () => {
                         </div>
                         <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                           <div className="w-full h-15">
-                            <h1 className="text-gray-400">Destination</h1>
+                            <h1 className="text-gray-400">Price</h1>
                             <h1 className="font-semibold">{price}</h1>
                           </div>
                           <div className="w-full h-15">
