@@ -39,7 +39,7 @@ export const Login = () => {
         } else if (data.user?.isSubAdmin) {
           navigate("/SubAdmin");
         } else if (data.user) {
-          navigate("/Dashboard");
+          navigate("/UserDashboard");
         } else {
           setErr("Something went wrong. Go check it again!");
         }
