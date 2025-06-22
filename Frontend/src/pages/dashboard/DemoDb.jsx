@@ -107,10 +107,10 @@ export const LandingDemoDb = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.customName} Owner:{user.ownerName}
+                            Customer:{user.customName} Car Name:{user.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                            {user.isAdmin === true ? "Admin" : "User"}
+                            Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             {/* Member since January 15, 2023{" "} */}
@@ -136,7 +136,7 @@ export const LandingDemoDb = () => {
                               </div>
                               <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
-                                  <h1 className="text-gray-400">Destination</h1>
+                                  <h1 className="text-gray-400">Price</h1>
                                   <h1 className="font-semibold">
                                     {user.price}
                                   </h1>
@@ -244,10 +244,10 @@ export const PendingDemoDb = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.customName} Owner:{user.ownerName}
+                            Customer:{user.customName} Car Name:{user.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                            {user.isAdmin === true ? "Admin" : "User"}
+                            Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             {/* Member since January 15, 2023{" "} */}
@@ -273,7 +273,7 @@ export const PendingDemoDb = () => {
                               </div>
                               <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
-                                  <h1 className="text-gray-400">Destination</h1>
+                                  <h1 className="text-gray-400">Price</h1>
                                   <h1 className="font-semibold">
                                     {user.price}
                                   </h1>
@@ -381,10 +381,10 @@ export const SucessfullDemoDb = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.customName} Owner:{user.ownerName}
+                            Customer:{user.customName} Car Name:{user.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                            {user.isAdmin === true ? "Admin" : "User"}
+                            Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             {/* Member since January 15, 2023{" "} */}
@@ -410,7 +410,7 @@ export const SucessfullDemoDb = () => {
                               </div>
                               <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
-                                  <h1 className="text-gray-400">Destination</h1>
+                                  <h1 className="text-gray-400">Price</h1>
                                   <h1 className="font-semibold">
                                     {user.price}
                                   </h1>
@@ -518,10 +518,10 @@ export const AllDemoDb = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.customName} Owner:{user.ownerName}
+                            Customer:{user.customName} Car Name:{user.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                            {user.isAdmin === true ? "Admin" : "User"}
+                            Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             {/* Member since January 15, 2023{" "} */}
@@ -547,7 +547,7 @@ export const AllDemoDb = () => {
                               </div>
                               <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
-                                  <h1 className="text-gray-400">Destination</h1>
+                                  <h1 className="text-gray-400">Price</h1>
                                   <h1 className="font-semibold">
                                     {user.price}
                                   </h1>
@@ -655,10 +655,10 @@ export const CancledDemoDb = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.customName} Owner:{user.ownerName}
+                            Customer:{user.customName} Car Name:{user.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                            {user.isAdmin === true ? "Admin" : "User"}
+                            Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             {/* Member since January 15, 2023{" "} */}
@@ -684,7 +684,7 @@ export const CancledDemoDb = () => {
                               </div>
                               <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
-                                  <h1 className="text-gray-400">Destination</h1>
+                                  <h1 className="text-gray-400">Price</h1>
                                   <h1 className="font-semibold">
                                     {user.price}
                                   </h1>
@@ -775,77 +775,82 @@ export const UserDemoDb = () => {
                   </div>
                 </div>
 
-                {(isLoading && <h1>Loading...</h1>) || (
-                  <h1>There is now Bookings here</h1>
-                )}
-                {data.map((user) => (
-                  <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                    <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
-                      <div className="relative">
-                        <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                          <h1 className="font-bold text-[40px]">
-                            {user.fullName?.charAt(0).toUpperCase()}{" "}
-                          </h1>
-                        </div>
-                        <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
-                      </div>
-                      <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                        {user.fullName}
-                      </h1>
-                      <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {user.isAdmin === true ? "Admin" : "User"}
-                      </h1>
-                      <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                        {/* Member since January 15, 2023{" "} */}
-                        {new Date(user.createdAt).toLocaleString("en-GB")}
-                      </h1>
-                    </div>
-                    <div className="w-full h-full py-5 px-5 bg-gray-800">
-                      <div className="w-full h-full">
-                        <div className="border-b-2 pb-2 border-gray-400">
-                          <div className="w-full flex flex-col lg:flex-row gap-1">
-                            <div className="w-full h-15">
-                              <h1 className="text-gray-400">Email</h1>
-                              <h1 className="font-semibold">{user.email}</h1>
-                            </div>
-                            <div className="w-full h-15">
-                              <h1 className="text-gray-400">Phone</h1>
-                              <h1 className="font-semibold">{user.phone}</h1>
-                            </div>
-                          </div>
-                          <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
-                            <div className="w-full h-15">
-                              <h1 className="text-gray-400">Destination</h1>
-                              <h1 className="font-semibold">
-                                {user.destination}
+                {isLoading && <h1>Loading...</h1>}
+                {(data &&
+                  data.map((user) => (
+                    <Link to="/EditDemoDb" state={{ user }}>
+                      <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                        <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
+                          <div className="relative">
+                            <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
+                              <h1 className="font-bold text-[40px]">
+                                {user.customName?.charAt(0).toUpperCase()}{" "}
                               </h1>
                             </div>
-                            <div className="w-full h-15">
-                              <h1 className="text-gray-400">Car type</h1>
-                              <h1 className="font-semibold">{user.item}</h1>
+                            <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
+                          </div>
+                          <h1 className="mt-2 text-2xl text-white text-center font-bold">
+                            Customer:{user.customName} Car Name:{user.ownerName}
+                          </h1>
+                          <h1 className="text-[18px] text-blue-400 text-center font-semibold">
+                            Model:{user.model}
+                          </h1>
+                          <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                            {/* Member since January 15, 2023{" "} */}
+                            {new Date(user.createdAt).toLocaleString("en-GB")}
+                          </h1>
+                        </div>
+                        <div className="w-full h-full py-5 px-5 bg-gray-800">
+                          <div className="w-full h-full">
+                            <div className="border-b-2 pb-2 border-gray-400">
+                              <div className="w-full flex flex-col lg:flex-row gap-1">
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Email</h1>
+                                  <h1 className="font-semibold">
+                                    {user.email}
+                                  </h1>
+                                </div>
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Phone</h1>
+                                  <h1 className="font-semibold">
+                                    {user.phone}
+                                  </h1>
+                                </div>
+                              </div>
+                              <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Price</h1>
+                                  <h1 className="font-semibold">
+                                    {user.price}
+                                  </h1>
+                                </div>
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Car type</h1>
+                                  <h1 className="font-semibold">{user.item}</h1>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="w-full h-fit py-2 flex flex-col space-y-3">
+                              <div className="w-fit h-full py-1">
+                                <h1 className="text-[20px] text-gray-300 font-bold">
+                                  Status
+                                </h1>
+                              </div>
+                              <div className="w-full h-fit flex gap-3">
+                                <h1
+                                  className={`capitalize ${
+                                    user.status === "Pending" && "text-green"
+                                  }`}
+                                >
+                                  {user.status}
+                                </h1>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div className="w-full h-fit py-2 flex flex-col space-y-3">
-                          <div className="w-fit h-full py-1">
-                            <h1 className="text-[20px] text-gray-300 font-bold">
-                              Status
-                            </h1>
-                          </div>
-                          <div className="w-full h-fit flex gap-3">
-                            <h1
-                              className={`capitalize ${
-                                user.status === "Pending" && "text-green"
-                              }`}
-                            >
-                              {user.status}
-                            </h1>
-                          </div>
-                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
+                    </Link>
+                  ))) || <h1>There is now Bookings here</h1>}
               </div>
             </main>
           </div>
