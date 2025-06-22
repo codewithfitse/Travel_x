@@ -26,6 +26,52 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   console.log(`Posted Successfully`);
 });
 
+// Specific booking 
+router.get("/OneDayVehiclesBook/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await UserOneDay.find({ _id: id });
+    res.json(data);
+    console.log("Sorted Demo:", data);
+  } catch (err) {
+    console.error("Failed to fetch Demo:", err);
+    res
+      .status(500)
+      .json({ message: "Error fetching Demo", error: err.message });
+  }
+});
+
+// i use patch to edit status of booking!
+router.patch("/OneDayVehiclesBook/:id", async (req, res) => {
+  const { id } = req.params;
+  const { stat } = req.body;
+  try {
+    const data = await UserOneDay.findByIdAndUpdate(id, { status: stat });
+    res.json(data);
+    console.log("Deleted bookings:", data);
+  } catch (err) {
+    console.error("Failed to fetch bookings:", err);
+    res
+      .status(500)
+      .json({ message: "Error fetching bookings", error: err.message });
+  }
+});
+
+// to delete booking from databse!
+router.delete("/OneDayVehiclesBook/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await UserOneDay.findByIdAndDelete(id);
+    res.json(data);
+    console.log("Deleted bookings:", data);
+  } catch (err) {
+    console.error("Failed to fetch bookings:", err);
+    res
+      .status(500)
+      .json({ message: "Error fetching bookings", error: err.message });
+  }
+});
+
 // I make this to list all booking 
 router.get("/booking", async (req, res) => {
   const data = await UserBook.find({}).sort({ createdAt: -1 });
