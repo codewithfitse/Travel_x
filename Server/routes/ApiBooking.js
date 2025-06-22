@@ -10,9 +10,9 @@ const router = express.Router();
 
 router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   const { url, name, price, item, model } = req.body;
-  const {id, firstName, email} = req.user;
+  const {id, firstName, email, phone } = req.user;
 
-  UserOneDay.create({ url, ownerName:name, customName:firstName, price, item, model, userId: id, email: email, })
+  UserOneDay.create({ url, ownerName:name, customName:firstName, price, item, model, userId: id, email: email, phone: phone })
     .then((employee) => {
       res.json(employee);
     })
