@@ -107,7 +107,7 @@ export const LandingDemoDb = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Cutom:{user.customName} Owner:{user.ownerName}
+                            Customer:{user.customName} Owner:{user.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                             {user.isAdmin === true ? "Admin" : "User"}
@@ -859,13 +859,13 @@ export const EditDemoDb = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const {
-    fullName,
+    customName,
     _id,
     createdAt,
     email,
     phone,
-    destination,
-    isAdmin,
+    price,
+    model,
     item,
     status,
   } = location?.state?.user;
@@ -875,7 +875,7 @@ export const EditDemoDb = () => {
 
   async function handleDelete(_id) {
     try {
-      await axios.delete(`https://travel-x-408k.onrender.com/dashboard/demo/${_id}`, {
+      await axios.delete(`https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`, {
         withCredentials: true,
       });
       alert("Successfully Deleted!");
@@ -888,9 +888,10 @@ export const EditDemoDb = () => {
 
   async function handleStatus(_id) {
     try {
-      await axios.patch(`https://travel-x-408k.onrender.com/dashboard/demo/${_id}`, {
+      await axios.patch(`https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`, {
         stat,
       });
+      alert(`Successfully Change Status to ${stat}!`);
       navigate("/LandingDemoDb");
     } catch (error) {
       console.log(error);
@@ -928,7 +929,7 @@ export const EditDemoDb = () => {
                     <div className="relative">
                       <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
                         <h1 className="font-bold text-[40px]">
-                          {fullName?.charAt(0).toUpperCase()}{" "}
+                          {customName?.charAt(0).toUpperCase()}{" "}
                         </h1>
                       </div>
                       <div
@@ -946,10 +947,10 @@ export const EditDemoDb = () => {
                       <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                     </div>
                     <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                      {fullName}
+                      Customer:{user.customName} Owner:{user.ownerName}
                     </h1>
                     <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                      {isAdmin === true ? "Admin" : "User"}
+                      {model}
                     </h1>
                     <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                       {/* Member since January 15, 2023{" "} */}
@@ -972,7 +973,7 @@ export const EditDemoDb = () => {
                         <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Destination</h1>
-                            <h1 className="font-semibold">{destination}</h1>
+                            <h1 className="font-semibold">{price}</h1>
                           </div>
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Car type</h1>
@@ -995,6 +996,7 @@ export const EditDemoDb = () => {
                             id=""
                             onChange={(e) => setStat(e.target.value)}
                           >
+                            <option value="">Choose Status</option>
                             <option value="pending">Pending</option>
                             <option value="successful">Successful</option>
                             <option value="canceled">Canceled</option>
