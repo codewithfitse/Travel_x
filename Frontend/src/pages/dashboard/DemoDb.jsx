@@ -55,7 +55,7 @@ export const LandingDemoDb = () => {
                 </div>
 
                 <div className="w-full flex justify-between space-x-2">
-                  <Link to="/OneDayVehiclesBook">
+                  <Link to="/AllDemoDb">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row items-center justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1 className="text-[30px] font-bold mr-2">All</h1>
@@ -64,7 +64,7 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/OneDayVehiclesBook/Pending">
+                  <Link to="/PendingDemoDb">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1 className="text-[30px] font-bold">Pending</h1>
@@ -73,7 +73,7 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/OneDayVehiclesBook/Successful">
+                  <Link to="/SucessfullDemoDb">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1 className="text-[30px] font-bold">Successful</h1>
@@ -82,7 +82,7 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/OneDayVehiclesBook/Canceled">
+                  <Link to="/CancledDemoDb">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1 className="text-[30px] font-bold">Canceled</h1>
