@@ -746,6 +746,19 @@ export const OneDayVehiclesBook = () => {
   const location = useLocation();
   const user = location.state?.img;
 
+  async function handleBooking() {
+    try {
+      await axios.post(`https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`, user, {
+        withCredentials: true,
+      });
+      alert("Successfully Deleted!");
+      navigate("/LandingDemoDb");
+    } catch (error) {
+      alert("Not Deleted Try Again!");
+      console.log(error);
+    }
+  }
+  
   useEffect(() => {
     // Fetch images from backend
     const fetchImages = async () => {
@@ -799,7 +812,7 @@ export const OneDayVehiclesBook = () => {
                 <li>° Perfect for in city</li>
                 <li>° Pick up at airport</li>
               </ul>
-              <Link to="/Home"><h1 className="text-[30px]">Okey</h1></Link>
+              <Link to="/Home"><h1 className="text-[30px]" onClick={handleBooking}>Okey</h1></Link>
               <Link to="/Home"><h1 className="text-[30px]">Back</h1></Link>
             </div>
           </div>
