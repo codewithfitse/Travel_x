@@ -60,6 +60,34 @@ router.get("/demos", authMiddleware, async (req, res) => {
   console.log(data);
 });
 
+
+router.get("/demosPen", authMiddleware, async (req, res) => {
+  const userId = req.user.id;
+  const data = await UserDemo.find({ status: "pending" }).sort({
+    createdAt: -1,
+  });
+  res.json(data);
+  console.log(data);
+});
+
+router.get("/demosSuc", authMiddleware, async (req, res) => {
+  const userId = req.user.id;
+  const data = await UserDemo.find({ status: "successful" }).sort({
+    createdAt: -1,
+  });
+  res.json(data);
+  console.log(data);
+});
+
+router.get("/demosCan", authMiddleware, async (req, res) => {
+  const userId = req.user.id;
+  const data = await UserDemo.find({ status: "canceled" }).sort({
+    createdAt: -1,
+  });
+  res.json(data);
+  console.log(data);
+});
+
 // i made this b/c to list all bookings the user have
 router.get("/demo", authMiddleware, async (req, res) => {
   // this is cookie that hold user info mongodb id.
