@@ -12,7 +12,7 @@ const ImageSchema = new mongoose.Schema({
   model: String,
   status: {
     type: String,
-    default: "Pending",
+    default: "pending",
   },  
   createdAt: { type: Date, default: Date.now },
 });
