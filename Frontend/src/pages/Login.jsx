@@ -30,8 +30,6 @@ export const Login = () => {
       .then((result) => {
         const data = result.data;
         console.log("Response data:", data);
-        localStorage.setItem("user", JSON.stringify(email));
-
         console.log(result);
         //if (data.user?.isAdmin || data.user?.isSubAdmin) {
         if (data.user?.isAdmin) {
@@ -40,6 +38,9 @@ export const Login = () => {
           navigate("/SubAdmin");
         } else if (data.user) {
           navigate("/UserDashboard");
+        } else if (!data || !data.user) {
+          setErr("Something went wrong no data. Try again.");
+          return;
         } else {
           setErr("Something went wrong. Go check it again!");
         }
