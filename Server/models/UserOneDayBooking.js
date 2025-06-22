@@ -11,4 +11,4 @@ const ImageSchema = new mongoose.Schema({
 });
 
 const UserOneDay = mongoose.model("Images", ImageSchema);
-export default UserPost;
+export default UserOneDay;
