@@ -55,7 +55,7 @@ export const LandingDemoDb = () => {
                 </div>
 
                 <div className="w-full flex justify-between space-x-2">
-                  <Link to="/AllDemoDb">
+                  <Link to="/OneDayVehiclesBook">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row items-center justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1 className="text-[30px] font-bold mr-2">All</h1>
@@ -64,7 +64,7 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/PendingDemoDb">
+                  <Link to="/OneDayVehiclesBook/Pending">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1 className="text-[30px] font-bold">Pending</h1>
@@ -73,7 +73,7 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/SucessfullDemoDb">
+                  <Link to="/OneDayVehiclesBook/Successful">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1 className="text-[30px] font-bold">Successful</h1>
@@ -82,10 +82,10 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/CancledDemoDb">
+                  <Link to="/OneDayVehiclesBook/Canceled">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
-                        <h1 className="text-[30px] font-bold">Cancled</h1>
+                        <h1 className="text-[30px] font-bold">Canceled</h1>
                         <i class="fa fa-address-book w-2 !text-[30px]"></i>
                       </div>
                     </div>
