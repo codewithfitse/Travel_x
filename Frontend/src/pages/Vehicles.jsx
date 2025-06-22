@@ -709,7 +709,7 @@ export const OneDayVehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-                 <Link to="/OneDayVehiclesBook" state={{ img }}>Book</Link>
+                 <Link to="/OneDayVehiclesBook" state={{ img }}><Button text={"Book Now!"} /></Link>
               </div>
             </div>
           ))
