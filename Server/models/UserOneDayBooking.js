@@ -10,5 +10,5 @@ const ImageSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const UserOneDay = mongoose.model("Images", ImageSchema);
+const UserOneDay = mongoose.model("oneDayBook", ImageSchema);
 export default UserOneDay;
