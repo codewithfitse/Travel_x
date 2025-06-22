@@ -186,7 +186,7 @@ export const PendingDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/demosPen", {
+          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Pending", {
             withCredentials: true,
           })
           .then((result) => {
@@ -323,7 +323,7 @@ export const SucessfullDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/demosSuc", {
+          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Successful", {
             withCredentials: true,
           })
           .then((result) => {
@@ -460,7 +460,7 @@ export const AllDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/demos", {
+          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook", {
             withCredentials: true,
           })
           .then((result) => {
@@ -597,7 +597,7 @@ export const CancledDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/demosCan", {
+          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Canceled", {
             withCredentials: true,
           })
           .then((result) => {
