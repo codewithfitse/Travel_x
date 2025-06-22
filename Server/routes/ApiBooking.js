@@ -1,9 +1,23 @@
 import express from "express";
 import UserBook from "../models/userBook.js";
 import UserDemo from "../models/UserDemo.js";
+import UserOneDay from "../models/UserOneDayBooking.js";
 import authMiddleware from "../middleware/tokenMiddleware.js";
 
 const router = express.Router();
+
+
+
+router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
+  const { url, name, price, item, model } = req.body;
+  const userId = req.user.id;
+  UserOneDay.create({ url, name, price, item, model, userId: userId })
+    .then((employee) => {
+      res.json(employee);
+    })
+    .catch((err) => res.json(err));
+  console.log(`Posted Successfully`);
+});
 
 // I make this to list all booking 
 router.get("/booking", async (req, res) => {
