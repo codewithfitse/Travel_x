@@ -131,7 +131,7 @@ export const SubHeader = () => {
   //const [toggle, setToggle] = useState(false);
   async function handleLogout() {
     await axios.post(
-      "http://localhost:3000/logout",
+      "https://travel-x-408k.onrender.com/logout",
       {},
       {
         withCredentials: true,
@@ -196,7 +196,7 @@ export const UserHeader = () => {
   //const [toggle, setToggle] = useState(false);
   async function handleLogout() {
     await axios.post(
-      "http://localhost:3000/logout",
+      "https://travel-x-408k.onrender.com/logout",
       {},
       {
         withCredentials: true,
