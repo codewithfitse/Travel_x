@@ -14,6 +14,7 @@ import Vehicles, {
   MiniVanVehicles,
   PickUpVehicles,
   OneDayVehicles,
+  OneDayVehiclesBook,
 } from "./pages/Vehicles.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -168,6 +169,10 @@ const router = createBrowserRouter([
   {
     path: "/OneLandingVehicle",
     element: <OneLandingVehicle />,
+  },  
+  {
+    path: "/OneDayVehiclesBook",
+    element: <OneDayVehiclesBook />,
   },  
   {
     path: "/OnePost",
