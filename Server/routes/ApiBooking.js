@@ -7,6 +7,12 @@ import authMiddleware from "../middleware/tokenMiddleware.js";
 const router = express.Router();
 
 
+// I make this to list all booking for one day!
+router.get("/OneDayVehiclesBook", async (req, res) => {
+  const data = await UserOneDay.find({}).sort({ createdAt: -1 });
+  res.json(data);
+  console.log(data);
+});
 
 router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   const { url, name, price, item, model } = req.body;
