@@ -6,6 +6,7 @@ const ImageSchema = new mongoose.Schema({
   ownerName: String,
   customName: String,
   email: String,
+  phone: String,
   item: String,
   price: String,
   model: String,
