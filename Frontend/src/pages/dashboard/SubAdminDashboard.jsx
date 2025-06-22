@@ -1,14 +1,14 @@
 import { Link } from "react-router";
-import { Header, SideBar } from "../dashboard/component";
+import { SubHeader, SubSideBar } from "../dashboard/component";
 
 const SubDashboard = () => {
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
         <div className="w-full h-screen flex bg-[#020817] text-white">
-          <SideBar />
+          <SubSideBar />
           <div className="ml-14 flex flex-col flex-1">
-            <Header />
+            <SubHeader />
             <main className="pt-20 p-5 bg-transparent">
               <div className="w-full h-full p-5 lg:px-30 bg-gray-900">
                 <div className="w-full h-fit flex justify-between items-center">
