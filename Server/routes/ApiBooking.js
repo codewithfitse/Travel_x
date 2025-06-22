@@ -28,7 +28,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
 
 router.get("/OneDayVehiclesBook/Pending", authMiddleware, async (req, res) => {
   const userId = req.user.id;
-  const data = await UserDemo.find({ status: "pending" }).sort({
+  const data = await UserOneDay.find({ status: "pending" }).sort({
     createdAt: -1,
   });
   res.json(data);
@@ -37,7 +37,7 @@ router.get("/OneDayVehiclesBook/Pending", authMiddleware, async (req, res) => {
 
 router.get("/OneDayVehiclesBook/Successful", authMiddleware, async (req, res) => {
   const userId = req.user.id;
-  const data = await UserDemo.find({ status: "successful" }).sort({
+  const data = await UserOneDay.find({ status: "successful" }).sort({
     createdAt: -1,
   });
   res.json(data);
@@ -46,7 +46,7 @@ router.get("/OneDayVehiclesBook/Successful", authMiddleware, async (req, res) =>
 
 router.get("/OneDayVehiclesBook/Canceled", authMiddleware, async (req, res) => {
   const userId = req.user.id;
-  const data = await UserDemo.find({ status: "canceled" }).sort({
+  const data = await UserOneDay.find({ status: "canceled" }).sort({
     createdAt: -1,
   });
   res.json(data);
