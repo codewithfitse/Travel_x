@@ -189,7 +189,7 @@ router.get("/Ones", async (req, res) => {
 
 // I make this to list of suv Photos from Cloudinarey! 
 router.get("/One", authMiddleware, async (req, res) => {
-  const id = req.user;
+  const id = req.user.id;
   try {
     const images = await UserPostOne.find({ id }).sort({
       uploadedAt: -1,
