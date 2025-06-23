@@ -733,7 +733,7 @@ export const UserDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBookUser", {
+          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook", {
             withCredentials: true,
           })
           .then((result) => {
