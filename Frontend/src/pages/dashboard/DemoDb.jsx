@@ -62,7 +62,7 @@ export const LandingDemoDb = () => {
                           : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
                       }`}
                     >
-                      <div className="w-full px-5 flex justify-between items-center">
+                      <div className="w-fit px-5 flex justify-between items-center">
                         <h1
                           className={`font-bold transition-all duration-300 ease-in-out ${
                             toggle
