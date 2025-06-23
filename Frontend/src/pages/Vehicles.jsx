@@ -813,6 +813,7 @@ export const OneDayVehiclesBook = () => {
                 <li>° Perfect for in city</li>
                 <li>° Pick up at airport</li>
               </ul>
+              <div className="flex mt-3 lg:mt-5 space-x-5">
               <button className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg" onClick={handleBooking}>
                 {isLoading ? "Ordering...": "Order"}
               </button>
@@ -821,6 +822,7 @@ export const OneDayVehiclesBook = () => {
                   Back
                 </button>
               </Link>
+              </div>
             </div>
           </div>
         )}
