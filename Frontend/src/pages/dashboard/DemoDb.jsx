@@ -43,7 +43,7 @@ export const LandingDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className="text-[30px] text-white font-bold">
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px] "}`}>
                       Users Booking Status
                     </h1>
                   </div>
