@@ -737,8 +737,6 @@ export const OneDayVehicles = () => {
   );
 };
 
-
-
 export const OneDayVehiclesBook = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -818,7 +816,7 @@ export const OneDayVehiclesBook = () => {
               <button className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg" onClick={handleBooking}>
                 {isLoading ? "Ordering...": "Order"}
               </button>
-              <Link to="/Vehicles"><h1 className="text-[30px]">
+              <Link to="/Vehicles">
                 <button className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg" onClick={handleBooking}>
                   Back
                 </button>
