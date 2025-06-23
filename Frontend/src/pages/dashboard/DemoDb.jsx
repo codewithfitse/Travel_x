@@ -64,10 +64,10 @@ export const LandingDemoDb = () => {
                     >
                       <div className="w-full flex justify-between items-center">
                         <h1
-                          className={`font-bold transition-all duration-300 ease-in-out ${
+                          className={`text-center font-bold transition-all duration-300 ease-in-out ${
                             toggle
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                              : "w-full text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                              : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
                         >All</h1>
                       </div>
@@ -83,10 +83,10 @@ export const LandingDemoDb = () => {
                     >
                       <div className="w-full flex justify-between items-center">
                         <h1
-                          className={`font-bold transition-all duration-300 ease-in-out ${
+                          className={`text-center font-bold transition-all duration-300 ease-in-out ${
                             toggle
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                              : "w-full text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                              : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
                           >Pending</h1>
                       </div>
@@ -102,10 +102,10 @@ export const LandingDemoDb = () => {
                     >
                       <div className="w-full flex justify-between items-center">
                         <h1
-                          className={`font-bold transition-all duration-300 ease-in-out ${
+                          className={`text-center font-bold transition-all duration-300 ease-in-out ${
                             toggle
                               ? "w-fit text-[20px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                              : "w-full text-[24px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                              : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
                         >Successful</h1>
                       </div>
@@ -121,10 +121,10 @@ export const LandingDemoDb = () => {
                     >
                       <div className="w-full flex justify-between items-center">
                         <h1
-                          className={`font-bold transition-all duration-300 ease-in-out ${
+                          className={`text-center font-bold transition-all duration-300 ease-in-out ${
                             toggle
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                              : "w-full text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                              : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
                           >Canceled</h1>
                       </div>
