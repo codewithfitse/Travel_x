@@ -64,10 +64,10 @@ export const LandingDemoDb = () => {
                     >
                       <div className="w-full px-5 flex justify-between items-center">
                         <h1
-                          className={`w-full font-bold transition-all duration-300 ease-in-out ${
+                          className={`font-bold transition-all duration-300 ease-in-out ${
                             toggle
-                              ? "w-auto text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                              : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                              ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                              : "w-full text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
                         >All</h1>
                         <i class="fa fa-address-book w-2 !text-[30px]"></i>
