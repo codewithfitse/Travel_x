@@ -43,14 +43,16 @@ export const LandingDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px] "}`}>
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
                       Users Booking Status
                     </h1>
                   </div>
                   <div className="w-fit h-full">
-                    <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
-                      Edit Demo
-                    </button>
+                    <Link to="/Admin">
+                      <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
+                        Edit Demo
+                      </button>
+                    </Link>  
                   </div>
                 </div>
 
@@ -259,8 +261,8 @@ export const PendingDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className="text-[30px] text-white font-bold">
-                      User Demo Status Pending
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px] "}`}>
+                      Book Status Pending
                     </h1>
                   </div>
                   <div className="w-fit h-full">
@@ -396,7 +398,7 @@ export const SucessfullDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className="text-[30px] text-white font-bold">
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
                       User Demo Status Successful
                     </h1>
                   </div>
@@ -533,7 +535,7 @@ export const AllDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className="text-[30px] text-white font-bold">
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
                       User Demo Status All
                     </h1>
                   </div>
@@ -670,7 +672,7 @@ export const CancledDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className="text-[30px] text-white font-bold">
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
                       User Demo Status Cancel
                     </h1>
                   </div>
@@ -806,14 +808,16 @@ export const UserDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className="text-[30px] text-white font-bold">
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
                       One Day Booking!
                     </h1>
                   </div>
                   <div className="w-fit h-full">
-                    <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
-                      Edit Demo
-                    </button>
+                    <Link to="/UserDashboard">
+                      <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
+                        Back
+                      </button>
+                    </Link>  
                   </div>
                 </div>
 
@@ -960,14 +964,16 @@ export const EditDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className="text-[30px] text-white font-bold">
-                      User Bookings
+                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                      Edit Bookings
                     </h1>
                   </div>
                   <div className="w-fit h-full">
-                    <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
-                      Edit Bookings
-                    </button>
+                    <Link to="/LandingDemoDb">
+                      <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
+                        Edit Demo
+                      </button>
+                    </Link>  
                   </div>
                 </div>
 
