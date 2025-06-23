@@ -191,7 +191,7 @@ router.get("/Ones", async (req, res) => {
 router.get("/One", authMiddleware, async (req, res) => {
   const id = req.user.id;
   try {
-    const images = await UserPostOne.find({ id }).sort({
+    const images = await UserPostOne.find({ userId:id }).sort({
       uploadedAt: -1,
     });
     console.log("Here is work product!");
