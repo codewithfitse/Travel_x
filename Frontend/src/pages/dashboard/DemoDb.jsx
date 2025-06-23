@@ -764,7 +764,7 @@ export const UserDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
-                      User Demo
+                      One Day Booking!
                     </h1>
                   </div>
                   <div className="w-fit h-full">
