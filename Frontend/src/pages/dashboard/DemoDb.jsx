@@ -54,9 +54,9 @@ export const LandingDemoDb = () => {
                   </div>
                 </div>
 
-                <div className="w-full grid grid-cols-1 lg:grid-cols-4 place-items-center gap-2">
+                <div className={`w-full grid lg:grid-cols-4 ${toggle ? "grid-cols-1" : "grid-cols-2"} gap-2`}>
                   <Link to="/AllDemoDb">
-                    <div className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                    <div className={`w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
                           : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
