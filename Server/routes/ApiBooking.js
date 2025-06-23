@@ -14,6 +14,13 @@ router.get("/OneDayVehiclesBook", async (req, res) => {
   console.log(data);
 });
 
+router.get("/OneDayVehiclesBookUser", authMiddleware, async (req, res) => {
+  const id = req.user.id;
+  const data = await UserOneDay.find({ id }).sort({ createdAt: -1 });
+  res.json(data);
+  console.log(data);
+});
+
 router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   const { url, name, price, item, model } = req.body;
   const {id, firstName, email, phone } = req.user;
