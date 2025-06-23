@@ -39,6 +39,7 @@ import {
 } from "./pages/dashboard/CRUDVECHICL.jsx";
 import {
   OneLandingVehicle,  
+  OneLandingVehicleAdmin,  
   OneDeletes,
   OneEdits,
   OneViews,
@@ -170,6 +171,10 @@ const router = createBrowserRouter([
   {
     path: "/OneLandingVehicle",
     element: <OneLandingVehicle />,
+  },  
+  {
+    path: "/OneLandingVehicleAdmin",
+    element: <OneLandingVehicleAdmin />,
   },  
   {
     path: "/OneDayVehiclesBook",
