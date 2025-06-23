@@ -89,7 +89,7 @@ export const LandingDemoDb = () => {
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "w-full text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                          Pending</h1>
+                          >Pending</h1>
                         <i class="fa fa-address-book w-2 !text-[30px]"></i>
                       </div>
                     </div>
@@ -109,7 +109,7 @@ export const LandingDemoDb = () => {
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "w-full text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                          Successful</h1>
+                        >Successful</h1>
                         <i class="fa fa-address-book w-2 !text-[30px]"></i>
                       </div>
                     </div>
@@ -129,7 +129,7 @@ export const LandingDemoDb = () => {
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "w-full text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                          Canceled</h1>
+                          >Canceled</h1>
                         <i class="fa fa-address-book w-2 !text-[30px]"></i>
                       </div>
                     </div>
