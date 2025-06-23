@@ -44,7 +44,7 @@ export const LandingDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
-                      Users Booking Status
+                      Booking Status
                     </h1>
                   </div>
                   <div className="w-fit h-full">
@@ -262,7 +262,7 @@ export const PendingDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px] "}`}>
-                      Book Status Pending
+                      Status Pending
                     </h1>
                   </div>
                   <div className="w-fit h-full">
@@ -399,7 +399,7 @@ export const SucessfullDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
-                      Book Status Successful
+                      Status Successful
                     </h1>
                   </div>
                   <div className="w-fit h-full">
@@ -536,7 +536,7 @@ export const AllDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
-                      Book Status All
+                      Status All
                     </h1>
                   </div>
                   <div className="w-fit h-full">
@@ -673,7 +673,7 @@ export const CancledDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
-                      Book Status Cancel
+                      Status Cancel
                     </h1>
                   </div>
                   <div className="w-fit h-full">
