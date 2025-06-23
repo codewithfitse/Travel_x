@@ -85,6 +85,7 @@ export const OneLandingVehicle = () => {
 };
 
 export const OneGet = () => {
+  const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
@@ -109,11 +110,17 @@ export const OneGet = () => {
     <>
       <section className="min-h-full overflow-x-hidden">
         <div className="w-full h-full flex bg-[#020817] text-white">
-        <SideBar />
-        <div className="ml-14 flex flex-col flex-1">
-          <Header />
+          <SideBar toggle={toggle} setToggle={setToggle} />
+          <div className="ml-14 flex flex-col flex-1">
+            <Header toggle={toggle} />
             <main className="pt-20 p-5 bg-transparent">
-              <div className="w-full h-full p-5 lg:px-10 bg-gray-900">
+              <div
+                className={`h-full lg:px-30 bg-gray-900 ${
+                  toggle
+                    ? "w-auto ml-22 p-3 text-[10px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                    : " p-5 text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]"
+                }`}
+              >
                 <div className="w-full h-fit flex flex-col justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
