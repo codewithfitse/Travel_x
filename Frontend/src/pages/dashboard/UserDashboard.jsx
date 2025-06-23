@@ -24,7 +24,7 @@ const UserDashboard = () => {
                 <Link to="/UserDemoDb">
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full px-5 flex justify-between items-center">
-                      <h1 className="text-[30px] font-bold">Booking Demo</h1>
+                      <h1 className="text-[30px] font-bold">One Booking</h1>
                       <i className="fa fa-group w-2 !text-[30px]"></i>
                     </div>
                   </div>
