@@ -16,7 +16,7 @@ router.get("/OneDayVehiclesBook", async (req, res) => {
 
 router.get("/OneDayVehiclesBookUser", authMiddleware, async (req, res) => {
   const id = req.user.id;
-  const data = await UserOneDay.find({ id }).sort({ createdAt: -1 });
+  const data = await UserOneDay.find({ userId:id }).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
