@@ -399,7 +399,7 @@ export const SucessfullDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
-                      User Demo Status Successful
+                      Book Status Successful
                     </h1>
                   </div>
                   <div className="w-fit h-full">
@@ -536,7 +536,7 @@ export const AllDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
-                      User Demo Status All
+                      Book Status All
                     </h1>
                   </div>
                   <div className="w-fit h-full">
@@ -673,7 +673,7 @@ export const CancledDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
-                      User Demo Status Cancel
+                      Book Status Cancel
                     </h1>
                   </div>
                   <div className="w-fit h-full">
