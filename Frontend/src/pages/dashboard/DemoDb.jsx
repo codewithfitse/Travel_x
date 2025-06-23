@@ -44,7 +44,7 @@ export const LandingDemoDb = () => {
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
-                      User Demo Status
+                      Users Booking Status
                     </h1>
                   </div>
                   <div className="w-fit h-full">
