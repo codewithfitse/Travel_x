@@ -179,7 +179,7 @@ const Dashboard = () => {
                               ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >View One Day 
+                        >Status One Day 
                         </h1>
                         <i className="fa fa-bookmark w-2 !text-[30px]"></i>
                       </div>
