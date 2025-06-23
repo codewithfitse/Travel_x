@@ -175,6 +175,97 @@ export const OneGet = () => {
   );
 };
 
+export const OneGetAdmin = () => {
+  const [toggle, setToggle] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [images, setImages] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch images from backend
+    const fetchImages = async () => {
+      try {
+        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/ones", { withCredentials: true });
+        setImages(res.data);
+      } catch (err) {
+        console.error("Error fetching images:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  return (
+    <>
+      <section className="min-h-full overflow-x-hidden">
+        <div className="w-full h-full flex bg-[#020817] text-white">
+          <SideBar toggle={toggle} setToggle={setToggle} />
+          <div className="ml-14 flex flex-col flex-1">
+            <Header toggle={toggle} />
+            <main className="pt-20 p-5 bg-transparent">
+              <div
+                className={`h-full lg:px-30 bg-gray-900 ${
+                  toggle
+                    ? "w-auto ml-22 p-3 text-[10px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                    : " p-5 text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]"
+                }`}
+              >
+                <div className="w-full h-fit flex flex-col justify-between items-center">
+                  <div className="w-fit h-full py-1">
+                    <h1 className="text-[30px] text-white font-bold">
+                      Cars Collection DataBase
+                    </h1>
+                    <h1 className="text-[30px] text-white font-bold">
+                      {isLoading ? "Loading..." : null }
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  {images.map((img) => (
+                    <div
+                      key={img._id}
+                      className="flex-[1_1_calc(50%-1rem)] min-w-[300px] p-4 bg-gray-800 rounded-2xl"
+                    >
+                      <p>
+                        <strong>Name:</strong> {img.name}
+                      </p>
+                      <p>
+                        <strong>Item:</strong> {img.item}
+                      </p>
+                      <p>
+                        <strong>Price:</strong> {img.price}
+                      </p>
+
+                      <Link to="/OneViews" state={{ img }}>
+                        <button className="text-blue-300 text-2xl font-semibold">
+                          Views
+                        </button>
+                      </Link>
+
+                      <p>{img.filename}</p>
+
+                      <div className="flex justify-center mt-2">
+                        <img
+                          src={img.url}
+                          alt={img.filename}
+                          className="w-full h-auto object-cover rounded-[10px]"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
 export const OnePost = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState();
