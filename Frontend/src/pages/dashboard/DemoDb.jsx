@@ -1055,16 +1055,16 @@ export const EditDemoDb = () => {
                             <option value="canceled">Canceled</option>
                           </select>
                           <div
-                            className="w-8 h-8 lg:w-10 lg:h-10 bg-red-300 flex justify-center items-center rounded-[10px]"
-                            onClick={() => handleDelete(_id)}
-                           >
-                            <i class="fa fa-edit w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
-                          </div>
-                          <div
                             className="w-8 h-8 lg:w-10 lg:h-10 bg-green-500 flex justify-center items-center rounded-[10px]"
                             onClick={() => handleStatus(_id)}
                           >
-                            <i class="fa fa-trash w-fit text-white hover:text-green-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
+                            <i class="fa fa-edit w-fit text-white hover:text-green-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
+                          </div>
+                          <div
+                            className="w-8 h-8 lg:w-10 lg:h-10 bg-red-100 flex justify-center items-center rounded-[10px]"
+                            onClick={() => handleDelete(_id)}
+                           >
+                            <i class="fa fa-trash w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
                           </div>
                           <input
                             type="text"
