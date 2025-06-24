@@ -149,7 +149,7 @@ export const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <h1 className="my-2 text-red-500 text-[30px]">{err}</h1>
+            <h1 className="my-1 text-red-500 text-[15px] font-serif capitalize">{err}</h1>
             <button
               type="submit"
               className="w-full bg-white text-black font-semibold py-2 rounded-md hover:bg-zinc-200 transition"
