@@ -1054,7 +1054,18 @@ export const EditDemoDb = () => {
                             <option value="successful">Successful</option>
                             <option value="canceled">Canceled</option>
                           </select>
-
+                          <div
+                            className="w-8 h-8 lg:w-10 lg:h-10 bg-red-300 flex justify-center items-center rounded-[10px] absolute -top-7 left-25 sm:-top-7 sm:right-40 md:-top-7 md:right-60 lg:-top-7 lg:left-24"
+                            onClick={() => handleDelete(_id)}
+                           >
+                            <i class="fa fa-edit w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
+                          </div>
+                          <div
+                            className="w-8 h-8 lg:w-10 lg:h-10 bg-green-500 flex justify-center items-center rounded-[10px] absolute -top-7 left-15  sm:-top-7 sm:-left-40 md:-top-7 md:-left-60 lg:-top-7 lg:-left-12"
+                            onClick={() => handleStatus(_id)}
+                          >
+                            <i class="fa fa-trash w-fit text-white hover:text-green-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
+                          </div>
                           <input
                             type="text"
                             value={stat}
