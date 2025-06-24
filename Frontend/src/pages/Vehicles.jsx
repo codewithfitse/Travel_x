@@ -662,7 +662,7 @@ export const OneDayVehicles = () => {
     const fetchImages = async () => {
          setIsLoading(true);
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
+        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/Ones", { withCredentials: true });
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
