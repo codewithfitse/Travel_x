@@ -99,9 +99,9 @@ export const Login = () => {
       <div className="lg:mt-10 flex flex-col items-center justify-center min-h-screen p-4">
         <div className="bg-zinc-900 p-6 rounded-xl max-w-sm w-full space-y-6 shadow-lg">
           <div>
-            <h2 className="text-2xl font-bold">Create an account</h2>
+            <h2 className="text-2xl font-bold">Login an account</h2>
             <p className="text-sm text-zinc-400 mt-1">
-              Enter your email below to create your account
+              Enter your email below to Login your account
             </p>
           </div>
 
@@ -153,7 +153,11 @@ export const Login = () => {
               type="submit"
               className="w-full bg-white text-black font-semibold py-2 rounded-md hover:bg-zinc-200 transition"
             >
-              Create account
+              {isLoading ? (
+                  <p className="text-center">Loading...</p>
+                ) : (
+                  "Submit"
+              )}
             </button>
           </form>
         </div>
@@ -171,93 +175,6 @@ export const Login = () => {
           <button className="text-white text-2xl leading-none">+</button>
         </div>
       </div>      
-
-      <div className="py-[100px] px-5 lg:px-[200px]">
-        <div className="p-5 lg:p-10 card">
-          <div className="flex mb-2 space-x-2">
-            <div
-              className="w-full h-fit py-1 px-2 flex justify-start items-center text-black backdrop-blur-2xl bg-white/10 shadow-white-50 rounded-2xl"
-              onClick={handleOauth}
-            >
-              <i className="fa fa-google-plus mr-3 !text-[25px] !text-red-500"></i>
-              <h1 className="text-[20px]">Google</h1>
-            </div>
-            <div
-              className="w-full h-fit py-1 px-2 flex justify-start items-center text-black backdrop-blur-2xl bg-white/10 shadow-white-50 rounded-2xl"
-              onClick={handleOauth}
-            >
-              <i className="fab fa-facebook-f mr-3 !text-[25px] !text-blue-600"></i>
-              <h1 className="text-[20px]">Facebook</h1>
-            </div>
-          </div>         
-          <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
-            Login
-          </h1>
-          <form onSubmit={handleClick} method="post" action="">
-            <div className="mt-8 flex flex-col justify-between space-y-4">
-              <div className="w-[90%] flex flex-col">
-                <label
-                  htmlFor=""
-                  className="text-[18px] font-bold lg:text-[25px]"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="input"
-                  placeholder="Enter Email"
-                />
-              </div>
-              <div className="w-[90%] flex flex-col">
-                <label
-                  htmlFor=""
-                  className="text-[18px] font-bold lg:text-[25px]"
-                >
-                  Password
-                </label>
-                <input
-                  type="text"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="input"
-                  placeholder="Enter Password"
-                />
-
-                {err && (
-                  <div className="text-red-500 mt-1 font-semibold text-[16px] lg:text-[18px]">
-                    {err}
-                  </div>
-                )}
-                
-              </div>
-
-              <div className="mt-5 px-5 flex justify-between">
-                <h1>Forgot password?</h1>
-                <Link to="/SignUp">
-                  <h1>Sign Up</h1>
-                </Link>
-              </div>
-            </div>
-
-            <div className="mt-5 lg:mt-10">
-              <button
-                type="submit"
-                className="w-full h-fit py-2 px-10 lg:py-3 lg:px-5 text-[13px] lg:text-[40px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
-              >
-                {isLoading ? (
-                  <p className="text-center">Loading...</p>
-                ) : (
-                  "Submit"
-                )}
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
 
       <Footer />
     </div>
