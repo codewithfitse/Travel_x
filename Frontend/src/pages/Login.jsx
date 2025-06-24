@@ -95,6 +95,83 @@ export const Login = () => {
     <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
       <Header />
 
+
+      <div className="lg:mt-10 flex flex-col items-center justify-center min-h-screen p-4">
+        <div className="bg-zinc-900 p-6 rounded-xl max-w-sm w-full space-y-6 shadow-lg">
+          <div>
+            <h2 className="text-2xl font-bold">Create an account</h2>
+            <p className="text-sm text-zinc-400 mt-1">
+              Enter your email below to create your account
+            </p>
+          </div>
+
+          <div className="flex gap-4">
+            <button
+              className="flex-1 flex items-center justify-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-md hover:bg-zinc-700"
+              onClick={handleOauth}
+            >
+              {/* GitHub Icon */}
+              <i className="fa fa-github p-1 !text-[26px] text-black bg-white rounded-full "></i>
+              GitHub
+            </button>
+            <button
+              className="flex-1 flex items-center justify-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-md hover:bg-zinc-700"
+              onClick={handleOauth}
+            >
+              {/* Google Icon */}
+              <i className="fa fa-google p-1 !text-[26px] text-red-600 bg-white rounded-full "></i>
+              Google
+            </button>
+          </div>
+
+          <div className="text-center text-xs text-zinc-400">
+            OR CONTINUE WITH
+          </div>
+
+          <form className="space-y-4" onSubmit={handleClick}>
+            <div>
+              <label className="block text-sm font-medium">Email</label>
+              <input
+                type="email"
+                className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
+                placeholder="fitse@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium">Password</label>
+              <input
+                type="password"
+                className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
+                placeholder=". . . . . . ."
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-white text-black font-semibold py-2 rounded-md hover:bg-zinc-200 transition"
+            >
+              Create account
+            </button>
+          </form>
+        </div>
+
+        <div className="mt-6 bg-zinc-900 p-4 rounded-xl w-full max-w-sm flex items-center justify-between shadow-lg">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black font-bold">
+              F
+            </div>
+            <div>
+              <div className="font-semibold">Fitsum Zerihun</div>
+              <div className="text-sm text-zinc-400">fitse@example.com</div>
+            </div>
+          </div>
+          <button className="text-white text-2xl leading-none">+</button>
+        </div>
+      </div>      
+
       <div className="py-[100px] px-5 lg:px-[200px]">
         <div className="p-5 lg:p-10 card">
           <div className="flex mb-2 space-x-2">
