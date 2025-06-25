@@ -26,6 +26,7 @@
     "mongoose-connect": "^0.0.3",
     "multer": "^2.0.0",
     "multer-storage-cloudinary": "^4.0.0",
+    "node-fetch": "^3.3.2",
     "passport": "^0.7.0",
     "passport-discord": "^0.1.4",
     "passport-google-oauth20": "^2.0.0"
