@@ -753,7 +753,8 @@ export const OneDayVehiclesBook = () => {
       alert("Successfully Booked!");
       navigate("/UserDashboard");
     } catch (error) {
-      alert("Not Deleted Try Again!");
+      alert("You forgot to login bro");
+      navigate("/Login")
       console.log(error);
     } finally {
       setIsLoading(false)
