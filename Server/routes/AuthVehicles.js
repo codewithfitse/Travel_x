@@ -302,10 +302,6 @@ router.put(
       post.public_id = req.file.filename;
     }
 
-  post.url = req.file.path;
-  post.public_id = req.file.filename;
-}
-
 
       // Update other fields
       post.name = name || post.name;
