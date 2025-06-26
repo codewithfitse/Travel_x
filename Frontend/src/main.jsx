@@ -30,16 +30,18 @@ import {
   DeleteDashboard,
 } from "./pages/dashboard/CRUDUSER.jsx";
 import {
-  LandingVehicle,  
+  LandingVehicle,
+  SubLandingVehicle,
   Deletes,
   Edits,
   Views,
   Post,
+  GetAdmin,
   Get,
 } from "./pages/dashboard/CRUDVECHICL.jsx";
 import {
-  OneLandingVehicle,  
-  OneLandingVehicleAdmin,  
+  OneLandingVehicle,
+  OneLandingVehicleAdmin,
   OneDeletes,
   OneEdits,
   OneViews,
@@ -91,7 +93,7 @@ const router = createBrowserRouter([
   {
     path: "/Demo",
     element: <Demo />,
-  },  
+  },
   {
     path: "/SuvVehicles",
     element: <SuvVehicles />,
@@ -139,7 +141,7 @@ const router = createBrowserRouter([
   {
     path: "/SubAdmin",
     element: <SubDashboard />,
-  }, 
+  },
   {
     path: "/UserDashboard",
     element: <UserDashboard />,
@@ -147,10 +149,18 @@ const router = createBrowserRouter([
   {
     path: "/LandingVehicle",
     element: <LandingVehicle />,
-  },  
+  },
+  {
+    path: "/SubLandingVehicle",
+    element: <SubLandingVehicle />,
+  },
   {
     path: "/Post",
     element: <Post />,
+  },
+  {
+    path: "/GetAdmin",
+    element: <GetAdmin />,
   },
   {
     path: "/Get",
@@ -171,15 +181,15 @@ const router = createBrowserRouter([
   {
     path: "/OneLandingVehicle",
     element: <OneLandingVehicle />,
-  },  
+  },
   {
     path: "/OneLandingVehicleAdmin",
     element: <OneLandingVehicleAdmin />,
-  },  
+  },
   {
     path: "/OneDayVehiclesBook",
     element: <OneDayVehiclesBook />,
-  },  
+  },
   {
     path: "/OnePost",
     element: <OnePost />,
@@ -227,7 +237,7 @@ const router = createBrowserRouter([
   {
     path: "/EditContactDb",
     element: <EditContactDb />,
-  },  
+  },
   {
     path: "/BookingDb",
     element: <BookingDb />,
@@ -275,7 +285,7 @@ const router = createBrowserRouter([
   {
     path: "/SubProfile",
     element: <SubProfile />,
-  },  
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

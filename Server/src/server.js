@@ -15,17 +15,18 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import session from "express-session";
 import UserOauth from "../models/UserOauth.js";
-import fetch from 'node-fetch'; // If using ESM
+import fetch from "node-fetch"; // If using ESM
 // const fetch = require('node-fetch'); // If using CommonJS
 
-const RENDER_URL = 'https://travel-x-408k.onrender.com';
+const RENDER_URL = "https://travel-x-408k.onrender.com";
 
 setInterval(() => {
   fetch(RENDER_URL)
-    .then((res) => console.log(`[PING] ${new Date().toISOString()} - ${res.status}`))
-    .catch((err) => console.error('[PING ERROR]', err));
+    .then((res) =>
+      console.log(`[PING] ${new Date().toISOString()} - ${res.status}`)
+    )
+    .catch((err) => console.error("[PING ERROR]", err));
 }, 5 * 60 * 1000); // Ping every 5 minutes
-
 
 const app = express();
 app.use(

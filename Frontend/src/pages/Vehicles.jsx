@@ -44,7 +44,6 @@ const Vehicles = () => {
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
         <Link to="/SuvVehicles" state={{ Suv }}>
-          Suv
           <div className="w-full py-5 card">
             <div className="flex justify-center">
               <img src="economy2.png" alt="" srcset="" />
@@ -72,7 +71,6 @@ const Vehicles = () => {
         </Link>
 
         <Link to="/SuvVehicles" state={{ Suv }}>
-          Ecomony
           <div className="w-full py-5 card">
             <div className="flex justify-center">
               <img src="standard.png" alt="" srcset="" />
@@ -92,27 +90,25 @@ const Vehicles = () => {
           </div>
         </Link>
         <Link to="/MidSuvVehicles" state={{ Suv }}>
-          Ecomony
           <div className="w-full py-5 card">
             <div className="pt-4 flex justify-center">
               <img src="midsizesuv.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Suv</h1>
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Mid Suv</h1>
               <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
+              <h2>Toyota Rav4 or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
+                <li>° 5 to 7 Person Seat</li>
+                <li>° Automatic and Manual</li>
+                <li>° Perfect for in Family + City</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>
           </div>
         </Link>
         <Link to="/FullSuvVehicles" state={{ MidSuv }}>
-          Ecomony
           <div className="w-full py-5 card">
             <div className="pb-15 flex justify-center">
               <img src="chery-jetour.png" alt="" srcset="" />
@@ -123,49 +119,47 @@ const Vehicles = () => {
               <h2>Toyota VITZ or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
+                <li>° 7 to 8 Person Seat</li>
+                <li>° Automatic and Manual </li>
+                <li>° Perfect for in city, More Cargo</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>
           </div>
         </Link>
         <Link to="/MiniVanVehicles" state={{ Suv }}>
-          Ecomony
           <div className="w-full py-5 card">
             <div className="flex justify-center">
               <img src="minivan.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Van</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
+              <h2>Starting 900,000 to 7,250,000Br</h2>
+              <h2>Toyota Hiace or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
+                <li>° 10 to 15 Person Seat</li>
+                <li>° Automatic And Manual</li>
+                <li>° Perfect for Trip + Cargo Palace</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>
           </div>
         </Link>
         <Link to="/PickUpVehicles" state={{ Suv }}>
-          Ecomony
           <div className="w-full py-8 card">
             <div className="pb-15 flex justify-center">
               <img src="pickup.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
+              <h2>Starting 1,200,000 to 9,000,000Br</h2>
+              <h2>Toyota Revo or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
+                <li>° 2 to 5 Person Seat</li>
+                <li>° Automatic And Manual</li>
+                <li>° Perfect for Heavy Duty + Utility</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>

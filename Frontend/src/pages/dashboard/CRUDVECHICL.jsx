@@ -26,6 +26,55 @@ export const LandingVehicle = () => {
                 </div>
 
                 <div className="flex flex-wrap flex-col gap-4">
+                  <Link to="/GetAdmin">
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">See Posts</h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link to="/Post">
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">Upload Posts</h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export const SubLandingVehicle = () => {
+  const [isloading, setIsloading] = useState(false);
+  const [images, setImages] = useState([]);
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <section className="min-h-screen overflow-x-hidden">
+        <div className="w-full h-screen flex bg-[#020817] text-white">
+          <SideBar />
+          <div className="ml-14 flex flex-col flex-1">
+            <Header />
+            <main className="pt-20 p-5 bg-transparent">
+              <div className="w-full h-full p-5 lg:px-10 bg-gray-900">
+                <div className="w-full h-fit flex flex-col justify-between items-center">
+                  <div className="w-fit h-full py-1">
+                    <h1 className="text-[30px] text-white font-bold">
+                      Cars Collection DataBase
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap flex-col gap-4">
                   <Link to="/Get">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
@@ -52,7 +101,7 @@ export const LandingVehicle = () => {
   );
 };
 
-export const Get = () => {
+export const GetAdmin = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
@@ -61,7 +110,10 @@ export const Get = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads");
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/uploads",
+          { withCredentials: true }
+        );
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -77,9 +129,9 @@ export const Get = () => {
     <>
       <section className="min-h-full overflow-x-hidden">
         <div className="w-full h-full flex bg-[#020817] text-white">
-        <SideBar />
-        <div className="ml-14 flex flex-col flex-1">
-          <Header />
+          <SideBar />
+          <div className="ml-14 flex flex-col flex-1">
+            <Header />
             <main className="pt-20 p-5 bg-transparent">
               <div className="w-full h-full p-5 lg:px-10 bg-gray-900">
                 <div className="w-full h-fit flex flex-col justify-between items-center">
@@ -88,7 +140,94 @@ export const Get = () => {
                       Cars Collection DataBase
                     </h1>
                     <h1 className="text-[30px] text-white font-bold">
-                      {isLoading ? "Loading..." : null }
+                      {isLoading ? "Loading..." : null}
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  {images.map((img) => (
+                    <div
+                      key={img._id}
+                      className="flex-[1_1_calc(50%-1rem)] min-w-[300px] p-4 bg-gray-800 rounded-2xl"
+                    >
+                      <p>
+                        <strong>Name:</strong> {img.name}
+                      </p>
+                      <p>
+                        <strong>Item:</strong> {img.item}
+                      </p>
+                      <p>
+                        <strong>Price:</strong> {img.price}
+                      </p>
+
+                      <Link to="/Views" state={{ img }}>
+                        <button className="text-blue-300 text-2xl font-semibold">
+                          Views
+                        </button>
+                      </Link>
+
+                      <p>{img.filename}</p>
+
+                      <div className="flex justify-center mt-2">
+                        <img
+                          src={img.url}
+                          alt={img.filename}
+                          className="w-full h-auto object-cover rounded-[10px]"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export const Get = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [images, setImages] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch images from backend
+    const fetchImages = async () => {
+      try {
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/uploads/sub",
+          { withCredentials: true }
+        );
+        setImages(res.data);
+      } catch (err) {
+        console.error("Error fetching images:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  return (
+    <>
+      <section className="min-h-full overflow-x-hidden">
+        <div className="w-full h-full flex bg-[#020817] text-white">
+          <SideBar />
+          <div className="ml-14 flex flex-col flex-1">
+            <Header />
+            <main className="pt-20 p-5 bg-transparent">
+              <div className="w-full h-full p-5 lg:px-10 bg-gray-900">
+                <div className="w-full h-fit flex flex-col justify-between items-center">
+                  <div className="w-fit h-full py-1">
+                    <h1 className="text-[30px] text-white font-bold">
+                      Cars Collection DataBase
+                    </h1>
+                    <h1 className="text-[30px] text-white font-bold">
+                      {isLoading ? "Loading..." : null}
                     </h1>
                   </div>
                 </div>
@@ -150,24 +289,28 @@ export const Post = () => {
     if (!image) return;
 
     const formData = new FormData();
-    formData.append('name', name); 
-    formData.append('item', item); 
-    formData.append('price', price); 
-    formData.append('image', image); 
+    formData.append("name", name);
+    formData.append("item", item);
+    formData.append("price", price);
+    formData.append("image", image);
 
     try {
-      const res = await axios.post("https://travel-x-408k.onrender.com/uploads", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        withCredentials: true,
-      });      
+      const res = await axios.post(
+        "https://travel-x-408k.onrender.com/uploads",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          withCredentials: true,
+        }
+      );
       fetchImages();
       setName("");
       setItem("");
       setPrice("");
       setImage("");
-      alert("Upload Success");      
+      alert("Upload Success");
     } catch (err) {
       console.error(err);
       alert("Upload failed");
@@ -203,7 +346,7 @@ export const Post = () => {
             </label>
             <input
               type="text"
-              name='name'
+              name="name"
               onChange={(e) => setName(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Name"
@@ -213,19 +356,19 @@ export const Post = () => {
             <label htmlFor="" className="text-[30px] font-semibold">
               Item:
             </label>
-          <select
-                name="item"
-                type="text"
-                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
-                onChange={(e) => setItem(e.target.value)}
-              >
-                <option value="none">Choose here!</option>                            
-                <option value="suv">suv</option>
-                <option value="midsuv">midSuv</option>
-                <option value="fullsuv">fullSuv</option>
-                <option value="pickup">pickup</option>
-                <option value="minivan">minivan</option>
-              </select>
+            <select
+              name="item"
+              type="text"
+              className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+              onChange={(e) => setItem(e.target.value)}
+            >
+              <option value="none">Choose here!</option>
+              <option value="suv">suv</option>
+              <option value="midsuv">midSuv</option>
+              <option value="fullsuv">fullSuv</option>
+              <option value="pickup">pickup</option>
+              <option value="minivan">minivan</option>
+            </select>
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
@@ -233,7 +376,7 @@ export const Post = () => {
             </label>
             <input
               type="text"
-              name='price'
+              name="price"
               onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Description"
@@ -245,7 +388,7 @@ export const Post = () => {
             </label>
             <input
               type="file"
-              name='image'
+              name="image"
               accept="image/*"
               onChange={(e) => setImage(e.target.files[0])}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
@@ -355,7 +498,6 @@ export const Edits = () => {
   async function updatePost(e) {
     e.preventDefault();
     setIsLoading(true);
-    
 
     const formData = new FormData();
     formData.append("name", name);
@@ -364,7 +506,6 @@ export const Edits = () => {
     if (image) {
       formData.append("image", image);
     }
-
 
     try {
       await axios
@@ -417,19 +558,19 @@ export const Edits = () => {
             <label htmlFor="" className="text-[30px] font-semibold">
               Item:
             </label>
-              <select
-                name="item"
-                type="text"
-                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
-                onChange={(e) => setItem(e.target.value)}
-              >
-                <option value="none">Choose here!</option>                
-                <option value="suv">suv</option>
-                <option value="midsuv">midSuv</option>
-                <option value="fullsuv">fullSuv</option>
-                <option value="pickup">pickup</option>
-                <option value="minivan">minivan</option>
-              </select>
+            <select
+              name="item"
+              type="text"
+              className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+              onChange={(e) => setItem(e.target.value)}
+            >
+              <option value="none">Choose here!</option>
+              <option value="suv">suv</option>
+              <option value="midsuv">midSuv</option>
+              <option value="fullsuv">fullSuv</option>
+              <option value="pickup">pickup</option>
+              <option value="minivan">minivan</option>
+            </select>
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
