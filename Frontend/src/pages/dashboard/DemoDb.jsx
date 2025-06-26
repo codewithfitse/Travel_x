@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react"; 
-import { Header, SideBar } from "../dashboard/component";
+import { Header, SideBar, UserHeader, UserSideBar } from "../dashboard/component";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom"; 
 
@@ -797,9 +797,9 @@ export const UserDemoDb = () => {
     <>
       <section className="min-h-screen overflow-x-hidden">
         <div className="w-full h-screen flex bg-[#020817] text-white">
-          <SideBar toggle={toggle} setToggle={setToggle} />
+          <UserSideBar toggle={toggle} setToggle={setToggle} />
           <div className="ml-14 flex flex-col flex-1">
-            <Header toggle={toggle} />
+            <UserHeader toggle={toggle} />
             <main className="pt-20 p-5 bg-transparent">
               <div
                 className={`h-full lg:px-30 bg-gray-900 transition-all duration-300 ease-in-out ${
