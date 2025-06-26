@@ -35,131 +35,22 @@ const Demo = () => {
   }
 
   return (
-    <div className="w-full h-[100%] background text-amber-50">
-      <Header />
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-[#1d1d1f] via-[#2c2c2e] to-[#3a3a3c] px-4">
+      <div className="group relative backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-xl p-10 max-w-xl w-full text-center transition-all duration-500 ease-out hover:backdrop-blur-xl hover:shadow-2xl hover:border-white/30 hover:scale-105">
+        {/* Glow Border Animation */}
+        <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-white/30 group-hover:opacity-100 opacity-0 transition-all duration-500 pointer-events-none"></div>
 
-      <div className="py-[100px] lg:px-[200px]">
-        <div className="p-10 card">
-          <h1 className="text-[40px] font-bold text-center font-mono">
-            Book Now❗
-          </h1>
-          <form onSubmit={handleClick} action="">
-            <div className="mt-8 flex justify-between space-x-2">
-              <div className="w-full flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  name=""
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  className="input"
-                  placeholder="Enter Full Name"
-                />
-              </div>
-            </div>
-            <div className="mt-8 flex justify-between space-x-2">
-              <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="input"
-                  placeholder="Enter Email"
-                />
-              </div>
-              <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
-                  Phone
-                </label>
-                <input
-                  type="number"
-                  name="phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="input"
-                  placeholder="Enter Phone"
-                />
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <h1 className="text-[30px]">Car choice</h1>
-              <select
-                name=""
-                id=""
-                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
-                onChange={(e) => setItem(e.target.value)}
-              >
-                <option value="suv">suv</option>
-                <option value="midsuv">midSuv</option>
-                <option value="fullsuv">fullSuv</option>
-                <option value="pickup">pickup</option>
-                <option value="minivan">minivan</option>
-              </select>
-            </div>
-
-            <div className="mt-10">
-              <h1 className="text-[30px]">
-                Car Only Be Used in Addis Ababa City?
-              </h1>
-              <ul className="pl-2">
-                <li>Economy</li>
-                <li>Standard</li>
-              </ul>
-            </div>
-
-            <div className="mt-10 flex justify-between space-x-2">
-              <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
-                  If not in Addis Ababa where is the Destination
-                </label>
-                <input
-                  type="text"
-                  name="destination"
-                  value={destination}
-                  onChange={(e) => setDestination(e.target.value)}
-                  className="input"
-                  placeholder="destination"
-                />
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <button
-                type="submit"
-                className="p-2 text-3xl text-black font-bold bg-[#16fe01] rounded-[10px]"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
+        <h1 className="text-5xl font-semibold text-white tracking-tight mb-4">
+          Welcome to Travel X
+        </h1>
+        <p className="text-lg text-white/70 font-light mb-8">
+          Explore. Discover. Travel with elegance.
+        </p>
+        <button className="px-6 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors">
+          Get Started
+        </button>
       </div>
-
-      <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
-          </h1>
-          <h2 className="text-[10px] lg:text-[20px] text-2xl">
-            We Always Have The Best Customer Services In Town
-          </h2>
-        </div>
-        <div className="lg:mt-7 flex justify-center items-center">
-          <Link to={"/Booking"}>
-            <Button text={"Book Now!"} />
-          </Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
+    </section>
   );
 };
 

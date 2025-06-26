@@ -7,9 +7,9 @@ import { Button } from "../components/Button";
 const Home = () => {
   return (
     <>
-      <div className="w-full overflow-x-hidden h-[100%] background text-amber-50">
+      <div className="w-full overflow-x-hidden h-[100%] bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-amber-50">
         <Header />
-        <div className="grid grid-cols-1 lg:grid-cols-2 pt-[100px] lg:pt-[150px] pl-[20px] lg:pl-[40px] relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 pt-[100px] lg:pt-[150px] pl-[20px] lg:pl-[40px] relative bg-gradient-to-tr from-[#1d1d1f] via-[#2c2c2e] to-[#3a3a3c] px-4">
           <div className="w-full lg:w-[100%]">
             <h1 className="text-[30px] lg:text-[45px] font-semibold">
               <span className="text-[40px] lg:text-[60px] text-[#16fe01] font-bold font-serif">

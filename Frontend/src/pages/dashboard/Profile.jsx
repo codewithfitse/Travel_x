@@ -2,8 +2,14 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Header, SideBar, SubHeader, SubSideBar, UserHeader, UserSideBar } from "../dashboard/component";
-
+import {
+  Header,
+  SideBar,
+  SubHeader,
+  SubSideBar,
+  UserHeader,
+  UserSideBar,
+} from "../dashboard/component";
 
 export const Profile = () => {
   const [loading, setLoading] = useState(true);
