@@ -141,7 +141,7 @@ const Vehicles = () => {
                 <li>° 10 to 15 Person Seat</li>
                 <li>° Automatic And Manual</li>
                 <li>° Perfect for Trip + Cargo Palace</li>
-                <li>° Pick up at airport</li>
+                <li>° Pick up at airport </li>
               </ul>
             </div>
           </div>
