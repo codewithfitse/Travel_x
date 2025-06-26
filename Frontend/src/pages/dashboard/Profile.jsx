@@ -309,7 +309,7 @@ export const UserProfile = () => {
                       <div className="relative">
                         <div className="w-[120px] h-[120px] overflow-hidden flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
                           <img
-                            src={users?.avatar}
+                            src={user?.avatar}
                             className="w-full h-full object-cover rounded-full"
                             alt="Profile Pic"
                           />
@@ -318,10 +318,10 @@ export const UserProfile = () => {
                       </div>
 
                       <h1 className="mt-2 text-2xl capitalize text-white text-center font-bold">
-                        {users?.name || users?.firstName} {users?.lastName}
+                        {user?.name || user?.firstName} {user?.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {users?.isAdmin ? "Admin" : "SubAdmin"}
+                        {user?.isAdmin ? "Admin" : "SubAdmin"}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
@@ -333,13 +333,13 @@ export const UserProfile = () => {
                           <div className="w-full flex flex-col lg:flex-row gap-1">
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Email</h1>
-                              <h1 className="font-semibold">{users?.email}</h1>
+                              <h1 className="font-semibold">{user?.email}</h1>
                             </div>
                             <div className="w-full h-15">
                               <h1 className="text-gray-400">Last Login</h1>
                               <h1 className="font-semibold">
                                 {/* 30/05/2025, 01:48:49{" "} */}
-                                {new Date(users?.lastLogin).toLocaleString(
+                                {new Date(user?.lastLogin).toLocaleString(
                                   "en-GB"
                                 )}
                               </h1>
