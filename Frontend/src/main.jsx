@@ -31,6 +31,7 @@ import {
 } from "./pages/dashboard/CRUDUSER.jsx";
 import {
   LandingVehicle,
+  SubLandingVehicle,
   Deletes,
   Edits,
   Views,
@@ -148,6 +149,10 @@ const router = createBrowserRouter([
   {
     path: "/LandingVehicle",
     element: <LandingVehicle />,
+  },
+  {
+    path: "/SubLandingVehicle",
+    element: <SubLandingVehicle />,
   },
   {
     path: "/Post",
