@@ -70,7 +70,7 @@ const Header = () => {
             <Link to="/Login">
               <h1 className="hover:text-[#16fe01]">LOGIN</h1>
             </Link>
-            <Link to="/Demo">
+            <Link to="/USerDashboard">
               <h1 className="hover:text-[#16fe01]">DashBoard</h1>
             </Link>
           </div>
