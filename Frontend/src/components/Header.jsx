@@ -71,7 +71,7 @@ const Header = () => {
               <h1 className="hover:text-[#16fe01]">LOGIN</h1>
             </Link>
             <Link to="/UserDashboard">
-              <h1 className="hover:text-[#16fe01]">Demo</h1>
+              <h1 className="hover:text-[#16fe01]">DashBoard</h1>
             </Link>
           </div>
         )}
