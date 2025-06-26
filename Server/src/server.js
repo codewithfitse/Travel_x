@@ -188,10 +188,10 @@ app.get("/", (req, res) => {
 app.get("/dashboards", authMiddleware, async (req, res) => {
   const id = req.user?._id || req.user?.id;
   
-  const data = await UserLogin.find(
-    { _id: id },
-    { password: false }
-  );
+  const data =
+  (await UserLogin.findById(id).select("-password")) ||
+  (await UserOauth.findById(id).select("-password"));
+
   res.json(data);
   console.log(data);
 });
