@@ -87,8 +87,9 @@ router.get("/pickup", async (req, res) => {
 });
 
 // I make this Post to upload to cloudeary cloud storage!
-router.post("/", upload.single('image'), async (req, res) => {
+router.post("/", upload.single('image'), authMiddleware, async (req, res) => {
   const { name, item, price } = req.body;
+  const id = req.user.id
 
   if (!req.file) {
     return res.status(400).json({ error: "No file uploaded" });
@@ -97,6 +98,7 @@ router.post("/", upload.single('image'), async (req, res) => {
   try {
     // req.file now contains Cloudinary info
     const savedPost = new UserPost({
+      userId: id,
       name,
       item,
       price,
