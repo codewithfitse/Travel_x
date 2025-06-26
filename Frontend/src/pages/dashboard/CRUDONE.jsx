@@ -604,8 +604,14 @@ export const OneEdits = () => {
     try {
       await axios
         .put(`https://travel-x-408k.onrender.com/uploads/one/${img._id}`, formData, { withCredentials: true })
-        .then(() => navigate("/OneLandingVehicle"))
-        .catch((err) => console.log(err));
+        .then(() => (
+          alert("Done");
+          navigate("/OneLandingVehicle");
+        ))
+        .catch((err) => ( 
+          alert("Failed");
+          console.log(err);
+        ));
     } catch (error) {
       console.log(error);
     } finally {
