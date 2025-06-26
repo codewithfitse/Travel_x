@@ -594,7 +594,6 @@ export const OneEdits = () => {
     formData.append("name", name);
     formData.append("item", item);
     formData.append("model", model);
-    formData.append("item", item);
     formData.append("price", price);
     if (image) {
       formData.append("image", image);
