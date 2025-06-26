@@ -1,23 +1,16 @@
-// -------------------------
-// Imports
-// -------------------------
 import jwt from "jsonwebtoken";
 import passport from "passport";
 
-// -------------------------
-// Auth Middleware
-// -------------------------
 export default function authMiddleware(req, res, next) {
-  // ✅ Try Passport first (for OAuth or JWT strategy)
-  passport.authenticate("jwt", { session: false }, (err, user, info) => {
+  // First try passport (OAuth session or Bearer token)
+  passport.authenticate("jwt", { session: true }, (err, user, info) => {
     if (user) {
       req.user = user;
       return next();
     }
 
-    // ⚠️ Fallback to cookie-based JWT if Passport fails
+    // Fallback to cookie-based JWT
     const token = req.cookies.token;
-
     if (!token) {
       return res.status(401).json({ message: "Unauthorized: No token" });
     }
@@ -29,5 +22,5 @@ export default function authMiddleware(req, res, next) {
     } catch (error) {
       return res.status(403).json({ message: "Forbidden: Invalid token" });
     }
-  })(req, res, next); // ⚠️ Don't forget to call it!
+  })(req, res, next); // important to invoke it
 }
