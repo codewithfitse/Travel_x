@@ -19,7 +19,10 @@ const Vehicles = () => {
     const fetchImages = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/uploads/one",
+          { withCredentials: true }
+        );
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -30,7 +33,7 @@ const Vehicles = () => {
 
     fetchImages();
   }, []);
-  
+
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
@@ -40,8 +43,6 @@ const Vehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-
-
         <Link to="/SuvVehicles" state={{ Suv }}>
           Suv
           <div className="w-full py-5 card">
@@ -114,7 +115,7 @@ const Vehicles = () => {
           Ecomony
           <div className="w-full py-5 card">
             <div className="pb-15 flex justify-center">
-              <img src="fullsizesuv.png" alt="" srcset="" />
+              <img src="chery-jetour.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
@@ -177,7 +178,9 @@ const Vehicles = () => {
               <img src="send.jpg" alt="" srcset="" />
             </div>
             <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold">One Day with Driver!</h1>
+              <h1 className="text-[40px] text-[#16fe01] font-bold">
+                One Day with Driver!
+              </h1>
               <h2>Starting 2200Br - 5000Br</h2>
               <h2>Toyota VITZ or Similar</h2>
               <h2>Vehicle Feature</h2>
@@ -190,10 +193,8 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-
       </div>
 
-      
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
@@ -229,7 +230,9 @@ export const SuvVehicles = () => {
   const fetchImages = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/suv");
+      const res = await axios.get(
+        "https://travel-x-408k.onrender.com/uploads/suv"
+      );
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -254,8 +257,7 @@ export const SuvVehicles = () => {
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
-            <div key={img._id}
- className="w-full py-5 card">
+            <div key={img._id} className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
                   src={img.url}
@@ -276,7 +278,7 @@ export const SuvVehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-                 <Link to="/Home">Home</Link>
+                <Link to="/Home">Home</Link>
               </div>
             </div>
           ))
@@ -316,7 +318,9 @@ export const MidSuvVehicles = () => {
   const fetchImages = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/midsuv");
+      const res = await axios.get(
+        "https://travel-x-408k.onrender.com/uploads/midsuv"
+      );
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -337,12 +341,11 @@ export const MidSuvVehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-                {isLoading ? (
+        {isLoading ? (
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
-            <div key={img._id}
- className="w-full py-5 card">
+            <div key={img._id} className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
                   src={img.url}
@@ -363,7 +366,7 @@ export const MidSuvVehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-                 <Link to="/Home">Home</Link>
+                <Link to="/Home">Home</Link>
               </div>
             </div>
           ))
@@ -403,7 +406,9 @@ export const FullSuvVehicles = () => {
   const fetchImages = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/fullsuv");
+      const res = await axios.get(
+        "https://travel-x-408k.onrender.com/uploads/fullsuv"
+      );
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -428,8 +433,7 @@ export const FullSuvVehicles = () => {
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
-            <div key={img._id}
- className="w-full py-5 card">
+            <div key={img._id} className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
                   src={img.url}
@@ -450,7 +454,7 @@ export const FullSuvVehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-                 <Link to="/Home">Home</Link>
+                <Link to="/Home">Home</Link>
               </div>
             </div>
           ))
@@ -490,7 +494,9 @@ export const MiniVanVehicles = () => {
   const fetchImages = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/minivan");
+      const res = await axios.get(
+        "https://travel-x-408k.onrender.com/uploads/minivan"
+      );
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -515,8 +521,7 @@ export const MiniVanVehicles = () => {
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
-            <div key={img._id}
- className="w-full py-5 card">
+            <div key={img._id} className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
                   src={img.url}
@@ -537,7 +542,7 @@ export const MiniVanVehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-                 <Link to="/Home">Home</Link>
+                <Link to="/Home">Home</Link>
               </div>
             </div>
           ))
@@ -577,7 +582,9 @@ export const PickUpVehicles = () => {
   const fetchImages = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/pickup");
+      const res = await axios.get(
+        "https://travel-x-408k.onrender.com/uploads/pickup"
+      );
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -602,8 +609,7 @@ export const PickUpVehicles = () => {
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           images.map((img) => (
-            <div key={img._id}
- className="w-full py-5 card">
+            <div key={img._id} className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
                   src={img.url}
@@ -624,7 +630,7 @@ export const PickUpVehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-                 <Link to="/Home">Home</Link>
+                <Link to="/Home">Home</Link>
               </div>
             </div>
           ))
@@ -660,9 +666,12 @@ export const OneDayVehicles = () => {
   useEffect(() => {
     // Fetch images from backend
     const fetchImages = async () => {
-         setIsLoading(true);
+      setIsLoading(true);
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/Ones", { withCredentials: true });
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/uploads/Ones",
+          { withCredentials: true }
+        );
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -673,7 +682,7 @@ export const OneDayVehicles = () => {
 
     fetchImages();
   }, []);
-  
+
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
@@ -687,8 +696,7 @@ export const OneDayVehicles = () => {
           <p className="text-[50px] font-bold">Loading..</p>
         ) : (
           data.map((img) => (
-            <div key={img._id}
- className="w-full py-5 card">
+            <div key={img._id} className="w-full py-5 card">
               <div className="flex justify-center">
                 <img
                   src={img.url}
@@ -709,7 +717,9 @@ export const OneDayVehicles = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-                 <Link to="/OneDayVehiclesBook" state={{ img }}><Button text={"Book Now!"} /></Link>
+                <Link to="/OneDayVehiclesBook" state={{ img }}>
+                  <Button text={"Book Now!"} />
+                </Link>
               </div>
             </div>
           ))
@@ -745,22 +755,26 @@ export const OneDayVehiclesBook = () => {
   const user = location.state?.img;
 
   async function handleBooking() {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      await axios.post(`https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`, user, {
-        withCredentials: true,
-      });
+      await axios.post(
+        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`,
+        user,
+        {
+          withCredentials: true,
+        }
+      );
       alert("Successfully Booked!");
       navigate("/UserDashboard");
     } catch (error) {
       alert("You forgot to login bro");
-      navigate("/Login")
+      navigate("/Login");
       console.log(error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
   }
-  
+
   useEffect(() => {
     // Fetch images from backend
     const fetchImages = async () => {
@@ -815,14 +829,20 @@ export const OneDayVehiclesBook = () => {
                 <li>° Pick up at airport</li>
               </ul>
               <div className="flex mt-3 lg:mt-5 space-x-5">
-              <button className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg" onClick={handleBooking}>
-                {isLoading ? "Ordering...": "Order"}
-              </button>
-              <Link to="/Vehicles">
-                <button className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg" onClick={handleBooking}>
-                  Back
+                <button
+                  className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
+                  onClick={handleBooking}
+                >
+                  {isLoading ? "Ordering..." : "Order"}
                 </button>
-              </Link>
+                <Link to="/Vehicles">
+                  <button
+                    className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
+                    onClick={handleBooking}
+                  >
+                    Back
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -849,5 +869,3 @@ export const OneDayVehiclesBook = () => {
     </div>
   );
 };
-
-
