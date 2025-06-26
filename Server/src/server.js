@@ -158,7 +158,7 @@ function isAuthenticated(req, res, next) {
 }
 
 // i create this b/c i want too make simlify for user profile data after all the login is done and to feach it frontend!
-app.get("/profile", (req, res) => {
+app.get("/profile", authMiddleware, (req, res) => {
   res.status(200).json({ message: "Welcome Admin", user: req.user });
 });
 
