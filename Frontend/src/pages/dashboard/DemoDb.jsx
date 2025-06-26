@@ -813,7 +813,7 @@ export const UserDemoDb = () => {
                     </h1>
                   </div>
                   <div className="w-fit h-full">
-                    <Link to="/UserDashboard">
+                    <Link to="">
                       <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
                         Back
                       </button>
