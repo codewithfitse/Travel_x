@@ -9,7 +9,7 @@ export const Profile = () => {
   const [toggle, setToggle] = useState(false);
   const [data, setData] = useState([]);
   const [users, setUsers] = useState(null);
-  const user = data[0];
+  const users = data[0];
 
 
   useEffect(() => {
