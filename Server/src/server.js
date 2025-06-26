@@ -186,11 +186,11 @@ app.get("/", (req, res) => {
 
 // this will feached if the middle ware is correct means if the cookie is present!
 app.get("/dashboards", authMiddleware, async (req, res) => {
-  const id = req.user?._id || req.user?.id;
-  
+
   const data =
-  (await UserLogin.findById(id).select("-password")) ||
-  (await UserOauth.findById(id).select("-password"));
+  (await UserLogin.find({ email: req.user.email }).select("-password")) ||
+  (await UserOauth.find({ email: req.user.email }));
+
 
   res.json(data);
   console.log(data);
