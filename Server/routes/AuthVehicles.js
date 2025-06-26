@@ -138,7 +138,7 @@ router.post("/", upload.single("image"), authMiddleware, async (req, res) => {
 router.put("/:id", upload.single("image"), async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, item, price } = req.body;
+    const { name, item, price, model } = req.body;
 
     const post = await UserPost.findById(id);
     if (!post) return res.status(404).json({ error: "Post not found" });
@@ -157,6 +157,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     post.name = name || post.name;
     post.item = item || post.item;
     post.price = price || post.price;
+    post.model = price || post.model;
 
     await post.save();
 
@@ -284,7 +285,7 @@ router.put(
   async (req, res) => {
     try {
       const { id } = req.params;
-      const { name, item, price } = req.body;
+      const { name, item, price, model } = req.body;
       // this conatines mongoDb id and it will save user info in booking that will have acces to only user access!
       const userId = req.user.id;
 
