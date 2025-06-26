@@ -52,6 +52,55 @@ export const LandingVehicle = () => {
   );
 };
 
+export const LandingVehicle = () => {
+  const [isloading, setIsloading] = useState(false);
+  const [images, setImages] = useState([]);
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <section className="min-h-screen overflow-x-hidden">
+        <div className="w-full h-screen flex bg-[#020817] text-white">
+          <SideBar />
+          <div className="ml-14 flex flex-col flex-1">
+            <Header />
+            <main className="pt-20 p-5 bg-transparent">
+              <div className="w-full h-full p-5 lg:px-10 bg-gray-900">
+                <div className="w-full h-fit flex flex-col justify-between items-center">
+                  <div className="w-fit h-full py-1">
+                    <h1 className="text-[30px] text-white font-bold">
+                      Cars Collection DataBase
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap flex-col gap-4">
+                  <Link to="/Get">
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">See Posts</h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link to="/Post">
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="text-[30px] font-bold">Upload Posts</h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
 export const GetAdmin = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
