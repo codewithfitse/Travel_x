@@ -178,7 +178,7 @@ export const UserSideBar = () => {
           <i class="fas fa-folder-open text-white !text-[30px]"></i>
         </div>
       </Link>
-      <Link to="/Dashboard">
+      <Link to="/UserDashboard">
         <div className="w-full h-16 flex justify-center items-center border-b-1 border-gray-700">
           <i class="fas fa-database text-white !text-[30px]"></i>
         </div>
