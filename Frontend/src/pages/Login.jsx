@@ -81,7 +81,7 @@ export const Login = () => {
         } else if (user.isSubAdmin) {
           navigate("/SubAdmin");
         } else {
-          navigate("/Dashboard");
+          navigate("/Login");
         }
       })
       .catch((err) => {
