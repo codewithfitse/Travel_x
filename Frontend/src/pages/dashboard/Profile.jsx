@@ -315,7 +315,7 @@ export const SubProfile = () => {
                         <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                       </div>
                       <h1 className="mt-2 text-2xl capitalize text-white text-center font-bold">
-                        {user.firstName} {user.lastName}jjjj
+                        {user.firstName} {user.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                         Admin
