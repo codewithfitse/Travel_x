@@ -140,8 +140,10 @@ app.get(
       console.log("✅ Logged in user:", req.user);
       console.log("💾 Session:", req.session);
 
-      if (isAdmin || isSubAdmin) {
+      if (isAdmin) {
         return res.redirect("https://travel-x-kappa.vercel.app/Admin");
+      } else if (isSubAdmin) {
+        return res.redirect("https://travel-x-kappa.vercel.app/SubAdmin");
       }
 
       return res.redirect("https://travel-x-kappa.vercel.app/UserDashboard");
