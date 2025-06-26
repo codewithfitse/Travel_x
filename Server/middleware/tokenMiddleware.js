@@ -1,10 +1,17 @@
 import jwt from "jsonwebtoken";
+import passport from "passport";
 
 export default function authMiddleware(req, res, next) {
-  const token = req.cookies.token; // 👈 get the token from the cookie
+  // ✅ Check for Passport session (OAuth login)
+  if (req.isAuthenticated && req.isAuthenticated()) {
+    req.user = req.user; // Already populated by passport.deserializeUser
+    return next();
+  }
 
+  // ✅ Fallback to cookie-based JWT
+  const token = req.cookies.token;
   if (!token) {
-    return res.status(401).json({ message: "Unauthorized: Missing token!" });
+    return res.status(401).json({ message: "Unauthorized: No token" });
   }
 
   try {
