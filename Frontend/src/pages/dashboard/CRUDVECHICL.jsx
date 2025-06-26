@@ -62,7 +62,8 @@ export const GetAdmin = () => {
     const fetchImages = async () => {
       try {
         const res = await axios.get(
-          "https://travel-x-408k.onrender.com/uploads"
+          "https://travel-x-408k.onrender.com/uploads",
+          { withCredentials: true }
         );
         setImages(res.data);
       } catch (err) {
@@ -148,7 +149,8 @@ export const Get = () => {
     const fetchImages = async () => {
       try {
         const res = await axios.get(
-          "https://travel-x-408k.onrender.com/uploads/sub"
+          "https://travel-x-408k.onrender.com/uploads/sub",
+          { withCredentials: true }
         );
         setImages(res.data);
       } catch (err) {
