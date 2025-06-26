@@ -96,8 +96,8 @@ const Vehicles = () => {
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Mid Suv</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota Rav4 or Similar</h2>
+              <h2>Starting 1,400,000 - 5,500,000Br</h2>
+              <h2>Hyundai Tucson or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
                 <li>° 5 to 7 Person Seat</li>
@@ -111,12 +111,12 @@ const Vehicles = () => {
         <Link to="/FullSuvVehicles" state={{ MidSuv }}>
           <div className="w-full py-5 card">
             <div className="pb-15 flex justify-center">
-              <img src="chery-jetour.png" alt="" srcset="" />
+              <img src="fullsuv.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
+              <h2>Starting 1,200,000 - 37,000,000Br</h2>
+              <h2>Jetour X70 or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
                 <li>° 7 to 8 Person Seat</li>
@@ -141,7 +141,7 @@ const Vehicles = () => {
                 <li>° 10 to 15 Person Seat</li>
                 <li>° Automatic And Manual</li>
                 <li>° Perfect for Trip + Cargo Palace</li>
-                <li>° Pick up at airport</li>
+                <li>° Pick up at airport </li>
               </ul>
             </div>
           </div>
