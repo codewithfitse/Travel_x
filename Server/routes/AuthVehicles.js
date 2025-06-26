@@ -230,44 +230,51 @@ router.get("/suvOne", async (req, res) => {
 });
 
 // I make this Post to upload to cloudeary cloud storage!
-router.post(
-  "/one",
-  authMiddleware,
-  upload.single("image"),
-  async (req, res) => {
-    const { name, item, price, model } = req.body;
-    // this conatines mongoDb id and it will save user info in booking that will have acces to only user access!
-    const userId = req.user.id;
-    if (!req.file) {
-      return res.status(400).json({ error: "No file uploaded" });
-    }
+router.post("/one", authMiddleware, upload.single("image"), async (req, res) => {
+  const { name, item, price, model } = req.body;
+  const userId = req.user?.id;
 
-    try {
-      // req.file now contains Cloudinary info
-      const savedPost = new UserPostOne({
-        userId: userId,
-        name,
-        item,
-        price,
-        model,
-        url: req.file.path, // already the Cloudinary URL, user to feach image to frontend!
-        public_id: req.file.filename, // this is the Cloudinary ID , userd to update and delete from cloudnarey
-      });
+  // Add these debug logs:
+  console.log("📥 Incoming POST to /one");
+  console.log("🧑‍💻 User ID:", userId);
+  console.log("📦 Body:", req.body);
+  console.log("📁 File:", req.file);
 
-      await savedPost.save();
-
-      console.log("✅ Uploaded to Cloudinary via Multer:", req.file.path);
-
-      res.status(200).json({
-        msg: "Uploaded and saved to DB!",
-        imageUrl: req.file.path,
-      });
-    } catch (error) {
-      console.error("❌ Upload failed:", error);
-      res.status(500).json({ error: "Upload failed" });
-    }
+  if (!userId) {
+    return res.status(401).json({ error: "Unauthorized: No user ID" });
   }
-);
+
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
+  try {
+    const savedPost = new UserPostOne({
+      userId,
+      name,
+      item,
+      price,
+      model,
+      url: req.file.path,
+      public_id: req.file.filename,
+    });
+
+    await savedPost.save();
+
+    res.status(200).json({
+      msg: "Uploaded and saved to DB!",
+      imageUrl: req.file.path,
+    });
+  } catch (error) {
+    console.error("❌ Error saving post:", error.message);
+    return res.status(500).json({
+      error: "Upload failed",
+      message: error.message,
+      stack: error.stack,
+    });
+  }
+});
+
 
 // Update route - Update image and/or text
 router.put(
