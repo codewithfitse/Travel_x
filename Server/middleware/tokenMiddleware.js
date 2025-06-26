@@ -1,19 +1,26 @@
 import jwt from "jsonwebtoken";
+import passport from "passport";
 
-function authMiddleware(req, res, next) {
-  const token = req.cookies.token; // 👈 get the token from the cookie
+export default function authMiddleware(req, res, next) {
+  // First try passport (OAuth session or Bearer token)
+  passport.authenticate("jwt", { session: true }, (err, user, info) => {
+    if (user) {
+      req.user = user;
+      return next();
+    }
 
-  if (!token) {
-    return res.status(401).json({ message: "Unauthorized: Missing token!" });
-  }
+    // Fallback to cookie-based JWT
+    const token = req.cookies.token;
+    if (!token) {
+      return res.status(401).json({ message: "Unauthorized: No token" });
+    }
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, decodedUser) => {
-    if (err) {
+    try {
+      const decodedUser = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = decodedUser;
+      return next();
+    } catch (error) {
       return res.status(403).json({ message: "Forbidden: Invalid token" });
     }
-    req.user = decodedUser; // 🎯 attach the user info to request
-    next();
-  });
+  })(req, res, next); // important to invoke it
 }
-
-export default authMiddleware;
