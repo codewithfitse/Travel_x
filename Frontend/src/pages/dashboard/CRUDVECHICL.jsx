@@ -647,7 +647,7 @@ export const Deletes = () => {
       .delete(`https://travel-x-408k.onrender.com/uploads/${_id}`)
       .then(() => {
         alert("successfully deleted");
-        navigate("/Get");
+        navigate("/LandingVehicle");
       })
       .catch((err) => console.log(err));
   }
