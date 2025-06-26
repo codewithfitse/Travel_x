@@ -111,7 +111,7 @@ const Vehicles = () => {
         <Link to="/FullSuvVehicles" state={{ MidSuv }}>
           <div className="w-full py-5 card">
             <div className="pb-15 flex justify-center">
-              <img src="chery-Jetour.png" alt="" srcset="" />
+              <img src="fullsuv.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
