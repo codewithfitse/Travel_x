@@ -35,7 +35,7 @@ import {
   Edits,
   Views,
   Post,
-  AdminGet,
+  GetAdmin,
   Get,
 } from "./pages/dashboard/CRUDVECHICL.jsx";
 import {
@@ -154,8 +154,8 @@ const router = createBrowserRouter([
     element: <Post />,
   },
   {
-    path: "/AdminGet",
-    element: <AdminGet />,
+    path: "/GetAdmin",
+    element: <GetAdmin />,
   },
   {
     path: "/Get",
