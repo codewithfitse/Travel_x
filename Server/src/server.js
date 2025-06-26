@@ -143,7 +143,7 @@ app.get(
         return res.redirect("https://travel-x-kappa.vercel.app/Admin");
       }
 
-      return res.redirect("https://travel-x-kappa.vercel.app/Login");
+      return res.redirect("https://travel-x-kappa.vercel.app/UserDashboard");
     });
   }
 );

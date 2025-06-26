@@ -51,7 +51,11 @@ export const ViewDashboard = () => {
                     </h1>
                     <h1 className="font-bold capitalize">
                       Password:{" "}
-                      <span className="font-semibold">{user.password}</span>{" "}
+                      <span className="font-semibold">.........</span>{" "}
+                    </h1>
+                    <h1 className="font-bold capitalize">
+                      Role:{" "}
+                      <span className="font-semibold">{user.isAdmin ? "Admin" : user.isSubAdmin ? "SubAdmin" : "User"}</span>{" "}
                     </h1>
                     <h1 className="font-bold capitalize">
                       Control:{" "}

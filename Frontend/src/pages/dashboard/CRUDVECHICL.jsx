@@ -160,6 +160,7 @@ export const Post = () => {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+        withCredentials: true,
       });      
       fetchImages();
       setName("");
