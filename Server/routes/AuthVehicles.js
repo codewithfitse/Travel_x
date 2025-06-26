@@ -232,7 +232,7 @@ router.get("/suvOne", async (req, res) => {
 // I make this Post to upload to cloudeary cloud storage!
 router.post("/one", authMiddleware, upload.single("image"), async (req, res) => {
   const { name, item, price, model } = req.body;
-  const userId = req.user?.id;
+  const userId = req.user?._id || req.user?.id;
 
   // Add these debug logs:
   console.log("📥 Incoming POST to /one");
