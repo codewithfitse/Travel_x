@@ -95,14 +95,14 @@ const Vehicles = () => {
               <img src="midsizesuv.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Suv</h1>
+              <h1 className="text-[40px] text-[#16fe01] font-bold">Mid Suv</h1>
               <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
+              <h2>Toyota Rav4 or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
+                <li>° 5 to 7 Person Seat</li>
+                <li>° Automatic and Manual</li>
+                <li>° Perfect for in Family + City</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>
@@ -111,7 +111,7 @@ const Vehicles = () => {
         <Link to="/FullSuvVehicles" state={{ MidSuv }}>
           <div className="w-full py-5 card">
             <div className="pb-15 flex justify-center">
-              <img src="fullsizesuv.png" alt="" srcset="" />
+              <img src="chery-jetour.png" alt="" srcset="" />
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
@@ -119,9 +119,9 @@ const Vehicles = () => {
               <h2>Toyota VITZ or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
+                <li>° 7 to 8 Person Seat</li>
+                <li>° Automatic and Manual </li>
+                <li>° Perfect for in city, More Cargo</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>
@@ -140,8 +140,8 @@ const Vehicles = () => {
               <ul>
                 <li>° 10 to 15 Person Seat</li>
                 <li>° Automatic And Manual</li>
-                <li>° Perfect for Trip</li>
-                <li>° Have Cargo Pace</li>
+                <li>° Perfect for Trip + Cargo Palace</li>
+                <li>° Pick up at airport</li>
               </ul>
             </div>
           </div>
@@ -157,9 +157,9 @@ const Vehicles = () => {
               <h2>Toyota Revo or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
+                <li>° 2 to 5 Person Seat</li>
                 <li>° Automatic And Manual</li>
-                <li>° Perfect for Heavy Duty</li>
+                <li>° Perfect for Heavy Duty + Utility</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>
