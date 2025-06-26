@@ -96,8 +96,8 @@ const Vehicles = () => {
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Mid Suv</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota Rav4 or Similar</h2>
+              <h2>Starting 1,400,000 - 5,500,000Br</h2>
+              <h2>Hyundai Tucson or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
                 <li>° 5 to 7 Person Seat</li>
@@ -115,7 +115,7 @@ const Vehicles = () => {
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
-              <h2>Starting $60</h2>
+              <h2>Starting 1,200,000 - 37,000,000Br</h2>
               <h2>Jetour X70 or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
