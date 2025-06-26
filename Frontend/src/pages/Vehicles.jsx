@@ -134,14 +134,14 @@ const Vehicles = () => {
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Van</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
+              <h2>Starting 900,000 to 7,250,000Br</h2>
+              <h2>Toyota Hiace or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
-                <li>° Pick up at airport</li>
+                <li>° 10 to 15 Person Seat</li>
+                <li>° Automatic And Manual</li>
+                <li>° Perfect for Trip</li>
+                <li>° Have Cargo Pace</li>
               </ul>
             </div>
           </div>
@@ -153,13 +153,13 @@ const Vehicles = () => {
             </div>
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
+              <h2>Starting 1,200,000 to 9,000,000Br</h2>
+              <h2>Toyota Revo or Similar</h2>
               <h2>Vehicle Feature</h2>
               <ul>
                 <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
+                <li>° Automatic And Manual</li>
+                <li>° Perfect for Heavy Duty</li>
                 <li>° Pick up at airport</li>
               </ul>
             </div>
