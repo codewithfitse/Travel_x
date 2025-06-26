@@ -294,11 +294,13 @@ router.put(
 
       // If there's a new image uploaded, delete old image from Cloudinary and upload new one
     if (req.file) {
-  try {
-    await cloudinary.uploader.destroy(post.public_id);
-  } catch (err) {
-    console.warn("⚠️ Cloudinary deletion failed:", err.message);
-  }
+      // Delete old image from Cloudinary
+      await cloudinary.uploader.destroy(post.public_id);
+
+      // Update with new image info
+      post.url = req.file.path;
+      post.public_id = req.file.filename;
+    }
 
   post.url = req.file.path;
   post.public_id = req.file.filename;
