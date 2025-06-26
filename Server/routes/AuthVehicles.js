@@ -293,14 +293,17 @@ router.put(
       if (!post) return res.status(404).json({ error: "Post not found" });
 
       // If there's a new image uploaded, delete old image from Cloudinary and upload new one
-      if (req.file) {
-        // Delete old image from Cloudinary
-        await cloudinary.uploader.destroy(post.public_id);
+    if (req.file) {
+  try {
+    await cloudinary.uploader.destroy(post.public_id);
+  } catch (err) {
+    console.warn("⚠️ Cloudinary deletion failed:", err.message);
+  }
 
-        // Update with new image info
-        post.url = req.file.path;
-        post.public_id = req.file.filename;
-      }
+  post.url = req.file.path;
+  post.public_id = req.file.filename;
+}
+
 
       // Update other fields
       post.name = name || post.name;
