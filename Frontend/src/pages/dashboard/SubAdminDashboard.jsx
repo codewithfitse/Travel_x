@@ -22,7 +22,7 @@ const SubDashboard = () => {
                   <div className="w-fit h-full"></div>
                 </div>
 
-                <Link to="/UserDemoDb">
+                <Link to="/SubDemoDb">
                   <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                     <div className="w-full px-5 flex justify-between items-center">
                       <h1 className="text-[30px] font-bold">Booking Demo</h1>
