@@ -65,6 +65,7 @@ import {
   LandingDemoDb,
   PendingDemoDb,
   SucessfullDemoDb,
+  SubDemoDb,
   UserDemoDb,
 } from "./pages/dashboard/DemoDb.jsx";
 
@@ -269,6 +270,10 @@ const router = createBrowserRouter([
   {
     path: "/UserDemoDb",
     element: <UserDemoDb />,
+  },
+  {
+    path: "/SubDemoDb",
+    element: <SubDemoDb />,
   },
   {
     path: "/EditDemoDb",
