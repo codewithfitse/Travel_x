@@ -12,7 +12,13 @@ const SubDashboard = () => {
           <div className="ml-14 flex flex-col flex-1">
             <SubHeader toggle={toggle} setToggle={setToggle} />
             <main className="pt-20 p-5 bg-transparent">
-              <div className="w-full h-full p-5 lg:px-30 bg-gray-900">
+              <div
+                className={`h-full lg:px-30 bg-gray-900 ${
+                  toggle
+                    ? "w-auto ml-22 p-3 text-[10px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                    : " p-5 text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]"
+                }`}
+              >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
