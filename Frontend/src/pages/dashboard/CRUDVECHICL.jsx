@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Header, SideBar } from "./component";
+import { Header, SideBar, SubHeader, SubSideBar } from "./component";
 
 export const LandingVehicle = () => {
   const [isloading, setIsloading] = useState(false);
@@ -216,9 +216,9 @@ export const Get = () => {
     <>
       <section className="min-h-full overflow-x-hidden">
         <div className="w-full h-full flex bg-[#020817] text-white">
-          <SideBar />
+          <SubSideBar />
           <div className="ml-14 flex flex-col flex-1">
-            <Header />
+            <SubHeader />
             <main className="pt-20 p-5 bg-transparent">
               <div className="w-full h-full p-5 lg:px-10 bg-gray-900">
                 <div className="w-full h-fit flex flex-col justify-between items-center">
