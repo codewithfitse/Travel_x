@@ -156,7 +156,7 @@ export const SubHeader = () => {
             <div className="flex justify-between">Dashboard</div>
           </Link>
           <Link to="/Login">
-            <div className="flex justify-between onClick={handleLogout}">Sign out</div>
+            <div className="flex justify-between" onClick={handleLogout}>Sign out</div>
           </Link>
           <Link to="/SubProfile">
             <div className="flex justify-between">Profile</div>
