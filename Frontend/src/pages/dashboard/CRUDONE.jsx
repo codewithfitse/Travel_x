@@ -17,7 +17,7 @@ export const OneLandingVehicleAdmin = () => {
           <div className="ml-14 flex flex-col flex-1">
             <Header toggle={toggle} />
             <main className="pt-20 p-5 bg-transparent">
-                <div
+              <div
                 className={`h-full lg:px-30 bg-gray-900 ${
                   toggle
                     ? "w-auto ml-22 p-3 text-[10px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
@@ -34,7 +34,7 @@ export const OneLandingVehicleAdmin = () => {
 
                 <div className="flex flex-wrap flex-col gap-4">
                   <Link to="/OneGetAdmin">
-                     <div
+                    <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
@@ -48,14 +48,16 @@ export const OneLandingVehicleAdmin = () => {
                               ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >See Posts</h1>
+                        >
+                          See Posts
+                        </h1>
                         <i className="fa fa-bookmark w-2 !text-[30px]"></i>
                       </div>
                     </div>
                   </Link>
-                  
+
                   <Link to="/OnePost">
-                     <div
+                    <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
@@ -69,7 +71,9 @@ export const OneLandingVehicleAdmin = () => {
                               ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >Upload Posts</h1>
+                        >
+                          Upload Posts
+                        </h1>
                         <i className="fa fa-bookmark w-2 !text-[30px]"></i>
                       </div>
                     </div>
@@ -98,7 +102,7 @@ export const OneLandingVehicle = () => {
           <div className="ml-14 flex flex-col flex-1">
             <SubHeader toggle={toggle} />
             <main className="pt-20 p-5 bg-transparent">
-                <div
+              <div
                 className={`h-full lg:px-30 bg-gray-900 ${
                   toggle
                     ? "w-auto ml-22 p-3 text-[10px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
@@ -115,7 +119,7 @@ export const OneLandingVehicle = () => {
 
                 <div className="flex flex-wrap flex-col gap-4">
                   <Link to="/OneGet">
-                     <div
+                    <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
@@ -129,14 +133,16 @@ export const OneLandingVehicle = () => {
                               ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >See Posts</h1>
+                        >
+                          See Posts
+                        </h1>
                         <i className="fa fa-bookmark w-2 !text-[30px]"></i>
                       </div>
                     </div>
                   </Link>
-                  
+
                   <Link to="/OnePost">
-                     <div
+                    <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
@@ -150,7 +156,9 @@ export const OneLandingVehicle = () => {
                               ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >Upload Posts</h1>
+                        >
+                          Upload Posts
+                        </h1>
                         <i className="fa fa-bookmark w-2 !text-[30px]"></i>
                       </div>
                     </div>
@@ -175,7 +183,10 @@ export const OneGet = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/uploads/one",
+          { withCredentials: true }
+        );
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -208,7 +219,7 @@ export const OneGet = () => {
                       Cars Collection DataBase
                     </h1>
                     <h1 className="text-[30px] text-white font-bold">
-                      {isLoading ? "Loading..." : null }
+                      {isLoading ? "Loading..." : null}
                     </h1>
                   </div>
                 </div>
@@ -266,7 +277,10 @@ export const OneGetAdmin = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/uploads/ones", { withCredentials: true });
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/uploads/ones",
+          { withCredentials: true }
+        );
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -299,7 +313,7 @@ export const OneGetAdmin = () => {
                       Cars Collection DataBase
                     </h1>
                     <h1 className="text-[30px] text-white font-bold">
-                      {isLoading ? "Loading..." : null }
+                      {isLoading ? "Loading..." : null}
                     </h1>
                   </div>
                 </div>
@@ -353,7 +367,7 @@ export const OnePost = () => {
   const [name, setName] = useState();
   const [price, setPrice] = useState();
   const [item, setItem] = useState();
-  const [model, setModel] = useState("");  
+  const [model, setModel] = useState("");
   const [images, setImages] = useState([]);
 
   const handleUpload = async (e) => {
@@ -362,26 +376,30 @@ export const OnePost = () => {
     if (!image) return;
 
     const formData = new FormData();
-    formData.append('name', name); 
-    formData.append('item', item); 
-    formData.append('model', model); 
-    formData.append('price', price); 
-    formData.append('image', image); 
+    formData.append("name", name);
+    formData.append("item", item);
+    formData.append("model", model);
+    formData.append("price", price);
+    formData.append("image", image);
 
     try {
-      const res = await axios.post("https://travel-x-408k.onrender.com/uploads/one", formData, {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });      
+      const res = await axios.post(
+        "https://travel-x-408k.onrender.com/uploads/one",
+        formData,
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       fetchImages();
       setName("");
       setItem("");
       setPrice("");
       setModel("");
       setImage("");
-      alert("Upload Success");      
+      alert("Upload Success");
     } catch (err) {
       console.error(err);
       alert("Upload failed");
@@ -392,7 +410,10 @@ export const OnePost = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get("https://travel-x-408k.onrender.com/uploads/one", { withCredentials: true });
+      const res = await axios.get(
+        "https://travel-x-408k.onrender.com/uploads/one",
+        { withCredentials: true }
+      );
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
@@ -417,7 +438,7 @@ export const OnePost = () => {
             </label>
             <input
               type="text"
-              name='name'
+              name="name"
               onChange={(e) => setName(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Name"
@@ -427,27 +448,27 @@ export const OnePost = () => {
             <label htmlFor="" className="text-[30px] font-semibold">
               Item:
             </label>
-          <select
-                name="item"
-                type="text"
-                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
-                onChange={(e) => setItem(e.target.value)}
-              >
-                <option value="none">Choose here!</option>                            
-                <option value="suv">suv</option>
-                <option value="midsuv">midSuv</option>
-                <option value="fullsuv">fullSuv</option>
-                <option value="pickup">pickup</option>
-                <option value="minivan">minivan</option>
-              </select>
+            <select
+              name="item"
+              type="text"
+              className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+              onChange={(e) => setItem(e.target.value)}
+            >
+              <option value="none">Choose here!</option>
+              <option value="suv">suv</option>
+              <option value="midsuv">midSuv</option>
+              <option value="fullsuv">fullSuv</option>
+              <option value="pickup">pickup</option>
+              <option value="minivan">minivan</option>
+            </select>
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
               Price:
             </label>
             <input
-              type="text"
-              name='price'
+              type="number"
+              name="price"
               onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Description"
@@ -459,7 +480,7 @@ export const OnePost = () => {
             </label>
             <input
               type="text"
-              name='model'
+              name="model"
               onChange={(e) => setModel(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Model"
@@ -471,7 +492,7 @@ export const OnePost = () => {
             </label>
             <input
               type="file"
-              name='image'
+              name="image"
               accept="image/*"
               onChange={(e) => setImage(e.target.files[0])}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
@@ -588,7 +609,6 @@ export const OneEdits = () => {
   async function updatePost(e) {
     e.preventDefault();
     setIsLoading(true);
-    
 
     const formData = new FormData();
     formData.append("name", name);
@@ -599,15 +619,18 @@ export const OneEdits = () => {
       formData.append("image", image);
     }
 
-
     try {
       await axios
-        .put(`https://travel-x-408k.onrender.com/uploads/one/${img._id}`, formData, { withCredentials: true })
+        .put(
+          `https://travel-x-408k.onrender.com/uploads/one/${img._id}`,
+          formData,
+          { withCredentials: true }
+        )
         .then(() => {
           alert("Done");
           navigate("/OneLandingVehicle");
         })
-        .catch((err) => { 
+        .catch((err) => {
           alert("Failed");
           console.log(err);
         });
@@ -657,19 +680,19 @@ export const OneEdits = () => {
             <label htmlFor="" className="text-[30px] font-semibold">
               Item:
             </label>
-              <select
-                name="item"
-                type="text"
-                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
-                onChange={(e) => setItem(e.target.value)}
-              >
-                <option value="none">Choose here!</option>                
-                <option value="suv">suv</option>
-                <option value="midsuv">midSuv</option>
-                <option value="fullsuv">fullSuv</option>
-                <option value="pickup">pickup</option>
-                <option value="minivan">minivan</option>
-              </select>
+            <select
+              name="item"
+              type="text"
+              className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+              onChange={(e) => setItem(e.target.value)}
+            >
+              <option value="none">Choose here!</option>
+              <option value="suv">suv</option>
+              <option value="midsuv">midSuv</option>
+              <option value="fullsuv">fullSuv</option>
+              <option value="pickup">pickup</option>
+              <option value="minivan">minivan</option>
+            </select>
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
@@ -689,7 +712,7 @@ export const OneEdits = () => {
             </label>
             <input
               type="text"
-              name='model'
+              name="model"
               onChange={(e) => setModel(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Description"
@@ -758,7 +781,9 @@ export const OneDeletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, { withCredentials: true })
+      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, {
+        withCredentials: true,
+      })
       .then(() => {
         alert("successfully deleted");
         navigate("/OneGet");

@@ -7,7 +7,7 @@ const ImageSchema = new mongoose.Schema({
   url: String,
   name: String,
   item: String,
-  price: String,
+  price: Number,
   model: String,
   createdAt: { type: Date, default: Date.now },
 });
