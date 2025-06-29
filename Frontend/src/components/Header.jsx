@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="flex w-full lg:w-full h-auto py-3 px-4 justify-between items-center text-white-500 fixed z-1 container">
       <div className="pl-2 lg:pl-6 flex items-center">
         <img
           src="/Logo/Time_white.png"
-          className="w-14 lg:w-18 h-full"
+          className="w-14 lg:w-18 h-full skeleton"
           alt="Logo"
           srcSet=""
         />

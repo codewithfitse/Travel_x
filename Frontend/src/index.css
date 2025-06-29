@@ -49,6 +49,20 @@ body {
   scale: 1.03;
 }
 
+.skeleton {
+  opacity: .7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background: #a3b8c2;
+  }
+  100% {
+    background: #f0f3f5;
+  }
+}
+
 @layer base {
   :root {
     --color-lum: #16fe01;
