@@ -832,7 +832,7 @@ export const OneDayVehiclesBook = () => {
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
       <div className="pt-[100px]">
-        <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
+        <h1 className="text-[40px] lg:text-[80px] text-center font-bold ">
           <span className="text-[#16fe01] ">Our</span> Cars
         </h1>
       </div>
