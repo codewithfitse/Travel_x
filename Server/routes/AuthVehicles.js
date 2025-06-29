@@ -9,10 +9,11 @@ const router = express.Router();
 
 const upload = multer({ storage: storage });
 
-router.get("/price/:id", async (req, res) => {
-  const id = req.params.id;
+router.get("/price/:price", async (req, res) => {
+  const { price } = req.params;
   try {
-    const findPrice = await UserPostOne.find({ price: { $lt: id } });
+    const targetPrice = parseInt(price);
+    const findPrice = await UserPostOne.find({ price: { $lt: targetPrice } });
     res.status(200).json(findPrice);
   } catch (err) {
     console.error("Error fetching prices:", err);
