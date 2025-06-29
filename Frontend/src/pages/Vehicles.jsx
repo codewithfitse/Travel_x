@@ -854,7 +854,7 @@ export const OneDayVehiclesBook = () => {
               {user.name}
             </h1>
             <h2>Starting ${user.price}</h2>
-            <h2>Toyota VITZ or Similar</h2>
+            <h2>{user.model} or Similar</h2>
             <h2>Vehicle Feature {user.item}</h2>
             <ul>
               <li>° 4 Person Seat</li>
