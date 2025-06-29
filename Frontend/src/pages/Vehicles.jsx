@@ -298,7 +298,7 @@ export const Pricing = () => {
       </div>
 
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {datas.map((user) => {
+        {datas.map((user) => (
           <Link to="/SuvVehicles" state={{ Suv }}>
             <div id={user.id} className="w-full h-auto py-5 card">
               <SkeletonImage
@@ -329,8 +329,8 @@ export const Pricing = () => {
                 </Link>
               </div>
             </div>
-          </Link>;
-        })}
+          </Link>
+        ))}
       </div>
 
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
