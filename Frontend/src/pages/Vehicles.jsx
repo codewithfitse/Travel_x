@@ -321,7 +321,7 @@ export const Pricing = () => {
                   <li>° Pick up at airport</li>
                 </ul>
 
-                <Link to="/MidSuvVehicles " state={{ MidSuv }}>
+                <Link to="/MidSuvVehicles" state={{ MidSuv }}>
                   Mid Suv
                 </Link>
                 <Link to="/PickUpVehicles" state={{ FullSuv }}>
