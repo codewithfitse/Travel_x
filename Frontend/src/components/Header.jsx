@@ -20,7 +20,8 @@ const Header = () => {
           src="/Logo/Time_white.png"
           alt="Time Logo"
           imgClass="w-16 h-auto"
-          skeletonClass="w-16 h-16 bg-gray-200 rounded-full animate-pulse"
+          skeletonAnimation="w-16 bg-gray-200 rounded-full animate-pulse"
+          skeletonClass="h-16"
         />
       </div>
 

@@ -6,13 +6,13 @@ const SkeletonImage = ({
   alt = "Logo",
   className = "", // Optional outer wrapper styling
   imgClass = "",
-  skeletonClassAnimation = "w-full lg:w-full bg-gray-300 animate-pulse",
+  skeletonAnimation = "w-full lg:w-full bg-gray-300 animate-pulse",
   skeletonClass = "",
 }) => {
   return (
     <div className={`flex items-center transition-all ${className}`}>
       {isLoading ? (
-        <div className={`${skeletonClassAnimation} ${skeletonClass}`}></div>
+        <div className={`${skeletonAnimation} ${skeletonClass}`}></div>
       ) : (
         <img src={src} alt={alt} className={imgClass} />
       )}
