@@ -574,7 +574,7 @@ export const OneViewsAdmin = () => {
               <Link to="/OneEditsAdmin" state={{ img }}>
                 Update
               </Link>
-              <Link to="/OneDeletes" state={{ img }}>
+              <Link to="/OneDeletesAdmin" state={{ img }}>
                 Delete
               </Link>
             </div>
