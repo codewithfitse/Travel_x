@@ -17,7 +17,7 @@ const Vehicles = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 3000);
+    const timer = setTimeout(() => setIsLoading(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -686,6 +686,12 @@ export const OneDayVehicles = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 6000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     // Fetch images from backend
     const fetchImages = async () => {
       setIsLoading(true);
@@ -720,11 +726,18 @@ export const OneDayVehicles = () => {
           data.map((img) => (
             <div key={img._id} className="w-full py-5 card">
               <div className="flex justify-center">
-                <img
+                <SkeletonImage
+                  isLoading={isLoading}
+                  src={img.url}
+                  alt={img.filename}
+                  imgClass="w-full h-auto object-cover rounded-[10px]"
+                  skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+                />
+                {/* <img
                   src={img.url}
                   alt={img.filename}
                   className="w-full h-auto object-cover rounded-[10px]"
-                />
+                /> */}
               </div>
               <div className="pl-5">
                 <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
