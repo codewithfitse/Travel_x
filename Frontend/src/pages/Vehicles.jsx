@@ -686,13 +686,6 @@ export const OneDayVehicles = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 9000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    // Fetch images from backend
     const fetchImages = async () => {
       try {
         const res = await axios.get(
@@ -711,42 +704,50 @@ export const OneDayVehicles = () => {
   }, []);
 
   return (
-    <div className="w-full h-[100%] background text-amber-50">
+    <div className="w-full min-h-screen bg-black text-amber-50">
       <Header />
+
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[#16fe01] ">Our</span> Cars
+          <span className="text-[#16fe01]">Our</span> Cars
         </h1>
       </div>
-      <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
+
+      <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data.map((img) => (
-          <div key={img._id} className="w-full py-5 card">
+          <div
+            key={img._id}
+            className="w-full max-w-[500px] mx-auto bg-white text-black rounded-lg shadow-md overflow-hidden"
+          >
             <SkeletonImage
               isLoading={isLoading}
               src={img.url}
               alt={img.filename}
-              imgClass="w-full h-auto object-cover rounded-[10px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              imgClass="w-full h-auto object-cover rounded-t-[10px]"
+              skeletonClass="w-full h-[250px] bg-gray-300 rounded-t-[10px] animate-pulse"
             />
-            {/* <img
-                  src={img.url}
-                  alt={img.filename}
-                  className="w-full h-auto object-cover rounded-[10px]"
-                /> */}
-            <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
+
+            <div className="p-4 space-y-1">
+              <h1 className="text-2xl font-bold text-[#16fe01] capitalize">
                 {img.name}
               </h1>
-              <h2>Starting {img.price}Br</h2>
-              <h2>Toyota VITZ or Similar</h2>
-              <h2>Vehicle Feature {img.item}</h2>
-              <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
-                <li>° Pick up at airport</li>
+              <h2 className="text-sm">Starting {img.price} Br</h2>
+              <h2 className="text-sm text-gray-700">Toyota VITZ or Similar</h2>
+              <h2 className="text-sm font-semibold">
+                Vehicle Feature: {img.item}
+              </h2>
+              <ul className="list-disc list-inside text-sm mt-2 text-gray-700">
+                <li>4 Person Seat</li>
+                <li>Automatic</li>
+                <li>Perfect for in city</li>
+                <li>Pick up at airport</li>
               </ul>
-              <Link to="/OneDayVehiclesBook" state={{ img }}>
+
+              <Link
+                to="/OneDayVehiclesBook"
+                state={{ img }}
+                className="block mt-4"
+              >
                 <Button text={"Book Now!"} />
               </Link>
             </div>
@@ -754,20 +755,18 @@ export const OneDayVehicles = () => {
         ))}
       </div>
 
-      <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-[15px] lg:text-[40px] font-bold">
+      <div className="my-16 lg:my-40 px-4 lg:px-20 flex flex-col lg:flex-row justify-between items-center gap-6">
+        <div className="text-center lg:text-left">
+          <h1 className="text-xl lg:text-4xl font-bold">
             COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
           </h1>
-          <h2 className="text-[10px] lg:text-[20px] text-2xl">
+          <h2 className="text-sm lg:text-xl">
             We Always Have The Best Customer Services In Town
           </h2>
         </div>
-        <div className="lg:mt-7 flex justify-center items-center">
-          <Link to={"/Booking"}>
-            <Button text={"Book Now!"} />
-          </Link>
-        </div>
+        <Link to="/Booking">
+          <Button text={"Book Now!"} />
+        </Link>
       </div>
 
       <Footer />
