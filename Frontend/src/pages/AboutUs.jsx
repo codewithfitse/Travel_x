@@ -53,7 +53,7 @@ const AboutUs = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="Abel.jpg"
-              imgClass="w-full h-auto"
+              imgClass="w-full h-auto rounded-[20px]"
             />
             {/* <img src="" className="w-full h-auto rounded-[15px]" alt="" /> */}
           </div>
