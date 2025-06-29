@@ -779,14 +779,13 @@ export const OneDayVehicles = () => {
 };
 
 export const OneDayVehiclesBook = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   const user = location.state?.img;
 
   async function handleBooking() {
-    setIsLoading(true);
     try {
       await axios.post(
         `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`,
