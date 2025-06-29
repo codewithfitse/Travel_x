@@ -687,7 +687,7 @@ export const OneDayVehicles = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 6000);
+    const timer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -701,6 +701,8 @@ export const OneDayVehicles = () => {
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -724,7 +726,6 @@ export const OneDayVehicles = () => {
             className="w-full max-w-[500px] mx-auto text-white rounded-lg shadow-md overflow-hidden card"
           >
             <SkeletonImage
-              isLoading={isLoading}
               src={img.url}
               alt={img.filename}
               imgClass="w-full h-fit object-cover rounded-[10px]"
