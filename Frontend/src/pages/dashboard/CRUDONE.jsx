@@ -776,7 +776,7 @@ export const OneEditsAdmin = () => {
             <input
               type="file"
               accept="image/*"
-              onChange={(e) => setImage(e.target.files[0])}
+              onChange={(e) => setImages(e.target.files[0])}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose File"
             />
@@ -823,6 +823,7 @@ export const OneEditsAdmin = () => {
     </div>
   );
 };
+
 export const OneEdits = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
