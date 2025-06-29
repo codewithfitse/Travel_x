@@ -780,12 +780,14 @@ export const OneDayVehicles = () => {
 
 export const OneDayVehiclesBook = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoadings, setIsLoadings] = useState(false);
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   const user = location.state?.img;
 
   async function handleBooking() {
+    setIsLoadings(true);
     try {
       await axios.post(
         `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`,
@@ -801,7 +803,7 @@ export const OneDayVehiclesBook = () => {
       navigate("/Login");
       console.log(error);
     } finally {
-      setIsLoading(false);
+      setIsLoadings(false);
     }
   }
 
@@ -865,7 +867,7 @@ export const OneDayVehiclesBook = () => {
                 className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
                 onClick={handleBooking}
               >
-                {isLoading ? "Ordering..." : "Order"}
+                {isLoadings ? "Ordering..." : "Order"}
               </button>
               <Link to="/Vehicles">
                 <button
