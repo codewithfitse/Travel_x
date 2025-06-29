@@ -840,15 +840,13 @@ export const OneDayVehiclesBook = () => {
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
         <div key={user._id} className="w-full py-5 card">
-          <div className="flex justify-center">
-            <SkeletonImage
-              isLoading={isLoading}
-              src={user.url}
-              alt={user.filename}
-              imgClass="w-full h-[400px] object-cover rounded-[10px]"
-              skeletonClass="w-full h-[250px] rounded-[10px]"
-            />
-          </div>
+          <SkeletonImage
+            isLoading={isLoading}
+            src={user.url}
+            alt={user.filename}
+            imgClass="w-full h-[400px] object-cover rounded-[10px]"
+            skeletonClass="w-full h-[250px] rounded-[10px]"
+          />
           <div className="pl-5">
             <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
               {user.name}
