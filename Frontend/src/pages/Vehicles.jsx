@@ -736,7 +736,7 @@ export const OneDayVehicles = () => {
                 {img.name}
               </h1>
               <h2 className="text-sm">Starting {img.price} Br</h2>
-              <h2 className="text-sm text-gray-700">Toyota VITZ or Similar</h2>
+              <h2 className="text-sm text-gray-200">{img.model} or Similar</h2>
               <h2 className="text-sm font-semibold">
                 Vehicle Feature: {img.item}
               </h2>
