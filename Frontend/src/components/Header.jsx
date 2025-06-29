@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import SkeletonImage from "./Skeleton";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -14,15 +15,13 @@ const Header = () => {
   return (
     <div className="flex w-full lg:w-full h-auto py-3 px-4 justify-between items-center text-white-500 fixed z-1 container">
       <div className="pl-2 lg:pl-6 flex items-center space-x-4 transition-all">
-        {isLoading ? (
-          <div className="w-14 lg:w-18 h-14 bg-gray-300 rounded-full animate-pulse"></div>
-        ) : (
-          <img
-            src="/Logo/Time_white.png"
-            className="w-14 lg:w-18 h-auto"
-            alt="Logo"
-          />
-        )}
+        <SkeletonImage
+          isLoading={isLoading}
+          src="/Logo/Time_white.png"
+          alt="Time Logo"
+          imgClass="w-16 h-auto"
+          skeletonClass="w-16 h-16 bg-gray-200 rounded-full animate-pulse"
+        />
       </div>
 
       {/* <nav className="w-fit flex justify-center items-center text-[7px] lg:text-[15px] font-bold space-x-2 lg:space-x-5.5">
