@@ -1,20 +1,28 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="flex w-full lg:w-full h-auto py-3 px-4 justify-between items-center text-white-500 fixed z-1 container">
-      <div className="pl-2 lg:pl-6 flex items-center transition-all duration-300 animate-pulse">
-        <h1 className="h-4 bg-gray-300 rounded-2xl mb-4"></h1>
-        <img
-          src="/Logo/Time_white.png"
-          className="w-14 lg:w-18 h-full"
-          alt="Logo"
-          srcSet=""
-        />
+      <div className="pl-2 lg:pl-6 flex items-center space-x-4 transition-all">
+        {isLoading ? (
+          <div className="w-14 lg:w-18 h-14 bg-gray-300 rounded-full animate-pulse"></div>
+        ) : (
+          <img
+            src="/Logo/Time_white.png"
+            className="w-14 lg:w-18 h-auto"
+            alt="Logo"
+          />
+        )}
       </div>
 
       {/* <nav className="w-fit flex justify-center items-center text-[7px] lg:text-[15px] font-bold space-x-2 lg:space-x-5.5">
