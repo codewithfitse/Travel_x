@@ -837,51 +837,47 @@ export const OneDayVehiclesBook = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {isLoading ? (
-          <p className="text-[50px] font-bold">Loading..</p>
-        ) : (
-          <div key={user._id} className="w-full py-5 card">
-            <div className="flex justify-center">
-              <SkeletonImage
-                isLoading={isLoading}
-                src={user.url}
-                alt={user.filename}
-                imgClass="w-full h-[400px] object-cover rounded-[10px]"
-                skeletonClass="w-full h-[250px] rounded-[10px]"
-              />
-            </div>
-            <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
-                {user.name}
-              </h1>
-              <h2>Starting ${user.price}</h2>
-              <h2>Toyota VITZ or Similar</h2>
-              <h2>Vehicle Feature {user.item}</h2>
-              <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
-                <li>° Pick up at airport</li>
-              </ul>
-              <div className="flex mt-3 lg:mt-5 space-x-5">
+        <div key={user._id} className="w-full py-5 card">
+          <div className="flex justify-center">
+            <SkeletonImage
+              isLoading={isLoading}
+              src={user.url}
+              alt={user.filename}
+              imgClass="w-full h-[400px] object-cover rounded-[10px]"
+              skeletonClass="w-full h-[250px] rounded-[10px]"
+            />
+          </div>
+          <div className="pl-5">
+            <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
+              {user.name}
+            </h1>
+            <h2>Starting ${user.price}</h2>
+            <h2>Toyota VITZ or Similar</h2>
+            <h2>Vehicle Feature {user.item}</h2>
+            <ul>
+              <li>° 4 Person Seat</li>
+              <li>° Automatic</li>
+              <li>° Perfect for in city</li>
+              <li>° Pick up at airport</li>
+            </ul>
+            <div className="flex mt-3 lg:mt-5 space-x-5">
+              <button
+                className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
+                onClick={handleBooking}
+              >
+                {isLoading ? "Ordering..." : "Order"}
+              </button>
+              <Link to="/Vehicles">
                 <button
-                  className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
+                  className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
                   onClick={handleBooking}
                 >
-                  {isLoading ? "Ordering..." : "Order"}
+                  Back
                 </button>
-                <Link to="/Vehicles">
-                  <button
-                    className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
-                    onClick={handleBooking}
-                  >
-                    Back
-                  </button>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
-        )}
+        </div>
       </div>
 
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
