@@ -679,7 +679,7 @@ export const OneEditsAdmin = () => {
         )
         .then(() => {
           alert("Done");
-          navigate("/OneLandingVehicle");
+          navigate("/OneLandingVehicleAdmin");
         })
         .catch((err) => {
           alert("Failed");
@@ -997,6 +997,72 @@ export const OneEdits = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const OneDeletesAdmin = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  const img = location?.state?.img;
+  const navigate = useNavigate();
+
+  async function handleDelete(_id) {
+    await axios
+      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, {
+        withCredentials: true,
+      })
+      .then(() => {
+        alert("successfully deleted");
+        navigate("/OneGetAdmin");
+      })
+      .catch((err) => console.log(err));
+  }
+
+  return (
+    <div className="h-screen p-3 bg-gray-950 text-white">
+      <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900">
+        <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
+          <h1 className="text-[30px] font-bold">Delete Cars Collection</h1>
+
+          <div
+            key={img._id}
+            className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
+          >
+            <p>
+              <strong>Name:</strong> {img.name}
+            </p>
+            <p>
+              <strong>Item:</strong> {img.item}
+            </p>
+            <p>
+              <strong>Price:</strong> {img.price}
+            </p>
+            <p>
+              <strong>Model:</strong> {img.model}
+            </p>
+            <div className="flex space-x-4">
+              <p>Are you sure:</p>
+              <button
+                className="text-red-600"
+                onClick={() => handleDelete(img._id)}
+              >
+                Yes
+              </button>
+              <button onClick={() => navigate("/Get")}>No</button>
+            </div>
+
+            <p>{img.filename}</p>
+            <div className=" flex justify-center">
+              <img
+                src={img.url}
+                alt={img.filename}
+                className="w-50 h-50 bg-center rounded-[10px]"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
