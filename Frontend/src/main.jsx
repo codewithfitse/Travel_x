@@ -43,6 +43,7 @@ import {
 import {
   OneLandingVehicle,
   OneLandingVehicleAdmin,
+  OneDeletesAdmin,
   OneDeletes,
   OneEdits,
   OneViews,
@@ -225,6 +226,10 @@ const router = createBrowserRouter([
   {
     path: "/OneEditsAdmin",
     element: <OneEditsAdmin />,
+  },
+  {
+    path: "/OneDeletesAdmin",
+    element: <OneDeletesAdmin />,
   },
   {
     path: "/OneDeletes",
