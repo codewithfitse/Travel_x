@@ -51,7 +51,7 @@ const Vehicles = () => {
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
         <Link to="/SuvVehicles" state={{ Suv }}>
-          <div className="w-full py-5 card">
+          <div className="w-full h-auto py-5 card">
             <SkeletonImage
               isLoading={isLoading}
               src="economy2.png"
