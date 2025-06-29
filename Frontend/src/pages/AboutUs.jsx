@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
+import SkeletonImage from "../components/Skeleton";
 
 const AboutUs = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="w-full h-fit background text-amber-50">
       <Header />
@@ -42,11 +50,12 @@ const AboutUs = () => {
       <div className="mt-[100px] flex flex-col lg:flex-row lg:justify-center lg:items-center">
         <div className="w-full lg:w-[30%] mb-5 lg:mb-0">
           <div className="w-full h-full px-6">
-            <img
+            <SkeletonImage
+              isLoading={isLoading}
               src="Abel.jpg"
-              className="w-full h-auto rounded-[15px]"
-              alt=""
+              imgClass="w-full h-auto"
             />
+            {/* <img src="" className="w-full h-auto rounded-[15px]" alt="" /> */}
           </div>
         </div>
         <div className="w-full lg:w-[70%]">
@@ -55,8 +64,8 @@ const AboutUs = () => {
               We
             </span>{" "}
             understand choosing rental services might be difficult and time
-            consuming task. At TIME Rental we always try to make it easier
-            by providing detailed information.
+            consuming task. At TIME Rental we always try to make it easier by
+            providing detailed information.
           </h1>
           <div className="mt-10 grid lg:grid-cols-2 gap-2">
             <div className="w-full h-[200px] pl-5 flex items-center space-x-5 card">
