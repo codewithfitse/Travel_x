@@ -725,20 +725,18 @@ export const OneDayVehicles = () => {
         ) : (
           data.map((img) => (
             <div key={img._id} className="w-full py-5 card">
-              <div className="flex justify-center">
-                <SkeletonImage
-                  isLoading={isLoading}
-                  src={img.url}
-                  alt={img.filename}
-                  imgClass="w-full h-auto object-cover rounded-[10px]"
-                  skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
-                />
-                {/* <img
+              <SkeletonImage
+                isLoading={isLoading}
+                src={img.url}
+                alt={img.filename}
+                imgClass="w-full h-auto object-cover rounded-[10px]"
+                skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              />
+              {/* <img
                   src={img.url}
                   alt={img.filename}
                   className="w-full h-auto object-cover rounded-[10px]"
                 /> */}
-              </div>
               <div className="pl-5">
                 <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
                   {img.name}
