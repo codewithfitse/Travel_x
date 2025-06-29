@@ -1,12 +1,12 @@
 import React from "react";
 
-const SkeletonImage = ({
+export const SkeletonImage = ({
   isLoading = true, // Allow external control
   src = "",
   alt = "Logo",
   className = "", // Optional outer wrapper styling
   imgClass = "",
-  skeletonAnimation = "w-full lg:w-full bg-gray-300 animate-pulse",
+  skeletonAnimation = " bg-gray-300 animate-pulse",
   skeletonClass = "",
 }) => {
   return (
@@ -21,3 +21,22 @@ const SkeletonImage = ({
 };
 
 export default SkeletonImage;
+
+export const SkeletonText = ({
+  isLoading = true,
+  className = "", // Optional outer wrapper styling
+  skeletonAnimation = "w-full lg:w-full bg-gray-300 animate-pulse",
+  skeletonClass = "",
+  textStyle = "",
+  text = "",
+}) => {
+  return (
+    <div className={`flex items-center transition-all ${className}`}>
+      {isLoading ? (
+        <div className={`${skeletonAnimation} ${skeletonClass}`}></div>
+      ) : (
+        <h1 className={textStyle}>{text}</h1>
+      )}
+    </div>
+  );
+};

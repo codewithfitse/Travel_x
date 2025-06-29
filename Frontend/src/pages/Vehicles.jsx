@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
+import SkeletonImage from "../components/Skeleton";
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,6 +14,12 @@ const Vehicles = () => {
   const Suv = "";
   const MidSuv = "";
   const FullSuv = "";
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Fetch images from backend
@@ -45,10 +52,13 @@ const Vehicles = () => {
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
         <Link to="/SuvVehicles" state={{ Suv }}>
           <div className="w-full py-5 card">
-            <div className="flex justify-center">
-              <img src="economy2.png" alt="" srcset="" />
-            </div>
-            <div className="pl-5">
+            <SkeletonImage
+              isLoading={isLoading}
+              src="economy2.png"
+              imgClass="w-full h-auto"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+            />
+            <div className="w-full pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Economy</h1>
               <h2>Starting $60</h2>
               <h2>Toyota VITZ or Similar</h2>
@@ -72,9 +82,12 @@ const Vehicles = () => {
 
         <Link to="/SuvVehicles" state={{ Suv }}>
           <div className="w-full py-5 card">
-            <div className="flex justify-center">
-              <img src="standard.png" alt="" srcset="" />
-            </div>
+            <SkeletonImage
+              isLoading={isLoading}
+              src="standard.png"
+              imgClass="w-full h-auto"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+            />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Standard</h1>
               <h2>Starting $60</h2>
@@ -91,9 +104,12 @@ const Vehicles = () => {
         </Link>
         <Link to="/MidSuvVehicles" state={{ Suv }}>
           <div className="w-full py-5 card">
-            <div className="pt-4 flex justify-center">
-              <img src="midsizesuv.png" alt="" srcset="" />
-            </div>
+            <SkeletonImage
+              isLoading={isLoading}
+              src="midsizesuv.png"
+              imgClass="w-full h-auto"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+            />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Mid Suv</h1>
               <h2>Starting 1,400,000 - 5,500,000Br</h2>
@@ -110,9 +126,12 @@ const Vehicles = () => {
         </Link>
         <Link to="/FullSuvVehicles" state={{ MidSuv }}>
           <div className="w-full py-5 card">
-            <div className="pb-15 flex justify-center">
-              <img src="fullsuv.png" alt="" srcset="" />
-            </div>
+            <SkeletonImage
+              isLoading={isLoading}
+              src="fullsuv.png"
+              imgClass="w-full h-auto"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+            />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Full Suv</h1>
               <h2>Starting 1,200,000 - 37,000,000Br</h2>
@@ -129,9 +148,12 @@ const Vehicles = () => {
         </Link>
         <Link to="/MiniVanVehicles" state={{ Suv }}>
           <div className="w-full py-5 card">
-            <div className="flex justify-center">
-              <img src="minivan.png" alt="" srcset="" />
-            </div>
+            <SkeletonImage
+              isLoading={isLoading}
+              src="minivan.png"
+              imgClass="w-full h-auto"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+            />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Mini Van</h1>
               <h2>Starting 900,000 to 7,250,000Br</h2>
@@ -148,9 +170,12 @@ const Vehicles = () => {
         </Link>
         <Link to="/PickUpVehicles" state={{ Suv }}>
           <div className="w-full py-8 card">
-            <div className="pb-15 flex justify-center">
-              <img src="pickup.png" alt="" srcset="" />
-            </div>
+            <SkeletonImage
+              isLoading={isLoading}
+              src="pickup.png"
+              imgClass="w-full h-auto"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+            />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
               <h2>Starting 1,200,000 to 9,000,000Br</h2>
@@ -168,9 +193,12 @@ const Vehicles = () => {
 
         <Link to="/OneDayVehicles">
           <div className="w-full py-8 card" key="user._id">
-            <div className="pb-15 flex justify-center">
-              <img src="send.jpg" alt="" srcset="" />
-            </div>
+            <SkeletonImage
+              isLoading={isLoading}
+              src="send.jpg"
+              imgClass="w-full h-auto"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+            />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">
                 One Day with Driver!
