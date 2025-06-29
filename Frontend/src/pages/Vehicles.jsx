@@ -809,7 +809,6 @@ export const OneDayVehiclesBook = () => {
   useEffect(() => {
     // Fetch images from backend
     const fetchImages = async () => {
-      setIsLoading(true);
       try {
         const res = await axios.get(
           "https://travel-x-408k.onrender.com/uploads/one",
@@ -818,8 +817,6 @@ export const OneDayVehiclesBook = () => {
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
-      } finally {
-        setIsLoading(false);
       }
     };
 
@@ -840,10 +837,12 @@ export const OneDayVehiclesBook = () => {
         ) : (
           <div key={user._id} className="w-full py-5 card">
             <div className="flex justify-center">
-              <img
+              <SkeletonImage
+                isLoading={isLoading}
                 src={user.url}
                 alt={user.filename}
-                className="w-full h-auto object-cover rounded-[10px]"
+                imgClass="w-full h-[400px] object-cover rounded-[10px]"
+                skeletonClass="w-full h-[250px] rounded-[10px]"
               />
             </div>
             <div className="pl-5">
