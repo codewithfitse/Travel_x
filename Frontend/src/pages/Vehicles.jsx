@@ -720,43 +720,39 @@ export const OneDayVehicles = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {isLoading ? (
-          <p className="text-[50px] font-bold">Loading..</p>
-        ) : (
-          data.map((img) => (
-            <div key={img._id} className="w-full py-5 card">
-              <SkeletonImage
-                isLoading={isLoading}
-                src={img.url}
-                alt={img.filename}
-                imgClass="w-full h-auto object-cover rounded-[10px]"
-                skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
-              />
-              {/* <img
+        data.map((img) => (
+        <div key={img._id} className="w-full py-5 card">
+          <SkeletonImage
+            isLoading={isLoading}
+            src={img.url}
+            alt={img.filename}
+            imgClass="w-full h-auto object-cover rounded-[10px]"
+            skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+          />
+          {/* <img
                   src={img.url}
                   alt={img.filename}
                   className="w-full h-auto object-cover rounded-[10px]"
                 /> */}
-              <div className="pl-5">
-                <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
-                  {img.name}
-                </h1>
-                <h2>Starting {img.price}Br</h2>
-                <h2>Toyota VITZ or Similar</h2>
-                <h2>Vehicle Feature {img.item}</h2>
-                <ul>
-                  <li>° 4 Person Seat</li>
-                  <li>° Automatic</li>
-                  <li>° Perfect for in city</li>
-                  <li>° Pick up at airport</li>
-                </ul>
-                <Link to="/OneDayVehiclesBook" state={{ img }}>
-                  <Button text={"Book Now!"} />
-                </Link>
-              </div>
-            </div>
-          ))
-        )}
+          <div className="pl-5">
+            <h1 className="text-[40px] text-[#16fe01] font-bold capitalize">
+              {img.name}
+            </h1>
+            <h2>Starting {img.price}Br</h2>
+            <h2>Toyota VITZ or Similar</h2>
+            <h2>Vehicle Feature {img.item}</h2>
+            <ul>
+              <li>° 4 Person Seat</li>
+              <li>° Automatic</li>
+              <li>° Perfect for in city</li>
+              <li>° Pick up at airport</li>
+            </ul>
+            <Link to="/OneDayVehiclesBook" state={{ img }}>
+              <Button text={"Book Now!"} />
+            </Link>
+          </div>
+        </div>
+        ))
       </div>
 
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
