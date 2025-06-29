@@ -701,8 +701,6 @@ export const OneDayVehicles = () => {
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
-      } finally {
-        setIsLoading(false);
       }
     };
 
