@@ -687,7 +687,7 @@ export const OneDayVehicles = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 6000);
+    const timer = setTimeout(() => setIsLoading(false), 9000);
     return () => clearTimeout(timer);
   }, []);
 
