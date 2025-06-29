@@ -726,6 +726,7 @@ export const OneDayVehicles = () => {
             className="w-full max-w-[500px] mx-auto text-white rounded-lg shadow-md overflow-hidden card"
           >
             <SkeletonImage
+              isLoading={isLoading}
               src={img.url}
               alt={img.filename}
               imgClass="w-full h-fit object-cover rounded-[10px]"
