@@ -7,10 +7,11 @@ const Header = () => {
   const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="flex w-full lg:w-full h-auto py-3 px-4 justify-between items-center text-white-500 fixed z-1 container">
-      <div className="pl-2 lg:pl-6 flex items-center">
+      <div className="pl-2 lg:pl-6 flex items-center transition-all duration-300 animate-pulse">
+        <h1 className="h-4 bg-gray-300 rounded-2xl mb-4"></h1>
         <img
           src="/Logo/Time_white.png"
-          className="w-14 lg:w-18 h-full skeleton"
+          className="w-14 lg:w-18 h-full"
           alt="Logo"
           srcSet=""
         />
