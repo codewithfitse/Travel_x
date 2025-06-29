@@ -694,7 +694,6 @@ export const OneDayVehicles = () => {
   useEffect(() => {
     // Fetch images from backend
     const fetchImages = async () => {
-      setIsLoading(true);
       try {
         const res = await axios.get(
           "https://travel-x-408k.onrender.com/uploads/Ones",
