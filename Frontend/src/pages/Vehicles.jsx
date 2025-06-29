@@ -740,7 +740,7 @@ export const OneDayVehicles = () => {
               <h2 className="text-sm font-semibold">
                 Vehicle Feature: {img.item}
               </h2>
-              <ul className="list-disc list-inside text-sm mt-2 text-gray-700">
+              <ul className="list-disc list-inside text-sm mt-2 text-gray-300">
                 <li>4 Person Seat</li>
                 <li>Automatic</li>
                 <li>Perfect for in city</li>
