@@ -251,7 +251,7 @@ export const Pricing = () => {
   const MidSuv = "";
   const FullSuv = "";
 
-  const price = location?.state?.data;
+  const pass = location?.state?.data;
 
   useEffect(() => {
     // Fetch images from backend
@@ -259,7 +259,7 @@ export const Pricing = () => {
       setIsLoading(true);
       try {
         const res = await axios.get(
-          `https://travel-x-408k.onrender.com/uploads/price/${price}`,
+          `https://travel-x-408k.onrender.com/uploads/price/${pass.price}`,
           { withCredentials: true }
         );
         setDatas(res.data);
