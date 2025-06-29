@@ -9,6 +9,17 @@ const router = express.Router();
 
 const upload = multer({ storage: storage });
 
+router.get("/price/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const findPrice = await UserPostOne.find({ price: { $lt: id } });
+    res.status(200).json(findPrice);
+  } catch (err) {
+    console.error("Error fetching prices:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 // I make this to list All Photos from Cloudinarey!
 router.get("/", async (req, res) => {
   try {
@@ -231,51 +242,55 @@ router.get("/suvOne", async (req, res) => {
 });
 
 // I make this Post to upload to cloudeary cloud storage!
-router.post("/one", authMiddleware, upload.single("image"), async (req, res) => {
-  const { name, item, price, model } = req.body;
-  const userId = req.user?._id || req.user?.id;
+router.post(
+  "/one",
+  authMiddleware,
+  upload.single("image"),
+  async (req, res) => {
+    const { name, item, price, model } = req.body;
+    const userId = req.user?._id || req.user?.id;
 
-  // Add these debug logs:
-  console.log("📥 Incoming POST to /one");
-  console.log("🧑‍💻 User ID:", userId);
-  console.log("📦 Body:", req.body);
-  console.log("📁 File:", req.file);
+    // Add these debug logs:
+    console.log("📥 Incoming POST to /one");
+    console.log("🧑‍💻 User ID:", userId);
+    console.log("📦 Body:", req.body);
+    console.log("📁 File:", req.file);
 
-  if (!userId) {
-    return res.status(401).json({ error: "Unauthorized: No user ID" });
+    if (!userId) {
+      return res.status(401).json({ error: "Unauthorized: No user ID" });
+    }
+
+    if (!req.file) {
+      return res.status(400).json({ error: "No file uploaded" });
+    }
+
+    try {
+      const savedPost = new UserPostOne({
+        userId,
+        name,
+        item,
+        price,
+        model,
+        url: req.file.path,
+        public_id: req.file.filename,
+      });
+
+      await savedPost.save();
+
+      res.status(200).json({
+        msg: "Uploaded and saved to DB!",
+        imageUrl: req.file.path,
+      });
+    } catch (error) {
+      console.error("❌ Error saving post:", error.message);
+      return res.status(500).json({
+        error: "Upload failed",
+        message: error.message,
+        stack: error.stack,
+      });
+    }
   }
-
-  if (!req.file) {
-    return res.status(400).json({ error: "No file uploaded" });
-  }
-
-  try {
-    const savedPost = new UserPostOne({
-      userId,
-      name,
-      item,
-      price,
-      model,
-      url: req.file.path,
-      public_id: req.file.filename,
-    });
-
-    await savedPost.save();
-
-    res.status(200).json({
-      msg: "Uploaded and saved to DB!",
-      imageUrl: req.file.path,
-    });
-  } catch (error) {
-    console.error("❌ Error saving post:", error.message);
-    return res.status(500).json({
-      error: "Upload failed",
-      message: error.message,
-      stack: error.stack,
-    });
-  }
-});
-
+);
 
 // Update route - Update image and/or text
 router.put(
@@ -293,15 +308,14 @@ router.put(
       if (!post) return res.status(404).json({ error: "Post not found" });
 
       // If there's a new image uploaded, delete old image from Cloudinary and upload new one
-    if (req.file) {
-      // Delete old image from Cloudinary
-      await cloudinary.uploader.destroy(post.public_id);
+      if (req.file) {
+        // Delete old image from Cloudinary
+        await cloudinary.uploader.destroy(post.public_id);
 
-      // Update with new image info
-      post.url = req.file.path;
-      post.public_id = req.file.filename;
-    }
-
+        // Update with new image info
+        post.url = req.file.path;
+        post.public_id = req.file.filename;
+      }
 
       // Update other fields
       post.name = name || post.name;

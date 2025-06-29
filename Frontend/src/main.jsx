@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs.jsx";
 import NotFound from "./pages/404.jsx";
 import Booking from "./pages/Booking.jsx";
 import Vehicles, {
+  Pricing,
   SuvVehicles,
   MidSuvVehicles,
   FullSuvVehicles,
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
   {
     path: "/Demo",
     element: <Demo />,
+  },
+  {
+    path: "/Pricing",
+    element: <Pricing />,
   },
   {
     path: "/SuvVehicles",
