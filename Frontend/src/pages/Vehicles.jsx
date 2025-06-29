@@ -714,23 +714,16 @@ export const OneDayVehicles = () => {
       </div>
 
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <SkeletonImage
-          isLoading={isLoading}
-          src={"Abel.jpg"}
-          imgClass="w-full h-fit object-cover rounded-[10px]"
-          skeletonClass="w-full h-[250px] bg-gray-300 rounded-[10px] animate-pulse"
-        />
         {data.map((img) => (
           <div
             key={img._id}
             className="w-full max-w-[500px] mx-auto text-white rounded-lg shadow-md overflow-hidden card"
           >
             <SkeletonImage
-              isLoading={isLoading}
               src={img.url}
               alt={img.filename}
               imgClass="w-full h-fit object-cover rounded-[10px]"
-              skeletonClass="w-full h-[250px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-full h-[250px] rounded-[10px]"
             />
 
             <div className="p-4 space-y-1">
