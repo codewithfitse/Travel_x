@@ -721,7 +721,7 @@ export const OneDayVehicles = () => {
         {data.map((img) => (
           <div
             key={img._id}
-            className="w-full max-w-[500px] mx-auto text-white rounded-lg shadow-md overflow-hidden card"
+            className="w-full h-fit max-w-[500px] mx-auto text-white rounded-lg shadow-md overflow-hidden card"
           >
             <SkeletonImage
               isLoading={isLoading}
