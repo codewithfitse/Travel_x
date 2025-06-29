@@ -750,7 +750,7 @@ export const OneEditsAdmin = () => {
               Price:
             </label>
             <input
-              type="text"
+              type="number"
               name="price"
               onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
@@ -929,7 +929,7 @@ export const OneEdits = () => {
               Price:
             </label>
             <input
-              type="text"
+              type="number"
               name="price"
               onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
