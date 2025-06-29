@@ -303,14 +303,15 @@ export const Pricing = () => {
             <div id={user.id} className="w-full h-auto py-5 card">
               <SkeletonImage
                 isLoading={isLoading}
-                src="economy2.png"
+                src={user.url}
+                alt={user.filename}
                 imgClass="w-full h-auto rounded-[20px]"
                 skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
               />
               <div className="w-full pl-5">
                 <h1 className="text-[40px] text-[#16fe01] font-bold">s</h1>
-                <h2>Starting $60</h2>
-                <h2>Toyota VITZ or Similar</h2>
+                <h2>Starting {user.price}Br</h2>
+                <h2>{user.model} or Similar</h2>
                 <h2>Vehicle Feature</h2>
                 <ul>
                   <li>° 4 Person Seat</li>
