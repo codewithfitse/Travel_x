@@ -6,7 +6,7 @@ const SkeletonImage = ({
   alt = "Logo",
   className = "", // Optional outer wrapper styling
   imgClass = "",
-  skeletonClassAnimation = "w-full lg:w-full bg-gray-300 rounded-full animate-pulse",
+  skeletonClassAnimation = "w-full lg:w-full bg-gray-300 animate-pulse",
   skeletonClass = "",
 }) => {
   return (
