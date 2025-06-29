@@ -681,7 +681,7 @@ export const PickUpVehicles = () => {
 };
 
 export const OneDayVehicles = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
