@@ -20,7 +20,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="flex justify-around">
+      <div className="flex justify-around items-start">
         <div className="w-[30%] pl-4 lg:pl-8 flex flex-col space-y-1">
           <h1 className="text-[15px] lg:text-[28px] font-bold">
             <span className="text-[40px] font-serif">T</span>ime

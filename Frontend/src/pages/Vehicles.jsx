@@ -55,7 +55,7 @@ const Vehicles = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="economy2.png"
-              imgClass="w-full h-auto"
+              imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="w-full pl-5">
@@ -85,8 +85,8 @@ const Vehicles = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="standard.png"
-              imgClass="w-full h-auto"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              imgClass="w-full h-auto rounded-[20px]"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[20px] animate-pulse"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Standard</h1>
@@ -107,7 +107,7 @@ const Vehicles = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="midsizesuv.png"
-              imgClass="w-full h-auto"
+              imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
@@ -129,7 +129,7 @@ const Vehicles = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="fullsuv.png"
-              imgClass="w-full h-auto"
+              imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
@@ -151,7 +151,7 @@ const Vehicles = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="minivan.png"
-              imgClass="w-full h-auto"
+              imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
@@ -173,7 +173,7 @@ const Vehicles = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="pickup.png"
-              imgClass="w-full h-auto"
+              imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
@@ -196,7 +196,7 @@ const Vehicles = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="send.jpg"
-              imgClass="w-full h-auto"
+              imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
