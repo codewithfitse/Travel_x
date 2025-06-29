@@ -704,7 +704,7 @@ export const OneDayVehicles = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-black text-amber-50">
+    <div className="w-full min-h-screen background text-amber-50">
       <Header />
 
       <div className="pt-[100px]">
