@@ -54,6 +54,7 @@ const AboutUs = () => {
               isLoading={isLoading}
               src="Abel.jpg"
               imgClass="w-full h-auto rounded-[20px]"
+              skeletonClass="h-[200px]"
             />
           </div>
         </div>
