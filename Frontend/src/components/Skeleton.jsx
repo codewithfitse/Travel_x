@@ -10,7 +10,7 @@ export const SkeletonImage = ({
   skeletonClass = "",
 }) => {
   return (
-    <div className={`flex items-center transition-all ${className}`}>
+    <div className={`flex items-center transition-all ${className} `}>
       {isLoading ? (
         <div className={`${skeletonAnimation} ${skeletonClass}`}></div>
       ) : (
