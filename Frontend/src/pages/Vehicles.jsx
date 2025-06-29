@@ -716,7 +716,7 @@ export const OneDayVehicles = () => {
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <SkeletonImage
           isLoading={isLoading}
-          src={"abel.jpg"}
+          src={"Abel.jpg"}
           imgClass="w-full h-fit object-cover rounded-[10px]"
           skeletonClass="w-full h-[250px] bg-gray-300 rounded-[10px] animate-pulse"
         />
