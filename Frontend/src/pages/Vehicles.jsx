@@ -723,7 +723,7 @@ export const OneDayVehicles = () => {
               isLoading={isLoading}
               src={img.url}
               alt={img.filename}
-              imgClass="w-full h-auto object-cover rounded-t-[10px]"
+              imgClass="w-full h-fit object-cover rounded-t-[10px]"
               skeletonClass="w-full h-[250px] bg-gray-300 rounded-t-[10px] animate-pulse"
             />
 
