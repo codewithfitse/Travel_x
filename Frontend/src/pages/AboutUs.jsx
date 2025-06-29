@@ -10,7 +10,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 2000);
+    const timer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -55,7 +55,6 @@ const AboutUs = () => {
               src="Abel.jpg"
               imgClass="w-full h-auto rounded-[20px]"
             />
-            {/* <img src="" className="w-full h-auto rounded-[15px]" alt="" /> */}
           </div>
         </div>
         <div className="w-full lg:w-[70%]">
