@@ -823,7 +823,6 @@ export const OneEditsAdmin = () => {
     </div>
   );
 };
-
 export const OneEdits = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
