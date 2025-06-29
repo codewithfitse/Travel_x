@@ -46,9 +46,11 @@ import {
   OneDeletes,
   OneEdits,
   OneViews,
+  OneViewsAdmin,
   OnePost,
   OneGet,
   OneGetAdmin,
+  OneEditsAdmin,
 } from "./pages/dashboard/CRUDONE.jsx";
 import {
   Profile,
@@ -213,8 +215,16 @@ const router = createBrowserRouter([
     element: <OneViews />,
   },
   {
+    path: "/OneViewsAdmin",
+    element: <OneViewsAdmin />,
+  },
+  {
     path: "/OneEdits",
     element: <OneEdits />,
+  },
+  {
+    path: "/OneEditsAdmin",
+    element: <OneEditsAdmin />,
   },
   {
     path: "/OneDeletes",

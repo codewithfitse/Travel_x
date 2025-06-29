@@ -334,7 +334,7 @@ export const OneGetAdmin = () => {
                         <strong>Price:</strong> {img.price}
                       </p>
 
-                      <Link to="/OneViews" state={{ img }}>
+                      <Link to="/OneViewsAdmin" state={{ img }}>
                         <button className="text-blue-300 text-2xl font-semibold">
                           Views
                         </button>
@@ -543,6 +543,57 @@ export const OnePost = () => {
   );
 };
 
+export const OneViewsAdmin = () => {
+  //const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  const img = location?.state?.img;
+
+  return (
+    <div className="h-full p-3 bg-gray-950 text-white">
+      <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900">
+        <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
+          <h1 className="text-[30px] font-bold">View Cars Collection</h1>
+
+          <div
+            key={img?._id}
+            className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
+          >
+            <p>
+              <strong>Name:</strong> {img?.name}
+            </p>
+            <p>
+              <strong>Item:</strong> {img?.item}
+            </p>
+            <p>
+              <strong>Price:</strong> {img?.price}
+            </p>
+            <p>
+              <strong>Model:</strong> {img?.model}
+            </p>
+            <div className="flex space-x-4">
+              <Link to="/OneEditsAdmin" state={{ img }}>
+                Update
+              </Link>
+              <Link to="/OneDeletes" state={{ img }}>
+                Delete
+              </Link>
+            </div>
+
+            <p>{img?.filename}</p>
+            <div className=" flex justify-center">
+              <img
+                src={img.url}
+                alt={img?.filename}
+                className="w-50 h-50 bg-center rounded-[10px]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const OneViews = () => {
   //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
@@ -594,6 +645,184 @@ export const OneViews = () => {
   );
 };
 
+export const OneEditsAdmin = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [image, setImage] = useState(null);
+  const [name, setName] = useState("");
+  const [model, setModel] = useState("");
+  const [item, setItem] = useState("");
+  const [price, setPrice] = useState();
+  const [images, setImages] = useState([]);
+  const location = useLocation();
+  const img = location?.state?.img;
+  const navigate = useNavigate();
+
+  async function updatePost(e) {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("item", item);
+    formData.append("model", model);
+    formData.append("price", price);
+    if (image) {
+      formData.append("image", image);
+    }
+
+    try {
+      await axios
+        .put(
+          `https://travel-x-408k.onrender.com/uploads/one/${img._id}`,
+          formData,
+          { withCredentials: true }
+        )
+        .then(() => {
+          alert("Done");
+          navigate("/OneLandingVehicle");
+        })
+        .catch((err) => {
+          alert("Failed");
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    if (!img) {
+      navigate("/Get"); // Redirect back to your image list
+    }
+  }, [img, navigate]);
+
+  return (
+    <div className="h-full p-3 bg-gray-950 text-white">
+      <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900">
+        <form
+          action=""
+          onSubmit={updatePost}
+          className="flex flex-col space-y-3"
+        >
+          {/* <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              Name:
+            </label>
+            <input
+              type="text"
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Name File"
+            />
+          </div> */}
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              Name:
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Choose Name"
+            />
+          </div>
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              Item:
+            </label>
+            <select
+              name="item"
+              type="text"
+              className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
+              onChange={(e) => setItem(e.target.value)}
+            >
+              <option value="none">Choose here!</option>
+              <option value="suv">suv</option>
+              <option value="midsuv">midSuv</option>
+              <option value="fullsuv">fullSuv</option>
+              <option value="pickup">pickup</option>
+              <option value="minivan">minivan</option>
+            </select>
+          </div>
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              Price:
+            </label>
+            <input
+              type="text"
+              name="price"
+              onChange={(e) => setPrice(e.target.value)}
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Choose Description"
+            />
+          </div>
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              Model:
+            </label>
+            <input
+              type="text"
+              name="model"
+              onChange={(e) => setModel(e.target.value)}
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Choose Description"
+            />
+          </div>
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              File:
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImage(e.target.files[0])}
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Choose File"
+            />
+          </div>
+          <div className="w-full">
+            <button
+              type="submit"
+              className="py-2 px-3 bg-gray-700 rounded-[10px]"
+            >
+              {isLoading ? "Loading..." : "Submit"}
+            </button>
+          </div>
+        </form>
+        <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
+          {images.map((img) => (
+            <div
+              key={img._id}
+              className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
+            >
+              <p>
+                <strong>Name:</strong> {img.name}
+              </p>
+              <p>
+                <strong>Item:</strong> {img.item}
+              </p>
+              <p>
+                <strong>Price:</strong> {img.price}
+              </p>
+              <p>
+                <strong>Model:</strong> {img.model}
+              </p>
+              <p>{img.filename}</p>
+              <div className=" flex justify-center">
+                <img
+                  src={img.url}
+                  alt={img.filename}
+                  className="w-50 h-100 bg-center rounded-[10px]"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 export const OneEdits = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
