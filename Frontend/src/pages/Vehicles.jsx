@@ -686,6 +686,12 @@ export const OneDayVehicles = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const fetchImages = async () => {
       try {
         const res = await axios.get(
