@@ -12,10 +12,7 @@ const upload = multer({ storage: storage });
 router.get("/price/:price", async (req, res) => {
   const { price } = req.params;
   try {
-    const targetPrice = parseInt(price);
-    console.log("Target price from URL:", targetPrice);
-
-    const findPrice = await UserPostOne.find({ price: { $lt: targetPrice } });
+    const findPrice = await UserPostOne.find({ price: { $lt: 3000 } });
     console.log("Matched documents:", findPrice.length);
 
     res.status(200).json(findPrice);

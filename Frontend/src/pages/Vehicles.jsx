@@ -244,14 +244,12 @@ export default Vehicles;
 export const Pricing = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [datas, setDatas] = useState([]);
-  //const [images, setImages] = useState([]);
-  //const navigate = useNavigate();
   const location = useLocation();
   const Suv = "";
   const MidSuv = "";
   const FullSuv = "";
 
-  const { price } = location?.state || {};
+  const { price } = location?.state?.price;
 
   useEffect(() => {
     // Fetch images from backend
@@ -822,17 +820,6 @@ export const OneDayVehicles = () => {
     fetchImages();
   }, []);
 
-  const handlePriceRangeClick = () => {
-    navigate(`/Pricing`);
-  };
-
-  const priceRanges = [
-    { label: "3-4k", value: "3000-4000" },
-    { label: "5-6k", value: "5000-6000" },
-    { label: "7-8k", value: "7000-8000" },
-    { label: "8k+", value: "8000+" },
-  ];
-
   return (
     <div className="w-full min-h-screen background text-amber-50">
       <Header />
@@ -843,17 +830,15 @@ export const OneDayVehicles = () => {
         </h1>
       </div>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-3 px-4">
-        {priceRanges.map(({ label, value }) => (
-          <button
-            key={value}
-            onClick={() => handlePriceRangeClick(value)}
-            className="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition"
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+      <Link to={"/Pricing"} state={{ price: "3k" }}>
+        3k
+      </Link>
+      <Link to={"/Pricing"} state={{ price: "4k" }}>
+        4k
+      </Link>
+      <Link to={"/Pricing"} state={{ price: "8k" }}>
+        8k+
+      </Link>
 
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data.map((img) => (
