@@ -309,7 +309,9 @@ export const Pricing = () => {
                 skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
               />
               <div className="w-full pl-5">
-                <h1 className="text-[40px] text-[#16fe01] font-bold">s</h1>
+                <h1 className="text-[40px] text-[#16fe01] font-bold">
+                  {user.name}
+                </h1>
                 <h2>Starting {user.price}Br</h2>
                 <h2>{user.model} or Similar</h2>
                 <h2>Vehicle Feature</h2>
