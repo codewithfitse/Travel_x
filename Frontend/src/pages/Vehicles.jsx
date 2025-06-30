@@ -280,21 +280,6 @@ export const Pricing = () => {
         </h1>
       </div>
 
-      <div className="mt-10 w-full h-fit flex space-x-2 p-2">
-        <div className="w-full card">
-          <h1 className="text-[30px] text-center">2k</h1>
-        </div>
-        <div className="w-full card">
-          <h1 className="text-[30px] text-center">4k</h1>
-        </div>
-        <div className="w-full card">
-          <h1 className="text-[30px] text-center">6k</h1>
-        </div>
-        <div className="w-full card">
-          <h1 className="text-[30px] text-center">7k</h1>
-        </div>
-      </div>
-
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
         {datas.map((user) => (
           <Link to="/SuvVehicles" state={{ Suv }}>
