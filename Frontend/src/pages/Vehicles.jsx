@@ -822,6 +822,17 @@ export const OneDayVehicles = () => {
     fetchImages();
   }, []);
 
+  const handlePriceRangeClick = (range) => {
+    navigate(`/Pricing/${range}`);
+  };
+
+  const priceRanges = [
+    { label: "3-4k", value: "3000-4000" },
+    { label: "5-6k", value: "5000-6000" },
+    { label: "7-8k", value: "7000-8000" },
+    { label: "8k+", value: "8000+" },
+  ];
+
   return (
     <div className="w-full min-h-screen background text-amber-50">
       <Header />
@@ -832,27 +843,16 @@ export const OneDayVehicles = () => {
         </h1>
       </div>
 
-      <div className="mt-10 w-full h-fit flex space-x-2 p-2">
-        <Link to={"/Pricing"} state={{ price: 3000 }}>
-          <div className="w-full card">
-            <h1 className="text-[30px] text-center">3k</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: 4000 }}>
-          <div className="w-full card">
-            <h1 className="text-[30px] text-center">4k</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: 5000 }}>
-          <div className="w-full card">
-            <h1 className="text-[30px] text-center">5k</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: 6000 }}>
-          <div className="w-full card">
-            <h1 className="text-[30px] text-center">6k</h1>
-          </div>
-        </Link>
+      <div className="mt-10 flex flex-wrap justify-center gap-3 px-4">
+        {priceRanges.map(({ label, value }) => (
+          <button
+            key={value}
+            onClick={() => handlePriceRangeClick(value)}
+            className="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition"
+          >
+            {label}
+          </button>
+        ))}
       </div>
 
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
