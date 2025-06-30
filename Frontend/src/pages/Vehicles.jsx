@@ -822,8 +822,8 @@ export const OneDayVehicles = () => {
     fetchImages();
   }, []);
 
-  const handlePriceRangeClick = (range) => {
-    navigate(`/Pricing/${range}`);
+  const handlePriceRangeClick = () => {
+    navigate(`/Pricing`);
   };
 
   const priceRanges = [
