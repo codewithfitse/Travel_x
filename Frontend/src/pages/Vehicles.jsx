@@ -822,7 +822,7 @@ export const OneDayVehicles = () => {
     fetchImages();
   }, []);
 
-  const handlePriceRangeClick = () => {
+  const handlePriceRangeClick = (g) => {
     navigate(`/Pricing`);
   };
 
