@@ -84,7 +84,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/MidSuvVehicles" state={{ Suv }}>
+        <Link to="/MidSuvVehicles" state={{ suv }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -108,7 +108,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/FullSuvVehicles" state={{ MidSuv }}>
+        <Link to="/FullSuvVehicles" state={{ suv }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -132,7 +132,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/MiniVanVehicles" state={{ Suv }}>
+        <Link to="/MiniVanVehicles" state={{ suv }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -156,7 +156,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/PickUpVehicles" state={{ Suv }}>
+        <Link to="/PickUpVehicles" state={{ suv }}>
           <div className="w-full py-8 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -232,17 +232,15 @@ export default Vehicles;
 export const SuvVehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
-  const navigate = useNavigate();
 
-  const Suv = "Suv";
-  const MidSuv = "Suv";
-  const FullSuv = "Suv";
+  const location = useLocation();
+  const type = location?.state?.suv;
 
   const fetchImages = async () => {
     setIsLoading(true);
     try {
       const res = await axios.get(
-        "https://travel-x-408k.onrender.com/uploads/suv"
+        `https://travel-x-408k.onrender.com/uploads/suv/${type}`
       );
       setImages(res.data);
     } catch (err) {
