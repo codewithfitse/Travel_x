@@ -222,7 +222,6 @@ export default Vehicles;
 export const VehiclesTypes = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
-
   const location = useLocation();
   const type = location?.state?.type;
 
@@ -233,7 +232,6 @@ export const VehiclesTypes = () => {
   }, []);
 
   const fetchImages = async () => {
-    setIsLoading(true);
     try {
       const res = await axios.get(
         `https://travel-x-408k.onrender.com/uploads/type/${type}`
@@ -241,8 +239,6 @@ export const VehiclesTypes = () => {
       setImages(res.data);
     } catch (err) {
       console.error("Fetching images failed:", err);
-    } finally {
-      setIsLoading(false);
     }
   };
 
