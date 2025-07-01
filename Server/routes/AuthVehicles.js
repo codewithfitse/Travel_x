@@ -93,12 +93,12 @@ router.get("/sub", authMiddleware, async (req, res) => {
 router.get("/type/:type", async (req, res) => {
   const { type } = req.params;
   try {
-    const images = await UserPost.find({ item: type }).sort({
+    const types = await UserPost.find({ item: type }).sort({
       uploadedAt: -1,
     });
     console.log("Here is work product!");
 
-    res.json(images);
+    res.json(types);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch images" });
   }
