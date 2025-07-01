@@ -61,7 +61,6 @@ import {
 import { ContactDb, EditContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb, EditBookingDb } from "./pages/dashboard/BookingDb.jsx";
 import UserDb from "./pages/dashboard/UserDb.jsx";
-import Demo from "./pages/Demo.jsx";
 import {
   CancledDemoDb,
   AllDemoDb,
@@ -94,10 +93,6 @@ const router = createBrowserRouter([
   {
     path: "/Vehicles",
     element: <Vehicles />,
-  },
-  {
-    path: "/Demo",
-    element: <Demo />,
   },
   {
     path: "/Pricing",
