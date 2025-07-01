@@ -718,15 +718,23 @@ export const OneDayVehicles = () => {
         </h1>
       </div>
 
-      <Link to={"/Pricing"} state={{ price: "3k" }}>
-        3k
-      </Link>
-      <Link to={"/Pricing"} state={{ price: "4k" }}>
-        4k
-      </Link>
-      <Link to={"/Pricing"} state={{ price: "8k" }}>
-        8k+
-      </Link>
+      <div className="w-full flex">
+        <Link to={"/Pricing"} state={{ price: "3k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">3K</h1>
+          </div>
+        </Link>
+        <Link to={"/Pricing"} state={{ price: "4k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">5K</h1>
+          </div>
+        </Link>
+        <Link to={"/Pricing"} state={{ price: "8k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">8K</h1>
+          </div>
+        </Link>
+      </div>
 
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data.map((img) => (
