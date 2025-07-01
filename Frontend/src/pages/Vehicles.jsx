@@ -25,7 +25,7 @@ const Vehicles = () => {
       </div>
 
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        <Link to="/SuvVehicles" state={{ type: "suv" }}>
+        <Link to="/VehiclesTypes" state={{ type: "suv" }}>
           <div className="w-full h-auto py-5 card">
             <SkeletonImage
               isLoading={isLoading}
