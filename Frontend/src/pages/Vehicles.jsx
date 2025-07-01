@@ -241,103 +241,6 @@ const Vehicles = () => {
 
 export default Vehicles;
 
-export const Pricing = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [datas, setDatas] = useState([]);
-  const location = useLocation();
-  const Suv = "";
-  const MidSuv = "";
-  const FullSuv = "";
-
-  const { price } = location?.state?.price;
-
-  useEffect(() => {
-    // Fetch images from backend
-    const fetchImages = async () => {
-      setIsLoading(true);
-      try {
-        const res = await axios.get(
-          `https://travel-x-408k.onrender.com/uploads/price/${price}`,
-          { withCredentials: true }
-        );
-        setDatas(res.data);
-      } catch (err) {
-        console.error("Error fetching images:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchImages();
-  }, []);
-
-  return (
-    <div className="w-full h-[100%] background text-amber-50">
-      <Header />
-      <div className="pt-[100px]">
-        <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[#16fe01] ">Our</span> Cars
-        </h1>
-      </div>
-
-      <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {datas.map((user) => (
-          <Link to="/SuvVehicles" state={{ Suv }}>
-            <div id={user.id} className="w-full h-auto py-5 card">
-              <SkeletonImage
-                isLoading={isLoading}
-                src={user.url}
-                alt={user.filename}
-                imgClass="w-full h-auto rounded-[20px]"
-                skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
-              />
-              <div className="w-full pl-5">
-                <h1 className="text-[40px] text-[#16fe01] font-bold">
-                  {user.name}
-                </h1>
-                <h2>Starting {user.price}Br</h2>
-                <h2>{user.model} or Similar</h2>
-                <h2>Vehicle Feature</h2>
-                <ul>
-                  <li>° 4 Person Seat</li>
-                  <li>° Automatic</li>
-                  <li>° Perfect for in city</li>
-                  <li>° Pick up at airport</li>
-                </ul>
-
-                <Link to="/MidSuvVehicles" state={{ MidSuv }}>
-                  Mid Suv
-                </Link>
-                <Link to="/PickUpVehicles" state={{ FullSuv }}>
-                  Pick UP
-                </Link>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
-          </h1>
-          <h2 className="text-[10px] lg:text-[20px] text-2xl">
-            We Always Have The Best Customer Services In Town
-          </h2>
-        </div>
-        <div className="lg:mt-7 flex justify-center items-center">
-          <Link to={"/Booking"}>
-            <Button text={"Book Now!"} />
-          </Link>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
-};
-
 export const SuvVehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
@@ -879,6 +782,103 @@ export const OneDayVehicles = () => {
         <Link to="/Booking">
           <Button text={"Book Now!"} />
         </Link>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export const Pricing = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [datas, setDatas] = useState([]);
+  const location = useLocation();
+  const Suv = "";
+  const MidSuv = "";
+  const FullSuv = "";
+
+  const price = location?.state?.price;
+
+  useEffect(() => {
+    // Fetch images from backend
+    const fetchImages = async () => {
+      setIsLoading(true);
+      try {
+        const res = await axios.get(
+          `https://travel-x-408k.onrender.com/uploads/price/${price}`,
+          { withCredentials: true }
+        );
+        setDatas(res.data);
+      } catch (err) {
+        console.error("Error fetching images:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  return (
+    <div className="w-full h-[100%] background text-amber-50">
+      <Header />
+      <div className="pt-[100px]">
+        <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
+          <span className="text-[#16fe01] ">Our</span> Cars
+        </h1>
+      </div>
+
+      <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
+        {datas.map((user) => (
+          <Link to="/SuvVehicles" state={{ Suv }}>
+            <div id={user.id} className="w-full h-auto py-5 card">
+              <SkeletonImage
+                isLoading={isLoading}
+                src={user.url}
+                alt={user.filename}
+                imgClass="w-full h-auto rounded-[20px]"
+                skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              />
+              <div className="w-full pl-5">
+                <h1 className="text-[40px] text-[#16fe01] font-bold">
+                  {user.name}
+                </h1>
+                <h2>Starting {user.price}Br</h2>
+                <h2>{user.model} or Similar</h2>
+                <h2>Vehicle Feature</h2>
+                <ul>
+                  <li>° 4 Person Seat</li>
+                  <li>° Automatic</li>
+                  <li>° Perfect for in city</li>
+                  <li>° Pick up at airport</li>
+                </ul>
+
+                <Link to="/MidSuvVehicles" state={{ MidSuv }}>
+                  Mid Suv
+                </Link>
+                <Link to="/PickUpVehicles" state={{ FullSuv }}>
+                  Pick UP
+                </Link>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-[15px] lg:text-[40px] font-bold">
+            COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
+          </h1>
+          <h2 className="text-[10px] lg:text-[20px] text-2xl">
+            We Always Have The Best Customer Services In Town
+          </h2>
+        </div>
+        <div className="lg:mt-7 flex justify-center items-center">
+          <Link to={"/Booking"}>
+            <Button text={"Book Now!"} />
+          </Link>
+        </div>
       </div>
 
       <Footer />
