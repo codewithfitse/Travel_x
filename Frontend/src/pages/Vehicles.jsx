@@ -260,13 +260,13 @@ export const VehiclesTypes = () => {
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
         {images.map((img) => (
           <div key={img._id} className="w-full py-5 card">
-            <div className="flex justify-center">
-              <img
-                src={img.url}
-                alt={img.filename}
-                className="w-full h-auto object-cover rounded-[10px]"
-              />
-            </div>
+            <SkeletonImage
+              isLoading={isLoading}
+              src={img.url}
+              alt={img.filename}
+              imgClass="w-full h-auto rounded-[20px]"
+              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
+            />
             <div className="pl-5">
               <h1 className="text-[40px] text-[var(--color-lum)] font-bold capitalize">
                 {img.name}
