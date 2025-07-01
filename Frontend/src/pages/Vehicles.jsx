@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation, useParams } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
 import SkeletonImage from "../components/Skeleton";
@@ -791,7 +791,7 @@ export const OneDayVehicles = () => {
 
 export const Pricing = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [datas, setDatas] = useState([]);
+  const [data, setData] = useState([]);
   const location = useLocation();
   const Suv = "";
   const MidSuv = "";
@@ -808,7 +808,7 @@ export const Pricing = () => {
           `https://travel-x-408k.onrender.com/uploads/price/${price}`,
           { withCredentials: true }
         );
-        setDatas(res.data);
+        setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
       } finally {
@@ -829,22 +829,22 @@ export const Pricing = () => {
       </div>
 
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {datas.map((user) => (
+        {data.map((user) => (
           <Link to="/SuvVehicles" state={{ Suv }}>
-            <div id={user.id} className="w-full h-auto py-5 card">
+            <div id={user?.id} className="w-full h-auto py-5 card">
               <SkeletonImage
                 isLoading={isLoading}
-                src={user.url}
-                alt={user.filename}
+                src={user?.url}
+                alt={user?.filename}
                 imgClass="w-full h-auto rounded-[20px]"
                 skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
               />
               <div className="w-full pl-5">
                 <h1 className="text-[40px] text-[#16fe01] font-bold">
-                  {user.name}
+                  {user?.name}
                 </h1>
-                <h2>Starting {user.price}Br</h2>
-                <h2>{user.model} or Similar</h2>
+                <h2>Starting {user?.price}Br</h2>
+                <h2>{user?.model} or Similar</h2>
                 <h2>Vehicle Feature</h2>
                 <ul>
                   <li>° 4 Person Seat</li>
