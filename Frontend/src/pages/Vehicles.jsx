@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link, useNavigate, useLocation, useParams } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
 import SkeletonImage from "../components/Skeleton";
 
 const Vehicles = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -31,7 +31,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="economy2.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-full h-[300px] rounded-[10px]"
             />
             <div className="w-full pl-5">
               <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
@@ -63,7 +63,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="standard.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[20px] animate-pulse"
+              skeletonClass="w-full h-[300px] rounded-[20px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
