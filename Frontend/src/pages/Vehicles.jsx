@@ -8,9 +8,6 @@ import SkeletonImage from "../components/Skeleton";
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState([]);
-  const [images, setImages] = useState([]);
-  const navigate = useNavigate();
   const Suv = "";
   const MidSuv = "";
   const FullSuv = "";
@@ -19,26 +16,6 @@ const Vehicles = () => {
     // Simulate loading for 2 seconds
     const timer = setTimeout(() => setIsLoading(false), 4000);
     return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    // Fetch images from backend
-    const fetchImages = async () => {
-      setIsLoading(true);
-      try {
-        const res = await axios.get(
-          "https://travel-x-408k.onrender.com/uploads/one",
-          { withCredentials: true }
-        );
-        setData(res.data);
-      } catch (err) {
-        console.error("Error fetching images:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchImages();
   }, []);
 
   return (
