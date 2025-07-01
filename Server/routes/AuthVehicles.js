@@ -9,15 +9,56 @@ const router = express.Router();
 
 const upload = multer({ storage: storage });
 
+// Route: /price/:price
 router.get("/price/:price", async (req, res) => {
   const { price } = req.params;
-  try {
-    const findPrice = await UserPostOne.find({ price: { $lt: 3000 } });
-    console.log("Matched documents:", findPrice.length);
 
-    res.status(200).json(findPrice);
+  try {
+    // Convert price like "3k" to 3000
+    const lowerPrice = price.toLowerCase();
+    const numericPart = parseInt(lowerPrice.replace("k", ""));
+    const numericPrice = isNaN(numericPart) ? null : numericPart * 1000;
+
+    if (!numericPrice) {
+      return res.status(400).json({ error: "Invalid price format" });
+    }
+
+    let min = 0;
+    let max = 0;
+
+    // Define price ranges
+    if (numericPrice === 3000) {
+      min = 3000;
+      max = 3999;
+    } else if (numericPrice === 4000) {
+      min = 4000;
+      max = 4999;
+    } else if (numericPrice === 5000) {
+      min = 5000;
+      max = 5999;
+    } else if (numericPrice === 6000) {
+      min = 6000;
+      max = 6999;
+    } else if (numericPrice >= 8000) {
+      min = 8000;
+      max = null; // open-ended
+    } else {
+      return res.status(400).json({ error: "Unsupported price range" });
+    }
+
+    const filter = max
+      ? { price: { $gte: min, $lte: max } }
+      : { price: { $gte: min } };
+
+    console.log("📦 Price filter applied:", filter);
+
+    const vehicles = await UserPostOne.find(filter);
+
+    console.log(`🔍 Found ${vehicles.length} vehicle(s) for price: ${price}`);
+
+    res.status(200).json(vehicles);
   } catch (err) {
-    console.error("Error fetching prices:", err);
+    console.error("❌ Server error while filtering vehicles by price:", err);
     res.status(500).json({ error: "Server error" });
   }
 });
