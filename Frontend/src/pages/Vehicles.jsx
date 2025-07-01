@@ -721,12 +721,35 @@ export const OneDayVehicles = () => {
       <div className="w-full flex">
         <Link to={"/Pricing"} state={{ price: "3k" }}>
           <div className="card">
-            <h1 className="text-[30px]">3K</h1>
+            <h1 className="text-[30px]">3K - 4K</h1>
+          </div>
+        </Link>
+        <Link to={"/Pricing"} state={{ price: "5k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">5K - 6K</h1>
+          </div>
+        </Link>
+        <Link to={"/Pricing"} state={{ price: "7k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">7K - 8K</h1>
+          </div>
+        </Link>
+        <Link to={"/Pricing"} state={{ price: "9k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">+9K</h1>
+          </div>
+        </Link>
+      </div>
+      {/* 
+      <div className="w-full flex">
+        <Link to={"/Pricing"} state={{ price: "3k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">3K - 4K</h1>
           </div>
         </Link>
         <Link to={"/Pricing"} state={{ price: "4k" }}>
           <div className="card">
-            <h1 className="text-[30px]">5K</h1>
+            <h1 className="text-[30px]">5K - 6K</h1>
           </div>
         </Link>
         <Link to={"/Pricing"} state={{ price: "5k" }}>
@@ -744,7 +767,7 @@ export const OneDayVehicles = () => {
             <h1 className="text-[30px]">8K</h1>
           </div>
         </Link>
-      </div>
+      </div> */}
 
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data.map((img) => (

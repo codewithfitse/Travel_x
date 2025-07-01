@@ -29,21 +29,15 @@ router.get("/price/:price", async (req, res) => {
     // Define price ranges
     if (numericPrice === 3000) {
       min = 3000;
-      max = 3999;
-    } else if (numericPrice === 4000) {
-      min = 4000;
       max = 4999;
     } else if (numericPrice === 5000) {
       min = 5000;
-      max = 5999;
-    } else if (numericPrice === 6000) {
-      min = 6000;
       max = 6999;
     } else if (numericPrice === 7000) {
       min = 7000;
-      max = 7999;
-    } else if (numericPrice >= 8000) {
-      min = 8000;
+      max = 8999;
+    } else if (numericPrice >= 9000) {
+      min = 9000;
       max = null; // open-ended
     } else {
       return res.status(400).json({ error: "Unsupported price range" });
