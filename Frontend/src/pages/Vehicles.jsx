@@ -57,7 +57,7 @@ const Vehicles = () => {
           </div>
         </Link>
 
-        <Link to="/SuvVehicles" state={{ type: "suv" }}>
+        <Link to="/VehiclesTypes" state={{ type: "suv" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -81,7 +81,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/SuvVehicles" state={{ type: "midsuv" }}>
+        <Link to="/VehiclesTypes" state={{ type: "midsuv" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -105,7 +105,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/FullSuvVehicles" state={{ type: "fullsuv" }}>
+        <Link to="/VehiclesTypes" state={{ type: "fullsuv" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -129,7 +129,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/MiniVanVehicles" state={{ type: "minivan" }}>
+        <Link to="/VehiclesTypes" state={{ type: "minivan" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -153,7 +153,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/PickUpVehicles" state={{ type: "pickup" }}>
+        <Link to="/VehiclesTypes" state={{ type: "pickup" }}>
           <div className="w-full py-8 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -226,7 +226,7 @@ const Vehicles = () => {
 
 export default Vehicles;
 
-export const SuvVehicles = () => {
+export const VehiclesTypes = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
 

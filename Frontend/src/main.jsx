@@ -9,7 +9,7 @@ import NotFound from "./pages/404.jsx";
 import Booking from "./pages/Booking.jsx";
 import Vehicles, {
   Pricing,
-  SuvVehicles,
+  VehiclesTypes,
   MidSuvVehicles,
   FullSuvVehicles,
   MiniVanVehicles,
@@ -99,8 +99,8 @@ const router = createBrowserRouter([
     element: <Pricing />,
   },
   {
-    path: "/SuvVehicles",
-    element: <SuvVehicles />,
+    path: "/VehiclesTypes",
+    element: <VehiclesTypes />,
   },
   {
     path: "/MidSuvVehicles",
