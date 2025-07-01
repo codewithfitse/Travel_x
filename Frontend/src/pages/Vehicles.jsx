@@ -231,7 +231,7 @@ export const SuvVehicles = () => {
   const [images, setImages] = useState([]);
 
   const location = useLocation();
-  const type = location?.state?.suv;
+  const type = location?.state?.type;
 
   const fetchImages = async () => {
     setIsLoading(true);
