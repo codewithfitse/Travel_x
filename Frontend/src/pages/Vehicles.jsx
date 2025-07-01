@@ -8,9 +8,9 @@ import SkeletonImage from "../components/Skeleton";
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const Suv = "";
-  const MidSuv = "";
-  const FullSuv = "";
+  const suv = "suv";
+  const sidSuv = "";
+  const sullSuv = "";
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -28,7 +28,7 @@ const Vehicles = () => {
       </div>
 
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        <Link to="/SuvVehicles" state={{ Suv }}>
+        <Link to="/SuvVehicles" state={{ suv }}>
           <div className="w-full h-auto py-5 card">
             <SkeletonImage
               isLoading={isLoading}
