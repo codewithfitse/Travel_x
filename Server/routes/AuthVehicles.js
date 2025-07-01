@@ -39,6 +39,9 @@ router.get("/price/:price", async (req, res) => {
     } else if (numericPrice === 6000) {
       min = 6000;
       max = 6999;
+    } else if (numericPrice === 7000) {
+      min = 7000;
+      max = 7999;
     } else if (numericPrice >= 8000) {
       min = 8000;
       max = null; // open-ended

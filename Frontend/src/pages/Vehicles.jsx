@@ -731,12 +731,12 @@ export const OneDayVehicles = () => {
         </Link>
         <Link to={"/Pricing"} state={{ price: "5k" }}>
           <div className="card">
-            <h1 className="text-[30px]">3K</h1>
+            <h1 className="text-[30px]">7K</h1>
           </div>
         </Link>
         <Link to={"/Pricing"} state={{ price: "7k" }}>
           <div className="card">
-            <h1 className="text-[30px]">5K</h1>
+            <h1 className="text-[30px]">7K</h1>
           </div>
         </Link>
         <Link to={"/Pricing"} state={{ price: "8k" }}>
