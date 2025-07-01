@@ -60,7 +60,7 @@ const Vehicles = () => {
           </div>
         </Link>
 
-        <Link to="/SuvVehicles" state={{ Suv }}>
+        <Link to="/SuvVehicles" state={{ suv }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
