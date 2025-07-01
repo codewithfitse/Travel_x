@@ -719,23 +719,27 @@ export const OneDayVehicles = () => {
       </div>
 
       <div className="w-full flex">
+        <div className="flex">
+          <input type="text" className="w-full h-fit p-2 bg-amber-50" />
+          <button>Search</button>
+        </div>
         <Link to={"/Pricing"} state={{ price: "3k" }}>
-          <div className="card">
+          <div className="w-fit p-6 card">
             <h1 className="text-[30px]">3K - 4K</h1>
           </div>
         </Link>
         <Link to={"/Pricing"} state={{ price: "5k" }}>
-          <div className="card">
+          <div className="w-fit p-6 card">
             <h1 className="text-[30px]">5K - 6K</h1>
           </div>
         </Link>
         <Link to={"/Pricing"} state={{ price: "7k" }}>
-          <div className="card">
+          <div className="w-fit p-6 card">
             <h1 className="text-[30px]">7K - 8K</h1>
           </div>
         </Link>
         <Link to={"/Pricing"} state={{ price: "9k" }}>
-          <div className="card">
+          <div className="w-fit p-6 card">
             <h1 className="text-[30px]">+9K</h1>
           </div>
         </Link>
