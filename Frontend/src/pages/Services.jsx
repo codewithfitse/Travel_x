@@ -11,7 +11,7 @@ const Services = () => {
 
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[#16fe01] ">Our</span> SERVICES
+          <span className="text-[var(--color-lum)] ">Our</span> SERVICES
         </h1>
         <h2 className="text-[20px] lg:text-[40px] text-center">
           WHAT WE DO BEST AT ADDIS CAR RENTAL
@@ -21,12 +21,12 @@ const Services = () => {
       <div className="mt-[60px] py-2 px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 container">
         <div className="w-full flex items-center py-5">
           <div className="w-[20%] flex justify-center">
-            <div className="p-3 bg-[#16fe01] rounded-full">
+            <div className="p-3 bg-[var(--color-lum)] rounded-full">
               <img src="Icons/car.png" className="w-10 h-10" alt="" srcset="" />
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px] text-[#16fe01] font-bold">
+            <h1 className="pb-1 text-[40px] text-[var(--color-lum)] font-bold">
               CAR RENTAL
             </h1>
             <h2 className="w-[90%]">
@@ -38,7 +38,7 @@ const Services = () => {
         </div>
         <div className="w-full flex items-center py-5">
           <div className="w-[20%] flex justify-center">
-            <div className="p-3 bg-[#16fe01] rounded-full">
+            <div className="p-3 bg-[var(--color-lum)] rounded-full">
               <img
                 src="Icons/binoculars.png"
                 className="w-10 h-10"
@@ -48,7 +48,7 @@ const Services = () => {
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px] text-[#16fe01] font-bold">
+            <h1 className="pb-1 text-[40px] text-[var(--color-luvar(--color-lum)] font-bold">
               CITY TOUR
             </h1>
             <h2 className="w-[90%]">
@@ -60,12 +60,12 @@ const Services = () => {
         </div>
         <div className="w-full flex items-center py-5">
           <div className="w-[20%] flex justify-center">
-            <div className="p-3 bg-[#16fe01] rounded-full">
+            <div className="p-3 bg-[var(--color-lum)] rounded-full">
               <img src="Icons/map.png" className="w-10 h-10" alt="" srcset="" />
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px]/10 text-[#16fe01] line-clamp-2 font-bold">
+            <h1 className="pb-1 text-[40px]/10 text-[var(--color-lum)] line-clamp-2 font-bold">
               TRAVEL CONSULTING
             </h1>
             <h2 className="w-[90%]">
@@ -79,14 +79,14 @@ const Services = () => {
 
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[#16fe01] ">Our</span> Promise
+          <span className="text-[var(--color-lum)] ">Our</span> Promise
         </h1>
       </div>
 
       <div className="mt-[60px] py-6 px-2 w-full grid lg:grid-cols-4 place-items-center gap-3 space-y-3 container">
-        <div className="w-full flex flex-col items-center border-l-5 border-l-[#16fe01] py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-[var(--color-lum)] py-5">
           <div className="flex justify-center">
-            <div className="p-2 bg-[#16fe01] rounded-full">
+            <div className="p-2 bg-[var(--color-lum)] rounded-full">
               <img
                 src="Icons/verified.png"
                 className="w-10 h-10"
@@ -101,9 +101,9 @@ const Services = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center border-l-5 border-l-[#16fe01] py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-[var(--color-lum)] py-5">
           <div className="flex justify-center">
-            <div className="p-2 bg-[#16fe01] rounded-full">
+            <div className="p-2 bg-[var(--color-lum)] rounded-full">
               <img
                 src="Icons/tools.png"
                 className="w-10 h-10"
@@ -118,9 +118,9 @@ const Services = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center border-l-5 border-l-[#16fe01] py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-[var(--color-lum)] py-5">
           <div className="flex  justify-center">
-            <div className="p-2 bg-[#16fe01] rounded-full">
+            <div className="p-2 bg-[var(--color-lum)] rounded-full">
               <img
                 src="Icons/infinity.png"
                 className="w-10 h-10"
@@ -135,9 +135,9 @@ const Services = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center border-l-5 border-l-[#16fe01] py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-[var(--color-lum)] py-5">
           <div className="flex  justify-center">
-            <div className="p-2 bg-[#16fe01] rounded-full">
+            <div className="p-2 bg-[var(--color-lum)] rounded-full">
               <img
                 src="Icons/deal.png"
                 className="w-10 h-10"
@@ -157,7 +157,8 @@ const Services = () => {
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
+            COME & TRY OUR{" "}
+            <span className="text-[var(--color-lum)]">SERVICES</span>
           </h1>
           <h2 className="text-[10px] lg:text-[20px] text-2xl">
             We Always Have The Best Customer Services In Town
