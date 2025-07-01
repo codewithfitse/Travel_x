@@ -9,8 +9,8 @@ import SkeletonImage from "../components/Skeleton";
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
   const suv = "suv";
-  const sidSuv = "";
-  const sullSuv = "";
+  const midSuv = "";
+  const fullSuv = "";
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -50,10 +50,10 @@ const Vehicles = () => {
                 <li>° Pick up at airport</li>
               </ul>
 
-              <Link to="/MidSuvVehicles" state={{ MidSuv }}>
+              <Link to="/MidSuvVehicles" state={{ midSuv }}>
                 Mid Suv
               </Link>
-              <Link to="/PickUpVehicles" state={{ FullSuv }}>
+              <Link to="/PickUpVehicles" state={{ fullSuv }}>
                 Pick UP
               </Link>
             </div>
