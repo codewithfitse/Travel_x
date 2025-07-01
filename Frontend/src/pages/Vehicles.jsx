@@ -81,7 +81,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/MidSuvVehicles" state={{ type: "midsuv" }}>
+        <Link to="/SuvVehicles" state={{ type: "midsuv" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
