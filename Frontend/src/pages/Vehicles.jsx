@@ -729,6 +729,16 @@ export const OneDayVehicles = () => {
             <h1 className="text-[30px]">5K</h1>
           </div>
         </Link>
+        <Link to={"/Pricing"} state={{ price: "5k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">3K</h1>
+          </div>
+        </Link>
+        <Link to={"/Pricing"} state={{ price: "7k" }}>
+          <div className="card">
+            <h1 className="text-[30px]">5K</h1>
+          </div>
+        </Link>
         <Link to={"/Pricing"} state={{ price: "8k" }}>
           <div className="card">
             <h1 className="text-[30px]">8K</h1>
