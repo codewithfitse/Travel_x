@@ -104,67 +104,6 @@ router.get("/type/:type", async (req, res) => {
   }
 });
 
-router.get("/suv", async (req, res) => {
-  try {
-    const images = await UserPost.find({ item: "suv" }).sort({
-      uploadedAt: -1,
-    });
-    console.log("Here is work product!");
-
-    res.json(images);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch images" });
-  }
-});
-
-// I make this to list of Midsuv Photos from Cloudinarey!
-router.get("/midsuv", async (req, res) => {
-  try {
-    const images = await UserPost.find({ item: "midsuv" }).sort({
-      uploadedAt: -1,
-    });
-    res.json(images);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch images" });
-  }
-});
-
-// I make this to list of Fullsuv Photos from Cloudinarey!
-router.get("/fullsuv", async (req, res) => {
-  try {
-    const images = await UserPost.find({ item: "fullsuv" }).sort({
-      uploadedAt: -1,
-    });
-    res.json(images);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch images" });
-  }
-});
-
-// I make this to list of Minisuv Photos from Cloudinarey!
-router.get("/minivan", async (req, res) => {
-  try {
-    const images = await UserPost.find({ item: "minivan" }).sort({
-      uploadedAt: -1,
-    });
-    res.json(images);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch images" });
-  }
-});
-
-// I make this to list of Picksuv Photos from Cloudinarey!
-router.get("/pickup", async (req, res) => {
-  try {
-    const images = await UserPost.find({ item: "pickup" }).sort({
-      uploadedAt: -1,
-    });
-    res.json(images);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch images" });
-  }
-});
-
 // I make this Post to upload to cloudeary cloud storage!
 router.post("/", upload.single("image"), authMiddleware, async (req, res) => {
   const { name, item, price } = req.body;
