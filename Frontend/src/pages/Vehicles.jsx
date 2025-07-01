@@ -8,9 +8,11 @@ import SkeletonImage from "../components/Skeleton";
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const suv = "suv";
-  const midSuv = "";
-  const fullSuv = "";
+  //const suv = "suv";
+  // const midsuv = "";
+  // const fullsuv = "";
+  // const minivan = "suv";
+  //const pickup = "";
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -28,7 +30,7 @@ const Vehicles = () => {
       </div>
 
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        <Link to="/SuvVehicles" state={{ suv }}>
+        <Link to="/SuvVehicles" state={{ type: "suv" }}>
           <div className="w-full h-auto py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -60,7 +62,7 @@ const Vehicles = () => {
           </div>
         </Link>
 
-        <Link to="/SuvVehicles" state={{ suv }}>
+        <Link to="/SuvVehicles" state={{ type: "suv" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -84,7 +86,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/MidSuvVehicles" state={{ suv }}>
+        <Link to="/MidSuvVehicles" state={{ type: "midsuv" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -108,7 +110,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/FullSuvVehicles" state={{ suv }}>
+        <Link to="/FullSuvVehicles" state={{ type: "fullsuv" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -132,7 +134,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/MiniVanVehicles" state={{ suv }}>
+        <Link to="/MiniVanVehicles" state={{ type: "minivan" }}>
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
@@ -156,7 +158,7 @@ const Vehicles = () => {
             </div>
           </div>
         </Link>
-        <Link to="/PickUpVehicles" state={{ suv }}>
+        <Link to="/PickUpVehicles" state={{ type: "pickup" }}>
           <div className="w-full py-8 card">
             <SkeletonImage
               isLoading={isLoading}

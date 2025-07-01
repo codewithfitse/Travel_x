@@ -90,7 +90,7 @@ router.get("/sub", authMiddleware, async (req, res) => {
 });
 
 // I make this to list of suv Photos from Cloudinarey!
-router.get("/suv/:type", async (req, res) => {
+router.get("/type/:type", async (req, res) => {
   const type = req.params.type;
   try {
     const images = await UserPost.find({ item: type }).sort({
