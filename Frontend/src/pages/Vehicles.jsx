@@ -8,11 +8,6 @@ import SkeletonImage from "../components/Skeleton";
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(false);
-  //const suv = "suv";
-  // const midsuv = "";
-  // const fullsuv = "";
-  // const minivan = "suv";
-  //const pickup = "";
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -52,10 +47,10 @@ const Vehicles = () => {
                 <li>° Pick up at airport</li>
               </ul>
 
-              <Link to="/MidSuvVehicles" state={{ midSuv }}>
+              <Link to="/MidSuvVehicles" state={{ type: "midsuv" }}>
                 Mid Suv
               </Link>
-              <Link to="/PickUpVehicles" state={{ fullSuv }}>
+              <Link to="/PickUpVehicles" state={{ type: "pickup" }}>
                 Pick UP
               </Link>
             </div>
