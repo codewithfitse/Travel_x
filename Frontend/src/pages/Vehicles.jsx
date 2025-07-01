@@ -718,31 +718,39 @@ export const OneDayVehicles = () => {
         </h1>
       </div>
 
-      <div className="w-full flex">
-        <div className="flex">
-          <input type="text" className="w-full h-fit p-2 bg-amber-50" />
-          <button>Search</button>
+      <div className="w-full h-[50px] lg:mt-10 pl-5 flex">
+        <div className="w-full h-full flex space-x-2">
+          <input
+            type="text"
+            className="w-full h-full p-2 bg-amber-50 rounded-2xl placeholder:text-amber-800"
+            placeholder="Search Your Type!"
+          />
+          <button className=" w-fit h-full p-2 rounded-2xl font-bold bg-[var(--color-lum)]">
+            Search
+          </button>
         </div>
-        <Link to={"/Pricing"} state={{ price: "3k" }}>
-          <div className="w-fit p-6 card">
-            <h1 className="text-[30px]">3K - 4K</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: "5k" }}>
-          <div className="w-fit p-6 card">
-            <h1 className="text-[30px]">5K - 6K</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: "7k" }}>
-          <div className="w-fit p-6 card">
-            <h1 className="text-[30px]">7K - 8K</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: "9k" }}>
-          <div className="w-fit p-6 card">
-            <h1 className="text-[30px]">+9K</h1>
-          </div>
-        </Link>
+        <div className="w-full h-fit grid grid-cols-2 lg:grid-cols-4 gap-3 place-items-center">
+          <Link to={"/Pricing"} state={{ price: "3k" }}>
+            <div className="w-full px-3 py-2 bg-gray-900 rounded-2xl">
+              <h1 className="text-[15px] lg:text-[30px]">3K - 4K</h1>
+            </div>
+          </Link>
+          <Link to={"/Pricing"} state={{ price: "5k" }}>
+            <div className="w-fit px-3 py-2 bg-gray-900 rounded-2xl">
+              <h1 className="text-[15px] lg:text-[30px]">5K - 6K</h1>
+            </div>
+          </Link>
+          <Link to={"/Pricing"} state={{ price: "7k" }}>
+            <div className="w-fit px-3 py-2 bg-gray-900 rounded-2xl">
+              <h1 className="text-[15px] lg:text-[30px]">7K - 8K</h1>
+            </div>
+          </Link>
+          <Link to={"/Pricing"} state={{ price: "9k" }}>
+            <div className="w-fit px-3 py-2 bg-gray-900 rounded-2xl">
+              <h1 className="text-[15px] lg:text-[30px]">+9K</h1>
+            </div>
+          </Link>
+        </div>
       </div>
       {/* 
       <div className="w-full flex">
