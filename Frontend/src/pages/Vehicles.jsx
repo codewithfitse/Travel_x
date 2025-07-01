@@ -808,6 +808,11 @@ export const Pricing = () => {
   const price = location?.state?.price;
 
   useEffect(() => {
+    if (!price) {
+      console.warn("🚨 Price is undefined. Skipping fetch.");
+      return;
+    }
+
     // Fetch images from backend
     const fetchImages = async () => {
       setIsLoading(true);
@@ -816,16 +821,17 @@ export const Pricing = () => {
           `https://travel-x-408k.onrender.com/uploads/price/${price}`,
           { withCredentials: true }
         );
+        console.log("✅ Received data:", res.data); // Debug
         setData(res.data);
       } catch (err) {
-        console.error("Error fetching images:", err);
+        console.error("❌ Error fetching images:", err);
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchImages();
-  }, []);
+  }, [price]); // ✅ Add 'price' here
 
   return (
     <div className="w-full h-[100%] background text-amber-50">
