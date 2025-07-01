@@ -220,7 +220,7 @@ const Vehicles = () => {
 export default Vehicles;
 
 export const VehiclesTypes = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
 
   const location = useLocation();
