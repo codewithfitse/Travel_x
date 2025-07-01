@@ -89,7 +89,7 @@ router.get("/sub", authMiddleware, async (req, res) => {
   }
 });
 
-// I make this to list of suv Photos from Cloudinarey!
+// I make this to filter out the vehicle type passed from req.param
 router.get("/type/:type", async (req, res) => {
   const { type } = req.params;
   try {
