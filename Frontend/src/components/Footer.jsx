@@ -16,13 +16,13 @@ const Footer = () => {
           <input
             type="text"
             placeholder="Enter Your Email"
-            className=" py-1 px-2 lg:py-2 lg:px-3 w-[140px] lg:w-[400px] bg-gray-400 rounded-3xl"
+            className=" py-1 px-2 lg:py-2 lg:px-3 w-[140px] lg:w-[400px] bg-gray-200 rounded-3xl placeholder:text-black"
           />
         </div>
       </div>
       <div className="flex justify-around items-start">
         <div className="w-[30%] pl-4 lg:pl-8 flex flex-col space-y-1">
-          <h1 className="text-[15px] lg:text-[28px] font-bold">
+          <h1 className="text-[15px] lg:text-[28px] text-[var(--color-lum)] font-bold">
             <span className="text-[40px] font-serif">T</span>ime
           </h1>
           <h2 className="text-[10px] lg:text-[16px]">

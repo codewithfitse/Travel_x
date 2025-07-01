@@ -5,7 +5,7 @@ import { Header, SideBar, SubHeader, SubSideBar } from "./component";
 
 export const OneLandingVehicleAdmin = () => {
   const [toggle, setToggle] = useState(false);
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -90,7 +90,7 @@ export const OneLandingVehicleAdmin = () => {
 
 export const OneLandingVehicle = () => {
   const [toggle, setToggle] = useState(false);
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
