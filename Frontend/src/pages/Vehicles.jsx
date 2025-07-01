@@ -237,7 +237,7 @@ export const SuvVehicles = () => {
     setIsLoading(true);
     try {
       const res = await axios.get(
-        `https://travel-x-408k.onrender.com/uploads/suv/${type}`
+        `https://travel-x-408k.onrender.com/uploads/type/${type}`
       );
       setImages(res.data);
     } catch (err) {
