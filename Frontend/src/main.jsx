@@ -10,10 +10,6 @@ import Booking from "./pages/Booking.jsx";
 import Vehicles, {
   Pricing,
   VehiclesTypes,
-  MidSuvVehicles,
-  FullSuvVehicles,
-  MiniVanVehicles,
-  PickUpVehicles,
   OneDayVehicles,
   OneDayVehiclesBook,
 } from "./pages/Vehicles.jsx";
@@ -101,22 +97,6 @@ const router = createBrowserRouter([
   {
     path: "/VehiclesTypes",
     element: <VehiclesTypes />,
-  },
-  {
-    path: "/MidSuvVehicles",
-    element: <MidSuvVehicles />,
-  },
-  {
-    path: "/FullSuvVehicles",
-    element: <FullSuvVehicles />,
-  },
-  {
-    path: "/MiniVanVehicles",
-    element: <MiniVanVehicles />,
-  },
-  {
-    path: "/PickUpVehicles",
-    element: <PickUpVehicles />,
   },
   {
     path: "/OneDayVehicles",
