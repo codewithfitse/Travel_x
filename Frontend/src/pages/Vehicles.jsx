@@ -11,7 +11,7 @@ const Vehicles = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 4000);
+    const timer = setTimeout(() => setIsLoading(false), 6000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -31,7 +31,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="economy2.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-full h-[300px] rounded-[10px]"
+              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="w-full pl-5">
               <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
@@ -46,13 +46,6 @@ const Vehicles = () => {
                 <li>° Perfect for in city</li>
                 <li>° Pick up at airport</li>
               </ul>
-
-              <Link to="/MidSuvVehicles" state={{ type: "midsuv" }}>
-                Mid Suv
-              </Link>
-              <Link to="/PickUpVehicles" state={{ type: "pickup" }}>
-                Pick UP
-              </Link>
             </div>
           </div>
         </Link>
@@ -63,7 +56,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="standard.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-full h-[300px] rounded-[20px]"
+              skeletonClass="w-[400px] h-[300px] rounded-[20px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
@@ -233,6 +226,12 @@ export const VehiclesTypes = () => {
   const location = useLocation();
   const type = location?.state?.type;
 
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const fetchImages = async () => {
     setIsLoading(true);
     try {
@@ -259,36 +258,32 @@ export const VehiclesTypes = () => {
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
-        {isLoading ? (
-          <p className="text-[50px] font-bold">Loading..</p>
-        ) : (
-          images.map((img) => (
-            <div key={img._id} className="w-full py-5 card">
-              <div className="flex justify-center">
-                <img
-                  src={img.url}
-                  alt={img.filename}
-                  className="w-full h-auto object-cover rounded-[10px]"
-                />
-              </div>
-              <div className="pl-5">
-                <h1 className="text-[40px] text-[var(--color-lum)] font-bold capitalize">
-                  {img.name}
-                </h1>
-                <h2>Starting ${img.price}</h2>
-                <h2>Toyota VITZ or Similar</h2>
-                <h2>Vehicle Feature {img.item}</h2>
-                <ul>
-                  <li>° 4 Person Seat</li>
-                  <li>° Automatic</li>
-                  <li>° Perfect for in city</li>
-                  <li>° Pick up at airport</li>
-                </ul>
-                <Link to="/Home">Home</Link>
-              </div>
+        {images.map((img) => (
+          <div key={img._id} className="w-full py-5 card">
+            <div className="flex justify-center">
+              <img
+                src={img.url}
+                alt={img.filename}
+                className="w-full h-auto object-cover rounded-[10px]"
+              />
             </div>
-          ))
-        )}
+            <div className="pl-5">
+              <h1 className="text-[40px] text-[var(--color-lum)] font-bold capitalize">
+                {img.name}
+              </h1>
+              <h2>Starting ${img.price}</h2>
+              <h2>Toyota VITZ or Similar</h2>
+              <h2>Vehicle Feature {img.item}</h2>
+              <ul>
+                <li>° 4 Person Seat</li>
+                <li>° Automatic</li>
+                <li>° Perfect for in city</li>
+                <li>° Pick up at airport</li>
+              </ul>
+              <Link to="/Home">Home</Link>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
