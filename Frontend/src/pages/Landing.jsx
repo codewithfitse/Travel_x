@@ -6,7 +6,7 @@ export const Landing = () => {
   return (
     <div className="w-full h-screen landingBg overflow-x-hidden">
       <div className="h-screen pt-130 lg:pt-72 pl-5 lg:pl-15 pb-32 lg:pb-9 text-[25px]/7 text-white font-serif lg:text-6xl/15 font-bold backdrop-blur-[5px]">
-        <h1 className="mb-3 text-[#16fe01]">
+        <h1 className="mb-3 text-lum">
           <span className="text-[80px] font-serif">T</span>ime
           <br />
         </h1>
