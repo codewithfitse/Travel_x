@@ -1,8 +1,35 @@
 import { UserHeader, UserSideBar } from "../dashboard/component";
-import { Link } from "react-router-dom";
-//import { Button } from "../../components/Button";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const UserDashboard = () => {
+  const [Loading, setLoading] = useState(false);
+  const [toggle, setToggle] = useState(false);
+  const [users, setUsers] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function loadProfile() {
+      setLoading(true);
+      try {
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/profile",
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(res.data.user); // for debugging
+        setUsers(res.data.user);
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+        navigate("/Login");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProfile();
+  }, []);
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
