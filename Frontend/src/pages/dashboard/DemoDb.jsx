@@ -1,8 +1,15 @@
 import { useEffect } from "react";
-import { useState } from "react"; 
-import { Header, SideBar, SubHeader, SubSideBar, UserHeader, UserSideBar } from "../dashboard/component";
+import { useState } from "react";
+import {
+  Header,
+  SideBar,
+  SubHeader,
+  SubSideBar,
+  UserHeader,
+  UserSideBar,
+} from "../dashboard/component";
 import axios from "axios";
-import { Link, useLocation, useNavigate } from "react-router-dom"; 
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const LandingDemoDb = () => {
   const [data, setData] = useState([]);
@@ -13,9 +20,12 @@ export const LandingDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook", {
-            withCredentials: true,
-          })
+          .get(
+            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook",
+            {
+              withCredentials: true,
+            }
+          )
           .then((result) => {
             console.log(result.data);
             setData(result.data);
@@ -43,7 +53,11 @@ export const LandingDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px]"
+                      }`}
+                    >
                       Booking Status
                     </h1>
                   </div>
@@ -52,13 +66,18 @@ export const LandingDemoDb = () => {
                       <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
                         Edit Demo
                       </button>
-                    </Link>  
+                    </Link>
                   </div>
                 </div>
 
-                <div className={`w-full grid lg:grid-cols-4 ${toggle ? "grid-cols-1" : "grid-cols-2"} gap-2`}>
+                <div
+                  className={`w-full grid lg:grid-cols-4 ${
+                    toggle ? "grid-cols-1" : "grid-cols-2"
+                  } gap-2`}
+                >
                   <Link to="/AllDemoDb">
-                    <div className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                    <div
+                      className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[20px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
                           : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
@@ -71,13 +90,16 @@ export const LandingDemoDb = () => {
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >All</h1>
+                        >
+                          All
+                        </h1>
                       </div>
                     </div>
                   </Link>
 
                   <Link to="/PendingDemoDb">
-                    <div className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                    <div
+                      className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[20px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
                           : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
@@ -90,13 +112,16 @@ export const LandingDemoDb = () => {
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                          >Pending</h1>
+                        >
+                          Pending
+                        </h1>
                       </div>
                     </div>
                   </Link>
 
                   <Link to="/SucessfullDemoDb">
-                    <div className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                    <div
+                      className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[20px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
                           : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
@@ -109,13 +134,16 @@ export const LandingDemoDb = () => {
                               ? "w-fit text-[20px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >Successful</h1>
+                        >
+                          Successful
+                        </h1>
                       </div>
                     </div>
                   </Link>
 
                   <Link to="/CancledDemoDb">
-                    <div className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                    <div
+                      className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[20px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
                           : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
@@ -128,7 +156,9 @@ export const LandingDemoDb = () => {
                               ? "w-fit text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "w-full text-[22px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                          >Canceled</h1>
+                        >
+                          Canceled
+                        </h1>
                       </div>
                     </div>
                   </Link>
@@ -179,6 +209,7 @@ export const LandingDemoDb = () => {
                                   </h1>
                                 </div>
                               </div>
+                              <div className="w-full flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Issued At</h1>
                                   <h1 className="font-semibold">
@@ -244,9 +275,12 @@ export const PendingDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Pending", {
-            withCredentials: true,
-          })
+          .get(
+            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Pending",
+            {
+              withCredentials: true,
+            }
+          )
           .then((result) => {
             console.log(result.data);
             setData(result.data);
@@ -274,7 +308,11 @@ export const PendingDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px] "}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px] "
+                      }`}
+                    >
                       Status Pending
                     </h1>
                   </div>
@@ -381,9 +419,12 @@ export const SucessfullDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Successful", {
-            withCredentials: true,
-          })
+          .get(
+            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Successful",
+            {
+              withCredentials: true,
+            }
+          )
           .then((result) => {
             console.log(result.data);
             setData(result.data);
@@ -411,7 +452,11 @@ export const SucessfullDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px]"
+                      }`}
+                    >
                       Status Successful
                     </h1>
                   </div>
@@ -518,9 +563,12 @@ export const AllDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook", {
-            withCredentials: true,
-          })
+          .get(
+            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook",
+            {
+              withCredentials: true,
+            }
+          )
           .then((result) => {
             console.log(result.data);
             setData(result.data);
@@ -548,7 +596,11 @@ export const AllDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px]"
+                      }`}
+                    >
                       Status All
                     </h1>
                   </div>
@@ -655,9 +707,12 @@ export const CancledDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Canceled", {
-            withCredentials: true,
-          })
+          .get(
+            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Canceled",
+            {
+              withCredentials: true,
+            }
+          )
           .then((result) => {
             console.log(result.data);
             setData(result.data);
@@ -685,7 +740,11 @@ export const CancledDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px]"
+                      }`}
+                    >
                       Status Cancel
                     </h1>
                   </div>
@@ -791,9 +850,12 @@ export const SubDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBookUser", {
-            withCredentials: true,
-          })
+          .get(
+            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBookUser",
+            {
+              withCredentials: true,
+            }
+          )
           .then((result) => {
             console.log(result.data);
             setData(result.data);
@@ -821,7 +883,11 @@ export const SubDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px]"
+                      }`}
+                    >
                       One Day Booking!
                     </h1>
                   </div>
@@ -830,7 +896,7 @@ export const SubDemoDb = () => {
                       <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
                         Back
                       </button>
-                    </Link>  
+                    </Link>
                   </div>
                 </div>
 
@@ -927,9 +993,12 @@ export const UserDemoDb = () => {
     async function load() {
       try {
         await axios
-          .get("https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBookUser", {
-            withCredentials: true,
-          })
+          .get(
+            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBookUser",
+            {
+              withCredentials: true,
+            }
+          )
           .then((result) => {
             console.log(result.data);
             setData(result.data);
@@ -957,7 +1026,11 @@ export const UserDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px]"
+                      }`}
+                    >
                       One Day Booking!
                     </h1>
                   </div>
@@ -966,7 +1039,7 @@ export const UserDemoDb = () => {
                       <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
                         Back
                       </button>
-                    </Link>  
+                    </Link>
                   </div>
                 </div>
 
@@ -1075,9 +1148,12 @@ export const EditDemoDb = () => {
 
   async function handleDelete(_id) {
     try {
-      await axios.delete(`https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`, {
-        withCredentials: true,
-      });
+      await axios.delete(
+        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`,
+        {
+          withCredentials: true,
+        }
+      );
       alert("Successfully Deleted!");
       navigate("/LandingDemoDb");
     } catch (error) {
@@ -1088,9 +1164,12 @@ export const EditDemoDb = () => {
 
   async function handleStatus(_id) {
     try {
-      await axios.patch(`https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`, {
-        stat,
-      });
+      await axios.patch(
+        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`,
+        {
+          stat,
+        }
+      );
       alert(`Successfully Change Status to ${stat}!`);
       navigate("/LandingDemoDb");
     } catch (error) {
@@ -1113,7 +1192,11 @@ export const EditDemoDb = () => {
               >
                 <div className="w-full h-fit flex justify-between items-center">
                   <div className="w-fit h-full py-1">
-                    <h1 className={`text-white font-bold ${toggle ? "text-[20px]" : "text-[30px]"}`}>
+                    <h1
+                      className={`text-white font-bold ${
+                        toggle ? "text-[20px]" : "text-[30px]"
+                      }`}
+                    >
                       Edit Bookings
                     </h1>
                   </div>
@@ -1122,7 +1205,7 @@ export const EditDemoDb = () => {
                       <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
                         Edit Demo
                       </button>
-                    </Link>  
+                    </Link>
                   </div>
                 </div>
 
@@ -1200,7 +1283,7 @@ export const EditDemoDb = () => {
                           <div
                             className="w-8 h-8 lg:w-10 lg:h-10 bg-red-100 flex justify-center items-center rounded-[10px]"
                             onClick={() => handleDelete(_id)}
-                           >
+                          >
                             <i class="fa fa-trash w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
                           </div>
                           <input
