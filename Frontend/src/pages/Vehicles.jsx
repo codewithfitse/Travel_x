@@ -565,15 +565,8 @@ export const OneDayVehiclesBook = () => {
   async function handleBooking() {
     setIsLoadings(true);
     try {
-      await axios.post(
-        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`,
-        user,
-        {
-          withCredentials: true,
-        }
-      );
-      alert("Successfully Booked!");
-      navigate("/UserDashboard");
+      //alert("Successfully Booked!");
+      navigate("/OneDayBook", { state: { bookingDetails: user } });
     } catch (error) {
       alert("You forgot to login bro");
       navigate("/Login");
