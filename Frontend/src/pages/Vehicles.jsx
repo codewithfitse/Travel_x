@@ -20,7 +20,7 @@ const Vehicles = () => {
       <Header />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[var(--color-lum)] ">Our</span> Cars
+          <span className="text-lum ">Our</span> Cars
         </h1>
       </div>
 
@@ -34,9 +34,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="w-full pl-5">
-              <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
-                Economy
-              </h1>
+              <h1 className="text-[40px] text-lum font-bold">Economy</h1>
               <h2>Starting $60</h2>
               <h2>Toyota VITZ or Similar</h2>
               <h2>Vehicle Feature</h2>
@@ -59,9 +57,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[20px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
-                Standard
-              </h1>
+              <h1 className="text-[40px] text-lum font-bold">Standard</h1>
               <h2>Starting $60</h2>
               <h2>Toyota VITZ or Similar</h2>
               <h2>Vehicle Feature</h2>
@@ -83,9 +79,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
-                Mid Suv
-              </h1>
+              <h1 className="text-[40px] text-lum font-bold">Mid Suv</h1>
               <h2>Starting 1,400,000 - 5,500,000Br</h2>
               <h2>Hyundai Tucson or Similar</h2>
               <h2>Vehicle Feature</h2>
@@ -107,9 +101,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
-                Full Suv
-              </h1>
+              <h1 className="text-[40px] text-lum font-bold">Full Suv</h1>
               <h2>Starting 1,200,000 - 37,000,000Br</h2>
               <h2>Jetour X70 or Similar</h2>
               <h2>Vehicle Feature</h2>
@@ -131,9 +123,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
-                Mini Van
-              </h1>
+              <h1 className="text-[40px] text-lum font-bold">Mini Van</h1>
               <h2>Starting 900,000 to 7,250,000Br</h2>
               <h2>Toyota Hiace or Similar</h2>
               <h2>Vehicle Feature</h2>
@@ -178,7 +168,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
+              <h1 className="text-[40px] text-lum font-bold">
                 One Day with Driver!
               </h1>
               <h2>Starting 2200Br - 5000Br</h2>
@@ -198,8 +188,7 @@ const Vehicles = () => {
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR{" "}
-            <span className="text-[var(--color-lum)]">SERVICES</span>
+            COME & TRY OUR <span className="text-lum">SERVICES</span>
           </h1>
           <h2 className="text-[10px] lg:text-[20px] text-2xl">
             We Always Have The Best Customer Services In Town
@@ -250,7 +239,7 @@ export const VehiclesTypes = () => {
       <Header />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[var(--color-lum)] ">Our</span> Cars
+          <span className="text-lum ">Our</span> Cars
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
@@ -264,7 +253,7 @@ export const VehiclesTypes = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[var(--color-lum)] font-bold capitalize">
+              <h1 className="text-[40px] text-lum font-bold capitalize">
                 {img.name}
               </h1>
               <h2>Starting ${img.price}</h2>
@@ -285,8 +274,7 @@ export const VehiclesTypes = () => {
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR{" "}
-            <span className="text-[var(--color-lum)]">SERVICES</span>
+            COME & TRY OUR <span className="text-lum">SERVICES</span>
           </h1>
           <h2 className="text-[10px] lg:text-[20px] text-2xl">
             We Always Have The Best Customer Services In Town
@@ -337,7 +325,7 @@ export const OneDayVehicles = () => {
 
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[var(--color-lum)]">Our</span> Cars
+          <span className="text-lum">Our</span> Cars
         </h1>
       </div>
 
@@ -348,7 +336,7 @@ export const OneDayVehicles = () => {
             className="w-full h-full p-2 bg-amber-50 rounded-2xl placeholder:text-amber-800"
             placeholder="Search Your Type!"
           />
-          <button className=" w-fit h-full p-2 rounded-2xl font-bold bg-[var(--color-lum)]">
+          <button className=" w-fit h-full p-2 rounded-2xl font-bold bg-lum">
             Search
           </button>
         </div>
@@ -419,7 +407,7 @@ export const OneDayVehicles = () => {
             />
 
             <div className="p-4 space-y-1">
-              <h1 className="text-2xl font-bold text-[var(--color-lum)] capitalize">
+              <h1 className="text-2xl font-bold text-lum capitalize">
                 {img.name}
               </h1>
               <h2 className="text-sm">Starting {img.price} Br</h2>
@@ -449,8 +437,7 @@ export const OneDayVehicles = () => {
       <div className="my-16 lg:my-40 px-4 lg:px-20 flex flex-col lg:flex-row justify-between items-center gap-6">
         <div className="text-center lg:text-left">
           <h1 className="text-xl lg:text-4xl font-bold">
-            COME & TRY OUR{" "}
-            <span className="text-[var(--color-lum)]">SERVICES</span>
+            COME & TRY OUR <span className="text-lum">SERVICES</span>
           </h1>
           <h2 className="text-sm lg:text-xl">
             We Always Have The Best Customer Services In Town
@@ -507,7 +494,7 @@ export const Pricing = () => {
       <Header />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-[var(--color-lum)] ">Our</span> Cars
+          <span className="text-lum ">Our</span> Cars
         </h1>
       </div>
 
@@ -523,9 +510,7 @@ export const Pricing = () => {
                 skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
               />
               <div className="w-full pl-5">
-                <h1 className="text-[40px] text-[var(--color-lum)] font-bold">
-                  {user?.name}
-                </h1>
+                <h1 className="text-[40px] text-lum font-bold">{user?.name}</h1>
                 <h2>Starting {user?.price}Br</h2>
                 <h2>{user?.model} or Similar</h2>
                 <h2>Vehicle Feature</h2>
@@ -551,8 +536,7 @@ export const Pricing = () => {
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR{" "}
-            <span className="text-[var(--color-lum)]">SERVICES</span>
+            COME & TRY OUR <span className="text-lum">SERVICES</span>
           </h1>
           <h2 className="text-[10px] lg:text-[20px] text-2xl">
             We Always Have The Best Customer Services In Town
@@ -627,7 +611,7 @@ export const OneDayVehiclesBook = () => {
       <Header />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold ">
-          <span className="text-[var(--color-lum)] ">Our</span> Cars
+          <span className="text-lum ">Our</span> Cars
         </h1>
       </div>
 
@@ -641,7 +625,7 @@ export const OneDayVehiclesBook = () => {
             skeletonClass="w-full h-[250px] rounded-[10px]"
           />
           <div className="pl-5">
-            <h1 className="text-[40px] text-[var(--color-lum)] font-bold capitalize">
+            <h1 className="text-[40px] text-lum font-bold capitalize">
               {user.name}
             </h1>
             <h2>Starting ${user.price}</h2>
@@ -676,8 +660,7 @@ export const OneDayVehiclesBook = () => {
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR{" "}
-            <span className="text-[var(--color-lum)]">SERVICES</span>
+            COME & TRY OUR <span className="text-lum">SERVICES</span>
           </h1>
           <h2 className="text-[10px] lg:text-[20px] text-2xl">
             We Always Have The Best Customer Services In Town
