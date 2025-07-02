@@ -219,7 +219,7 @@ export const LandingDemoDb = () => {
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Message</h1>
                                   <h1 className="font-semibold">
-                                    {user.phone}
+                                    {user.message}
                                   </h1>
                                 </div>
                               </div>
