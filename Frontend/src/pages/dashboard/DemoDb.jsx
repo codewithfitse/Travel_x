@@ -119,7 +119,7 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/SucessfullDemoDb">
+                  <Link to="/PendingDemoDb" state={{ status: "successful" }}>
                     <div
                       className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
