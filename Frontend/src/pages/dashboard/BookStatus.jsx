@@ -767,7 +767,7 @@ export const UserBookStatus = () => {
                           <img
                             src={user.url}
                             alt=""
-                            className="w-full h-[400px]"
+                            className="w-full h-[400px] rounded-t-[10px]"
                           />
                         </div>
                         <div className="w-full h-auto flex flex-col lg:flex-row justify-between">
