@@ -8,7 +8,6 @@ import AboutUs from "./pages/AboutUs.jsx";
 import NotFound from "./pages/404.jsx";
 import Booking from "./pages/Booking.jsx";
 import OneDayBook from "./pages/Bookings.jsx";
-
 import Vehicles, {
   Pricing,
   VehiclesTypes,
