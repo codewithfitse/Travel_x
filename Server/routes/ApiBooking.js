@@ -6,7 +6,6 @@ import authMiddleware from "../middleware/tokenMiddleware.js";
 
 const router = express.Router();
 
-
 // I make this to list all booking for one day!
 router.get("/OneDayVehiclesBook", async (req, res) => {
   const data = await UserOneDay.find({}).sort({ createdAt: -1 });
@@ -16,16 +15,29 @@ router.get("/OneDayVehiclesBook", async (req, res) => {
 
 router.get("/OneDayVehiclesBookUser", authMiddleware, async (req, res) => {
   const id = req.user.id;
-  const data = await UserOneDay.find({ userId:id }).sort({ createdAt: -1 });
+  const data = await UserOneDay.find({ userId: id }).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
 
 router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
-  const { url, name, price, item, model } = req.body;
-  const {id, firstName, email, phone } = req.user;
+  const { url, name, price, item, model, phone, destination, message } =
+    req.body;
+  const { id, firstName, email } = req.user;
 
-  UserOneDay.create({ url, ownerName:name, customName:firstName, price, item, model, userId: id, email: email, phone: phone })
+  UserOneDay.create({
+    url,
+    ownerName: name,
+    customName: firstName,
+    price,
+    item,
+    model,
+    userId: id,
+    email: email,
+    phone: phone,
+    destination: destination,
+    message: message,
+  })
     .then((employee) => {
       res.json(employee);
     })
@@ -42,14 +54,18 @@ router.get("/OneDayVehiclesBook/Pending", authMiddleware, async (req, res) => {
   console.log(data);
 });
 
-router.get("/OneDayVehiclesBook/Successful", authMiddleware, async (req, res) => {
-  const userId = req.user.id;
-  const data = await UserOneDay.find({ status: "successful" }).sort({
-    createdAt: -1,
-  });
-  res.json(data);
-  console.log(data);
-});
+router.get(
+  "/OneDayVehiclesBook/Successful",
+  authMiddleware,
+  async (req, res) => {
+    const userId = req.user.id;
+    const data = await UserOneDay.find({ status: "successful" }).sort({
+      createdAt: -1,
+    });
+    res.json(data);
+    console.log(data);
+  }
+);
 
 router.get("/OneDayVehiclesBook/Canceled", authMiddleware, async (req, res) => {
   const userId = req.user.id;
@@ -60,7 +76,7 @@ router.get("/OneDayVehiclesBook/Canceled", authMiddleware, async (req, res) => {
   console.log(data);
 });
 
-// Specific booking 
+// Specific booking
 router.get("/OneDayVehiclesBook/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -106,7 +122,7 @@ router.delete("/OneDayVehiclesBook/:id", async (req, res) => {
   }
 });
 
-// I make this to list all booking 
+// I make this to list all booking
 router.get("/booking", async (req, res) => {
   const data = await UserBook.find({}).sort({ createdAt: -1 });
   res.json(data);
@@ -123,7 +139,7 @@ router.post("/book", (req, res) => {
   console.log(`Posted Successfully`);
 });
 
-// I make this to get booking list by id  
+// I make this to get booking list by id
 router.get("/booking/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -138,7 +154,7 @@ router.get("/booking/:id", async (req, res) => {
   }
 });
 
-// I make this to delete booking list by id 
+// I make this to delete booking list by id
 router.delete("/booking/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -156,11 +172,10 @@ router.delete("/booking/:id", async (req, res) => {
 // i made this b/c to list all bookings
 router.get("/demos", authMiddleware, async (req, res) => {
   const userId = req.user.id;
-  const data = await UserDemo.find({ }).sort({ createdAt: -1 });
+  const data = await UserDemo.find({}).sort({ createdAt: -1 });
   res.json(data);
   console.log(data);
 });
-
 
 router.get("/demosPen", authMiddleware, async (req, res) => {
   const userId = req.user.id;
@@ -211,7 +226,7 @@ router.post("/demo", authMiddleware, (req, res) => {
   console.log(`Posted Successfully`);
 });
 
-// Specific booking 
+// Specific booking
 router.get("/demo/:id", async (req, res) => {
   const { id } = req.params;
   try {

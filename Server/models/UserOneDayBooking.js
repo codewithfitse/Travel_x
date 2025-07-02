@@ -10,10 +10,12 @@ const ImageSchema = new mongoose.Schema({
   item: String,
   price: String,
   model: String,
+  message: String,
+  destination: String,
   status: {
     type: String,
     default: "pending",
-  },  
+  },
   createdAt: { type: Date, default: Date.now },
 });
 

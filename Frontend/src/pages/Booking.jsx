@@ -206,6 +206,13 @@ export const OneDayBook = () => {
 
   const { bookingDetails } = location?.state;
 
+  const finalBookingData = {
+    ...bookingDetails, // from previous page
+    phone,
+    destination,
+    message,
+  };
+
   async function handleClick(e) {
     e.preventDefault();
     const res = await axios.post(
