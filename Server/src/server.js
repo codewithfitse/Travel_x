@@ -92,6 +92,7 @@ passport.use(
           googleId: profile.id,
           name: profile.displayName,
           email: profile.emails?.[0].value,
+          phone: profile.phone?.[0].value,
           avatar: profile.photos?.[0].value,
         });
 
@@ -120,7 +121,13 @@ passport.deserializeUser(async (id, done) => {
 //I make this to login with Oauth with Google to direte me google Oauth box!
 app.get(
   "/auths/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+  passport.authenticate("google", {
+    scope: [
+      "profile",
+      "email",
+      "https://www.googleapis.com/auth/user.phonenumbers.read",
+    ],
+  })
 );
 
 // yes i this will pay the big Part on Oauth it diffrenciate the routes admin, subAdmin,user and rediret you based on session data best ever i bulid fr!
@@ -162,7 +169,6 @@ app.get("/profile", authMiddleware, (req, res) => {
   res.status(200).json({ message: "Welcome Admin", user: req.user });
 });
 
-
 // my first Page 😊 proud of it!
 app.get("/", (req, res) => {
   res.json("HomePage");
@@ -171,11 +177,9 @@ app.get("/", (req, res) => {
 
 // this will feached if the middle ware is correct means if the cookie is present!
 app.get("/dashboards", authMiddleware, async (req, res) => {
-
   const data =
-  (await UserLogin.find({ email: req.user.email }).select("-password")) ||
-  (await UserOauth.find({ email: req.user.email }));
-
+    (await UserLogin.find({ email: req.user.email }).select("-password")) ||
+    (await UserOauth.find({ email: req.user.email }));
 
   res.json(data);
   console.log(data);
