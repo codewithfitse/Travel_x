@@ -25,7 +25,7 @@ import SubDashboard from "./pages/dashboard/SubAdminDashboard.jsx";
 import {
   EditUserInfo,
   ViewUserInfo,
-  DeleteUserInVfo,
+  DeleteUserInfo,
 } from "./pages/dashboard/CRUDUSER.jsx";
 import {
   LandingVehicle,
