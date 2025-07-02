@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
-import Booking from "./Booking";
+//import Booking from "./Booking";
 
-const OneDayBook = () => {
+export const OneDayBook = () => {
   const navigate = useNavigate()
   const [phone, setPhone] = useState();
   const [destination, setDestination] = useState();
@@ -131,4 +131,4 @@ const OneDayBook = () => {
   );
 };
 
-export default OneDayBook;
+
