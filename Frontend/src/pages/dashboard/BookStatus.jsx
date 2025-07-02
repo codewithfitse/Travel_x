@@ -349,8 +349,12 @@ export const StatusOfBook = () => {
                             Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                            {/* Member since January 15, 2023{" "} */}
-                            {new Date(user.createdAt).toLocaleString("en-GB")}
+                            Booked At:{" "}
+                            {new Date(user.createdAt).toLocaleString("en-GB")}{" "}
+                          </h1>
+                          <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                            Appointed time:{" "}
+                            {new Date(user.date).toLocaleString("en-GB")}
                           </h1>
                         </div>
                         <div className="w-full h-full py-5 px-5 bg-gray-800">
@@ -380,6 +384,20 @@ export const StatusOfBook = () => {
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Car type</h1>
                                   <h1 className="font-semibold">{user.item}</h1>
+                                </div>
+                              </div>
+                              <div className="w-full flex flex-col lg:flex-row gap-1">
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Destination</h1>
+                                  <h1 className="font-semibold">
+                                    {user.destination}
+                                  </h1>
+                                </div>
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Message</h1>
+                                  <h1 className="font-semibold">
+                                    {user.message}
+                                  </h1>
                                 </div>
                               </div>
                             </div>
@@ -493,8 +511,12 @@ export const AllBookStatus = () => {
                             Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                            {/* Member since January 15, 2023{" "} */}
-                            {new Date(user.createdAt).toLocaleString("en-GB")}
+                            Booked At:{" "}
+                            {new Date(user.createdAt).toLocaleString("en-GB")}{" "}
+                          </h1>
+                          <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                            Appointed time:{" "}
+                            {new Date(user.date).toLocaleString("en-GB")}
                           </h1>
                         </div>
                         <div className="w-full h-full py-5 px-5 bg-gray-800">
@@ -636,8 +658,12 @@ export const SubBookStatus = () => {
                             Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                            {/* Member since January 15, 2023{" "} */}
-                            {new Date(user.createdAt).toLocaleString("en-GB")}
+                            Booked At:{" "}
+                            {new Date(user.createdAt).toLocaleString("en-GB")}{" "}
+                          </h1>
+                          <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                            Appointed time:{" "}
+                            {new Date(user.date).toLocaleString("en-GB")}
                           </h1>
                         </div>
                         <div className="w-full h-full py-5 px-5 bg-gray-800">
@@ -667,6 +693,20 @@ export const SubBookStatus = () => {
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Car type</h1>
                                   <h1 className="font-semibold">{user.item}</h1>
+                                </div>
+                              </div>
+                              <div className="w-full flex flex-col lg:flex-row gap-1">
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Destination</h1>
+                                  <h1 className="font-semibold">
+                                    {user.destination}
+                                  </h1>
+                                </div>
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Message</h1>
+                                  <h1 className="font-semibold">
+                                    {user.message}
+                                  </h1>
                                 </div>
                               </div>
                             </div>
@@ -888,6 +928,9 @@ export const EditBookStatus = () => {
     phone,
     price,
     model,
+    message,
+    destination,
+    date,
     item,
     status,
   } = location?.state?.user;
@@ -975,8 +1018,10 @@ export const EditBookStatus = () => {
                       {model}
                     </h1>
                     <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                      {/* Member since January 15, 2023{" "} */}
-                      {new Date(createdAt).toLocaleString("en-GB")}
+                      Booked At: {new Date(createdAt).toLocaleString("en-GB")}{" "}
+                    </h1>
+                    <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                      Appointed time: {new Date(date).toLocaleString("en-GB")}
                     </h1>
                   </div>
                   <div className="w-full h-full py-5 px-5 bg-gray-800">
@@ -1000,6 +1045,16 @@ export const EditBookStatus = () => {
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Car type</h1>
                             <h1 className="font-semibold">{item}</h1>
+                          </div>
+                        </div>
+                        <div className="w-full flex flex-col lg:flex-row gap-1">
+                          <div className="w-full h-15">
+                            <h1 className="text-gray-400">Destination</h1>
+                            <h1 className="font-semibold">{destination}</h1>
+                          </div>
+                          <div className="w-full h-15">
+                            <h1 className="text-gray-400">Message</h1>
+                            <h1 className="font-semibold">{message}</h1>
                           </div>
                         </div>
                       </div>
