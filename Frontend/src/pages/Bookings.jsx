@@ -13,10 +13,10 @@ const OneDayBook = () => {
 
   const location = useLocation();
 
-  const { bookingDetails } = location?.state;
+  //const { bookingDetails } = location?.state || null;
 
   const finalBookingData = {
-    ...bookingDetails, // from previous page
+    //...bookingDetails, // from previous page
     phone,
     destination,
     message,
@@ -54,8 +54,8 @@ const OneDayBook = () => {
             Book Now❗
           </h1>
           <form onSubmit={handleClick} action="">
-            <div className="mt-8 flex justify-between space-x-2">
-              <div className="w-[45%] flex flex-col">
+            <div className="mt-8 px-20 flex flex-col justify-between space-y-5 space-x-2">
+              <div className="w-full flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
                   Phone
                 </label>
@@ -68,7 +68,7 @@ const OneDayBook = () => {
                   placeholder="Enter Phone"
                 />
               </div>
-              <div className="w-[45%] flex flex-col">
+              <div className="w-full flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
                   If not in Addis Ababa where is the Destination
                 </label>
@@ -81,10 +81,7 @@ const OneDayBook = () => {
                   placeholder="destination"
                 />
               </div>
-            </div>
-
-            <div className="mt-10 flex justify-between space-x-2">
-              <div className="flex flex-col">
+              <div className="w-full flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
                   Message or More info (optional)
                 </label>
@@ -94,10 +91,12 @@ const OneDayBook = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="h-[100px]  input"
-                  placeholder="destination"
+                  placeholder="Message"
                 />
               </div>
             </div>
+
+            <div className="mt-10 flex justify-between space-x-2"></div>
 
             <div className="mt-10">
               <button

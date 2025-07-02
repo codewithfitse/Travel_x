@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [users, setUsers] = useState(null);
   const user = data[0];
@@ -14,12 +15,16 @@ const Dashboard = () => {
     //if (!token) return;
     async function load() {
       try {
-        const result = await axios.get(`https://travel-x-408k.onrender.com/dashboards`, {
-          withCredentials: true, // if your server uses cookies and you want to send cookies too
-        });
+        const result = await axios.get(
+          `https://travel-x-408k.onrender.com/dashboards`,
+          {
+            withCredentials: true, // if your server uses cookies and you want to send cookies too
+          }
+        );
         setData(result.data);
       } catch (error) {
         console.error("Error:", error);
+        navigate("/Login");
       } finally {
         setLoading(false);
       }
@@ -30,10 +35,13 @@ const Dashboard = () => {
   useEffect(() => {
     async function loadProfile() {
       try {
-        const res = await axios.get("https://travel-x-408k.onrender.com/profile", {
-          withCredentials: true,
-        });
-         console.log(res.data.user); // for debugging
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/profile",
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(res.data.user); // for debugging
         setUsers(res.data.user);
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -75,7 +83,7 @@ const Dashboard = () => {
                     </button> */}
                   </div>
                 </div>
-                
+
                 {(user?.isAdmin === true || users?.isAdmin === true) && (
                   <Link to="/UserDb" key={user?._id}>
                     <div
@@ -101,7 +109,7 @@ const Dashboard = () => {
                   </Link>
                 )}
 
-                {(user?.isAdmin === true || users?.isAdmin === true)&& (
+                {(user?.isAdmin === true || users?.isAdmin === true) && (
                   <Link to="/ContactDb">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
@@ -139,9 +147,12 @@ const Dashboard = () => {
                   </Link>
                 )}
 
-                {(users?.isAdmin || users?.isSubAdmin || user?.isAdmin || user?.isSubAdmin) && (
+                {(users?.isAdmin ||
+                  users?.isSubAdmin ||
+                  user?.isAdmin ||
+                  user?.isSubAdmin) && (
                   <Link to="/LandingVehicle">
-                    <div 
+                    <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
                           ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
@@ -155,56 +166,8 @@ const Dashboard = () => {
                               ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                               : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                           }`}
-                        >Vehicles
-                        </h1>
-                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
-                      </div>
-                    </div>
-                  </Link>
-                )}
-                
-                {(users?.isAdmin || users?.isSubAdmin || user?.isAdmin || user?.isSubAdmin) && (
-                  <Link to="/LandingDemoDb">
-                    <div 
-                      className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
-                        toggle
-                          ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
-                          : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
-                      }`}
-                    >
-                      <div className="w-full px-5 flex justify-between items-center">
-                        <h1
-                          className={`font-bold transition-all duration-300 ease-in-out ${
-                            toggle
-                              ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                              : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
-                          }`}
-                        >Status One Day 
-                        </h1>
-                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
-                      </div>
-                    </div>
-                  </Link>
-                )}
-                
-                
-                {(users?.isAdmin || users?.isSubAdmin || user?.isAdmin || user?.isSubAdmin) && (
-                  <Link to="/OneLandingVehicleAdmin">
-                    <div 
-                      className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
-                        toggle
-                          ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
-                          : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
-                      }`}
-                    >
-                      <div className="w-full px-5 flex justify-between items-center">
-                        <h1
-                          className={`font-bold transition-all duration-300 ease-in-out ${
-                            toggle
-                              ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
-                              : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
-                          }`}
-                        >Post One Day
+                        >
+                          Vehicles
                         </h1>
                         <i className="fa fa-bookmark w-2 !text-[30px]"></i>
                       </div>
@@ -212,6 +175,61 @@ const Dashboard = () => {
                   </Link>
                 )}
 
+                {(users?.isAdmin ||
+                  users?.isSubAdmin ||
+                  user?.isAdmin ||
+                  user?.isSubAdmin) && (
+                  <Link to="/LandingDemoDb">
+                    <div
+                      className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                        toggle
+                          ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
+                          : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
+                      }`}
+                    >
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1
+                          className={`font-bold transition-all duration-300 ease-in-out ${
+                            toggle
+                              ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                              : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                          }`}
+                        >
+                          Status One Day
+                        </h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
+                    </div>
+                  </Link>
+                )}
+
+                {(users?.isAdmin ||
+                  users?.isSubAdmin ||
+                  user?.isAdmin ||
+                  user?.isSubAdmin) && (
+                  <Link to="/OneLandingVehicleAdmin">
+                    <div
+                      className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
+                        toggle
+                          ? "w-auto text-[200px] sm:text-[14px] md:text-[180px] lg:text-[240px] xl:text-[300px]"
+                          : "text-[300px] sm:text-[360px] md:text-[400px] lg:text-[44px] xl:text-[48px]"
+                      }`}
+                    >
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1
+                          className={`font-bold transition-all duration-300 ease-in-out ${
+                            toggle
+                              ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
+                              : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
+                          }`}
+                        >
+                          Post One Day
+                        </h1>
+                        <i className="fa fa-bookmark w-2 !text-[30px]"></i>
+                      </div>
+                    </div>
+                  </Link>
+                )}
               </div>
             </main>
           </div>
