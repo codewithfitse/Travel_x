@@ -23,9 +23,9 @@ import UserDashboard from "./pages/dashboard/UserDashboard.jsx";
 import AdminDashboard from "./pages/dashboard/AdminDashboard.jsx";
 import SubDashboard from "./pages/dashboard/SubAdminDashboard.jsx";
 import {
-  EditDashboard,
-  ViewDashboard,
-  DeleteDashboard,
+  EditUserInfo,
+  ViewUserInfo,
+  DeleteUserInfo,
 } from "./pages/dashboard/CRUDUSER.jsx";
 import {
   LandingVehicle,
@@ -215,15 +215,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/Edit",
-    element: <EditDashboard />,
+    element: <EditUserInfo />,
   },
   {
     path: "/View",
-    element: <ViewDashboard />,
+    element: <ViewUserInfo />,
   },
   {
     path: "/Delete",
-    element: <DeleteDashboard />,
+    element: <DeleteUserInfo />,
   },
   {
     path: "/UserDb",
