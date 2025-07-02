@@ -25,63 +25,62 @@ const Header = () => {
         />
       </div>
 
-      {/* <nav className="w-fit flex justify-center items-center text-[7px] lg:text-[15px] font-bold space-x-2 lg:space-x-5.5">
+      <nav className="hidden lg:flex w-fit justify-center items-center text-[15px] font-bold space-x-5.5">
         <Link to="/Home">
-          <h1 className="hover:text-[#16fe01]">HOME</h1>
+          <h1 className="hover:text-lum">HOME</h1>
         </Link>
         <Link to="/AboutUs">
-          <h1 className="hover:text-[#16fe01]">ABOUTUS</h1>
+          <h1 className="hover:text-lum">ABOUTUS</h1>
         </Link>
         <Link to="/Services">
-          <h1 className="hover:text-[#16fe01]">SERVICES</h1>
+          <h1 className="hover:text-lum">SERVICES</h1>
         </Link>
         <Link to="/Vehicles">
-          <h1 className="hover:text-[#16fe01]">VEHICLES</h1>
+          <h1 className="hover:text-lum">VEHICLES</h1>
         </Link>
         <Link to="/Contact">
-          <h1 className="hover:text-[#16fe01]">CONTACT</h1>
+          <h1 className="hover:text-lum">CONTACT</h1>
         </Link>
+        <div className="w-fit flex pr-20 justify-center items-center text-[15px] font-bold space-x-5.5">
+          <Link to="/SignUp">
+            <h1 className="hover:text-lum">SIGNUP</h1>
+          </Link>
+          <Link to="/Login">
+            <h1 className="hover:text-lum">LOGIN</h1>
+          </Link>
+        </div>
       </nav>
 
-      <nav className="w-fit flex lg:pr-10 justify-center items-center text-[7px] lg:text-[15px] font-bold space-x-3 lg:space-x-5.5">
-        <Link to="/SignUp">
-          <h1 className="hover:text-[#16fe01]">SIGNUP</h1>
-        </Link>
-        <Link to="/Login">
-          <h1 className="hover:text-[#16fe01]">LOGIN</h1>
-        </Link>
-      </nav> */}
-
       <div
-        className="flex flex-col text-center relative "
+        className="flex flex-col text-center relative not-sr-only lg:sr-only"
         onClick={() => setToggle(!toggle)}
       >
-        <div className="menu size-10 lg:size-12"></div>
+        <div className=" menu size-10 lg:size-12"></div>
         {toggle && (
           <div className="w-fit py-2 px-3 flex flex-col gap-3 justify-center text-[15px] lg:text-[15px] font-bold bg-gray-800 absolute top-12 -right-4">
             <Link to="/Home">
-              <h1 className="hover:text-[#16fe01]">HOME</h1>
+              <h1 className="hover:text-lum">HOME</h1>
             </Link>
             <Link to="/AboutUs">
-              <h1 className="hover:text-[#16fe01]">ABOUTUS</h1>
+              <h1 className="hover:text-lum">ABOUTUS</h1>
             </Link>
             <Link to="/Services">
-              <h1 className="hover:text-[#16fe01]">SERVICES</h1>
+              <h1 className="hover:text-lum">SERVICES</h1>
             </Link>
             <Link to="/Vehicles">
-              <h1 className="hover:text-[#16fe01]">VEHICLES</h1>
+              <h1 className="hover:text-lum">VEHICLES</h1>
             </Link>
             <Link to="/Contact">
-              <h1 className="hover:text-[#16fe01]">CONTACT</h1>
+              <h1 className="hover:text-lum">CONTACT</h1>
             </Link>
             <Link to="/SignUp">
-              <h1 className="hover:text-[#16fe01]">SIGNUP</h1>
+              <h1 className="hover:text-lum">SIGNUP</h1>
             </Link>
             <Link to="/Login">
-              <h1 className="hover:text-[#16fe01]">LOGIN</h1>
+              <h1 className="hover:text-lum">LOGIN</h1>
             </Link>
             <Link to="/USerDashboard">
-              <h1 className="hover:text-[#16fe01]">DashBoard</h1>
+              <h1 className="hover:text-lum">DashBoard</h1>
             </Link>
           </div>
         )}
