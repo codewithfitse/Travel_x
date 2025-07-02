@@ -155,15 +155,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/Views",
-    element: <ViewsUserInfo />,
+    element: <Views />,
   },
   {
     path: "/Edits",
-    element: <EditsUserInfo />,
+    element: <Edits />,
   },
   {
     path: "/Deletes",
-    element: <DeletesUserInfo />,
+    element: <Deletes />,
   },
   {
     path: "/OneLandingVehicle",

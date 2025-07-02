@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { Header, SideBar } from "./component";
 
-export const ViewDashboard = () => {
+export const ViewUserInfo = () => {
   const location = useLocation();
   const user = location.state?.user;
 
@@ -50,12 +50,17 @@ export const ViewDashboard = () => {
                       Phone: <span className="font-semibold">{user.phone}</span>{" "}
                     </h1>
                     <h1 className="font-bold capitalize">
-                      Password:{" "}
-                      <span className="font-semibold">.........</span>{" "}
+                      Password: <span className="font-semibold">.........</span>{" "}
                     </h1>
                     <h1 className="font-bold capitalize">
                       Role:{" "}
-                      <span className="font-semibold">{user.isAdmin ? "Admin" : user.isSubAdmin ? "SubAdmin" : "User"}</span>{" "}
+                      <span className="font-semibold">
+                        {user.isAdmin
+                          ? "Admin"
+                          : user.isSubAdmin
+                          ? "SubAdmin"
+                          : "User"}
+                      </span>{" "}
                     </h1>
                     <h1 className="font-bold capitalize">
                       Control:{" "}
@@ -96,7 +101,7 @@ export const ViewDashboard = () => {
   );
 };
 
-export const EditDashboard = () => {
+export const EditUserInfo = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
@@ -113,13 +118,16 @@ export const EditDashboard = () => {
   async function handleClick(e) {
     e.preventDefault();
     try {
-      await axios.put(`https://travel-x-408k.onrender.com/dashboard/user/${user._id}`, {
-        firstName,
-        lastName,
-        email,
-        phone,
-        password,
-      });
+      await axios.put(
+        `https://travel-x-408k.onrender.com/dashboard/user/${user._id}`,
+        {
+          firstName,
+          lastName,
+          email,
+          phone,
+          password,
+        }
+      );
       alert("User updated successfully!");
       navigate("/UserDb"); // back to main admin dashboard
     } catch (err) {
@@ -266,7 +274,7 @@ export const EditDashboard = () => {
   );
 };
 
-export const DeleteDashboard = () => {
+export const DeleteUserInfo = () => {
   const location = useLocation();
   const user = location.state?.user;
   const navigate = useNavigate();
