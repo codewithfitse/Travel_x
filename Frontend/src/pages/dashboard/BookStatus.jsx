@@ -211,9 +211,9 @@ export const LandingBookStatus = () => {
                               </div>
                               <div className="w-full flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
-                                  <h1 className="text-gray-400">Issued At</h1>
+                                  <h1 className="text-gray-400">Destination</h1>
                                   <h1 className="font-semibold">
-                                    {user.email}
+                                    {user.destination}
                                   </h1>
                                 </div>
                                 <div className="w-full h-15">
