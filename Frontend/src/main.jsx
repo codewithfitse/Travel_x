@@ -40,15 +40,15 @@ import {
 import {
   OneLandingVehicle,
   OneLandingVehicleAdmin,
-  OneDeletesAdmin,
-  OneDeletes,
-  OneEdits,
-  OneViews,
-  OneViewsAdmin,
-  OnePost,
   OneGet,
   OneGetAdmin,
+  OnePost,
+  OneViewsAdmin,
+  OneViews,
   OneEditsAdmin,
+  OneEdits,
+  OneDeletesAdmin,
+  OneDeletes,
 } from "./pages/dashboard/CRUDONE.jsx";
 import {
   Profile,
@@ -59,13 +59,13 @@ import { ContactDb, EditContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb, EditBookingDb } from "./pages/dashboard/BookingDb.jsx";
 import UserDb from "./pages/dashboard/UserDb.jsx";
 import {
-  AllDemoDb,
-  EditDemoDb,
-  LandingDemoDb,
+  AllBookStatus,
+  EditBookStatus,
+  LandingBookStatus,
   StatusOfBook,
-  SubDemoDb,
-  UserDemoDb,
-} from "./pages/dashboard/DemoDb.jsx";
+  SubBookStatus,
+  UserBookStatus,
+} from "./pages/dashboard/BookStatus.jsx";
 
 const router = createBrowserRouter([
   {
@@ -246,28 +246,28 @@ const router = createBrowserRouter([
     element: <EditBookingDb />,
   },
   {
-    path: "/LandingDemoDb",
-    element: <LandingDemoDb />,
+    path: "/LandingBookStatus",
+    element: <LandingBookStatus />,
   },
   {
-    path: "/AllDemoDb",
-    element: <AllDemoDb />,
+    path: "/AllBookStatus",
+    element: <AllBookStatus />,
   },
   {
     path: "/StatusOfBook",
     element: <StatusOfBook />,
   },
   {
-    path: "/UserDemoDb",
-    element: <UserDemoDb />,
+    path: "/UserBookStatus",
+    element: <UserBookStatus />,
   },
   {
-    path: "/SubDemoDb",
-    element: <SubDemoDb />,
+    path: "/SubBookStatus",
+    element: <SubBookStatus />,
   },
   {
-    path: "/EditDemoDb",
-    element: <EditDemoDb />,
+    path: "/EditBookStatus",
+    element: <EditBookStatus />,
   },
   {
     path: "/Profile",

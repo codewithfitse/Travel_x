@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-export const LandingDemoDb = () => {
+export const LandingBookStatus = () => {
   const [data, setData] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -75,7 +75,7 @@ export const LandingDemoDb = () => {
                     toggle ? "grid-cols-1" : "grid-cols-2"
                   } gap-2`}
                 >
-                  <Link to="/AllDemoDb">
+                  <Link to="/AllBookStatus">
                     <div
                       className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
@@ -320,7 +320,7 @@ export const StatusOfBook = () => {
                     </h1>
                   </div>
                   <div className="w-fit h-full">
-                    <Link to="/LandingDemoDb">
+                    <Link to="/LandingBookStatus">
                       <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
                         Back
                       </button>
@@ -331,7 +331,7 @@ export const StatusOfBook = () => {
                 {isLoading && <h1>Loading...</h1>}
                 {(data &&
                   data.map((user) => (
-                    <Link to="/EditDemoDb" state={{ user }}>
+                    <Link to="/EditBookStatus" state={{ user }}>
                       <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                         <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                           <div className="relative">
@@ -413,7 +413,7 @@ export const StatusOfBook = () => {
   );
 };
 
-export const AllDemoDb = () => {
+export const AllBookStatus = () => {
   const [data, setData] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -464,7 +464,7 @@ export const AllDemoDb = () => {
                     </h1>
                   </div>
                   <div className="w-fit h-full">
-                    <Link to="/LandingDemoDb">
+                    <Link to="/LandingBookStatus">
                       <button className="px-3 py-2 text-white font-semibold rounded-[10px] bg-blue-500">
                         Back
                       </button>
@@ -557,7 +557,7 @@ export const AllDemoDb = () => {
   );
 };
 
-export const SubDemoDb = () => {
+export const SubBookStatus = () => {
   const [data, setData] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -700,7 +700,7 @@ export const SubDemoDb = () => {
   );
 };
 
-export const UserDemoDb = () => {
+export const UserBookStatus = () => {
   const [data, setData] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -843,7 +843,7 @@ export const UserDemoDb = () => {
   );
 };
 
-export const EditDemoDb = () => {
+export const EditBookStatus = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const {
@@ -870,7 +870,7 @@ export const EditDemoDb = () => {
         }
       );
       alert("Successfully Deleted!");
-      navigate("/LandingDemoDb");
+      navigate("/LandingBookStatus");
     } catch (error) {
       alert("Not Deleted Try Again!");
       console.log(error);
@@ -886,7 +886,7 @@ export const EditDemoDb = () => {
         }
       );
       alert(`Successfully Change Status to ${stat}!`);
-      navigate("/LandingDemoDb");
+      navigate("/LandingBookStatus");
     } catch (error) {
       console.log(error);
     }
