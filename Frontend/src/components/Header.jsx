@@ -56,7 +56,7 @@ const Header = () => {
         className="flex flex-col text-center relative "
         onClick={() => setToggle(!toggle)}
       >
-        <div className="menu"></div>
+        <div className="menu size-10 lg:size-12"></div>
         {toggle && (
           <div className="w-fit py-2 px-3 flex flex-col gap-3 justify-center text-[15px] lg:text-[15px] font-bold bg-gray-800 absolute top-12 -right-4">
             <Link to="/Home">
