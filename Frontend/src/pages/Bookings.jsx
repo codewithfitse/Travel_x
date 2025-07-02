@@ -10,6 +10,7 @@ const OneDayBook = () => {
   const [phone, setPhone] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const location = useLocation();
 
@@ -24,6 +25,7 @@ const OneDayBook = () => {
 
   async function handleClick(e) {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const res = await axios.post(
         `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`,
@@ -38,6 +40,8 @@ const OneDayBook = () => {
       alert("You forgot to login bro");
       console.log(error);
       navigate("/Login");
+    } finally {
+      setIsLoading(false);
     }
     setPhone("");
     setDestination("");
@@ -104,7 +108,7 @@ const OneDayBook = () => {
                 className="p-2 text-3xl text-black font-bold bg-[#16fe01] rounded-[10px]"
                 onClick={handleClick}
               >
-                Submit
+                {isLoading ? "Loading.." : "Submit"}
               </button>
             </div>
           </form>
