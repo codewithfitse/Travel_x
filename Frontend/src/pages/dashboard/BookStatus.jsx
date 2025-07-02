@@ -779,10 +779,11 @@ export const UserBookStatus = () => {
                             Model:{user.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                            {/* Member since January 15, 2023{" "} */}
-                            {new Date(user.createdAt).toLocaleString(
-                              "en-GB"
-                            )}{" "}
+                            Booked At:{" "}
+                            {new Date(user.createdAt).toLocaleString("en-GB")}{" "}
+                          </h1>
+                          <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                            Appointed time:{" "}
                             {new Date(user.date).toLocaleString("en-GB")}
                           </h1>
                         </div>
