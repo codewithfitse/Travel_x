@@ -4,33 +4,33 @@ import Footer from "../components/Footer";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
+import Booking from "./Booking";
 
-const Booking = () => {
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
-  const [email, setEmail] = useState();
+const OneDayBook = () => {
   const [phone, setPhone] = useState();
-  const [item, setItem] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
 
-  function handleClick(e) {
+  const location = useLocation();
+
+  const { bookingDetails } = location?.state;
+
+  const finalBookingData = {
+    ...bookingDetails, // from previous page
+    phone,
+    destination,
+    message,
+  };
+
+  async function handleClick(e) {
     e.preventDefault();
-    axios
-      .post("https://travel-x-408k.onrender.com/dashboard/book", {
-        firstName,
-        lastName,
-        email,
-        phone,
-        item,
-        destination,
-        message,
-      })
-      .then((user) => console.log(user))
-      .catch((err) => console.log(err));
-    setFirstName("");
-    setLastName("");
-    setEmail("");
+    const res = await axios.post(
+      `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`,
+      finalBookingData,
+      {
+        withCredentials: true,
+      }
+    );
     setPhone("");
     setDestination("");
     setMessage("");
@@ -49,47 +49,6 @@ const Booking = () => {
             <div className="mt-8 flex justify-between space-x-2">
               <div className="w-[45%] flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  name=""
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="input"
-                  placeholder="Enter First Name"
-                />
-              </div>
-              <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  name=""
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  className="input"
-                  placeholder="Enter Last Name"
-                />
-              </div>
-            </div>
-            <div className="mt-8 flex justify-between space-x-2">
-              <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="input"
-                  placeholder="Enter Email"
-                />
-              </div>
-              <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
                   Phone
                 </label>
                 <input
@@ -101,36 +60,6 @@ const Booking = () => {
                   placeholder="Enter Phone"
                 />
               </div>
-            </div>
-
-            <div className="mt-10">
-              <h1 className="text-[30px]">Car choice</h1>
-              <select
-                name=""
-                id=""
-                value={item}
-                className="py-1 px-2 text-gray-600 bg-amber-50 capitalize rounded-[5px]"
-                onChange={(e) => setItem(e.target.value)}
-              >
-                <option value="suv">Suv</option>
-                <option value="midsuv">MidSuv</option>
-                <option value="fullsuv">FullSuv</option>
-                <option value="pickup">Pickup</option>
-                <option value="minivan">Minivan</option>
-              </select>
-            </div>
-
-            <div className="mt-10">
-              <h1 className="text-[30px]">
-                Car Only Be Used in Addis Ababa City?
-              </h1>
-              <ul className="pl-2">
-                <li>Economy</li>
-                <li>Standard</li>
-              </ul>
-            </div>
-
-            <div className="mt-10 flex justify-between space-x-2">
               <div className="w-[45%] flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
                   If not in Addis Ababa where is the Destination
@@ -195,4 +124,4 @@ const Booking = () => {
   );
 };
 
-export default Booking;
+export default OneDayBook;
