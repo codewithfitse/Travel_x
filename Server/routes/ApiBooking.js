@@ -55,28 +55,6 @@ router.get("/OneDayVehiclesBook/:status", authMiddleware, async (req, res) => {
   console.log(data);
 });
 
-router.get(
-  "/OneDayVehiclesBook/Successful",
-  authMiddleware,
-  async (req, res) => {
-    const userId = req.user.id;
-    const data = await UserOneDay.find({ status: "successful" }).sort({
-      createdAt: -1,
-    });
-    res.json(data);
-    console.log(data);
-  }
-);
-
-router.get("/OneDayVehiclesBook/Canceled", authMiddleware, async (req, res) => {
-  const userId = req.user.id;
-  const data = await UserOneDay.find({ status: "canceled" }).sort({
-    createdAt: -1,
-  });
-  res.json(data);
-  console.log(data);
-});
-
 // Specific booking
 router.get("/OneDayVehiclesBook/:id", async (req, res) => {
   const { id } = req.params;
@@ -170,7 +148,7 @@ router.delete("/booking/:id", async (req, res) => {
   }
 });
 
-// i made this b/c to list all bookings
+// i made this b/c to list all bookings.
 router.get("/demos", authMiddleware, async (req, res) => {
   const userId = req.user.id;
   const data = await UserDemo.find({}).sort({ createdAt: -1 });

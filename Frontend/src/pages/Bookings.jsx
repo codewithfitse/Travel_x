@@ -13,10 +13,10 @@ const OneDayBook = () => {
 
   const location = useLocation();
 
-  //const { bookingDetails } = location?.state || null;
+  const { bookingDetails } = location?.state || null;
 
   const finalBookingData = {
-    //...bookingDetails, // from previous page
+    ...bookingDetails, // from previous page
     phone,
     destination,
     message,
