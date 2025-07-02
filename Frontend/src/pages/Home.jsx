@@ -11,8 +11,6 @@ const Home = () => {
         <Header />
         <div className="grid grid-cols-1 lg:grid-cols-2 pt-[100px] lg:pt-[150px] pl-[20px] lg:pl-[40px] relative">
           <div className="w-full lg:w-[100%]">
-            <h1 className="font-creepster text-lum text-5xl">Spooky Text</h1>
-
             <h1 className="text-[30px] lg:text-[45px] font-semibold">
               <span className="text-[40px] lg:text-[60px] text-lum font-bold font-sans">
                 Time
