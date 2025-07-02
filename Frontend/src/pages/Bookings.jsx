@@ -43,6 +43,7 @@ const OneDayBook = () => {
     setDestination("");
     setMessage("");
   }
+
   return (
     <div className="w-full h-[100%] background text-amber-50 ">
       <Header />

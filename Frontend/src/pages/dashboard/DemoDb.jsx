@@ -179,6 +179,19 @@ export const LandingDemoDb = () => {
                                   </h1>
                                 </div>
                               </div>
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Issued At</h1>
+                                  <h1 className="font-semibold">
+                                    {user.email}
+                                  </h1>
+                                </div>
+                                <div className="w-full h-15">
+                                  <h1 className="text-gray-400">Message</h1>
+                                  <h1 className="font-semibold">
+                                    {user.phone}
+                                  </h1>
+                                </div>
+                              </div>
                               <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Price</h1>
