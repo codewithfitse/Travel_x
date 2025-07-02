@@ -6,7 +6,7 @@ import { Routes, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs.jsx";
 import NotFound from "./pages/404.jsx";
-import Booking from "./pages/Booking.jsx";
+import { Booking, OneDayBook } from "./pages/Booking.jsx";
 import Vehicles, {
   Pricing,
   VehiclesTypes,
@@ -85,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/Booking",
     element: <Booking />,
+  },
+  {
+    path: "/OneDayBook",
+    element: <OneDayBook />,
   },
   {
     path: "/Vehicles",
