@@ -20,7 +20,7 @@ const AboutUs = () => {
       <div className="pt-[100px] lg:pt-[150px] flex flex-col items-center">
         <h1 className="text-[25px] lg:text-[40px] text-center font-bold">
           We are{" "}
-          <span className="text-[25px] lg:text-[50px] text-[var(--color-lum)] font-bold ">
+          <span className="text-[25px] lg:text-[50px] text-lum font-bold ">
             Time
           </span>{" "}
           Car Rentals
@@ -60,7 +60,7 @@ const AboutUs = () => {
         </div>
         <div className="w-full lg:w-[70%]">
           <h1 className="text-[12px] lg:text-[22px]  pl-10 pr-1.5">
-            <span className="text-[20px] lg:text-[40px] text-[var(--color-lum)] font-bold ">
+            <span className="text-[20px] lg:text-[40px] text-lum font-bold ">
               We
             </span>{" "}
             understand choosing rental services might be difficult and time
@@ -69,7 +69,7 @@ const AboutUs = () => {
           </h1>
           <div className="mt-10 grid lg:grid-cols-2 gap-2">
             <div className="w-full h-[200px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-[var(--color-lum)] rounded-full">
+              <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"
@@ -86,7 +86,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-full h-[200px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-[var(--color-lum)] rounded-full">
+              <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"
@@ -103,7 +103,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-full h-[250px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-[var(--color-lum)] rounded-full">
+              <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"
@@ -121,7 +121,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-full h-[250px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-[var(--color-lum)] rounded-full">
+              <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"
@@ -144,8 +144,7 @@ const AboutUs = () => {
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR{" "}
-            <span className="text-[var(--color-lum)]">SERVICES</span>
+            COME & TRY OUR <span className="text-lum">SERVICES</span>
           </h1>
           <h2 className="text-[10px] lg:text-[20px] text-2xl">
             We Always Have The Best Customer Services In Town
