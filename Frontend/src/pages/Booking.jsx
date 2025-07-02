@@ -11,6 +11,7 @@ const Booking = () => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [item, setItem] = useState();
+  const [date, setDate] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
 
@@ -22,6 +23,7 @@ const Booking = () => {
         lastName,
         email,
         phone,
+        date,
         item,
         destination,
         message,
@@ -32,6 +34,7 @@ const Booking = () => {
     setLastName("");
     setEmail("");
     setPhone("");
+    setDate("");
     setDestination("");
     setMessage("");
   }
@@ -140,6 +143,22 @@ const Booking = () => {
                   name="destination"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
+                  className="input"
+                  placeholder="destination"
+                />
+              </div>
+            </div>
+
+            <div className="mt-10 flex justify-between space-x-2">
+              <div className="w-[45%] flex flex-col">
+                <label htmlFor="" className="text-[25px] font-bold">
+                  Apponment date:
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
                   className="input"
                   placeholder="destination"
                 />

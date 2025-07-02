@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema(
     phone: String,
     destination: String,
     item: String,
+    date: Date,
     message: String,
     createdAt: {
       type: Date,

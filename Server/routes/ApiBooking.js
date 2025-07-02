@@ -194,10 +194,18 @@ router.get("/demo", authMiddleware, async (req, res) => {
 
 // This one i use to separet users on there own.
 router.post("/demo", authMiddleware, (req, res) => {
-  const { fullName, email, phone, item, destination } = req.body;
+  const { fullName, email, phone, item, destination, date } = req.body;
   // this conatines mongoDb id and it will save user info in booking that will have acces to only user access!
   const userId = req.user.id;
-  UserDemo.create({ fullName, email, phone, item, destination, userId: userId })
+  UserDemo.create({
+    fullName,
+    email,
+    phone,
+    item,
+    destination,
+    userId: userId,
+    date,
+  })
     .then((employee) => {
       res.json(employee);
     })
