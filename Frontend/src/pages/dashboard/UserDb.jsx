@@ -23,6 +23,7 @@ const UserDb = () => {
     }
     loadData();
   }, []);
+
   useEffect(() => {
     setIsLoading(true);
     try {
@@ -41,7 +42,7 @@ const UserDb = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []);  
+  }, []);
   return (
     <section className="min-h-screen overflow-x-hidden">
       <div className="w-full h-screen flex bg-[#020817] text-white">
@@ -87,7 +88,7 @@ const UserDb = () => {
                 <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                   <div className="w-full px-5 flex justify-between items-center">
                     <h1 className="w-full text-[30px] font-bold">
-                      {user?.name} 
+                      {user?.name}
                     </h1>
                     <div className="w-fit flex space-x-3 lg:space-x-7 items-center">
                       <Link to="/View" state={{ user }}>
@@ -103,7 +104,6 @@ const UserDb = () => {
                   </div>
                 </div>
               ))}
-
             </div>
           </main>
         </div>
@@ -111,4 +111,4 @@ const UserDb = () => {
     </section>
   );
 };
-export default UserDb
+export default UserDb;
