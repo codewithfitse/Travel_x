@@ -33,7 +33,7 @@ const OneDayBook = () => {
         withCredentials: true,
       }
     );
-      alert("Successfully Booked!");
+      alert("Successfully .Booked!");
       navigate("/UserDashboard");
     } catch (error) {
       alert("You forgot to login bro");
