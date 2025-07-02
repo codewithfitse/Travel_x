@@ -316,7 +316,7 @@ export const StatusOfBook = () => {
                         toggle ? "text-[20px]" : "text-[30px] "
                       }`}
                     >
-                      Status Pending
+                      Status {status}
                     </h1>
                   </div>
                   <div className="w-fit h-full">
