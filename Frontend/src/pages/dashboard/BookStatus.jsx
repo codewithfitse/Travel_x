@@ -780,7 +780,10 @@ export const UserBookStatus = () => {
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             {/* Member since January 15, 2023{" "} */}
-                            {new Date(user.createdAt).toLocaleString("en-GB")}
+                            {new Date(user.createdAt).toLocaleString(
+                              "en-GB"
+                            )}{" "}
+                            {new Date(user.date).toLocaleString("en-GB")}
                           </h1>
                         </div>
                         <div className="w-full h-full py-5 px-5 bg-gray-800">
