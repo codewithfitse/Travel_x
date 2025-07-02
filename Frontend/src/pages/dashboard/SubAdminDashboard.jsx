@@ -1,9 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import { SubHeader, SubSideBar } from "../dashboard/component";
+import axios from "axios";
 
 const SubDashboard = () => {
+  const [loading, setLoading] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [users, setUsers] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function loadProfile() {
+      setLoading(true);
+      try {
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/profile",
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(res.data.user); // for debugging
+        setUsers(res.data.user);
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+        navigate("/Login");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProfile();
+  }, []);
+
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
@@ -44,7 +72,8 @@ const SubDashboard = () => {
                             : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                         }`}
                       >
-                        Booking Demo</h1>
+                        Booking Demo
+                      </h1>
                       <i class="fa fa-group w-2 !text-[30px]"></i>
                     </div>
                   </div>
@@ -89,12 +118,12 @@ const SubDashboard = () => {
                             : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                         }`}
                       >
-                        Vehicles</h1>
+                        Vehicles
+                      </h1>
                       <i class="fa fa-address-book w-2 !text-[30px]"></i>
                     </div>
                   </div>
                 </Link>
-
               </div>
             </main>
           </div>
