@@ -11,8 +11,10 @@ const Home = () => {
         <Header />
         <div className="grid grid-cols-1 lg:grid-cols-2 pt-[100px] lg:pt-[150px] pl-[20px] lg:pl-[40px] relative">
           <div className="w-full lg:w-[100%]">
+            <h1 className="font-creepster text-lum text-5xl">Spooky Text</h1>
+
             <h1 className="text-[30px] lg:text-[45px] font-semibold">
-              <span className="text-[40px] lg:text-[60px] text-[var(--color-lum)] font-bold font-serif">
+              <span className="text-[40px] lg:text-[60px] text-lum font-bold font-sans">
                 Time
               </span>{" "}
               CAR RENTAL <br />
@@ -46,7 +48,7 @@ const Home = () => {
             <h1 className="text-[25px] lg:text-[40px] text-center font-bold">
               WELCOME TO THE BEST CAR RENTAL SERVICE IN TOWN.
             </h1>
-            <h1 className="text-[18px] text-center lg:text-[22px] text-[var(--color-lum)] py-2">
+            <h1 className="text-[18px] text-center lg:text-[22px] text-lum py-2">
               The Quality Customer Service You Deserve
             </h1>
             <p className="text-[15px] text-center lg:text-[18px]">
@@ -120,7 +122,7 @@ const Home = () => {
             <h1 className="text-[25px] lg:text-6xl text-center font-bold">
               EASY BOOKING STEPS
             </h1>
-            <h1 className="text-[20px] lg:text-[30px] text-[var(--color-lum)] text-center mt-2 lg:mt-6">
+            <h1 className="text-[20px] lg:text-[30px] text-lum text-center mt-2 lg:mt-6">
               How to book your car with us and Start enjoying your ride
             </h1>
           </div>
@@ -129,7 +131,7 @@ const Home = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <img src="carlist.png" className="rounded-2xl" alt="" srcset="" />
               <h1 className="mt-2 ml-3">
-                <span className="text-[var(--color-lum)]">01</span>
+                <span className="text-lum">01</span>
                 <br />
                 CLICK THE RIDE
               </h1>
@@ -137,7 +139,7 @@ const Home = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <img src="send.jpg" className="rounded-2xl" alt="" srcset="" />
               <h1 className="mt-2 ml-3">
-                <span className="text-[var(--color-lum)]">02</span>
+                <span className="text-lum">02</span>
                 <br />
                 SEND A REQUEST
               </h1>
@@ -145,7 +147,7 @@ const Home = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <img src="enjoy.jpg" className="rounded-2xl" alt="" srcset="" />
               <h1 className="mt-2 ml-3">
-                <span className="text-[var(--color-lum)]">03</span>
+                <span className="text-lum">03</span>
                 <br />
                 ENJOY THE RIDE
               </h1>
@@ -156,8 +158,7 @@ const Home = () => {
         <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
           <div className="flex flex-col justify-center">
             <h1 className="text-[15px] lg:text-[40px] font-bold">
-              COME & TRY OUR{" "}
-              <span className="text-[var(--color-lum)]">SERVICES</span>
+              COME & TRY OUR <span className="text-lum">SERVICES</span>
             </h1>
             <h2 className="text-[10px] lg:text-[20px] text-2xl">
               We Always Have The Best Customer Services In Town

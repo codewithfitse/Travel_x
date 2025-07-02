@@ -8,9 +8,6 @@
 body {
   overflow-x: hidden;
   background: #000;
-    font-family: "Creepster", sans-serif;
-  font-weight: 100;
-  font-style: normal;
 }
 
 .background {
@@ -68,12 +65,11 @@ body {
   }
 }
 
-@layer base {
-  :root {
-    --color-lum: #16fe01;
-  }
-}
 
+
+@theme  {
+  --color-lum: #16fe01;
+}
 
 
 @layer card {
