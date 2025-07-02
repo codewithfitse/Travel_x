@@ -76,55 +76,23 @@ const callBack = "https://travel-x-408k.onrender.com/auths/google/profile";
 app.use(passport.initialize()); // as i understood this will instialize passport for use!
 app.use(passport.session());
 
-const fetchPhoneNumber = async (accessToken) => {
-  try {
-    const res = await axios.get(
-      "https://people.googleapis.com/v1/people/me?personFields=phoneNumbers",
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
+// const fetchPhoneNumber = async (accessToken) => {
+//   try {
+//     const res = await axios.get(
+//       "https://people.googleapis.com/v1/people/me?personFields=phoneNumbers",
+//       {
+//         headers: {
+//           Authorization: `Bearer ${accessToken}`,
+//         },
+//       }
+//     );
 
-    return res.data?.phoneNumbers?.[0]?.value || null;
-  } catch (error) {
-    console.error("🔴 Failed to fetch phone number:", error.message);
-    return null;
-  }
-};
-
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: ClientId,
-      clientSecret: ClientSecret,
-      callbackURL: callBack,
-    },
-    async (accessToken, refreshToken, profile, done) => {
-      try {
-        let user = await UserOauth.findOne({ googleId: profile.id });
-        if (user) return done(null, user);
-
-        // 🔐 Fetch phone number using accessToken
-        const phone = await fetchPhoneNumber(accessToken);
-
-        user = await UserOauth.create({
-          googleId: profile.id,
-          name: profile.displayName,
-          email: profile.emails?.[0].value,
-          phone, // 📱 Store fetched phone number here
-          avatar: profile.photos?.[0].value,
-        });
-
-        return done(null, user);
-      } catch (err) {
-        console.error("Error in Google Strategy", err);
-        return done(err, null);
-      }
-    }
-  )
-);
+//     return res.data?.phoneNumbers?.[0]?.value || null;
+//   } catch (error) {
+//     console.error("🔴 Failed to fetch phone number:", error.message);
+//     return null;
+//   }
+// };
 
 passport.use(
   new GoogleStrategy(
@@ -138,13 +106,10 @@ passport.use(
         let user = await UserOauth.findOne({ googleId: profile.id });
         if (user) return done(null, user);
 
-        const phone = await fetchPhoneNumber(accessToken);
-
         user = await UserOauth.create({
           googleId: profile.id,
           name: profile.displayName,
           email: profile.emails?.[0].value,
-          phone,
           avatar: profile.photos?.[0].value,
         });
 
@@ -174,11 +139,7 @@ passport.deserializeUser(async (id, done) => {
 app.get(
   "/auths/google",
   passport.authenticate("google", {
-    scope: [
-      "profile",
-      "email",
-      "https://www.googleapis.com/auth/user.phonenumbers.read",
-    ],
+    scope: ["profile", "email"],
   })
 );
 
