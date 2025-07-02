@@ -59,12 +59,10 @@ import { ContactDb, EditContactDb } from "./pages/dashboard/ContactDb.jsx";
 import { BookingDb, EditBookingDb } from "./pages/dashboard/BookingDb.jsx";
 import UserDb from "./pages/dashboard/UserDb.jsx";
 import {
-  CancledDemoDb,
   AllDemoDb,
   EditDemoDb,
   LandingDemoDb,
-  PendingDemoDb,
-  SucessfullDemoDb,
+  StatusOfBook,
   SubDemoDb,
   UserDemoDb,
 } from "./pages/dashboard/DemoDb.jsx";
@@ -256,16 +254,8 @@ const router = createBrowserRouter([
     element: <AllDemoDb />,
   },
   {
-    path: "/PendingDemoDb",
-    element: <PendingDemoDb />,
-  },
-  {
-    path: "/SucessfullDemoDb",
-    element: <SucessfullDemoDb />,
-  },
-  {
-    path: "/CancledDemoDb",
-    element: <CancledDemoDb />,
+    path: "/StatusOfBook",
+    element: <StatusOfBook />,
   },
   {
     path: "/UserDemoDb",
