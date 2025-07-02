@@ -7,6 +7,8 @@ import axios from "axios";
 
 const OneDayBook = () => {
   const navigate = useNavigate();
+
+  const [date, setDate] = useState();
   const [phone, setPhone] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
@@ -18,6 +20,7 @@ const OneDayBook = () => {
 
   const finalBookingData = {
     ...bookingDetails, // from previous page
+    date,
     phone,
     destination,
     message,
@@ -43,6 +46,7 @@ const OneDayBook = () => {
     } finally {
       setIsLoading(false);
     }
+    setDate("");
     setPhone("");
     setDestination("");
     setMessage("");
@@ -96,6 +100,19 @@ const OneDayBook = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   className="h-[100px]  input"
                   placeholder="Message"
+                />
+              </div>
+              <div className="w-[45%] flex flex-col">
+                <label htmlFor="" className="text-[25px] font-bold">
+                  Apponment date:
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="input"
+                  placeholder="destination"
                 />
               </div>
             </div>

@@ -21,22 +21,23 @@ router.get("/OneDayVehiclesBookUser", authMiddleware, async (req, res) => {
 });
 
 router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
-  const { url, name, price, item, model, phone, destination, message } =
+  const { url, name, price, item, model, phone, destination, message, date } =
     req.body;
   const { id, firstName, email } = req.user;
 
   UserOneDay.create({
+    userId: id,
     url,
     ownerName: name,
     customName: firstName,
     price,
     item,
     model,
-    userId: id,
-    email: email,
-    phone: phone,
-    destination: destination,
-    message: message,
+    date,
+    email,
+    phone,
+    destination,
+    message,
   })
     .then((employee) => {
       res.json(employee);

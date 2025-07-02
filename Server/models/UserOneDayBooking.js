@@ -10,6 +10,7 @@ const ImageSchema = new mongoose.Schema({
   item: String,
   price: String,
   model: String,
+  date: Date,
   message: String,
   destination: String,
   status: {
