@@ -45,9 +45,10 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   console.log(`Posted Successfully`);
 });
 
-router.get("/OneDayVehiclesBook/Pending", authMiddleware, async (req, res) => {
-  const userId = req.user.id;
-  const data = await UserOneDay.find({ status: "pending" }).sort({
+router.get("/OneDayVehiclesBook/:status", authMiddleware, async (req, res) => {
+  const { status } = req.params;
+  //const userId = req.user.id;
+  const data = await UserOneDay.find({ status: status }).sort({
     createdAt: -1,
   });
   res.json(data);

@@ -97,7 +97,7 @@ export const LandingDemoDb = () => {
                     </div>
                   </Link>
 
-                  <Link to="/PendingDemoDb">
+                  <Link to="/PendingDemoDb" state={{ status: "pending" }}>
                     <div
                       className={`w-full h-auto mt-4 lg:mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
@@ -271,12 +271,15 @@ export const PendingDemoDb = () => {
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const location = useLocation();
+  const { status } = location?.state;
+
   useEffect(() => {
     async function load() {
       try {
         await axios
           .get(
-            "https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/Pending",
+            `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${status}`,
             {
               withCredentials: true,
             }
