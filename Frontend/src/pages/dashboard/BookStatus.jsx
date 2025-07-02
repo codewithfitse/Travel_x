@@ -549,6 +549,20 @@ export const AllBookStatus = () => {
                                 </div>
                               </div>
                             </div>
+                            <div className="w-full flex flex-col lg:flex-row gap-1">
+                              <div className="w-full h-15">
+                                <h1 className="text-gray-400">Destination</h1>
+                                <h1 className="font-semibold">
+                                  {user.destination}
+                                </h1>
+                              </div>
+                              <div className="w-full h-15">
+                                <h1 className="text-gray-400">Message</h1>
+                                <h1 className="font-semibold">
+                                  {user.message}
+                                </h1>
+                              </div>
+                            </div>
                             <div className="w-full h-fit py-2 flex flex-col space-y-3">
                               <div className="w-fit h-full py-1">
                                 <h1 className="text-[20px] text-gray-300 font-bold">
