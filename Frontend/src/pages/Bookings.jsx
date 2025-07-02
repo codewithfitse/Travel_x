@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
 import Booking from "./Booking";
 
 const OneDayBook = () => {
+  const navigate = useNavigate()
   const [phone, setPhone] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
@@ -24,13 +25,19 @@ const OneDayBook = () => {
 
   async function handleClick(e) {
     e.preventDefault();
-    const res = await axios.post(
+    try {
+      const res = await axios.post(
       `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook`,
       finalBookingData,
       {
         withCredentials: true,
       }
     );
+      alert("Successfully Booked!");
+      navigate("/UserDashboard");
+    } catch (error) {
+      alert("You forgot to login bro");
+      navigate("/Login");
     setPhone("");
     setDestination("");
     setMessage("");
