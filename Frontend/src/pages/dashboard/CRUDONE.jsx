@@ -239,6 +239,9 @@ export const OneGet = () => {
                       <p>
                         <strong>Price:</strong> {img.price}
                       </p>
+                      <p>
+                        <strong>Quantity:</strong> {img.quantity}
+                      </p>
 
                       <Link to="/OneViews" state={{ img }}>
                         <button className="text-blue-300 text-2xl font-semibold">
@@ -589,6 +592,9 @@ export const OneViewsAdmin = () => {
               <strong>Price:</strong> {img?.price}
             </p>
             <p>
+              <strong>Quantity:</strong> {img?.quantity}
+            </p>
+            <p>
               <strong>Model:</strong> {img?.model}
             </p>
             <div className="flex space-x-4">
@@ -638,6 +644,9 @@ export const OneViews = () => {
             </p>
             <p>
               <strong>Price:</strong> {img?.price}
+            </p>
+            <p>
+              <strong>Quantity:</strong> {img?.quantity}
             </p>
             <p>
               <strong>Model:</strong> {img?.model}
@@ -841,6 +850,9 @@ export const OneEditsAdmin = () => {
                 <strong>Price:</strong> {img.price}
               </p>
               <p>
+                <strong>Quantity:</strong> {img?.quantity}
+              </p>
+              <p>
                 <strong>Model:</strong> {img.model}
               </p>
               <p>{img.filename}</p>
@@ -1034,6 +1046,9 @@ export const OneEdits = () => {
                 <strong>Price:</strong> {img.price}
               </p>
               <p>
+                <strong>Quantity:</strong> {img?.quantity}
+              </p>
+              <p>
                 <strong>Model:</strong> {img.model}
               </p>
               <p>{img.filename}</p>
@@ -1088,6 +1103,9 @@ export const OneDeletesAdmin = () => {
             </p>
             <p>
               <strong>Price:</strong> {img.price}
+            </p>
+            <p>
+              <strong>Quantity:</strong> {img?.quantity}
             </p>
             <p>
               <strong>Model:</strong> {img.model}
@@ -1154,6 +1172,9 @@ export const OneDeletes = () => {
             </p>
             <p>
               <strong>Price:</strong> {img.price}
+            </p>
+            <p>
+              <strong>Quantity:</strong> {img?.quantity}
             </p>
             <p>
               <strong>Model:</strong> {img.model}
