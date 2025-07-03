@@ -428,20 +428,21 @@ export const OneDayVehicles = () => {
                   </h1>
                 </div>
               ) : (
-                <div className="p-4 border-4 border-green-600 rounded-[10px]">
-                  <h1 className="text-green-600 text-[30px]">
-                    Quantity: {img.quantity}
-                  </h1>
+                <div className="">
+                  <div className="p-4 border-4 border-green-600 rounded-[10px]">
+                    <h1 className="text-green-600 text-[30px]">
+                      Quantity: {img.quantity}
+                    </h1>
+                  </div>
+                  <Link
+                    to="/OneDayVehiclesBook"
+                    state={{ img }}
+                    className="block mt-4"
+                  >
+                    <Button text={"Book Now!"} />
+                  </Link>
                 </div>
               )}
-
-              <Link
-                to="/OneDayVehiclesBook"
-                state={{ img }}
-                className="block mt-4"
-              >
-                <Button text={"Book Now!"} />
-              </Link>
             </div>
           </div>
         ))}
