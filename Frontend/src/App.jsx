@@ -5,9 +5,8 @@ import LiveChat from "./components/LiveChat";
 const App = () => {
   return (
     <>
-      <LiveChat>
-        <Landing />
-      </LiveChat>
+      <LiveChat />
+      <Landing />
     </>
   );
 };
