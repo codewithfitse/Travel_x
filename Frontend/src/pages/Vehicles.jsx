@@ -429,7 +429,7 @@ export const OneDayVehicles = () => {
                 </div>
               ) : (
                 <div className="mt-3">
-                  <div className="py-2 px-4 border-4 border-green-600 rounded-[10px]">
+                  <div className="w-fit py-2 px-4 border-4 border-green-600 rounded-[10px]">
                     <h1 className="text-green-600 text-[30px]">
                       Available now: {img.quantity}
                     </h1>
