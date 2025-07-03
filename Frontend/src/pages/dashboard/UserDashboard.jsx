@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-
 import { UserHeader, UserSideBar } from "../dashboard/component";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import LiveChat from "../../components/LiveChat";
 
 const UserDashboard = () => {
   const [Loading, setLoading] = useState(false);
@@ -35,6 +35,7 @@ const UserDashboard = () => {
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
+        <LiveChat />
         <div className="w-full h-screen flex bg-[#020817] text-white">
           <UserSideBar />
           <div className="ml-14 flex flex-col flex-1">
