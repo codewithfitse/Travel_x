@@ -421,16 +421,16 @@ export const OneDayVehicles = () => {
                 <li>Perfect for in city</li>
                 <li>Pick up at airport</li>
               </ul>
-              {img.quantity === 0 ? (
+              {img.quantity <= 0 ? (
                 <div className="p-4 border-4 border-red-600 rounded-[10px]">
-                  <h1 className="text-red-600 text-[30px]">
-                    Quantity of Cars {img.quantity}
+                  <h1 className="text-red-600 text-[30px] font-bold">
+                    Sold Out
                   </h1>
                 </div>
               ) : (
                 <div className="p-4 border-4 border-green-600 rounded-[10px]">
                   <h1 className="text-green-600 text-[30px]">
-                    Quantity of Cars {img.quantity}
+                    Quantity: {img.quantity}
                   </h1>
                 </div>
               )}
