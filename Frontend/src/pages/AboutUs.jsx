@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
 import SkeletonImage from "../components/Skeleton";
+import LiveChat from "../components/LiveChat";
 
 const AboutUs = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +17,7 @@ const AboutUs = () => {
   return (
     <div className="w-full h-fit background text-amber-50">
       <Header />
-
+      <LiveChat />
       <div className="pt-[100px] lg:pt-[150px] flex flex-col items-center">
         <h1 className="text-[25px] lg:text-[40px] text-center font-bold">
           We are{" "}

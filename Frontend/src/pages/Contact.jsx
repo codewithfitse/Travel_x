@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import axios from "axios";
+import LiveChat from "../components/LiveChat";
 
 const Contact = () => {
   const [firstName, setFirstName] = useState();
@@ -29,7 +30,7 @@ const Contact = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
       <Header />
-
+      <LiveChat />
       <div className="py-[100px] px-5 lg:px-[200px]">
         <div className="p-5 lg:p-10 card">
           <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">

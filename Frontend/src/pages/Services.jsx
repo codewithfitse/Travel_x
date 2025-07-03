@@ -3,12 +3,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router";
 import { Button } from "../components/Button";
+import LiveChat from "../components/LiveChat";
 
 const Services = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
-
+      <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
           <span className="text-lum ">Our</span> SERVICES

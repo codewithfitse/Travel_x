@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import LiveChat from "../components/LiveChat";
 
 export const SignUp = () => {
   const [firstName, setFirstName] = useState();
@@ -47,7 +48,7 @@ export const SignUp = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
       <Header />
-
+      <LiveChat />
       <div className="lg:mt-20 flex flex-col items-center justify-center min-h-screen p-4">
         <div className="bg-zinc-900 p-6 rounded-xl max-w-sm w-full space-y-6 shadow-lg">
           <div>

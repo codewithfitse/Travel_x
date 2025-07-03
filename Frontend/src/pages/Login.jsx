@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import LiveChat from "../components/LiveChat";
 
 export const Login = () => {
   const [err, setErr] = useState("");
@@ -22,11 +23,13 @@ export const Login = () => {
       setIsLoading(false);
       return;
     }
-    
+
     axios
-      .post("https://travel-x-408k.onrender.com/login", 
+      .post(
+        "https://travel-x-408k.onrender.com/login",
         { email, password },
-        { withCredentials: true })
+        { withCredentials: true }
+      )
       .then((result) => {
         const data = result.data;
         console.log("Response data:", data);
@@ -61,11 +64,11 @@ export const Login = () => {
       });
   }
 
-    async function handleOauth() {
+  async function handleOauth() {
     window.location.href = "https://travel-x-408k.onrender.com/auths/google";
   }
 
-    useEffect(() => {
+  useEffect(() => {
     axios
       .get("https://travel-x-408k.onrender.com/profile", {
         withCredentials: true, // ⚠️ super important to get the session cookie
@@ -90,12 +93,10 @@ export const Login = () => {
       });
   }, []);
 
-
   return (
     <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
       <Header />
-
-
+      <LiveChat />
       <div className="lg:mt-10 flex flex-col items-center justify-center min-h-screen p-4">
         <div className="bg-zinc-900 p-6 rounded-xl max-w-sm w-full space-y-6 shadow-lg">
           <div>
@@ -149,16 +150,14 @@ export const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <h1 className="my-1 text-red-500 text-[15px] font-serif capitalize">{err}</h1>
+            <h1 className="my-1 text-red-500 text-[15px] font-serif capitalize">
+              {err}
+            </h1>
             <button
               type="submit"
               className="w-full bg-white text-black font-semibold py-2 rounded-md hover:bg-zinc-200 transition"
             >
-              {isLoading ? (
-                  <p className="text-center">Loading...</p>
-                ) : (
-                  "Submit"
-              )}
+              {isLoading ? <p className="text-center">Loading...</p> : "Submit"}
             </button>
           </form>
         </div>
@@ -175,7 +174,7 @@ export const Login = () => {
           </div>
           <button className="text-white text-2xl leading-none">+</button>
         </div>
-      </div>      
+      </div>
 
       <Footer />
     </div>

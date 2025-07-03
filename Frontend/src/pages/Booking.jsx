@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
+import LiveChat from "../components/LiveChat";
 
 const Booking = () => {
   const [firstName, setFirstName] = useState();
@@ -42,7 +43,7 @@ const Booking = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
-
+      <LiveChat />
       <div className="py-[100px] lg:px-[200px]">
         <div className="p-10 card">
           <h1 className="text-[40px] font-bold text-center font-mono">
