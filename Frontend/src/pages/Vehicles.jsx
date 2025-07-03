@@ -5,6 +5,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
 import SkeletonImage from "../components/Skeleton";
+import LiveChat from "../components/LiveChat";
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,6 +19,7 @@ const Vehicles = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
+      <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
           <span className="text-lum ">Our</span> Cars
@@ -237,6 +239,7 @@ export const VehiclesTypes = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
+      <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
           <span className="text-lum ">Our</span> Cars
@@ -322,7 +325,7 @@ export const OneDayVehicles = () => {
   return (
     <div className="w-full min-h-screen background text-amber-50">
       <Header />
-
+      <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
           <span className="text-lum">Our</span> Cars
@@ -522,6 +525,7 @@ export const Pricing = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
+      <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
           <span className="text-lum ">Our</span> Cars
@@ -641,6 +645,7 @@ export const OneDayVehiclesBook = () => {
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
+      <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold ">
           <span className="text-lum ">Our</span> Cars
