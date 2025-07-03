@@ -380,8 +380,8 @@ export const OnePost = () => {
     formData.append("name", name);
     formData.append("item", item);
     formData.append("model", model);
-    formData.append("price", price);
-    formData.append("quantity", quantity);
+    formData.append("price", Number(price));
+    formData.append("quantity", Number(quantity));
     formData.append("image", image);
 
     try {

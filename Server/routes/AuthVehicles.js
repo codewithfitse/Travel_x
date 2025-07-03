@@ -240,7 +240,7 @@ router.post(
   authMiddleware,
   upload.single("image"),
   async (req, res) => {
-    const { name, item, price, model } = req.body;
+    const { name, item, price, model, quantity } = req.body;
     const userId = req.user?._id || req.user?.id;
 
     // Add these debug logs:
@@ -262,8 +262,9 @@ router.post(
         userId,
         name,
         item,
-        price,
+        price: Number(price),
         model,
+        quantity: Number(quantity),
         url: req.file.path,
         public_id: req.file.filename,
       });
@@ -293,7 +294,7 @@ router.put(
   async (req, res) => {
     try {
       const { id } = req.params;
-      const { name, item, price, model } = req.body;
+      const { name, item, price, model, quantity } = req.body;
       // this conatines mongoDb id and it will save user info in booking that will have acces to only user access!
       const userId = req.user.id;
 
@@ -315,6 +316,7 @@ router.put(
       post.item = item || post.item;
       post.price = price || post.price;
       post.model = model || post.model;
+      post.quantity = quantity || post.quantity;
 
       await post.save();
 
