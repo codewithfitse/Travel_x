@@ -91,7 +91,7 @@ router.patch("/OneDayVehiclesBook/:id", async (req, res) => {
     // Step 3: If status is "success", reduce quantity of the car
     if (stat.toLowerCase() === "successful") {
       // Replace `booking.vehicleId` with the actual field referencing the car
-      const car = await UserPostOne.findById(booking.vehicleId);
+      const car = await UserPostOne.findById(booking.userId);
 
       if (car) {
         car.quantity = Math.max(0, car.quantity - 1); // prevent negative quantity
