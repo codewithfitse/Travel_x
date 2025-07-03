@@ -469,13 +469,29 @@ export const OneDayVehicles = () => {
 
 export const Pricing = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadings, setIsLoadings] = useState(false);
   const [data, setData] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
   const Suv = "";
   const MidSuv = "";
   const FullSuv = "";
 
   const price = location?.state?.price;
+
+  async function handleBooking() {
+    setIsLoadings(true);
+    try {
+      //alert("Successfully Booked!");
+      navigate("/OneDayBook", { state: { bookingDetails: user } });
+    } catch (error) {
+      alert("You forgot to login bro");
+      navigate("/Login");
+      console.log(error);
+    } finally {
+      setIsLoadings(false);
+    }
+  }
 
   useEffect(() => {
     if (!price) {
@@ -534,13 +550,22 @@ export const Pricing = () => {
                   <li>° Perfect for in city</li>
                   <li>° Pick up at airport</li>
                 </ul>
-
-                <Link to="/MidSuvVehicles" state={{ MidSuv }}>
-                  Mid Suv
-                </Link>
-                <Link to="/PickUpVehicles" state={{ FullSuv }}>
-                  Pick UP
-                </Link>
+                <div className="flex mt-3 lg:mt-5 space-x-5">
+                  <button
+                    className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
+                    onClick={handleBooking}
+                  >
+                    {isLoadings ? "Ordering..." : "Order"}
+                  </button>
+                  <Link to="/Vehicles">
+                    <button
+                      className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
+                      onClick={handleBooking}
+                    >
+                      Back
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </Link>
