@@ -3,6 +3,7 @@ import UserBook from "../models/userBook.js";
 import UserDemo from "../models/UserDemo.js";
 import UserOneDay from "../models/UserOneDayBooking.js";
 import authMiddleware from "../middleware/tokenMiddleware.js";
+import UserPostOne from "../models/UserPostOne.js";
 
 const router = express.Router();
 
