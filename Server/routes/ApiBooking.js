@@ -22,11 +22,22 @@ router.get("/OneDayVehiclesBookUser", authMiddleware, async (req, res) => {
 });
 
 router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
-  const { url, name, price, item, model, phone, destination, message, date } =
-    req.body;
+  const {
+    url,
+    name,
+    price,
+    item,
+    model,
+    phone,
+    destination,
+    message,
+    date,
+    vehicleId,
+  } = req.body;
   const { id, firstName, email } = req.user;
 
   UserOneDay.create({
+    vehicleId: vehicleId,
     userId: id,
     url,
     ownerName: name,

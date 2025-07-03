@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const ImageSchema = new mongoose.Schema({
+  vehicleId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "oneImages", // This should match the name of your car model
+    required: true,
+  },
   userId: String,
   url: String,
   ownerName: String,
