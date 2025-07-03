@@ -5,7 +5,7 @@ const LiveChat = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.id = "3cxchat";
-    script.src = "https://1215.3cx.cloud/time "; // your real chat.js link
+    script.src = "https://1215.3cx.cloud/time"; // your real chat.js link
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
