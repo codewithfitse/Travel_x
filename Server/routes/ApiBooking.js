@@ -75,15 +75,38 @@ router.get("/OneDayVehiclesBook/:id", async (req, res) => {
 router.patch("/OneDayVehiclesBook/:id", async (req, res) => {
   const { id } = req.params;
   const { stat } = req.body;
+
   try {
-    const data = await UserOneDay.findByIdAndUpdate(id, { status: stat });
-    res.json(data);
-    console.log("Deleted bookings:", data);
+    // Step 1: Find the booking document
+    const booking = await UserOneDay.findById(id);
+    if (!booking) {
+      return res.status(404).json({ message: "Booking not found" });
+    }
+
+    // Step 2: Update the status
+    booking.status = stat;
+    await booking.save();
+
+    // Step 3: If status is "success", reduce quantity of the car
+    if (stat.toLowerCase() === "success") {
+      // Replace `booking.vehicleId` with the actual field referencing the car
+      const car = await UserPostOne.findById(booking.vehicleId);
+
+      if (car) {
+        car.quantity = Math.max(0, car.quantity - 1); // prevent negative quantity
+        await car.save();
+        console.log("✅ Quantity updated for vehicle:", car._id);
+      } else {
+        console.warn("⚠️ No linked car found for booking:", id);
+      }
+    }
+
+    res.json({ message: "Booking status updated", booking });
   } catch (err) {
-    console.error("Failed to fetch bookings:", err);
+    console.error("Failed to update booking:", err);
     res
       .status(500)
-      .json({ message: "Error fetching bookings", error: err.message });
+      .json({ message: "Error updating booking", error: err.message });
   }
 });
 
