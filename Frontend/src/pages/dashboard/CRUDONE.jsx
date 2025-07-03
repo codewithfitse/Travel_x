@@ -541,6 +541,9 @@ export const OnePost = () => {
               <p>
                 <strong>Model:</strong> {img.model}
               </p>
+              <p>
+                <strong>Quantity:</strong> {img.quantity}
+              </p>
 
               <p>{img.filename}</p>
               <div className=" flex justify-center">
