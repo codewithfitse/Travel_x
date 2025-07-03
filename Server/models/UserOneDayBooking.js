@@ -6,13 +6,26 @@ const ImageSchema = new mongoose.Schema({
   ownerName: String,
   customName: String,
   email: String,
-  phone: String,
-  item: String,
-  price: String,
+  phone: {
+    type: String,
+    required: true,
+  },
+  item: {
+    type: String,
+    required: true,
+  },
+  price: Number,
   model: String,
   date: Date,
+  quantity: {
+    type: Number,
+    default: 1,
+  },
   message: String,
-  destination: String,
+  destination: {
+    type: String,
+    required: true,
+  },
   status: {
     type: String,
     default: "pending",

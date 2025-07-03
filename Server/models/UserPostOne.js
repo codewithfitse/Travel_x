@@ -3,12 +3,34 @@ import mongoose from "mongoose";
 const ImageSchema = new mongoose.Schema({
   userId: String,
   public_id: String,
-  filename: String,
-  url: String,
-  name: String,
-  item: String,
-  price: Number,
-  model: String,
+  filename: {
+    type: String,
+    required: true,
+  },
+  url: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  item: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  model: {
+    type: String,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    default: 1,
+  },
   createdAt: { type: Date, default: Date.now },
 });
 
