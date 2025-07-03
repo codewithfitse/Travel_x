@@ -32,12 +32,12 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
     destination,
     message,
     date,
-    vehicleId,
+    _id,
   } = req.body;
   const { id, firstName, email } = req.user;
 
   UserOneDay.create({
-    vehicleId: vehicleId,
+    vehicleId: _id,
     userId: id,
     url,
     ownerName: name,
@@ -89,36 +89,33 @@ router.patch("/OneDayVehiclesBook/:id", async (req, res) => {
   const { stat } = req.body;
 
   try {
-    // Step 1: Find the booking document
+    // Step 1: Find the booking
     const booking = await UserOneDay.findById(id);
     if (!booking) {
       return res.status(404).json({ message: "Booking not found" });
     }
 
-    // Step 2: Update the status
+    // Step 2: Update booking status
     booking.status = stat;
     await booking.save();
 
-    // Step 3: If status is "success", reduce quantity of the car
+    // Step 3: If success, reduce quantity
     if (stat.toLowerCase() === "successful") {
-      // Replace `booking.vehicleId` with the actual field referencing the car
-      const car = await UserPostOne.findById(booking.userId);
+      const car = await UserPostOne.findById(booking.vehicleId);
 
       if (car) {
-        car.quantity = Math.max(0, car.quantity - 1); // prevent negative quantity
+        car.quantity = Math.max(0, car.quantity - 1); // never negative
         await car.save();
         console.log("✅ Quantity updated for vehicle:", car._id);
       } else {
-        console.warn("⚠️ No linked car found for booking:", id);
+        console.warn("⚠️ No linked car found with ID:", booking.vehicleId);
       }
     }
 
     res.json({ message: "Booking status updated", booking });
   } catch (err) {
-    console.error("Failed to update booking:", err);
-    res
-      .status(500)
-      .json({ message: "Error updating booking", error: err.message });
+    console.error("❌ Failed to update booking:", err);
+    res.status(500).json({ message: "Error", error: err.message });
   }
 });
 

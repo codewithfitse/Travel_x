@@ -7,7 +7,6 @@ import axios from "axios";
 
 const OneDayBook = () => {
   const navigate = useNavigate();
-
   const [date, setDate] = useState();
   const [phone, setPhone] = useState();
   const [destination, setDestination] = useState();
