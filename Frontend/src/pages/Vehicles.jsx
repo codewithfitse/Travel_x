@@ -431,7 +431,7 @@ export const OneDayVehicles = () => {
                 <div className="">
                   <div className="p-4 border-4 border-green-600 rounded-[10px]">
                     <h1 className="text-green-600 text-[30px]">
-                      Quantity: {img.quantity}
+                      Available now: {img.quantity}
                     </h1>
                   </div>
                   <Link
