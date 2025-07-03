@@ -5,11 +5,9 @@ const ImageSchema = new mongoose.Schema({
   public_id: String,
   filename: {
     type: String,
-    required: true,
   },
   url: {
     type: String,
-    required: true,
   },
   name: {
     type: String,
