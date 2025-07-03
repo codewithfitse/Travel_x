@@ -333,6 +333,9 @@ export const OneGetAdmin = () => {
                       <p>
                         <strong>Price:</strong> {img.price}
                       </p>
+                      <p>
+                        <strong>Quantity:</strong> {img.quantity}
+                      </p>
 
                       <Link to="/OneViewsAdmin" state={{ img }}>
                         <button className="text-blue-300 text-2xl font-semibold">
