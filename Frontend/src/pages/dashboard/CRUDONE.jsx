@@ -366,6 +366,7 @@ export const OnePost = () => {
   const [image, setImage] = useState();
   const [name, setName] = useState();
   const [price, setPrice] = useState();
+  const [quantity, setQuantity] = useState();
   const [item, setItem] = useState();
   const [model, setModel] = useState("");
   const [images, setImages] = useState([]);
@@ -380,6 +381,7 @@ export const OnePost = () => {
     formData.append("item", item);
     formData.append("model", model);
     formData.append("price", price);
+    formData.append("quantity", quantity);
     formData.append("image", image);
 
     try {
@@ -396,6 +398,7 @@ export const OnePost = () => {
       fetchImages();
       setName("");
       setItem("");
+      setQuantity("");
       setPrice("");
       setModel("");
       setImage("");
@@ -471,7 +474,19 @@ export const OnePost = () => {
               name="price"
               onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
-              placeholder="Choose Description"
+              placeholder="Choose Price"
+            />
+          </div>
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              Quantity:
+            </label>
+            <input
+              type="number"
+              name="quantity"
+              onChange={(e) => setQuantity(e.target.value)}
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Quantity of cars"
             />
           </div>
           <div className="w-full flex flex-col relative">
@@ -652,6 +667,7 @@ export const OneEditsAdmin = () => {
   const [model, setModel] = useState("");
   const [item, setItem] = useState("");
   const [price, setPrice] = useState();
+  const [quantity, setQuantity] = useState();
   const [images, setImages] = useState([]);
   const location = useLocation();
   const img = location?.state?.img;
@@ -666,6 +682,7 @@ export const OneEditsAdmin = () => {
     formData.append("item", item);
     formData.append("model", model);
     formData.append("price", price);
+    formData.append("quantity", quantity);
     if (image) {
       formData.append("image", image);
     }
@@ -759,6 +776,18 @@ export const OneEditsAdmin = () => {
           </div>
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
+              Quantity:
+            </label>
+            <input
+              type="number"
+              name="quantity"
+              onChange={(e) => setQuantity(e.target.value)}
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Quantity of cars"
+            />
+          </div>
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
               Model:
             </label>
             <input
@@ -831,6 +860,7 @@ export const OneEdits = () => {
   const [model, setModel] = useState("");
   const [item, setItem] = useState("");
   const [price, setPrice] = useState();
+  const [quantity, setQuantity] = useState();
   const [images, setImages] = useState([]);
   const location = useLocation();
   const img = location?.state?.img;
@@ -845,6 +875,7 @@ export const OneEdits = () => {
     formData.append("item", item);
     formData.append("model", model);
     formData.append("price", price);
+    formData.append("quantity", quantity);
     if (image) {
       formData.append("image", image);
     }
@@ -934,6 +965,18 @@ export const OneEdits = () => {
               onChange={(e) => setPrice(e.target.value)}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose Description"
+            />
+          </div>
+          <div className="w-full flex flex-col relative">
+            <label htmlFor="" className="text-[30px] font-semibold">
+              Quantity:
+            </label>
+            <input
+              type="number"
+              name="quantity"
+              onChange={(e) => setQuantity(e.target.value)}
+              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
+              placeholder="Quantity of cars"
             />
           </div>
           <div className="w-full flex flex-col relative">
