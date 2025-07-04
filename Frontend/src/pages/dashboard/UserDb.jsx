@@ -4,13 +4,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UserDb = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
 
   useEffect(() => {
     async function loadData() {
-      setIsLoading(true);
+      //setIsLoading(true);
       axios
         .get("https://travel-x-408k.onrender.com/dashboard/user")
         .then((result) => {
@@ -26,7 +26,7 @@ const UserDb = () => {
   useEffect(() => {
     try {
       async function loadData() {
-        setIsLoading(true);
+        //setIsLoading(true);
         axios
           .get("https://travel-x-408k.onrender.com/dashboard/userGoogle")
           .then((result) => {
