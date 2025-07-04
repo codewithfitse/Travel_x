@@ -10,7 +10,7 @@ const UserDb = () => {
 
   useEffect(() => {
     async function loadData() {
-      setIsLoading(true)
+      setIsLoading(true);
       axios
         .get("https://travel-x-408k.onrender.com/dashboard/user")
         .then((result) => {
@@ -18,8 +18,8 @@ const UserDb = () => {
           setData(result.data);
         })
         .catch((err) => console.log(err))
-        .finally(() => setIsLoading(false)
-    )
+        .finally(() => setIsLoading(false));
+    }
     loadData();
   }, []);
 
