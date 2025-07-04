@@ -572,7 +572,7 @@ export const OnePost = () => {
                 <img
                   src={img.url}
                   alt={img.filename}
-                  className="w-50 h-100 bg-center rounded-[10px] "
+                  className="w-50 h-100 bg-center rounded-[10px]"
                 />
               </div>
             </div>
