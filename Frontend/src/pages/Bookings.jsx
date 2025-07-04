@@ -6,6 +6,7 @@ import { Button } from "../components/Button";
 import axios from "axios";
 
 const OneDayBook = () => {
+  const [err, setErr] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [date, setDate] = useState();
   const [phone, setPhone] = useState();
@@ -43,6 +44,8 @@ const OneDayBook = () => {
       alert("Successfully Booked!");
       navigate("/UserDashboard");
     } catch (error) {
+      const errorMsg = err.response.status;
+      setErr(err.response.status);
       alert("You forgot to login bro");
       console.log(error);
       navigate("/Login");

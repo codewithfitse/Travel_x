@@ -49,7 +49,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
     !message ||
     !date
   ) {
-    res.status(401).json({ error: "All fields must be filed" });
+    res.status(400).json({ error: "All fields must be filed" });
   }
 
   UserOneDay.create({
