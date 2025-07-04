@@ -900,6 +900,7 @@ export const OneEditsAdmin = () => {
 };
 
 export const OneEdits = () => {
+  const [err, setErr] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
@@ -939,6 +940,7 @@ export const OneEdits = () => {
         })
         .catch((err) => {
           alert("Failed");
+          setErr(err.error);
           console.log(err);
         });
     } catch (error) {
@@ -1049,6 +1051,9 @@ export const OneEdits = () => {
               placeholder="Choose File"
             />
           </div>
+          {err && (
+            <h1 className="text-[30px] text-red-500 font-bold ">{err}</h1>
+          )}
           <div className="w-full">
             <button
               type="submit"
