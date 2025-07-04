@@ -741,7 +741,7 @@ export const OneEditsAdmin = () => {
           const errorMsg = err.response?.data?.error || "Something went wrong";
           alert(errorMsg);
           setErr(errorMsg);
-          console.log(err);
+          console.log(errorMsg);
         });
     } catch (error) {
       console.log(error);
@@ -910,7 +910,7 @@ export const OneEdits = () => {
   const [item, setItem] = useState("");
   const [price, setPrice] = useState();
   const [quantity, setQuantity] = useState();
-  const [images, setImages] = useState([]);
+  //const [images, setImages] = useState([]);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
@@ -1106,7 +1106,7 @@ export const OneEdits = () => {
 
 export const OneDeletesAdmin = () => {
   const [err, setErr] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+  //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
@@ -1122,10 +1122,10 @@ export const OneDeletesAdmin = () => {
         navigate("/OneGetAdmin");
       })
       .catch((err) => {
-        const errStat = err.response?.data?.error;
-        alert(errStat);
-        setErr(errStat);
-        console.log(err);
+        const errorMsg = err.response?.data?.error;
+        alert(errorMsg);
+        setErr(errorMsg);
+        console.log(errorMsg);
       });
   }
 
@@ -1134,7 +1134,9 @@ export const OneDeletesAdmin = () => {
       <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900">
         <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
           <h1 className="text-[30px] font-bold">Delete Cars Collection</h1>
-
+          {err && (
+            <h1 className="text-[30px] text-red-500 font-bold ">{err}</h1>
+          )}
           <div
             key={img._id}
             className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
@@ -1181,7 +1183,8 @@ export const OneDeletesAdmin = () => {
 };
 
 export const OneDeletes = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState();
+  // const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
@@ -1191,11 +1194,17 @@ export const OneDeletes = () => {
       .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, {
         withCredentials: true,
       })
-      .then(() => {
-        alert("successfully deleted");
+      .then((res) => {
+        const done = res?.data?.message || "Successfully deleted!";
+        alert(done);
         navigate("/OneGet");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        const errorMsg = err.response?.data?.error;
+        alert(errorMsg);
+        setErr(errorMsg);
+        console.log(errorMsg);
+      });
   }
 
   return (
@@ -1203,7 +1212,9 @@ export const OneDeletes = () => {
       <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900">
         <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
           <h1 className="text-[30px] font-bold">Delete Cars Collection</h1>
-
+          {err && (
+            <h1 className="text-[30px] text-red-500 font-bold ">{err}</h1>
+          )}
           <div
             key={img._id}
             className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
