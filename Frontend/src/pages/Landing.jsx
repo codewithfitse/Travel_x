@@ -1,11 +1,9 @@
-//import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
 
 export const Landing = () => {
   return (
     <div className="w-full h-screen landingBg overflow-x-hidden">
-      <LiveChat />
       <div className="h-screen pt-130 lg:pt-72 pl-5 lg:pl-15 pb-32 lg:pb-9 text-[25px]/7 text-white font-serif lg:text-6xl/15 font-bold backdrop-blur-[5px]">
         <h1 className="mb-3 text-yellow-500 font-UnifrakturMaguntia ">
           <span className="text-[80px]">T</span>ime
