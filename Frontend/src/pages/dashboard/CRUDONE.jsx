@@ -849,7 +849,9 @@ export const OneEditsAdmin = () => {
               placeholder="Choose File"
             />
           </div>
-          {err && <h1 className="text-[30px] text-red-500 font-bold">{err}</h1>}
+          {err && (
+            <h1 className="text-[30px] text-red-500 font-bold ">{err}</h1>
+          )}
 
           <div className="w-full">
             <button
