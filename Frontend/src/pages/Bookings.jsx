@@ -48,8 +48,8 @@ const OneDayBook = () => {
       if (errorMsg === 400) {
         setErr(errorMsg);
       } else {
-        alert("You forgot to login bro");
-        navigate("/Login");
+        //alert("You forgot to login bro");
+        //navigate("/Login");
       }
       console.log(error);
     } finally {
