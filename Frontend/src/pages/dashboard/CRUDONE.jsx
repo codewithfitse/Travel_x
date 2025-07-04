@@ -1124,6 +1124,7 @@ export const OneDeletesAdmin = () => {
       .catch((err) => {
         const errStat = err.response?.data?.error;
         alert(errStat);
+        setErr(errStat);
         console.log(err);
       });
   }
