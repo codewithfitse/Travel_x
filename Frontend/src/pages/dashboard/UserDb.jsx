@@ -88,26 +88,32 @@ const UserDb = () => {
                   ))}
                 </div>
               )}
-              {data1.map((user) => (
-                <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
-                  <div className="w-full px-5 flex justify-between items-center">
-                    <h1 className="w-full text-[30px] font-bold">
-                      {user?.name}
-                    </h1>
-                    <div className="w-fit flex space-x-3 lg:space-x-7 items-center">
-                      <Link to="/View" state={{ user }}>
-                        <i class="fas fa-eye w-7 !text-[25px] lg:!text-[30px]"></i>
-                      </Link>
-                      <Link to="/Edit" state={{ user }}>
-                        <i class="fas fa-edit w-7 !text-[25px] lg:!text-[30px]"></i>
-                      </Link>
-                      <Link to="/Delete" state={{ user }}>
-                        <i class="fa fa-trash w-7 !text-[25px] lg:!text-[30px]"></i>{" "}
-                      </Link>
+              {isLoading ? (
+                <h1 className="text-[30px]">Loading...</h1>
+              ) : (
+                <div className="">
+                  {data1.map((user) => (
+                    <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
+                      <div className="w-full px-5 flex justify-between items-center">
+                        <h1 className="w-full text-[30px] font-bold">
+                          {user?.name}
+                        </h1>
+                        <div className="w-fit flex space-x-3 lg:space-x-7 items-center">
+                          <Link to="/View" state={{ user }}>
+                            <i class="fas fa-eye w-7 !text-[25px] lg:!text-[30px]"></i>
+                          </Link>
+                          <Link to="/Edit" state={{ user }}>
+                            <i class="fas fa-edit w-7 !text-[25px] lg:!text-[30px]"></i>
+                          </Link>
+                          <Link to="/Delete" state={{ user }}>
+                            <i class="fa fa-trash w-7 !text-[25px] lg:!text-[30px]"></i>{" "}
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              )}
             </div>
           </main>
         </div>
