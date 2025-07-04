@@ -19,6 +19,14 @@ const ImageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  transationId: {
+    type: String,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
   price: Number,
   model: String,
   date: Date,
