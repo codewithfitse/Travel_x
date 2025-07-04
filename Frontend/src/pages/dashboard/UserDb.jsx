@@ -24,9 +24,9 @@ const UserDb = () => {
   }, []);
 
   useEffect(() => {
-    setIsLoading(true);
     try {
       async function loadData() {
+        setIsLoading(true);
         axios
           .get("https://travel-x-408k.onrender.com/dashboard/userGoogle")
           .then((result) => {
