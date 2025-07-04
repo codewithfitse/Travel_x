@@ -282,7 +282,7 @@ export const OneGetAdmin = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState("");
   const [images, setImages] = useState([]);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch images from backend
