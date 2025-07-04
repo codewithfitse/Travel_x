@@ -940,8 +940,8 @@ export const OneEdits = () => {
           navigate("/OneLandingVehicle");
         })
         .catch((err) => {
-          alert(errorMsg);
           const errorMsg = err.response?.data?.error || "Something went wrong";
+          alert(errorMsg);
           setErr(errorMsg);
           console.log(err);
         });
