@@ -11,7 +11,7 @@ const OneDayBook = () => {
   const [phone, setPhone] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
-  const [transationId, setTransationId] = useState();
+  const [transactionId, setTransactionId] = useState();
   const [amount, setAmount] = useState();
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const OneDayBook = () => {
   const { bookingDetails } = location?.state || null;
 
   const finalBookingData = {
-    ...bookingDetails, // from previous page
+    ...bookingDetails, // from previous page.
     date,
     phone,
     destination,
@@ -75,8 +75,8 @@ const OneDayBook = () => {
                 <input
                   type="text"
                   name="transationId"
-                  value={transationId}
-                  onChange={(e) => setTransationId(e.target.value)}
+                  value={transactionId}
+                  onChange={(e) => setTransactionId(e.target.value)}
                   className="input"
                   placeholder="Enter TransactionId"
                 />
