@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header, SideBar, SubHeader, SubSideBar } from "./component";
 
 export const OneLandingVehicleAdmin = () => {
   const [toggle, setToggle] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [images, setImages] = useState([]);
-  const navigate = useNavigate();
 
   return (
     <>
@@ -90,9 +87,6 @@ export const OneLandingVehicleAdmin = () => {
 
 export const OneLandingVehicle = () => {
   const [toggle, setToggle] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [images, setImages] = useState([]);
-  const navigate = useNavigate();
 
   return (
     <>
@@ -178,7 +172,6 @@ export const OneGet = () => {
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch images from backend
@@ -282,7 +275,6 @@ export const OneGetAdmin = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState("");
   const [images, setImages] = useState([]);
-  //const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch images from backend
@@ -706,7 +698,6 @@ export const OneEditsAdmin = () => {
   const [item, setItem] = useState("");
   const [price, setPrice] = useState();
   const [quantity, setQuantity] = useState();
-  const [images, setImages] = useState([]);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
@@ -764,16 +755,6 @@ export const OneEditsAdmin = () => {
           onSubmit={updatePost}
           className="flex flex-col space-y-3"
         >
-          {/* <div className="w-full flex flex-col relative">
-            <label htmlFor="" className="text-[30px] font-semibold">
-              Name:
-            </label>
-            <input
-              type="text"
-              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
-              placeholder="Name File"
-            />
-          </div> */}
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
               Name:
@@ -864,38 +845,6 @@ export const OneEditsAdmin = () => {
             </button>
           </div>
         </form>
-        <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
-          {images.map((img) => (
-            <div
-              key={img._id}
-              className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
-            >
-              <p>
-                <strong>Name:</strong> {img.name}
-              </p>
-              <p>
-                <strong>Item:</strong> {img.item}
-              </p>
-              <p>
-                <strong>Price:</strong> {img.price}
-              </p>
-              <p>
-                <strong>Quantity:</strong> {img?.quantity}
-              </p>
-              <p>
-                <strong>Model:</strong> {img.model}
-              </p>
-              <p>{img.filename}</p>
-              <div className=" flex justify-center">
-                <img
-                  src={img.url}
-                  alt={img.filename}
-                  className="w-50 h-100 bg-center rounded-[10px]"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -910,7 +859,6 @@ export const OneEdits = () => {
   const [item, setItem] = useState("");
   const [price, setPrice] = useState();
   const [quantity, setQuantity] = useState();
-  //const [images, setImages] = useState([]);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
@@ -968,16 +916,6 @@ export const OneEdits = () => {
           onSubmit={updatePost}
           className="flex flex-col space-y-3"
         >
-          {/* <div className="w-full flex flex-col relative">
-            <label htmlFor="" className="text-[30px] font-semibold">
-              Name:
-            </label>
-            <input
-              type="text"
-              className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
-              placeholder="Name File"
-            />
-          </div> */}
           <div className="w-full flex flex-col relative">
             <label htmlFor="" className="text-[30px] font-semibold">
               Name:
@@ -1067,38 +1005,6 @@ export const OneEdits = () => {
             </button>
           </div>
         </form>
-        <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
-          {images.map((img) => (
-            <div
-              key={img._id}
-              className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
-            >
-              <p>
-                <strong>Name:</strong> {img.name}
-              </p>
-              <p>
-                <strong>Item:</strong> {img.item}
-              </p>
-              <p>
-                <strong>Price:</strong> {img.price}
-              </p>
-              <p>
-                <strong>Quantity:</strong> {img?.quantity}
-              </p>
-              <p>
-                <strong>Model:</strong> {img.model}
-              </p>
-              <p>{img.filename}</p>
-              <div className=" flex justify-center">
-                <img
-                  src={img.url}
-                  alt={img.filename}
-                  className="w-50 h-100 bg-center rounded-[10px]"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -1106,7 +1012,6 @@ export const OneEdits = () => {
 
 export const OneDeletesAdmin = () => {
   const [err, setErr] = useState();
-  //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
@@ -1184,7 +1089,6 @@ export const OneDeletesAdmin = () => {
 
 export const OneDeletes = () => {
   const [err, setErr] = useState();
-  // const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
   const navigate = useNavigate();
