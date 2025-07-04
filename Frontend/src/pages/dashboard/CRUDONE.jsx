@@ -174,6 +174,7 @@ export const OneLandingVehicle = () => {
 };
 
 export const OneGet = () => {
+  const [err, setErr] = useState("");
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
@@ -190,6 +191,7 @@ export const OneGet = () => {
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
+        setErr(err);
       } finally {
         setIsLoading(false);
       }
@@ -221,6 +223,11 @@ export const OneGet = () => {
                     <h1 className="text-[30px] text-white font-bold">
                       {isLoading ? "Loading..." : null}
                     </h1>
+                    {err && (
+                      <h1 className="text-[30px] text-red-500 font-bold">
+                        {err}
+                      </h1>
+                    )}
                   </div>
                 </div>
 
@@ -318,6 +325,11 @@ export const OneGetAdmin = () => {
                     <h1 className="text-[30px] text-white font-bold">
                       {isLoading ? "Loading..." : null}
                     </h1>
+                    {err && (
+                      <h1 className="text-[30px] text-red-500 font-bold">
+                        {err}
+                      </h1>
+                    )}
                   </div>
                 </div>
 
@@ -369,6 +381,7 @@ export const OneGetAdmin = () => {
 
 export const OnePost = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState("");
   const [image, setImage] = useState();
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -411,6 +424,7 @@ export const OnePost = () => {
       alert("Upload Success");
     } catch (err) {
       console.error(err);
+      setErr(err);
       alert("Upload failed");
     } finally {
       setIsLoading(false);
@@ -425,6 +439,7 @@ export const OnePost = () => {
       );
       setImages(res.data);
     } catch (err) {
+      setErr(err);
       console.error("Fetching images failed:", err);
     }
   };
@@ -520,6 +535,7 @@ export const OnePost = () => {
               placeholder="Choose File"
             />
           </div>
+          {err && <h1 className="text-[30px] text-red-500 font-bold">{err}</h1>}
           <div className="w-full">
             <button
               type="submit"
