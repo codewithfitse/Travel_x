@@ -10,17 +10,16 @@ const UserDb = () => {
 
   useEffect(() => {
     async function loadData() {
+      setIsLoading(true)
       axios
         .get("https://travel-x-408k.onrender.com/dashboard/user")
         .then((result) => {
           console.log(result);
           setData(result.data);
         })
-        .catch((err) => console.log(err));
-      // const res = await fetch("http://localhost:3000/");
-      // const json = await res.json();
-      // setData(json);
-    }
+        .catch((err) => console.log(err))
+        .finally(() => setIsLoading(false)
+    )
     loadData();
   }, []);
 
