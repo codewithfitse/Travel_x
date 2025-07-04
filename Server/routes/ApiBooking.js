@@ -38,6 +38,20 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   } = req.body;
   const { id, firstName, email } = req.user;
 
+  if (
+    !transactionId ||
+    !amount ||
+    !price ||
+    !item ||
+    !model ||
+    !phone ||
+    !destination ||
+    !message ||
+    !date
+  ) {
+    res.status(401).json({ error: "All fields must be filed" });
+  }
+
   UserOneDay.create({
     vehicleId: _id,
     userId: id,
