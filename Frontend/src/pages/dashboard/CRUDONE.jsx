@@ -1105,6 +1105,7 @@ export const OneEdits = () => {
 };
 
 export const OneDeletesAdmin = () => {
+  const [err, setErr] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
@@ -1115,11 +1116,16 @@ export const OneDeletesAdmin = () => {
       .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, {
         withCredentials: true,
       })
-      .then(() => {
-        alert("successfully deleted");
+      .then((res) => {
+        const done = res?.data?.message || "Successfully deleted!";
+        alert(done);
         navigate("/OneGetAdmin");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        const errStat = err.response?.data?.error;
+        alert(errStat);
+        console.log(err);
+      });
   }
 
   return (

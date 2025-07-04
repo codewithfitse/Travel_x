@@ -344,7 +344,8 @@ router.delete("/one/:id", async (req, res) => {
     // Delete from MongoDB
     await UserPostOne.findByIdAndDelete(req.params.id);
 
-    res.json({ message: "Image deleted from Cloudinary and DB" });
+    res.json({ message: "Successfully Deleted" });
+    console.log("Image deleted from Cloudinary and DB");
   } catch (err) {
     console.error("Delete error:", err);
     res.status(500).json({ error: "Failed to delete image" });
