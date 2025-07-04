@@ -280,6 +280,7 @@ export const OneGet = () => {
 export const OneGetAdmin = () => {
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState("");
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -293,6 +294,7 @@ export const OneGetAdmin = () => {
         );
         setImages(res.data);
       } catch (err) {
+        setErr(err.error);
         console.error("Error fetching images:", err);
       } finally {
         setIsLoading(false);
