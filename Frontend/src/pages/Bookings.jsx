@@ -6,12 +6,14 @@ import { Button } from "../components/Button";
 import axios from "axios";
 
 const OneDayBook = () => {
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [date, setDate] = useState();
   const [phone, setPhone] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+  const [transationId, setTransationId] = useState();
+  const [amount, setAmount] = useState();
+  const navigate = useNavigate();
 
   const location = useLocation();
 
@@ -62,6 +64,32 @@ const OneDayBook = () => {
           </h1>
           <form onSubmit={handleClick} action="">
             <div className="mt-8 px-20 flex flex-col justify-between space-y-5 space-x-2">
+              <div className="w-full flex flex-col">
+                <label htmlFor="" className="text-[25px] font-bold">
+                  Transaction Link:
+                </label>
+                <input
+                  type="text"
+                  name="transationId"
+                  value={transationId}
+                  onChange={(e) => setTransationId(e.target.value)}
+                  className="input"
+                  placeholder="Enter Phone"
+                />
+              </div>
+              <div className="w-full flex flex-col">
+                <label htmlFor="" className="text-[25px] font-bold">
+                  Amount
+                </label>
+                <input
+                  type="number"
+                  name="amount"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
+                  className="input"
+                  placeholder="Enter Phone"
+                />
+              </div>
               <div className="w-full flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
                   Phone
