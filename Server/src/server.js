@@ -32,7 +32,7 @@ setInterval(() => {
 const app = express();
 app.use(
   cors({
-    origin: ["https://travel-x-kappa.vercel.app", "http://localhost:3000"],
+    origin: ["*", "http://localhost:3000"],
     methods: ["POST", "GET", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
