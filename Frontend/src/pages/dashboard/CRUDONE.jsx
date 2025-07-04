@@ -732,13 +732,15 @@ export const OneEditsAdmin = () => {
           formData,
           { withCredentials: true }
         )
-        .then(() => {
-          alert("Done");
+        .then((res) => {
+          const done = res.data?.message || "Successfully Updated!";
+          alert(done);
           navigate("/OneLandingVehicleAdmin");
         })
         .catch((err) => {
-          alert("Failed");
-          setErr(err.error);
+          const errorMsg = err.response?.data?.error || "Something went wrong";
+          alert(errorMsg);
+          setErr(errorMsg);
           console.log(err);
         });
     } catch (error) {
