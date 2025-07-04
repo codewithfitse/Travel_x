@@ -19,7 +19,7 @@ const ImageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  transationId: {
+  transactionId: {
     type: String,
     required: true,
   },

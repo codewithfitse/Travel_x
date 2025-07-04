@@ -59,7 +59,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
       res.json(employee);
     })
     .catch((err) => res.json(err));
-  console.log(`Posted Successfully`);
+  console.log(`Posted Successfully.`);
 });
 
 router.get("/OneDayVehiclesBook/:status", authMiddleware, async (req, res) => {
