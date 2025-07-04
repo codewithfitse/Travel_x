@@ -47,10 +47,11 @@ const OneDayBook = () => {
       const errorMsg = err?.response?.status;
       if (errorMsg === 400) {
         setErr(errorMsg);
+      } else {
+        alert("You forgot to login bro");
+        navigate("/Login");
       }
-      alert("You forgot to login bro");
       console.log(error);
-      navigate("/Login");
     } finally {
       setIsLoading(false);
     }
