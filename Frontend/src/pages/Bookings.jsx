@@ -44,8 +44,9 @@ const OneDayBook = () => {
       alert("Successfully Booked!.");
       navigate("/UserDashboard");
     } catch (error) {
-      const errorMsg = error?.response?.status;
-      if (errorMsg === 400) {
+      const errorStat = error?.response?.status;
+      const errorMsg = error?.response?.data?.error;
+      if (errorStat === 400) {
         setErr(errorMsg);
       } else {
         alert("You forgot to login bro");
