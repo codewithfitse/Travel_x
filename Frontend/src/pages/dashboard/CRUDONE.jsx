@@ -202,7 +202,7 @@ export const OneGet = () => {
 
   return (
     <>
-      <section className="min-h-full overflow-x-hidden">
+      <section className="min-h-full overflow-x-hidden ">
         <div className="w-full h-full flex bg-[#020817] text-white">
           <SubSideBar toggle={toggle} setToggle={setToggle} />
           <div className="ml-14 flex flex-col flex-1">
