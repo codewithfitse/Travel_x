@@ -301,6 +301,10 @@ router.put(
       const post = await UserPostOne.findById(id);
       if (!post) return res.status(404).json({ error: "Post not found" });
 
+      if (!name || !item || !price || !model || !quantity) {
+        return res.status(400).json({ error: "All fields are required." });
+      }
+
       // If there's a new image uploaded, delete old image from Cloudinary and upload new one
       if (req.file) {
         // Delete old image from Cloudinary
@@ -312,11 +316,11 @@ router.put(
       }
 
       // Update other fields
-      post.name = name || post.name;
-      post.item = item || post.item;
-      post.price = price || post.price;
-      post.model = model || post.model;
-      post.quantity = quantity || post.quantity;
+      post.name = name;
+      post.item = item;
+      post.price = price;
+      post.model = model;
+      post.quantity = quantity;
 
       await post.save();
 

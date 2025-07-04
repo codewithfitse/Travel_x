@@ -940,7 +940,8 @@ export const OneEdits = () => {
         })
         .catch((err) => {
           alert("Failed");
-          setErr(err.error);
+          const errorMsg = err.response?.data?.error || "Something went wrong";
+          setErr(errorMsg);
           console.log(err);
         });
     } catch (error) {
