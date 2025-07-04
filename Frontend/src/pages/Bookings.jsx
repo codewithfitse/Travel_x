@@ -44,12 +44,12 @@ const OneDayBook = () => {
       alert("Successfully Booked!.");
       navigate("/UserDashboard");
     } catch (error) {
-      const errorMsg = err?.response?.status;
+      const errorMsg = error?.response?.status;
       if (errorMsg === 400) {
         setErr(errorMsg);
       } else {
-        //alert("You forgot to login bro");
-        //navigate("/Login");
+        alert("You forgot to login bro");
+        navigate("/Login");
       }
       console.log(error);
     } finally {
