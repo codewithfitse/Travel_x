@@ -698,6 +698,7 @@ export const OneViews = () => {
 };
 
 export const OneEditsAdmin = () => {
+  const [err, setErr] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
@@ -737,6 +738,7 @@ export const OneEditsAdmin = () => {
         })
         .catch((err) => {
           alert("Failed");
+          setErr(err.error);
           console.log(err);
         });
     } catch (error) {
@@ -847,6 +849,8 @@ export const OneEditsAdmin = () => {
               placeholder="Choose File"
             />
           </div>
+          {err && <h1 className="text-[30px] text-red-500 font-bold">{err}</h1>}
+
           <div className="w-full">
             <button
               type="submit"
