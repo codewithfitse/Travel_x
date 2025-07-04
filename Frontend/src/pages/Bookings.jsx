@@ -64,9 +64,9 @@ const OneDayBook = () => {
           <h1 className="text-[40px] font-bold text-center font-mono">
             Transaction Account❗
           </h1>
-          <div className="w-full flex justify-center space-x-6">
+          <div className="w-full flex justify-center items-center space-x-6">
             <h1 className="text-[30px] font-bold text-center font-mono">
-              1000574533698
+              CBE 1000574533698
             </h1>
             <button
               onClick={() => {
