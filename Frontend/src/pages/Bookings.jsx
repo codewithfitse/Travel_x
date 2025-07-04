@@ -62,7 +62,7 @@ const OneDayBook = () => {
       <div className="py-[100px] lg:px-[200px]">
         <div className="p-10 card">
           <h1 className="text-[40px] font-bold text-center font-mono">
-            Transation Account❗
+            Transaction Account❗
           </h1>
           <button
             onClick={() => {
