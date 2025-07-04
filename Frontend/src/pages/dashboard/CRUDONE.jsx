@@ -595,6 +595,7 @@ export const OneViewsAdmin = () => {
       <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900">
         <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
           <h1 className="text-[30px] font-bold">View Cars Collection</h1>
+          {err && <div className="text-red-500 text-lg font-bold">{err}</div>}
 
           <div
             key={img?._id}
