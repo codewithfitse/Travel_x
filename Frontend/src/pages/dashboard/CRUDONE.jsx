@@ -335,7 +335,7 @@ export const OneGetAdmin = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 ">
                   {images.map((img) => (
                     <div
                       key={img._id}
@@ -354,7 +354,7 @@ export const OneGetAdmin = () => {
                         <strong>Quantity:</strong> {img.quantity}
                       </p>
 
-                      <Link to="/OneViewsAdmin" state={{ img }}>
+                      <Link to="/OneViewsAdmin" state={{ img, err }}>
                         <button className="text-blue-300 text-2xl font-semibold">
                           Views
                         </button>
@@ -589,6 +589,7 @@ export const OneViewsAdmin = () => {
   //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
+  const err = location?.state?.err;
 
   return (
     <div className="h-full p-3 bg-gray-950 text-white">
