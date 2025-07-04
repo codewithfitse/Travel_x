@@ -191,7 +191,7 @@ export const OneGet = () => {
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
-        setErr(err);
+        setErr(err.error);
       } finally {
         setIsLoading(false);
       }
