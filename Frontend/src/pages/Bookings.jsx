@@ -170,7 +170,11 @@ const OneDayBook = () => {
             </div>
 
             <div className="mt-10 flex justify-between space-x-2">
-              {err && <h1 className="text-red-500 text-[30px] ">{err}</h1>}
+              {err && (
+                <h1 className="text-red-500 text-[30px] font-bold text-center">
+                  {err}
+                </h1>
+              )}
             </div>
 
             <div className="mt-10">
