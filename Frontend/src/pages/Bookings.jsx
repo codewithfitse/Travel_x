@@ -44,8 +44,10 @@ const OneDayBook = () => {
       alert("Successfully Booked!");
       navigate("/UserDashboard");
     } catch (error) {
-      const errorMsg = err.response.status;
-      setErr(err.response.status);
+      const errorMsg = err?.response?.status;
+      if (errorMsg === 400) {
+        setErr(errorMsg);
+      }
       alert("You forgot to login bro");
       console.log(error);
       navigate("/Login");
@@ -165,7 +167,9 @@ const OneDayBook = () => {
               </div>
             </div>
 
-            <div className="mt-10 flex justify-between space-x-2"></div>
+            <div className="mt-10 flex justify-between space-x-2">
+              {err && <h1 className="text-red-500 text-[30px]">{err}</h1>}
+            </div>
 
             <div className="mt-10">
               <button
