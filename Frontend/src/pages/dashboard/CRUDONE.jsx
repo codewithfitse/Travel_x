@@ -250,7 +250,7 @@ export const OneGet = () => {
                         <strong>Quantity:</strong> {img.quantity}
                       </p>
 
-                      <Link to="/OneViews" state={{ img }}>
+                      <Link to="/OneViews" state={{ img, err }}>
                         <button className="text-blue-300 text-2xl font-semibold">
                           Views
                         </button>
@@ -335,7 +335,7 @@ export const OneGetAdmin = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4 ">
+                <div className="flex flex-wrap gap-4">
                   {images.map((img) => (
                     <div
                       key={img._id}
@@ -645,12 +645,14 @@ export const OneViews = () => {
   //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
+  const err = location?.state?.err;
 
   return (
     <div className="h-full p-3 bg-gray-950 text-white">
       <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900">
         <div className="w-fit h-fit p-2 flex flex-col items-center justify-center bg-gray-700 space-y-3">
           <h1 className="text-[30px] font-bold">View Cars Collection</h1>
+          {err && <div className="text-red-500 text-lg font-bold">{err}</div>}
 
           <div
             key={img?._id}
