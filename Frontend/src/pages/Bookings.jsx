@@ -20,7 +20,7 @@ const OneDayBook = () => {
   const { bookingDetails } = location?.state || null;
 
   const finalBookingData = {
-    ...bookingDetails, // from previous page.
+    ...bookingDetails, // from previous page
     date,
     phone,
     destination,
