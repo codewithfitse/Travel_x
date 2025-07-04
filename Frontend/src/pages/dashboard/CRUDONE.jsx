@@ -934,8 +934,9 @@ export const OneEdits = () => {
           formData,
           { withCredentials: true }
         )
-        .then(() => {
-          alert("Done");
+        .then((res) => {
+          const done = res.response?.data?.message || "Successfully Updated!";
+          alert(done);
           navigate("/OneLandingVehicle");
         })
         .catch((err) => {
