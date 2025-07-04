@@ -25,6 +25,8 @@ const OneDayBook = () => {
     phone,
     destination,
     message,
+    transactionId,
+    amount,
   };
 
   async function handleClick(e) {
