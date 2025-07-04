@@ -27,7 +27,7 @@ setInterval(() => {
       console.log(`[PING] ${new Date().toISOString()} - ${res.status}`)
     )
     .catch((err) => console.error("[PING ERROR]", err));
-}, 5 * 60 * 1000); // Ping every 5 minutes
+}, 10 * 60 * 1000); // Ping every 10 minutes
 
 const app = express();
 app.use(
@@ -75,24 +75,6 @@ const callBack = "https://travel-x-408k.onrender.com/auths/google/profile";
 
 app.use(passport.initialize()); // as i understood this will instialize passport for use!
 app.use(passport.session());
-
-// const fetchPhoneNumber = async (accessToken) => {
-//   try {
-//     const res = await axios.get(
-//       "https://people.googleapis.com/v1/people/me?personFields=phoneNumbers",
-//       {
-//         headers: {
-//           Authorization: `Bearer ${accessToken}`,
-//         },
-//       }
-//     );
-
-//     return res.data?.phoneNumbers?.[0]?.value || null;
-//   } catch (error) {
-//     console.error("🔴 Failed to fetch phone number:", error.message);
-//     return null;
-//   }
-// };
 
 passport.use(
   new GoogleStrategy(
@@ -177,15 +159,15 @@ function isAuthenticated(req, res, next) {
   res.status(401).json({ message: "Login required" });
 }
 
-// i create this b/c i want too make simlify for user profile data after all the login is done and to feach it frontend!
-app.get("/profile", authMiddleware, (req, res) => {
-  res.status(200).json({ message: "Welcome Admin", user: req.user });
-});
-
 // my first Page 😊 proud of it!
 app.get("/", (req, res) => {
   res.json("HomePage");
   console.log(`We are on Homepage`);
+});
+
+// i create this b/c i want too make simlify for user profile data after all the login is done and to feach it frontend!
+app.get("/profile", authMiddleware, (req, res) => {
+  res.status(200).json({ message: "Welcome Admin", user: req.user });
 });
 
 // this will feached if the middle ware is correct means if the cookie is present!

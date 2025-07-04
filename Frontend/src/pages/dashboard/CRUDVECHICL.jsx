@@ -53,10 +53,6 @@ export const LandingVehicle = () => {
 };
 
 export const SubLandingVehicle = () => {
-  const [isloading, setIsloading] = useState(false);
-  const [images, setImages] = useState([]);
-  const navigate = useNavigate();
-
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
@@ -107,7 +103,7 @@ export const GetAdmin = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch images from backend
+    // To Fetch Vehicle images from backend!
     const fetchImages = async () => {
       try {
         const res = await axios.get(
@@ -116,7 +112,9 @@ export const GetAdmin = () => {
         );
         setImages(res.data);
       } catch (err) {
-        console.error("Error fetching images:", err);
+        const errorMsg = err.response?.data?.error || "Error fetching images:";
+        console.error(errorMsg);
+        navigate("/LandingVehicle");
       } finally {
         setIsLoading(false);
       }
