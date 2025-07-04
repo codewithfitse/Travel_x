@@ -60,8 +60,12 @@ const OneDayBook = () => {
       <div className="py-[100px] lg:px-[200px]">
         <div className="p-10 card">
           <h1 className="text-[40px] font-bold text-center font-mono">
-            Book Now❗
+            Transation Account❗
           </h1>
+          <h1 className="text-[30px] font-bold text-center font-mono">
+            1000574533698
+          </h1>
+
           <form onSubmit={handleClick} action="">
             <div className="mt-8 px-20 flex flex-col justify-between space-y-5 space-x-2">
               <div className="w-full flex flex-col">
