@@ -64,9 +64,16 @@ const OneDayBook = () => {
           <h1 className="text-[40px] font-bold text-center font-mono">
             Transation Account❗
           </h1>
-          <h1 className="text-[30px] font-bold text-center font-mono">
-            1000574533698
-          </h1>
+          <button
+            onClick={() => {
+              navigator.clipboard.writeText("1000574533698");
+              alert("Copied to clipboard!");
+            }}
+            className="p-3 text-white hover:text-green-400 transition-all duration-200 rounded-[10px]"
+            title="Copy to clipboard"
+          >
+            <i className="fa fa-copy !text-[36px]"></i>
+          </button>
 
           <form onSubmit={handleClick} action="">
             <div className="mt-8 px-20 flex flex-col justify-between space-y-5 space-x-2">
