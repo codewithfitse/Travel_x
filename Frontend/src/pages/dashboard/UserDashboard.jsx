@@ -20,6 +20,13 @@ const UserDashboard = () => {
             withCredentials: true,
           }
         );
+        if (res.data.user.isAdmin) {
+          navigate("/Admin");
+        } else if (res.data.user.isSubAdmin) {
+          navigate("/SubAdmin");
+        } else {
+          navigate("/UserDashboard");
+        }
         console.log(res.data.user); // for debugging
         setUsers(res.data.user);
       } catch (error) {
