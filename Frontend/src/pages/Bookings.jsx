@@ -78,7 +78,7 @@ const OneDayBook = () => {
                   value={transationId}
                   onChange={(e) => setTransationId(e.target.value)}
                   className="input"
-                  placeholder="Enter Phone"
+                  placeholder="Enter TransactionId"
                 />
               </div>
               <div className="w-full flex flex-col">
@@ -91,7 +91,7 @@ const OneDayBook = () => {
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   className="input"
-                  placeholder="Enter Phone"
+                  placeholder="Enter Amount"
                 />
               </div>
               <div className="w-full flex flex-col">

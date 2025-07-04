@@ -25,7 +25,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
   const {
     url,
     name,
-    transationId,
+    transactionId,
     amount,
     price,
     item,
@@ -45,7 +45,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
     ownerName: name,
     customName: firstName,
     price,
-    transationId,
+    transactionId,
     amount,
     item,
     model,
