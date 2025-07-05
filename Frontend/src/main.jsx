@@ -66,12 +66,17 @@ import {
   SubBookStatus,
   UserBookStatus,
 } from "./pages/dashboard/BookStatus.jsx";
+import { Demo } from "./pages/dashboard/Demo.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing />,
     errorElement: <NotFound />,
+  },
+  {
+    path: "/Demo",
+    element: <Demo />,
   },
   {
     path: "/Home",

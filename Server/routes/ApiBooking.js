@@ -80,6 +80,8 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
     if (transactionId === "12345") {
       const car = await UserPostOne.findById(_id);
 
+      const stat = UserOneDay.find({});
+
       if (car) {
         car.quantity = Math.max(0, car.quantity - 1); // never negative
         await car.save();
