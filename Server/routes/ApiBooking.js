@@ -77,7 +77,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
     const stat = UserOneDay.findById({ _id });
 
     // Step 3: If success, reduce quantity
-    if (stat.status.toLowerCase() === "pending") {
+    if (stat.status.toLowerCase() === "pending.") {
       const car = await UserPostOne.findById(booking.vehicleId);
 
       if (car) {
