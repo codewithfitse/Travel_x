@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { Card } from "../../components/Card";
 
 const DeleteDashboard = () => {
+  const [open, setOpen] = useState(false);
   const location = useLocation();
   const user = location.state?.user;
   const navigate = useNavigate();
@@ -56,6 +58,17 @@ const DeleteDashboard = () => {
               <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                 <div className="w-full px-2 flex justify-between">
                   <div className="W-full">
+                    <div className="">
+                      <Card open={open} onClose={() => setOpen(false)}>
+                        <Link
+                          to=""
+                          state={{ user }}
+                          className="ml-2 text-red-400 hover:underline"
+                        >
+                          <button onClick={handleClick}>Delete</button>
+                        </Link>
+                      </Card>
+                    </div>
                     <h1 className="text-[14px] lg:text-[30px] font-bold capitalize">
                       Name:{" "}
                       <span className="font-semibold">
@@ -66,9 +79,10 @@ const DeleteDashboard = () => {
                       Are u Sure:{" "}
                       <span className="font-semibold">
                         <Link
-                          to="/Edit"
+                          //to="/Edit"
                           state={{ user }}
                           className="text-blue-400 hover:underline"
+                          onClick={() => setOpen(true)}
                         >
                           Edit
                         </Link>
