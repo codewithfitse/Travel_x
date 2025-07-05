@@ -7,7 +7,7 @@ export const Card = ({ open, children, onClose }) => {
         open ? "visible bg-black/20" : "invisible"
       }`}
     >
-      <div className="size-52 flex flex-col justify-center items-center bg-amber-50 rounded-2xl relative">
+      <div className="size-52 flex flex-col justify-center items-center bg-black/20 backdrop-blur-2xl text-amber-50 rounded-2xl relative">
         <div
           className="absolute top-0 right-2 w-fit h-fit text-2xl p-2"
           onClick={onClose}
