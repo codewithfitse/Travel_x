@@ -316,7 +316,7 @@ const DeleteDashboard = () => {
                     <h1 className="text-[14px] lg:text-[30px] font-bold capitalize">
                       Name:{" "}
                       <span className="font-semibold">
-                        {user.firstName} {user.lastName}
+                        {user.firstName || user.displayname} {user.lastName}
                       </span>
                     </h1>
                     <h1 className="text-[14px] lg:text-[30px] font-bold capitalize">
