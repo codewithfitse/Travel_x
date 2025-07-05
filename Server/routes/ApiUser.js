@@ -39,14 +39,13 @@ router.put("/user/:id", async (req, res) => {
 router.delete("/user/:id", async (req, res) => {
   try {
     const deletedUser = await UserLogin.findByIdAndDelete(req.params.id);
+    const deletedUserOauth = await UserOauth.findByIdAndDelete(req.params.id);
 
-    if (!deletedUser) {
+    if (!deletedUser || !deletedUserOauth) {
       return res.status(404).json({ error: "User not found" });
-    } else {
-      const deletedUserOauth = await UserOauth.findByIdAndDelete(req.params.id);
     }
 
-    res.status(200).json({ message: "User deleted successfully" }); 
+    res.status(200).json({ message: "User deleted successfully" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
@@ -62,7 +61,7 @@ router.delete("/userGoogle/:id", async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    res.status(200).json({ message: "User deleted successfully" }); 
+    res.status(200).json({ message: "User deleted successfully" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
