@@ -1,11 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-
-export const Demo = () => {
-  return (
-    <div className="w-full h-screen flex bg-gray-900">
-      <div></div>
-=======
 import { useState } from "react";
 import { Card } from "../../components/Card";
 
@@ -26,7 +19,6 @@ export const Demo = () => {
           <button className={`${btn} ${btnDanger}`}>Delete</button>
         </Card>
       </div>
->>>>>>> Try
     </div>
   );
 };
