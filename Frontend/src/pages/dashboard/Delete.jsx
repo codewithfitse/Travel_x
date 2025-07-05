@@ -58,7 +58,10 @@ const DeleteDashboard = () => {
               <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                 <div className="w-full px-2 flex justify-between">
                   <div className="W-full">
-                    <div className="">
+                    <div className="" onClick={() => setOpen(true)}>
+                      <div className="p-3">
+                        <button className="p-3 bg-amber-100">Hello</button>
+                      </div>
                       <Card open={open} onClose={() => setOpen(false)}>
                         <Link
                           to=""
