@@ -13,7 +13,7 @@ export const Demo = () => {
           Delete
         </button>
         <Card open={open} onClose={() => setOpen(false)}>
-          <button className={`btn1 btnDanger`}>Delete</button>
+          <button className={`btn btnDanger`}>Delete</button>
         </Card>
       </div>
     </div>
