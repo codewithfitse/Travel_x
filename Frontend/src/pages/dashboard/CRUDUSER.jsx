@@ -328,16 +328,12 @@ export const DeleteUserInfo = () => {
                   <div className="W-full">
                     <div className="" onClick={() => setOpen(true)}>
                       <div className="p-3">
-                        <button className="p-3 bg-amber-100">Hello</button>
+                        <button className="p-3 bg-amber-100 rounded-2xl">
+                          Hello
+                        </button>
                       </div>
                       <Card open={open} onClose={() => setOpen(false)}>
-                        <Link
-                          to=""
-                          state={{ user }}
-                          className="ml-2 text-red-400 hover:underline"
-                        >
-                          <button onClick={handleClick}>Delete</button>
-                        </Link>
+                        <button onClick={handleClick}>Delete</button>
                         <button
                           onClick={() => setOpen(false)}
                           className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400"
