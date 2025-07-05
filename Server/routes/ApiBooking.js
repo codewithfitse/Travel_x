@@ -72,7 +72,8 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
       message,
     });
 
-    await UserTransaction.create(transactionId, amount);
+    await UserTransaction.create({ transactionId, amount });
+    return res.status(200).json({ message: "Successfully Booked" });
   } catch (error) {
     res.json(error);
   }
