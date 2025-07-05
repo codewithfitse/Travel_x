@@ -72,7 +72,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
       message,
     });
 
-    await UserTransaction.Create(transactionId, amount);
+    await UserTransaction.create(transactionId, amount);
   } catch (error) {
     res.json(error);
   }
