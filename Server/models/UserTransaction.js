@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const UserTransactionSchema = mongoose.Schema({
-  transactionID: String,
+  transactionId: String,
   amount: Number,
 });
 
