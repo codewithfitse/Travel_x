@@ -291,10 +291,9 @@ export const DeleteUserInfo = () => {
       await axios
         .delete(`https://travel-x-408k.onrender.com/dashboard/user/${user._id}`)
         .then((result) => {
-          if (result?.data?.message === "deleted") {
-            alert("User updated successfully!");
-            navigate("/UserDb");
-          }
+          const message = result?.data?.message;
+          alert(message);
+          navigate("/UserDb");
         });
       // back to main admin dashboard
     } catch (err) {
