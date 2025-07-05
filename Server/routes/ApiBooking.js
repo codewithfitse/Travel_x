@@ -4,6 +4,7 @@ import UserDemo from "../models/UserDemo.js";
 import UserOneDay from "../models/UserOneDayBooking.js";
 import authMiddleware from "../middleware/tokenMiddleware.js";
 import UserPostOne from "../models/UserPostOne.js";
+import UserTransaction from "../models/UserTransaction.js";
 
 const router = express.Router();
 
@@ -21,7 +22,7 @@ router.get("/OneDayVehiclesBookUser", authMiddleware, async (req, res) => {
   console.log(data);
 });
 
-router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
+router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
   const {
     url,
     name,
@@ -52,27 +53,30 @@ router.post("/OneDayVehiclesBook", authMiddleware, (req, res) => {
     return res.status(400).json({ error: "All fields must be filed" });
   }
 
-  UserOneDay.create({
-    vehicleId: _id,
-    userId: id,
-    url,
-    ownerName: name,
-    customName: firstName,
-    price,
-    transactionId,
-    amount,
-    item,
-    model,
-    date,
-    email,
-    phone,
-    destination,
-    message,
-  })
-    .then((employee) => {
-      res.json(employee);
-    })
-    .catch((err) => res.json(err));
+  try {
+    UserOneDay.create({
+      vehicleId: _id,
+      userId: id,
+      url,
+      ownerName: name,
+      customName: firstName,
+      price,
+      transactionId,
+      amount,
+      item,
+      model,
+      date,
+      email,
+      phone,
+      destination,
+      message,
+    });
+
+    await UserTransaction.Create(transactionId, amount);
+  } catch (error) {
+    res.json(error);
+  }
+
   console.log(`Posted Successfully.`);
 });
 
