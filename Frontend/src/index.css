@@ -86,4 +86,10 @@ body {
   .input {
     @apply py-2 px-3 text-2xl text-black font-bold bg-white rounded-[10px] placeholder:text-[20px] placeholder:text-gray-500 hover:border-4 hover:border-amber-400;
   }
+  .btn {
+    @apply w-fit h-fit flex gap-2 items-center justify-center text-[30px] font-bold py-2 px-4 rounded-lg;
+  }
+  .btnDanger {
+    @apply text-white bg-red-600 shadow-red-400/40;
+  }
 }
