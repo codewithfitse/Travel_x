@@ -49,12 +49,6 @@ const Header = () => {
           <Link to="/Login">
             <h1 className="hover:text-lum">LOGIN</h1>
           </Link>
-<<<<<<< HEAD
-          <Link to="/UserDashboard">
-            <h1 className="hover:text-lum">Dash</h1>
-          </Link>
-=======
->>>>>>> Try
           <Link to="/Demo">
             <h1 className="hover:text-lum">Demo</h1>
           </Link>
