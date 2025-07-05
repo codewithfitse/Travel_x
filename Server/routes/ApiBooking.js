@@ -74,11 +74,11 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
 
     await UserTransaction.create({ transactionId, amount });
 
-    const stat = UserOneDay.findById({ _id });
+    //const stat = UserOneDay.findById({ _id });
 
     // Step 3: If success, reduce quantity
-    if (stat.status === "pending") {
-      const car = await UserPostOne.findById(vehicleId);
+    if (transactionId === "12345") {
+      const car = await UserPostOne.findById(_id);
 
       if (car) {
         car.quantity = Math.max(0, car.quantity - 1); // never negative
