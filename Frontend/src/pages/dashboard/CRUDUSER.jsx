@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { Header, SideBar } from "./component";
+import { Card } from "../../components/Card";
 
 export const ViewUserInfo = () => {
   const location = useLocation();
@@ -275,6 +276,7 @@ export const EditUserInfo = () => {
 };
 
 export const DeleteUserInfo = () => {
+  const [open, setOpen] = useState(false);
   const location = useLocation();
   const user = location.state?.user;
   const navigate = useNavigate();
@@ -349,9 +351,10 @@ export const DeleteUserInfo = () => {
                       Are u Sure:{" "}
                       <span className="font-semibold">
                         <Link
-                          to="/Edit"
+                          //to="/Edit"
                           state={{ user }}
                           className="text-blue-400 hover:underline"
+                          onClick={() => setOpen(true)}
                         >
                           Edit
                         </Link>
