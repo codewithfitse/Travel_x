@@ -338,6 +338,12 @@ export const DeleteUserInfo = () => {
                         >
                           <button onClick={handleClick}>Delete</button>
                         </Link>
+                        <button
+                          onClick={() => setOpen(false)}
+                          className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400"
+                        >
+                          Cancel
+                        </button>
                       </Card>
                     </div>
                     <h1 className="text-[14px] lg:text-[30px] font-bold capitalize">

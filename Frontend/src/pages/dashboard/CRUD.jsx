@@ -315,7 +315,9 @@ const DeleteDashboard = () => {
               <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                 <div className="w-full px-2 flex justify-between">
                   <div className="W-full">
-                    <Card open={open} onClose={() => setOpen(false)}></Card>
+                    <Card open={open} onClose={() => setOpen(false)}>
+                      hhhh
+                    </Card>
                     <h1 className="text-[14px] lg:text-[30px] font-bold capitalize">
                       Name:{" "}
                       <span className="font-semibold">
