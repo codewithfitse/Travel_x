@@ -41,7 +41,8 @@ const OneDayBook = () => {
           withCredentials: true,
         }
       );
-      alert("Successfully Booked!.");
+      const message = res?.data?.message;
+      alert(message);
       navigate("/UserDashboard");
     } catch (error) {
       const errorStat = error?.response?.status;
