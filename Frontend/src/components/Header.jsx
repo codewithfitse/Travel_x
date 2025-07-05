@@ -49,6 +49,9 @@ const Header = () => {
           <Link to="/Login">
             <h1 className="hover:text-lum">LOGIN</h1>
           </Link>
+          <Link to="/Demo">
+            <h1 className="hover:text-lum">Demo</h1>
+          </Link>
         </div>
       </nav>
 
@@ -80,8 +83,11 @@ const Header = () => {
             <Link to="/Login">
               <h1 className="hover:text-lum">LOGIN</h1>
             </Link>
-            <Link to="/USerDashboard">
+            <Link to="/UserDashboard">
               <h1 className="hover:text-lum">DashBoard</h1>
+            </Link>
+            <Link to="/Demo">
+              <h1 className="hover:text-lum">Demo</h1>
             </Link>
           </div>
         )}
