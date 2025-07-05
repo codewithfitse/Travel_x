@@ -1124,7 +1124,7 @@ export const OneDeletes = () => {
             className="w-fit h-fit p-3 flex flex-col justify-center bg-gray-800 rounded-2xl"
           >
             <p>
-              <strong>Name:</strong> {img.name}
+              <strong>Name:</strong> {img.name || img.displayname}
             </p>
             <p>
               <strong>Item:</strong> {img.item}
