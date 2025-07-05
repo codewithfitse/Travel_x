@@ -326,7 +326,7 @@ const DeleteDashboard = () => {
                       Are u Sure:{" "}
                       <span className="font-semibold">
                         <Link
-                          to="/Edit"
+                          //to="/Edit"
                           state={{ user }}
                           className="text-blue-400 hover:underline"
                           onClick={() => setOpen(true)}
