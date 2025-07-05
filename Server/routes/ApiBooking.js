@@ -54,7 +54,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
   }
 
   try {
-    UserOneDay.create({
+    await UserOneDay.create({
       vehicleId: _id,
       userId: id,
       url,
