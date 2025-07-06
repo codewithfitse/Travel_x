@@ -57,19 +57,21 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
     await UserOneDay.create({
       vehicleId: _id,
       userId: id,
-      url,
-      ownerName: name,
-      customName: firstName,
-      price,
       transactionId,
       amount,
-      item,
-      model,
-      date,
-      email,
-      phone,
-      destination,
-      message,
+      data: {
+        url,
+        ownerName: name,
+        customName: firstName,
+        price,
+        item,
+        model,
+        date,
+        email,
+        phone,
+        destination,
+        message,
+      },
     });
 
     await UserTransaction.create({ transactionId, amount });

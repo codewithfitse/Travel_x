@@ -7,18 +7,6 @@ const ImageSchema = new mongoose.Schema({
     required: true,
   },
   userId: String,
-  url: String,
-  ownerName: String,
-  customName: String,
-  email: String,
-  phone: {
-    type: String,
-    required: true,
-  },
-  item: {
-    type: String,
-    required: true,
-  },
   transactionId: {
     type: String,
     unique: true,
@@ -28,21 +16,35 @@ const ImageSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  price: Number,
-  model: String,
-  date: Date,
-  quantity: {
-    type: Number,
-    default: 1,
-  },
-  message: String,
-  destination: {
-    type: String,
-    required: true,
-  },
-  status: {
-    type: String,
-    default: "pending",
+  data: {
+    url: String,
+    ownerName: String,
+    customName: String,
+    email: String,
+    phone: {
+      type: String,
+      required: true,
+    },
+    item: {
+      type: String,
+      required: true,
+    },
+    price: Number,
+    model: String,
+    date: Date,
+    quantity: {
+      type: Number,
+      default: 1,
+    },
+    message: String,
+    destination: {
+      type: String,
+      required: true,
+    },
+    status: {
+      type: String,
+      default: "pending",
+    },
   },
   createdAt: { type: Date, default: Date.now },
 });
