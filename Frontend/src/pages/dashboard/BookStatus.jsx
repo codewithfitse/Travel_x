@@ -1030,14 +1030,14 @@ export const EditBookStatus = () => {
                     <div className="relative">
                       <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
                         <h1 className="font-bold text-[40px]">
-                          {user.data.customName?.charAt(0).toUpperCase()}{" "}
+                          {user?.data?.customName?.charAt(0).toUpperCase()}{" "}
                         </h1>
                       </div>
                       <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                     </div>
                     <div className="flex flex-col gap-3">
                       <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                        Customer:{user.data?.customName}
+                        Customer:{user?.data?.customName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                         {user.data.model}
