@@ -1040,20 +1040,28 @@ export const EditBookStatus = () => {
                       </div>
                       <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                     </div>
-                    <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                      Customer:{user.data.customName}
-                    </h1>
-                    <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                      {user.data.model}
-                    </h1>
-                    <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                      Booked At:{" "}
-                      {new Date(user.data.createdAt).toLocaleString("en-GB")}{" "}
-                    </h1>
-                    <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                      Appointed time:{" "}
-                      {new Date(user.data.date).toLocaleString("en-GB")}
-                    </h1>
+                    <div className="flex flex-col gap-3">
+                      <h1 className="mt-2 text-2xl text-white text-center font-bold">
+                        Customer:{user.data.customName}
+                      </h1>
+                      <h1 className="text-[18px] text-blue-400 text-center font-semibold">
+                        {user.data.model}
+                      </h1>
+                      <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                        Booked At:{" "}
+                        {new Date(user.data.createdAt).toLocaleString("en-GB")}{" "}
+                      </h1>
+                      <h1 className="text-[13px] text-gray-400 text-center font-semibold">
+                        Appointed time:{" "}
+                        {new Date(user.data.date).toLocaleString("en-GB")}
+                      </h1>
+                      <a
+                        href={user.transactionId}
+                        className="text-[13px] text-gray-400 text-center font-semibold"
+                      >
+                        Transaction Link: {user.transactionId}
+                      </a>
+                    </div>
                   </div>
                   <div className="w-full h-full py-5 px-5 bg-gray-800">
                     <div className="w-full h-full">
