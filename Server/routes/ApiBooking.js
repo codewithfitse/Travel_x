@@ -37,7 +37,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
     date,
     _id,
   } = req.body;
-  const { id, firstName, email, displayname } = req.user;
+  const { id, firstName, email, avatar } = req.user;
   const names = req.user.name;
 
   if (
@@ -72,6 +72,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
         url,
         ownerName: name,
         customName: firstName || names,
+        avatar,
         price,
         item,
         model,

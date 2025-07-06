@@ -20,6 +20,7 @@ const ImageSchema = new mongoose.Schema({
     url: String,
     ownerName: String,
     customName: String,
+    avatar: String,
     email: String,
     phone: {
       type: String,
