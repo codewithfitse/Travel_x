@@ -516,14 +516,17 @@ export const AllBookStatus = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.data.customName} Car Name:{user.data.ownerName}
+                            Customer:{user.data.customName} Car Name:
+                            {user.data.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                             Model:{user.data.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Booked At:{" "}
-                            {new Date(user.data.createdAt).toLocaleString("en-GB")}{" "}
+                            {new Date(user.data.createdAt).toLocaleString(
+                              "en-GB"
+                            )}{" "}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Appointed time:{" "}
@@ -556,7 +559,9 @@ export const AllBookStatus = () => {
                                 </div>
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Car type</h1>
-                                  <h1 className="font-semibold">{user.data.item}</h1>
+                                  <h1 className="font-semibold">
+                                    {user.data.item}
+                                  </h1>
                                 </div>
                               </div>
                             </div>
@@ -583,7 +588,8 @@ export const AllBookStatus = () => {
                               <div className="w-full h-fit flex gap-3">
                                 <h1
                                   className={`capitalize ${
-                                    user.data.status === "Pending" && "text-green"
+                                    user.data.status === "Pending" &&
+                                    "text-green"
                                   }`}
                                 >
                                   {user.data.status}
@@ -677,14 +683,17 @@ export const SubBookStatus = () => {
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.data.customName} Car Name:{user.data.ownerName}
+                            Customer:{user.data.customName} Car Name:
+                            {user.data.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                             Model:{user.data.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Booked At:{" "}
-                            {new Date(user..datacreatedAt).toLocaleString("en-GB")}{" "}
+                            {new Date(user.data.createdAt).toLocaleString(
+                              "en-GB"
+                            )}{" "}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Appointed time:{" "}
@@ -717,14 +726,16 @@ export const SubBookStatus = () => {
                                 </div>
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Car type</h1>
-                                  <h1 className="font-semibold">{user.data.item}</h1>
+                                  <h1 className="font-semibold">
+                                    {user.data.item}
+                                  </h1>
                                 </div>
                               </div>
                               <div className="w-full flex flex-col lg:flex-row gap-1">
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Destination</h1>
                                   <h1 className="font-semibold">
-                                    {.data.destination}
+                                    {user.data.destination}
                                   </h1>
                                 </div>
                                 <div className="w-full h-15">
@@ -744,7 +755,8 @@ export const SubBookStatus = () => {
                               <div className="w-full h-fit flex gap-3">
                                 <h1
                                   className={`capitalize ${
-                                    user.data.status === "Pending" && "text-green"
+                                    user.data.status === "Pending" &&
+                                    "text-green"
                                   }`}
                                 >
                                   {user.data.status}
@@ -963,7 +975,7 @@ export const EditBookStatus = () => {
     date,
     item,
     status,
-  } = location?.state?.user.data;
+  } = location?.state?.user;
   const navigate = useNavigate();
 
   const [stat, setStat] = useState(null);
