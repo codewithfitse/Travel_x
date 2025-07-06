@@ -360,7 +360,7 @@ export const StatusOfBook = () => {
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Appointed time:{" "}
-                            {new Date(user?.date).toLocaleString("en-GB")}
+                            {new Date(user.data?.date).toLocaleString("en-GB")}
                           </h1>
                         </div>
                         <div className="w-full h-full py-5 px-5 bg-gray-800">
