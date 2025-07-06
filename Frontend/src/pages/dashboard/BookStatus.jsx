@@ -962,20 +962,7 @@ export const UserBookStatus = () => {
 export const EditBookStatus = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
-  const {
-    customName,
-    _id,
-    createdAt,
-    email,
-    phone,
-    price,
-    model,
-    message,
-    destination,
-    date,
-    item,
-    status,
-  } = location?.state?.user;
+  const user = location?.state?.user;
   const navigate = useNavigate();
 
   const [stat, setStat] = useState(null);
@@ -1048,22 +1035,24 @@ export const EditBookStatus = () => {
                     <div className="relative">
                       <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
                         <h1 className="font-bold text-[40px]">
-                          {customName?.charAt(0).toUpperCase()}{" "}
+                          {user.data.customName?.charAt(0).toUpperCase()}{" "}
                         </h1>
                       </div>
                       <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                     </div>
                     <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                      Customer:{customName}
+                      Customer:{user.data.customName}
                     </h1>
                     <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                       {model}
                     </h1>
                     <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                      Booked At: {new Date(createdAt).toLocaleString("en-GB")}{" "}
+                      Booked At:{" "}
+                      {new Date(user.data.createdAt).toLocaleString("en-GB")}{" "}
                     </h1>
                     <h1 className="text-[13px] text-gray-400 text-center font-semibold">
-                      Appointed time: {new Date(date).toLocaleString("en-GB")}
+                      Appointed time:{" "}
+                      {new Date(user.data.date).toLocaleString("en-GB")}
                     </h1>
                   </div>
                   <div className="w-full h-full py-5 px-5 bg-gray-800">
@@ -1072,31 +1061,35 @@ export const EditBookStatus = () => {
                         <div className="w-full flex flex-col lg:flex-row gap-1">
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Email</h1>
-                            <h1 className="font-semibold">{email}</h1>
+                            <h1 className="font-semibold">{user.data.email}</h1>
                           </div>
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Phone</h1>
-                            <h1 className="font-semibold">{phone}</h1>
+                            <h1 className="font-semibold">{user.data.phone}</h1>
                           </div>
                         </div>
                         <div className="w-full mt-1 flex flex-col lg:flex-row gap-1">
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Price</h1>
-                            <h1 className="font-semibold">{price}</h1>
+                            <h1 className="font-semibold">{user.data.price}</h1>
                           </div>
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Car type</h1>
-                            <h1 className="font-semibold">{item}</h1>
+                            <h1 className="font-semibold">{user.data.item}</h1>
                           </div>
                         </div>
                         <div className="w-full flex flex-col lg:flex-row gap-1">
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Destination</h1>
-                            <h1 className="font-semibold">{destination}</h1>
+                            <h1 className="font-semibold">
+                              {user.data.destination}
+                            </h1>
                           </div>
                           <div className="w-full h-15">
                             <h1 className="text-gray-400">Message</h1>
-                            <h1 className="font-semibold">{message}</h1>
+                            <h1 className="font-semibold">
+                              {user.data.message}
+                            </h1>
                           </div>
                         </div>
                       </div>
@@ -1107,7 +1100,7 @@ export const EditBookStatus = () => {
                           </h1>
                         </div>
                         <div className="w-full h-fit flex gap-3">
-                          <h1 className="">{status}</h1>
+                          <h1 className="">{user.data.status}</h1>
                         </div>
                         <div className="w-full h-fit flex gap-3">
                           <select
@@ -1122,13 +1115,13 @@ export const EditBookStatus = () => {
                           </select>
                           <div
                             className="w-8 h-8 lg:w-10 lg:h-10 bg-green-500 flex justify-center items-center rounded-[10px]"
-                            onClick={() => handleStatus(_id)}
+                            onClick={() => handleStatus(user.data._id)}
                           >
                             <i class="fa fa-edit w-fit text-white hover:text-green-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
                           </div>
                           <div
                             className="w-8 h-8 lg:w-10 lg:h-10 bg-red-100 flex justify-center items-center rounded-[10px]"
-                            onClick={() => handleDelete(_id)}
+                            onClick={() => handleDelete(user.data._id)}
                           >
                             <i class="fa fa-trash w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
                           </div>
@@ -1137,7 +1130,7 @@ export const EditBookStatus = () => {
                             value={stat}
                             onChange={(e) => setStat(e.target.value)}
                           />
-                          <h1 className="">{status}</h1>
+                          <h1 className="">{user.data.status}</h1>
                         </div>
                       </div>
                     </div>
