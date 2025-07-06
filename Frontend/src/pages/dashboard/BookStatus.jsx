@@ -1049,7 +1049,7 @@ export const EditBookStatus = () => {
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Booked At:{" "}
-                        {new Date(user.data.createdAt).toLocaleString("en-GB")}{" "}
+                        {new Date(user.createdAt).toLocaleString("en-GB")}{" "}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Appointed time:{" "}
