@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 export const SideBar = ({ toggle, setToggle }) => {
-
   function toggles() {
     setToggle(!toggle);
   }
@@ -65,7 +64,7 @@ export const Header = ({ toggle }) => {
     } catch (error) {
       console.error("Logout failed:", error);
     }
-  };  
+  }
   return (
     <header
       className={`w-full h-16 flex justify-between pr-20 text-white text-[10px] lg:text-[20px] border-1 border-gray-700 fixed top-0 left-15 bg-white/5 backdrop-blur-sm z-20 ${
@@ -90,9 +89,9 @@ export const Header = ({ toggle }) => {
             <div className="flex justify-between">Dashboard</div>
           </Link>
 
-            <button className="flex justify-between" onClick={handleLogout}>
-              Sign out
-            </button>
+          <button className="flex justify-between" onClick={handleLogout}>
+            Sign out
+          </button>
 
           <div className="flex items-center">Profile</div>
         </div>
@@ -101,9 +100,7 @@ export const Header = ({ toggle }) => {
   );
 };
 
-
 export const SubSideBar = ({ toggle, setToggle }) => {
-
   function toggles() {
     setToggle(!toggle);
   }
@@ -165,7 +162,7 @@ export const SubHeader = ({ toggle }) => {
     } catch (error) {
       console.error("Logout failed:", error);
     }
-  };  
+  }
   return (
     <header
       className={`w-full h-16 flex justify-between pr-20 text-white text-[10px] lg:text-[20px] border-1 border-gray-700 fixed top-0 left-15 bg-white/5 backdrop-blur-sm z-20 ${
@@ -190,9 +187,9 @@ export const SubHeader = ({ toggle }) => {
             <div className="flex justify-between">Dashboard</div>
           </Link>
 
-            <button className="flex justify-between" onClick={handleLogout}>
-              Sign out
-            </button>
+          <button className="flex justify-between" onClick={handleLogout}>
+            Sign out
+          </button>
 
           <div className="flex items-center">Profile</div>
         </div>
@@ -200,7 +197,6 @@ export const SubHeader = ({ toggle }) => {
     </header>
   );
 };
-
 
 export const UserSideBar = () => {
   return (
@@ -239,7 +235,7 @@ export const UserHeader = () => {
     );
 
     console.log("Logout Successfully");
-  }  
+  }
   return (
     <header className="w-screen h-16 flex justify-between pr-20 text-white text-[10px] lg:text-[20px] border-1 border-gray-700 fixed top-0 left-15 bg-white/5 backdrop-blur-sm z-20">
       <nav className="w-full px-5 flex justify-between items-center">
@@ -252,11 +248,13 @@ export const UserHeader = () => {
           />
         </div>
         <div className="flex justify-between space-x-3">
-          <Link to="/">
+          <Link to="/Home">
             <div className="flex justify-between">Dashboard</div>
           </Link>
           <Link to="/Login">
-            <div className="flex justify-between" onClick={handleLogout}>Sign out</div>
+            <div className="flex justify-between" onClick={handleLogout}>
+              Sign out
+            </div>
           </Link>
           <Link to="/UserProfile">
             <div className="flex justify-between">Profile</div>
@@ -266,4 +264,3 @@ export const UserHeader = () => {
     </header>
   );
 };
-
