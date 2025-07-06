@@ -983,10 +983,10 @@ export const EditBookStatus = () => {
     }
   }
 
-  async function handleStatus(_id) {
+  async function handleStatus(user.data._id) {
     try {
       await axios.patch(
-        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`,
+        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${user.data._id}`,
         {
           stat,
         }
