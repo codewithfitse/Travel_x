@@ -49,6 +49,8 @@ const OneDayBook = () => {
       const errorMsg = error?.response?.data?.error;
       if (errorStat === 400) {
         setErr(errorMsg);
+      } else if (errorStat === 403) {
+        setErr(errorMsg);
       } else {
         alert("You forgot to login bro");
         navigate("/Login");
