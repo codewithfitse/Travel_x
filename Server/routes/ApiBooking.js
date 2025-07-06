@@ -95,7 +95,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
 router.get("/OneDayVehiclesBook/:status", authMiddleware, async (req, res) => {
   const { status } = req.params;
   //const userId = req.user.idg;
-  const data = await UserOneDay.find({ data: { status: status } }).sort({
+  const data = await UserOneDay.find({ "data.status": status }).sort({
     createdAt: -1,
   });
   res.json(data);
