@@ -770,7 +770,7 @@ export const UserBookStatus = () => {
           )
           .then((result) => {
             console.log(result.data);
-            setData(result.data);
+            setData(result?.data?.data);
             setIsLoading(false);
           });
       } catch (error) {
