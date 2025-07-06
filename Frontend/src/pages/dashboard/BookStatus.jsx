@@ -967,10 +967,10 @@ export const EditBookStatus = () => {
 
   const [stat, setStat] = useState(null);
 
-  async function handleDelete(_id) {
+  async function handleDelete(id) {
     try {
       await axios.delete(
-        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${_id}`,
+        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${id}`,
         {
           withCredentials: true,
         }
@@ -983,15 +983,14 @@ export const EditBookStatus = () => {
     }
   }
 
-  async function handleStatus(user.data._id) {
+  async function handleStatus(id) {
     try {
       await axios.patch(
-        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${user.data._id}`,
+        `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${id}`,
         {
           stat,
         },
-        
-  { withCredentials: true },
+        { withCredentials: true }
       );
       alert(`Successfully Change Status to ${stat}!`);
       navigate("/LandingBookStatus");
