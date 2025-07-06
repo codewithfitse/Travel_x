@@ -38,6 +38,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
     _id,
   } = req.body;
   const { id, firstName, email, displayname } = req.user;
+  const names = req.user.name;
 
   if (
     !transactionId ||
@@ -70,7 +71,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
       data: {
         url,
         ownerName: name,
-        customName: firstName || displayname,
+        customName: firstName || names,
         price,
         item,
         model,
