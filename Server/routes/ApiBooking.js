@@ -147,7 +147,7 @@ router.patch("/OneDayVehiclesBook/:id", async (req, res) => {
     }
 
     // Step 2: Update booking status
-    booking.status = stat;
+    booking.data.status = stat;
     await booking.save();
 
     // Step 3: If success, reduce quantity
