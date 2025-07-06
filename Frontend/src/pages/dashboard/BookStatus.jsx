@@ -275,7 +275,7 @@ export const StatusOfBook = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const location = useLocation();
-  const { status } = location?.state;
+  const status = location?.state?.status;
 
   useEffect(() => {
     async function load() {
