@@ -1037,7 +1037,7 @@ export const EditBookStatus = () => {
                     </div>
                     <div className="flex flex-col gap-3">
                       <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                        Customer:{user.data.customName}
+                        Customer:{user.data?.customName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
                         {user.data.model}
