@@ -1057,7 +1057,7 @@ export const EditBookStatus = () => {
                       </h1>
                       <a
                         href={user.transactionId}
-                        className="text-[13px] text-gray-400 text-center font-semibold"
+                        className="text-[13px] text-blue-400 text-center font-semibold"
                       >
                         Transaction Link: {user.transactionId}
                       </a>
