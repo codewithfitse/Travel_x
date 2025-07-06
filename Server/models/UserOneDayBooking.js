@@ -21,6 +21,7 @@ const ImageSchema = new mongoose.Schema({
   },
   transactionId: {
     type: String,
+    unique: true,
     required: true,
   },
   amount: {
