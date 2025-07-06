@@ -179,9 +179,19 @@ export const LandingBookStatus = () => {
                         <div className="w-fit lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                           <div className="relative">
                             <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                              <h1 className="font-bold text-[40px]">
-                                {user.data.customName?.charAt(0).toUpperCase()}{" "}
-                              </h1>
+                              {user.data.avatar ? (
+                                <img
+                                  src={user?.data?.avatar}
+                                  className="w-full h-full object-cover rounded-full"
+                                  alt="Profile Pic"
+                                />
+                              ) : (
+                                <h1 className="font-bold text-[40px]">
+                                  {user?.data?.customName
+                                    ?.charAt(0)
+                                    .toUpperCase()}{" "}
+                                </h1>
+                              )}
                             </div>
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
@@ -353,11 +363,19 @@ export const StatusOfBook = () => {
                         <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                           <div className="relative">
                             <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                              <h1 className="font-bold text-[40px]">
-                                {user?.data?.customName
-                                  ?.charAt(0)
-                                  .toUpperCase()}{" "}
-                              </h1>
+                              {user.data.avatar ? (
+                                <img
+                                  src={user?.data?.avatar}
+                                  className="w-full h-full object-cover rounded-full"
+                                  alt="Profile Pic"
+                                />
+                              ) : (
+                                <h1 className="font-bold text-[40px]">
+                                  {user?.data?.customName
+                                    ?.charAt(0)
+                                    .toUpperCase()}{" "}
+                                </h1>
+                              )}
                             </div>
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
@@ -528,9 +546,19 @@ export const AllBookStatus = () => {
                         <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                           <div className="relative">
                             <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                              <h1 className="font-bold text-[40px]">
-                                {user.data.customName?.charAt(0).toUpperCase()}{" "}
-                              </h1>
+                              {user.data.avatar ? (
+                                <img
+                                  src={user?.data?.avatar}
+                                  className="w-full h-full object-cover rounded-full"
+                                  alt="Profile Pic"
+                                />
+                              ) : (
+                                <h1 className="font-bold text-[40px]">
+                                  {user?.data?.customName
+                                    ?.charAt(0)
+                                    .toUpperCase()}{" "}
+                                </h1>
+                              )}
                             </div>
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
@@ -700,9 +728,19 @@ export const SubBookStatus = () => {
                         <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                           <div className="relative">
                             <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                              <h1 className="font-bold text-[40px]">
-                                {user.data.customName?.charAt(0).toUpperCase()}{" "}
-                              </h1>
+                              {user.data.avatar ? (
+                                <img
+                                  src={user?.data?.avatar}
+                                  className="w-full h-full object-cover rounded-full"
+                                  alt="Profile Pic"
+                                />
+                              ) : (
+                                <h1 className="font-bold text-[40px]">
+                                  {user?.data?.customName
+                                    ?.charAt(0)
+                                    .toUpperCase()}{" "}
+                                </h1>
+                              )}
                             </div>
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
@@ -875,11 +913,19 @@ export const UserBookStatus = () => {
                           <div className="w-full lg:w-[300px] h-auto flex flex-col items-center py-5 lg:pr-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
                             <div className="relative">
                               <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
-                                <h1 className="font-bold text-[40px]">
-                                  {user.data.customName
-                                    ?.charAt(0)
-                                    .toUpperCase()}{" "}
-                                </h1>
+                                {user.data.avatar ? (
+                                  <img
+                                    src={user?.data?.avatar}
+                                    className="w-full h-full object-cover rounded-full"
+                                    alt="Profile Pic"
+                                  />
+                                ) : (
+                                  <h1 className="font-bold text-[40px]">
+                                    {user?.data?.customName
+                                      ?.charAt(0)
+                                      .toUpperCase()}{" "}
+                                  </h1>
+                                )}
                               </div>
                               <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                             </div>
