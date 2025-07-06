@@ -54,6 +54,14 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
   }
 
   try {
+    const Transaction = await UserOneDay.find({ transactionId });
+
+    if (Transaction) {
+      return res
+        .status(403)
+        .json({ error: "Something Wrong you must Been booked before" });
+    }
+
     await UserOneDay.create({
       vehicleId: _id,
       userId: id,
