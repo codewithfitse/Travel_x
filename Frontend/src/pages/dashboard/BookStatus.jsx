@@ -1044,7 +1044,7 @@ export const EditBookStatus = () => {
                       Customer:{user.data.customName}
                     </h1>
                     <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                      {model}
+                      {user.data.model}
                     </h1>
                     <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                       Booked At:{" "}
