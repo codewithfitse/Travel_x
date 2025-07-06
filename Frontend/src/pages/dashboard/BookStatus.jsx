@@ -989,7 +989,9 @@ export const EditBookStatus = () => {
         `https://travel-x-408k.onrender.com/dashboard/OneDayVehiclesBook/${user.data._id}`,
         {
           stat,
-        }
+        },
+        
+  { withCredentials: true },
       );
       alert(`Successfully Change Status to ${stat}!`);
       navigate("/LandingBookStatus");
