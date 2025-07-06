@@ -340,27 +340,27 @@ export const StatusOfBook = () => {
                           <div className="relative">
                             <div className="w-30 h-30 flex justify-center items-center bg-amber-900 border-4 border-gray-600 rounded-full">
                               <h1 className="font-bold text-[40px]">
-                                {user.data.customName?.charAt(0).toUpperCase()}{" "}
+                                {user?.data?.customName
+                                  ?.charAt(0)
+                                  .toUpperCase()}{" "}
                               </h1>
                             </div>
                             <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                           </div>
                           <h1 className="mt-2 text-2xl text-white text-center font-bold">
-                            Customer:{user.data.customName} Car Name:
-                            {user.data.ownerName}
+                            Customer:{user?.data?.customName} Car Name:
+                            {user?.data.ownerName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                            Model:{user.data.model}
+                            Model:{user?.data?.model}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Booked At:{" "}
-                            {new Date(user.data.createdAt).toLocaleString(
-                              "en-GB"
-                            )}{" "}
+                            {new Date(user?.createdAt).toLocaleString("en-GB")}{" "}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Appointed time:{" "}
-                            {new Date(user.data.date).toLocaleString("en-GB")}
+                            {new Date(user.data?.date).toLocaleString("en-GB")}
                           </h1>
                         </div>
                         <div className="w-full h-full py-5 px-5 bg-gray-800">
@@ -370,13 +370,13 @@ export const StatusOfBook = () => {
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Email</h1>
                                   <h1 className="font-semibold">
-                                    {user.data.email}
+                                    {user?.data?.email}
                                   </h1>
                                 </div>
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Phone</h1>
                                   <h1 className="font-semibold">
-                                    {user.data.phone}
+                                    {user?.data?.phone}
                                   </h1>
                                 </div>
                               </div>
@@ -384,13 +384,13 @@ export const StatusOfBook = () => {
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Price</h1>
                                   <h1 className="font-semibold">
-                                    {user.data.price}
+                                    {user?.data?.price}
                                   </h1>
                                 </div>
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Car type</h1>
                                   <h1 className="font-semibold">
-                                    {user.data.item}
+                                    {user?.data?.item}
                                   </h1>
                                 </div>
                               </div>
@@ -398,13 +398,13 @@ export const StatusOfBook = () => {
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Destination</h1>
                                   <h1 className="font-semibold">
-                                    {user.data.destination}
+                                    {user?.data?.destination}
                                   </h1>
                                 </div>
                                 <div className="w-full h-15">
                                   <h1 className="text-gray-400">Message</h1>
                                   <h1 className="font-semibold">
-                                    {user.data.message}
+                                    {user?.data?.message}
                                   </h1>
                                 </div>
                               </div>
@@ -418,11 +418,11 @@ export const StatusOfBook = () => {
                               <div className="w-full h-fit flex gap-3">
                                 <h1
                                   className={`capitalize ${
-                                    user.data.status === "Pending" &&
+                                    user?.data?.status === "Pending" &&
                                     "text-green"
                                   }`}
                                 >
-                                  {user.data.status}
+                                  {user?.data?.status}
                                 </h1>
                               </div>
                             </div>
