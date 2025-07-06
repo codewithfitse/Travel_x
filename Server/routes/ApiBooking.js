@@ -54,7 +54,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
   }
 
   try {
-    const Transaction = await UserOneDay.find({ transactionId });
+    const Transaction = await UserOneDay.findOne({ transactionId });
 
     if (Transaction) {
       return res
