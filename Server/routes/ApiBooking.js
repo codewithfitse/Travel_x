@@ -62,7 +62,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
         .json({ error: "Something Wrong you must Been booked before" });
     }
 
-    await UserOneDay.create({
+    const booking = await UserOneDay.create({
       vehicleId: _id,
       userId: id,
       transactionId,
@@ -101,7 +101,7 @@ router.post("/OneDayVehiclesBook", authMiddleware, async (req, res) => {
       }
     }
 
-    return res.status(200).json({ message: "Successfully Booked" });
+    return res.status(200).json({ message: "Successfully Booked", booking });
   } catch (error) {
     res.json(error);
   }
