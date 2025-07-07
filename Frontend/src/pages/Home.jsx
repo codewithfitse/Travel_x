@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { Link } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
