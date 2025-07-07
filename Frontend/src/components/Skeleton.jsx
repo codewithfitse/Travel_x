@@ -2,6 +2,7 @@ import React from "react";
 
 export const SkeletonImage = ({
   isLoading = true, // Allow external control
+  loading = "lazy",
   src = "",
   alt = "Logo",
   className = "", // Optional outer wrapper styling
@@ -14,7 +15,7 @@ export const SkeletonImage = ({
       {isLoading ? (
         <div className={`${skeletonAnimation} ${skeletonClass}`}></div>
       ) : (
-        <img src={src} alt={alt} className={imgClass} />
+        <img loading={loading} src={src} alt={alt} className={imgClass} />
       )}
     </div>
   );
