@@ -6,6 +6,13 @@ import { Button } from "../components/Button";
 const LiveChat = lazy(() => import("../components/LiveChat"));
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 6000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <div className="w-full overflow-x-hidden h-[100%] background text-amber-50">
@@ -70,11 +77,11 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[100%] lg:w-[100%] flex justify-center">
-            <img
+            <SkeletonImage
+              isLoading={isLoading}
               src="MersedisFront.png"
-              className="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              alt=""
-              srcset=""
+              imgClass="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-fit"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
           </div>
         </div>
