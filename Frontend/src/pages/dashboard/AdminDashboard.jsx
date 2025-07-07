@@ -56,7 +56,7 @@ const Dashboard = () => {
   return (
     <>
       <section className="min-h-screen overflow-x-hidden">
-        <div className="w-full h-screen flex bg-[#020817] text-white">
+        <div className="w-full h-full flex bg-[#020817] text-white">
           <SideBar toggle={toggle} setToggle={setToggle} />
           <div className="ml-14 flex flex-col flex-1">
             <Header toggle={toggle} />
@@ -68,7 +68,7 @@ const Dashboard = () => {
                     : " p-5 text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]"
                 }`}
               >
-                <div className="w-full h-full flex justify-between items-center">
+                <div className="w-full h-auto flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
                       DataBase
