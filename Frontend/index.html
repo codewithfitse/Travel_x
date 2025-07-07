@@ -2,29 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>TIME</title>
     <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preload" href="/logo.png" as="image" type="image/png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ✅ Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- ✅ Google Fonts preload + async load -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" />
+    </noscript>
 
-    <!-- ✅ Preload Font Awesome 6.5.0 -->
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <!-- ✅ Font Awesome preload -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </noscript>
 
-    <!-- ✅ Preload Google Font: Creepster -->
+    <!-- ✅ Self-hosted font preload -->
     <link rel="preload" href="/fonts/creepster.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
-    
-
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"></noscript>
-
-    <link rel="preload" href="/assets/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/index.css"></noscript>
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TIME</title>
+    <!-- ✅ Main CSS (non-blocking) -->
+    <link rel="preload" href="/assets/index-BO6NWC-4.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="/assets/index-BO6NWC-4.css" />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
