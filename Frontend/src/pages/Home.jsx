@@ -39,6 +39,7 @@ const Home = () => {
               src="mercedis.webp"
               className="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
+              srcSet="mercedis.webp 400w, /mercedis@2x.webp 800w"
             />
           </div>
         </div>
