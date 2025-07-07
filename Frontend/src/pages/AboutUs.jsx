@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
@@ -16,13 +16,8 @@ const AboutUs = () => {
   }, []);
   return (
     <div className="w-full h-fit background text-amber-50">
-      <Suspense fallback={<div>Loading...</div>}>
-        <Header />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading chat...</div>}>
-        <LiveChat />
-      </Suspense>
+      <Header />
+      <LiveChat />
       <div className="pt-[100px] lg:pt-[150px] flex flex-col items-center">
         <h1 className="text-[25px] lg:text-[40px] text-center font-bold">
           We are{" "}
