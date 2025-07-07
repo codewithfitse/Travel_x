@@ -96,7 +96,7 @@ const Home = () => {
               isLoading={isLoading}
               src="compact.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-full h-[300px] bg-red-100  rounded-[10px] animate-pulse"
+              skeletonClass="w-[400px] h-[300px] bg-red-100  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Compact</h1>
             <p className="text-[25px] text-white ">From $1560 a Day</p>
@@ -111,7 +111,7 @@ const Home = () => {
               isLoading={isLoading}
               src="economy.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-full h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+              skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Economy</h1>
             <p className="text-[25px] text-white ">From $2070 a Day</p>
