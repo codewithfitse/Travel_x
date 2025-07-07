@@ -96,9 +96,8 @@ const Home = () => {
               isLoading={isLoading}
               src="compact.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-full h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-[300px] h-[300px] bg-red-100  rounded-[10px] animate-pulse"
             />
-            <img src="compact.png" alt="" srcset="" />
             <h1 className="text-[50px] text-white font-bold">Compact</h1>
             <p className="text-[25px] text-white ">From $1560 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
