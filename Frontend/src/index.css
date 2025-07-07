@@ -14,7 +14,7 @@ body {
 .background {
   width: 100%;
   height: auto;
-  background-image: url(../public/bg.webp);
+  background-image: url(../public/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
