@@ -83,7 +83,6 @@ const Home = () => {
           <div className="w-[100%] lg:w-[100%] flex justify-center">
             <SkeletonImage
               isLoading={isLoading}
-              loading="lazy"
               src="MersedisFront.png"
               imgClass="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
@@ -95,7 +94,6 @@ const Home = () => {
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              loading="lazy"
               src="compact.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
@@ -111,7 +109,6 @@ const Home = () => {
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              loading="lazy"
               src="economy.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit transition-all"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
@@ -127,7 +124,6 @@ const Home = () => {
           <div className="w-[100%] h-fit pt-10 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              loading="lazy"
               src="midsuv.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
@@ -143,7 +139,6 @@ const Home = () => {
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              loading="lazy"
               src="minivan.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
@@ -172,7 +167,6 @@ const Home = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
-                loading="lazy"
                 src="carlist.png"
                 imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
                 skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
@@ -186,7 +180,6 @@ const Home = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
-                loading="lazy"
                 src="send.jpg"
                 imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
                 skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
@@ -200,7 +193,6 @@ const Home = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
-                loading="lazy"
                 src="enjoy.jpg"
                 imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
                 skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
