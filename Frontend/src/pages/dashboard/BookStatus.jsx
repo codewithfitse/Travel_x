@@ -1076,7 +1076,7 @@ export const EditBookStatus = () => {
             <Header toggle={toggle} />
             <main className="pt-20 p-5 bg-transparent">
               <div
-                className={`h-full lg:px-30 bg-gray-900 transition-all duration-300 ease-in-out ${
+                className={`w-fit h-full lg:px-30 bg-gray-900 transition-all duration-300 ease-in-out ${
                   toggle ? "w-auto ml-22 p-3" : "p-5 "
                 }`}
               >
