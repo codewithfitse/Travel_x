@@ -31,7 +31,7 @@ const Home = () => {
                 Time
               </span>{" "}
               CAR RENTAL <br />
-              SERVICE IN ETHIOPIA
+              SERVICE IN ETHIOPIA.
             </h1>
             <p className="text-[20px]/7 lg:text-[30px]/10 my-3 lg:my-6">
               Daily or Weekly Car Rentals for <br />
