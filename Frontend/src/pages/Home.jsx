@@ -48,11 +48,14 @@ const Home = () => {
           </div>
 
           <div className="w-[100%] mt-10 lg:w-[100%] flex justify-center">
-            <img
+            <SkeletonImage
+              isLoading={isLoading}
               src="mercedis.png"
-              className="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
+              imgClass="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
+              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
+            <img />
           </div>
         </div>
 
