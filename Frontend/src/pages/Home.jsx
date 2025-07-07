@@ -96,7 +96,7 @@ const Home = () => {
               isLoading={isLoading}
               src="compact.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-[300px] h-[300px] bg-red-100  rounded-[10px] animate-pulse"
+              skeletonClass="w-full h-[300px] bg-red-100  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Compact</h1>
             <p className="text-[25px] text-white ">From $1560 a Day</p>
@@ -107,7 +107,12 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
-            <img src="economy.png" alt="" srcset="" />
+            <SkeletonImage
+              isLoading={isLoading}
+              src="economy.png"
+              imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+              skeletonClass="w-full h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+            />
             <h1 className="text-[50px] text-white font-bold">Economy</h1>
             <p className="text-[25px] text-white ">From $2070 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
