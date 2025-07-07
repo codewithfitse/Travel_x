@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Button } from "../components/Button";
+import SkeletonImage from "../components/Skeleton";
 const LiveChat = lazy(() => import("../components/LiveChat"));
 
 const Home = () => {
