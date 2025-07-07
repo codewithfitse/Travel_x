@@ -99,7 +99,7 @@ const Home = () => {
               skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Compact</h1>
-            <p className="text-[25px] text-white ">From $1560 a Day</p>
+            <p className="text-[25px] text-white ">From $1560 a Day.</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
               <Link to={"/Booking"}>
                 <Button text={"Book Now!"} />
