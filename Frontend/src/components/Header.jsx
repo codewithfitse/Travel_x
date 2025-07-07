@@ -9,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 2000);
+    const timer = setTimeout(() => setIsLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -17,7 +17,7 @@ const Header = () => {
       <div className="w-fit pl-2 lg:pl-6 pr-36 flex justify-center items-center space-x-4 transition-all">
         <SkeletonImage
           isLoading={isLoading}
-          src="/Logo/Time_white.png"
+          src="/Logo/Time_white.webp"
           alt="Time Logo"
           imgClass="w-16 lg:w-26 h-auto"
           skeletonAnimation="w-16 bg-gray-200 rounded-full animate-pulse"
