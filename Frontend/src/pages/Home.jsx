@@ -110,7 +110,7 @@ const Home = () => {
             <SkeletonImage
               isLoading={isLoading}
               src="economy.png"
-              imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit transition-all"
+              imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit transition-all "
               skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Economy</h1>
