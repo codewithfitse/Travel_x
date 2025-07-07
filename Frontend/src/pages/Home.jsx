@@ -54,7 +54,7 @@ const Home = () => {
               src="mercedis.png"
               imgClass="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
-              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
+              skeletonClass="w-[400px] lg:w-[550px]  h-[350px] rounded-[10px]"
             />
           </div>
         </div>
