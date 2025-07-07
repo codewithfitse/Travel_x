@@ -1217,11 +1217,6 @@ export const EditBookStatus = () => {
                           >
                             <i class="fa fa-trash w-fit text-red-500 hover:text-red-700 transition duration-300 !text-[25px] lg:!text-[30px] cursor-pointer"></i>
                           </div>
-                          <input
-                            type="text"
-                            value={stat}
-                            onChange={(e) => setStat(e.target.value)}
-                          />
                           <h1 className="">{user.data.status}</h1>
                         </div>
                       </div>
