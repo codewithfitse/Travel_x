@@ -54,7 +54,7 @@ const Home = () => {
               src="mercedis.png"
               imgClass="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
-              skeletonClass="w-[300px] lg:w-[550px]  h-[350px] rounded-[10px]"
+              skeletonClass="w-[380px] lg:w-[550px]  h-[350px] rounded-[10px]"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@ const Home = () => {
               isLoading={isLoading}
               src="MersedisFront.png"
               imgClass="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="mt-20 lg:mt-0 w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
           </div>
         </div>
@@ -96,7 +96,7 @@ const Home = () => {
               isLoading={isLoading}
               src="compact.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+              skeletonClass="mt-20 lg:mt-0 w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Compact</h1>
             <p className="text-[25px] text-white ">From $1560 a Day</p>
@@ -111,7 +111,7 @@ const Home = () => {
               isLoading={isLoading}
               src="economy.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+              skeletonClass="mt-20 lg:mt-0 w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Economy</h1>
             <p className="text-[25px] text-white ">From $2070 a Day</p>
@@ -126,7 +126,7 @@ const Home = () => {
               isLoading={isLoading}
               src="midsuv.png"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
-              skeletonClass="w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+              skeletonClass="mt-20 lg:mt-0 w-[400px] lg:w-[300px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
             />
             <h1 className="text-[50px] text-white font-bold">Mid Suv</h1>
             <p className="text-[25px] text-white ">From $1770 a Day</p>
