@@ -36,7 +36,7 @@ const Home = () => {
 
           <div className="w-[100%] mt-10 lg:w-[100%] flex justify-center">
             <img
-              src="mercedis.png"
+              src="mercedis.webp"
               className="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
             />
@@ -66,7 +66,7 @@ const Home = () => {
           </div>
           <div className="w-[100%] lg:w-[100%] flex justify-center">
             <img
-              src="MersedisFront.png"
+              src="MersedisFront.webp"
               className="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-fit"
               alt=""
               srcset=""
@@ -76,7 +76,7 @@ const Home = () => {
 
         <div className="w-full h-fit grid lg:grid-cols-4 justify-around mt-[100px] lg:mt-[250px] gap-3">
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
-            <img src="compact.png" alt="" srcset="" />
+            <img src="compact.webp" alt="" srcset="" />
             <h1 className="text-[50px] text-white font-bold">Compact</h1>
             <p className="text-[25px] text-white ">From $1560 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
@@ -86,7 +86,7 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
-            <img src="economy.png" alt="" srcset="" />
+            <img src="economy.webp" alt="" srcset="" />
             <h1 className="text-[50px] text-white font-bold">Economy</h1>
             <p className="text-[25px] text-white ">From $2070 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
@@ -96,7 +96,7 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[100%] h-fit pt-10 pb-5 flex flex-col items-center card">
-            <img src="midsuv.png" alt="" srcset="" />
+            <img src="midsuv.webp" alt="" srcset="" />
             <h1 className="text-[50px] text-white font-bold">Mid Suv</h1>
             <p className="text-[25px] text-white ">From $1770 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
@@ -106,7 +106,7 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
-            <img src="minivan.png" alt="" srcset="" />
+            <img src="minivan.webp" alt="" srcset="" />
             <h1 className="text-[50px] text-white font-bold">Mini Van</h1>
             <p className="text-[25px] text-white ">From $2570 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
