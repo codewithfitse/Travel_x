@@ -50,6 +50,7 @@ const Home = () => {
           <div className="w-[100%] mt-10 lg:w-[100%] flex justify-center">
             <SkeletonImage
               isLoading={isLoading}
+              loading="lazy"
               src="mercedis.png"
               imgClass="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
