@@ -68,7 +68,7 @@ const Dashboard = () => {
                     : " p-5 text-[30px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px]"
                 }`}
               >
-                <div className="w-full h-fit flex justify-between items-center">
+                <div className="w-full h-full flex justify-between items-center">
                   <div className="w-fit h-full py-1">
                     <h1 className="text-[30px] text-white font-bold">
                       DataBase
