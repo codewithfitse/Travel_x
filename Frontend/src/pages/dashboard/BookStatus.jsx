@@ -173,7 +173,7 @@ export const LandingBookStatus = () => {
                           <img
                             src={user.data.url}
                             alt=""
-                            className="w-full  h-[200px] lg:h-[400px] rounded-t-[10px]"
+                            className="w-[200px] lg:w-full h-[200px] lg:h-[400px] rounded-t-[10px]"
                           />
                         </div>
                         <div className="w-fit lg:w-[300px] h-auto flex flex-col items-center py-5 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-600 relative">
