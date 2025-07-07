@@ -1,16 +1,21 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
+import { Link } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router";
 import { Button } from "../components/Button";
-import LiveChat from "../components/LiveChat";
+const LiveChat = lazy(() => import("../components/LiveChat"));
 
 const Home = () => {
   return (
     <>
       <div className="w-full overflow-x-hidden h-[100%] background text-amber-50">
-        <Header />
-        <LiveChat />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading chat...</div>}>
+          <LiveChat />
+        </Suspense>
         <div className="grid grid-cols-1 lg:grid-cols-2 pt-[100px] lg:pt-[150px] pl-[20px] lg:pl-[40px] relative">
           <div className="w-full lg:w-[100%]">
             <h1 className="text-[30px] lg:text-[45px] font-semibold">
