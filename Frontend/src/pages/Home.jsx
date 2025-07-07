@@ -122,7 +122,12 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[100%] h-fit pt-10 pb-5 flex flex-col items-center card">
-            <img src="midsuv.png" alt="" srcset="" />
+            <SkeletonImage
+              isLoading={isLoading}
+              src="midsuv.png"
+              imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+              skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+            />
             <h1 className="text-[50px] text-white font-bold">Mid Suv</h1>
             <p className="text-[25px] text-white ">From $1770 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
@@ -132,7 +137,12 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
-            <img src="minivan.png" alt="" srcset="" />
+            <SkeletonImage
+              isLoading={isLoading}
+              src="minivan.png"
+              imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+              skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+            />
             <h1 className="text-[50px] text-white font-bold">Mini Van</h1>
             <p className="text-[25px] text-white ">From $2570 a Day</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
@@ -155,7 +165,12 @@ const Home = () => {
 
           <div className="w-full h-fit lg:mt-5 grid lg:grid-cols-3 gap-3 justify-around">
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
-              <img src="carlist.png" className="rounded-2xl" alt="" srcset="" />
+              <SkeletonImage
+                isLoading={isLoading}
+                src="carlist.png"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+              />
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">01</span>
                 <br />
@@ -163,7 +178,12 @@ const Home = () => {
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
-              <img src="send.jpg" className="rounded-2xl" alt="" srcset="" />
+              <SkeletonImage
+                isLoading={isLoading}
+                src="send.jpg"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+              />
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">02</span>
                 <br />
@@ -171,7 +191,12 @@ const Home = () => {
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
-              <img src="enjoy.jpg" className="rounded-2xl" alt="" srcset="" />
+              <SkeletonImage
+                isLoading={isLoading}
+                src="enjoy.jpg"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                skeletonClass="w-[400px] h-[300px] bg-gray-400  rounded-[10px] animate-pulse"
+              />
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">03</span>
                 <br />
