@@ -92,6 +92,11 @@ const Home = () => {
 
         <div className="w-full h-fit grid lg:grid-cols-4 justify-around mt-[100px] lg:mt-[250px] gap-3">
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
+            <SkeletonImage
+              isLoading={isLoading}
+              src="compact.png"
+              imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+            />
             <img src="compact.png" alt="" srcset="" />
             <h1 className="text-[50px] text-white font-bold">Compact</h1>
             <p className="text-[25px] text-white ">From $1560 a Day</p>
