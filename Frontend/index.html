@@ -4,21 +4,43 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
 
+    <!-- ✅ Preconnect to Google Fonts (better DNS/TLS handshake speed) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- ✅ Preload + Lazy Load Font Awesome CSS -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
+    </noscript>
 
-    <!-- ✅ Preload Font Awesome 6.5.0 -->
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <!-- ✅ Preload + Lazy Load Google Font: Creepster -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      />
+    </noscript>
 
-    <!-- ✅ Preload Google Font: Creepster -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"></noscript>
-
+    <!-- ✅ Set viewport for responsive layout -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TIME</title>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
