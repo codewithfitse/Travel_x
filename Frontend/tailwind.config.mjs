@@ -4,7 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
         creepster: ["Creepster", "cursive"],
+        unifraktur: ["UnifrakturMaguntia", "cursive"],
       },
       colors: {
         lum: "#16fe01",
