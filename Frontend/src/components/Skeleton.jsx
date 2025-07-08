@@ -6,7 +6,7 @@ export const SkeletonImage = ({
   alt = "Logo",
   className = "", // Optional outer wrapper styling
   imgClass = "",
-  skeletonAnimation = "bg-gray-300 animate-pulse",
+  skeletonAnimation = "bg-gray-300 animate-pulse rounded-[10px]",
   skeletonClass = "",
 }) => {
   return (
