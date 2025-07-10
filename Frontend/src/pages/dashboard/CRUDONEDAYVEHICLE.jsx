@@ -992,8 +992,15 @@ export const OneDeletes = () => {
         navigate("/OneGet");
       })
       .catch((err) => {
+        const errorStatus = err.response.status;
         const errorMsg = err.response?.data?.error;
+        if (errorStatus === 401) {
+          alert(errorMsg);
+        } else if (errorStatus === 400) {
+          alert(errorMsg);
+        }
         alert(errorMsg);
+
         setErr(errorMsg);
         console.log(errorMsg);
       });
