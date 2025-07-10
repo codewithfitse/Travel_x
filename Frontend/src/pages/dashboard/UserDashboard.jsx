@@ -36,7 +36,7 @@ const UserDashboard = () => {
   }, [navigate]);
   return (
     <>
-      <section className="min-h-screen overflow-x-hidden">
+      <section className="min-h-full overflow-x-hidden">
         <LiveChat />
         <div className="w-full h-screen flex bg-[#020817] text-white">
           <UserSideBar toggle={toggle} setToggle={setToggle} />
@@ -59,14 +59,15 @@ const UserDashboard = () => {
                 >
                   <div className="w-full px-5 flex justify-between items-center">
                     <h1
-                      className={`font-bold transition-all duration-300 ease-in-out ${
+                      className={`font-bold transition-all duration-300 ease-in-out text-white ${
                         toggle
                           ? "text-[22px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[30px]"
                           : "text-[28px] sm:text-[32px] md:text-[46px] lg:text-[40px] xl:text-[44px]"
                       }`}
-                    ></h1>
+                    >
+                      Bookings
+                    </h1>
                   </div>
-                  <div className="w-fit h-full"></div>
                 </div>
 
                 {isLoading ? (
