@@ -69,8 +69,8 @@ const OneDayBook = () => {
     <div className="w-full h-[100%] background overflow-x-hidden text-amber-50 ">
       <Header />
 
-      <div className="py-[100px] lg:px-[200px]">
-        <div className="p-10 card">
+      <div className="py-[70px] lg:py-[100px] lg:px-[200px]">
+        <div className="py-4 px-10 lg:p-10 card">
           <h1 className="text-[20px] lg:text-[40px] font-bold text-center font-mono">
             Transaction Account❗
           </h1>
