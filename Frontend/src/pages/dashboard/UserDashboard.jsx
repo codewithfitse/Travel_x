@@ -39,9 +39,9 @@ const UserDashboard = () => {
       <section className="min-h-screen overflow-x-hidden">
         <LiveChat />
         <div className="w-full h-screen flex bg-[#020817] text-white">
-          <SubSideBar toggle={toggle} setToggle={setToggle} />
+          <UserSideBar toggle={toggle} setToggle={setToggle} />
           <div className="ml-14 flex flex-col flex-1">
-            <SubHeader toggle={toggle} setToggle={setToggle} />
+            <UserHeader toggle={toggle} setToggle={setToggle} />
             <main className="pt-20 p-5 bg-transparent">
               <div
                 className={`h-full lg:px-30 bg-gray-900 ${
