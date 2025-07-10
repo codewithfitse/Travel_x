@@ -882,7 +882,7 @@ export const UserBookStatus = () => {
                   <div className="w-fit h-full py-1">
                     <h1
                       className={`text-white font-bold ${
-                        toggle ? "text-[20px]" : "text-[30px]"
+                        toggle ? "text-[13px]" : "text-[30px]"
                       }`}
                     >
                       One Day Booking!
@@ -901,7 +901,7 @@ export const UserBookStatus = () => {
                 {(data &&
                   data.map((user) => (
                     <Link to="" state={{ user }}>
-                      <div className="w-full h-auto mt-8 p-5  bg-gray-800 rounded-2xl">
+                      <div className="w-full h-auto mt-4 lg:mt-8 p-5 bg-white/30 backdrop-blur-[10px] rounded-2xl">
                         <div className="w-full h-full">
                           <img
                             src={user.data.url}
