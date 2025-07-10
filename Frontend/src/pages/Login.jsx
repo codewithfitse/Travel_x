@@ -26,11 +26,7 @@ export const Login = () => {
     }
 
     axios
-      .post(
-        `${Render}`/login`,
-        { email, password },
-        { withCredentials: true }
-      )
+      .post(`${Render}/login`, { email, password }, { withCredentials: true })
       .then((result) => {
         const data = result.data;
         console.log("Response data:", data);
@@ -66,12 +62,12 @@ export const Login = () => {
   }
 
   async function handleOauth() {
-    window.location.href = "https://travel-x-408k.onrender.com/auths/google";
+    window.location.href = `${Render}/auths/google`;
   }
 
   useEffect(() => {
     axios
-      .get("https://travel-x-408k.onrender.com/profile", {
+      .get(`${Render}/profile`, {
         withCredentials: true, // ⚠️ super important to get the session cookie
       })
       .then((res) => {
@@ -92,7 +88,7 @@ export const Login = () => {
         console.log("Not logged in:", err.message);
         // optionally navigate to login or show message
       });
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
