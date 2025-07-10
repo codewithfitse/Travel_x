@@ -48,7 +48,7 @@ const Booking = () => {
     setDestination("");
     setMessage("");
   }
-  const Backend = import.meta.env.VITE_BACKEND_URL;
+
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
