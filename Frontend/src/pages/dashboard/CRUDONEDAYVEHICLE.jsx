@@ -621,8 +621,13 @@ export const AdminOneDayVehicleEdits = () => {
           navigate("/AdminOneLandingVehicle");
         })
         .catch((err) => {
-          const errorMsg = err.response?.data?.error || "Something went wrong";
-          alert(errorMsg);
+          const errorStatus = err.response.status;
+          const errorMsg = err.response?.data?.error;
+          if (errorStatus === 404) {
+            alert(errorMsg);
+          } else if (errorStatus === 400) {
+            alert(errorMsg);
+          }
           setErr(errorMsg);
           console.log(errorMsg);
         });
@@ -915,8 +920,13 @@ export const AdminOneDayVehicleDeletes = () => {
         navigate("/AdminOneDayVehicleGet");
       })
       .catch((err) => {
+        const errorStatus = err.response.status;
         const errorMsg = err.response?.data?.error;
-        alert(errorMsg);
+        if (errorStatus === 401) {
+          alert(errorMsg);
+        } else if (errorStatus === 400) {
+          alert(errorMsg);
+        }
         setErr(errorMsg);
         console.log(errorMsg);
       });
