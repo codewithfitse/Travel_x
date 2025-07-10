@@ -1000,7 +1000,6 @@ export const OneDeletes = () => {
           alert(errorMsg);
         }
         alert(errorMsg);
-
         setErr(errorMsg);
         console.log(errorMsg);
       });
