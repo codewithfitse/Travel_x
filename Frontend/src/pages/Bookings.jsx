@@ -83,7 +83,7 @@ const OneDayBook = () => {
                 navigator.clipboard.writeText("1000574533698");
                 alert("Copied to clipboard!");
               }}
-              className="p-3 text-white hover:text-green-400 transition-all duration-200 rounded-[10px]"
+              className="p-3 text-white hover:text-lum transition-all duration-200 rounded-[10px]"
               title="Copy to clipboard"
             >
               <i className="fa fa-copy !text-[15px] lg:!text-[36px]"></i>
@@ -201,7 +201,7 @@ const OneDayBook = () => {
             <div className="mt-2 lg:mt-10">
               <button
                 type="submit"
-                className="ml-10 p-2 text-3xl text-black font-bold bg-[#16fe01] rounded-[10px]"
+                className="ml-10 p-2 text-3xl text-black font-bold bg-lum rounded-[10px]"
                 onClick={handleClick}
               >
                 {isLoading ? "Loading.." : "Submit"}
@@ -214,7 +214,7 @@ const OneDayBook = () => {
       <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
         <div className="flex flex-col justify-center">
           <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR <span className="text-[#16fe01]">SERVICES</span>
+            COME & TRY OUR <span className="text-lum">SERVICES</span>
           </h1>
           <h2 className="text-[10px] lg:text-[20px] text-2xl">
             We Always Have The Best Customer Services In Town
