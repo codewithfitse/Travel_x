@@ -47,7 +47,7 @@ const Booking = () => {
     setDestination("");
     setMessage("");
   }
-
+  const Backend = import.meta.env.VITE_BACKEND_URL;
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
@@ -76,7 +76,7 @@ const Booking = () => {
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">01</span>
                 <br />
-                CLICK THE RIDE
+                CLICK THE RIDE: {Backend}
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
