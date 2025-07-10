@@ -504,10 +504,9 @@ export const Pricing = () => {
     const fetchImages = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get(
-          `https://travel-x-408k.onrender.com/uploads/price/${price}`,
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${Render}/uploads/price/${price}`, {
+          withCredentials: true,
+        });
         console.log("✅ Received data:", res.data); // Debug
         setData(res.data);
       } catch (err) {
