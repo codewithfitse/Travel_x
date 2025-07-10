@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
+import SkeletonImage from "../components/Skeleton";
 
 const Booking = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
@@ -15,6 +17,12 @@ const Booking = () => {
   const [date, setDate] = useState();
   const [destination, setDestination] = useState();
   const [message, setMessage] = useState();
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => setIsLoading(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   function handleClick(e) {
     e.preventDefault();
@@ -47,7 +55,59 @@ const Booking = () => {
 
       <div className="w-full h-fit flex justify-center items-center pt-20">
         <h1 className="">Booking Steps</h1>
-        <div className=""></div>
+
+        <div className="w-full h-fit mt-15 lg:mt-30 flex flex-col items-center">
+          <div className="py-5 lg:py-10">
+            <h1 className="text-[25px] lg:text-6xl text-center font-bold">
+              EASY BOOKING STEPS
+            </h1>
+            <h1 className="text-[20px] lg:text-[30px] text-lum text-center mt-2 lg:mt-6">
+              How to book your car with us and Start enjoying your ride
+            </h1>
+          </div>
+
+          <div className="w-full h-fit lg:mt-5 grid lg:grid-cols-3 gap-3 justify-around">
+            <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
+              <SkeletonImage
+                isLoading={isLoading}
+                src="carlist.png"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                skeletonClass="w-[400px] h-[300px]"
+              />
+              <h1 className="mt-2 ml-3">
+                <span className="text-lum">01</span>
+                <br />
+                CLICK THE RIDE
+              </h1>
+            </div>
+            <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
+              <SkeletonImage
+                isLoading={isLoading}
+                src="send.jpg"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                skeletonClass="w-[400px] h-[300px]"
+              />
+              <h1 className="mt-2 ml-3">
+                <span className="text-lum">02</span>
+                <br />
+                SEND A REQUEST
+              </h1>
+            </div>
+            <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
+              <SkeletonImage
+                isLoading={isLoading}
+                src="enjoy.jpg"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                skeletonClass="w-[400px] h-[300px]"
+              />
+              <h1 className="mt-2 ml-3">
+                <span className="text-lum">03</span>
+                <br />
+                ENJOY THE RIDE
+              </h1>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="py-[100px] lg:px-[200px]">
