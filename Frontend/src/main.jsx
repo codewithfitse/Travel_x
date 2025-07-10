@@ -44,8 +44,6 @@ import {
   OneGet,
   AdminOneDayVehicleGet,
   OnePost,
-  AdminOneDayVehicleViews,
-  OneViews,
   AdminOneDayVehicleEdits,
   OneEdits,
   AdminOneDayVehicleDeletes,
@@ -198,14 +196,6 @@ const router = createBrowserRouter([
   {
     path: "/AdminOneDayVehicleGet",
     element: <AdminOneDayVehicleGet />,
-  },
-  {
-    path: "/OneViews",
-    element: <OneViews />,
-  },
-  {
-    path: "/AdminOneDayVehicleViews",
-    element: <AdminOneDayVehicleViews />,
   },
   {
     path: "/OneEdits",
