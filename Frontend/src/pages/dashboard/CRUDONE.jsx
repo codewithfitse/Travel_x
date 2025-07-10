@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header, SideBar, SubHeader, SubSideBar } from "./component";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const OneLandingVehicleAdmin = () => {
   const [toggle, setToggle] = useState(false);

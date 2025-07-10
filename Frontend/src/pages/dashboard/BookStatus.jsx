@@ -10,6 +10,7 @@ import {
 } from "../dashboard/component";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const LandingBookStatus = () => {
   const [data, setData] = useState([]);

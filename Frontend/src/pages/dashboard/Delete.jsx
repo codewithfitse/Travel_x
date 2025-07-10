@@ -5,6 +5,7 @@ import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { Card } from "../../components/Card";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 const DeleteDashboard = () => {
   const [open, setOpen] = useState(false);

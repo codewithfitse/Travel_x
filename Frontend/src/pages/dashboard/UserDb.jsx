@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 import { useEffect, useState } from "react";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 const UserDb = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +13,7 @@ const UserDb = () => {
     async function loadData() {
       //setIsLoading(true);
       axios
-        .get("https://travel-x-408k.onrender.com/dashboard/user")
+        .get(`${Render}/dashboard/user`)
         .then((result) => {
           console.log(result);
           setData(result.data);

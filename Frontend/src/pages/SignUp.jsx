@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const SignUp = () => {
   const [firstName, setFirstName] = useState();
@@ -15,16 +16,11 @@ export const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  // const [firstName, setFirstName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [phone, setPhone] = useState("");
-  // const [message, setMessage] = useState("");
-
   function handleClick(e) {
     e.preventDefault();
     setIsLoading(true);
     axios
-      .post("https://travel-x-408k.onrender.com/register", {
+      .post(`${Render}/register`, {
         firstName,
         lastName,
         email,

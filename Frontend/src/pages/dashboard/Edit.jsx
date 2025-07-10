@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { Header, SideBar } from "./component";
-
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 const EditDashboard = () => {
   const [firstName, setFirstName] = useState();
@@ -23,13 +23,16 @@ const EditDashboard = () => {
   async function handleClick(e) {
     e.preventDefault();
     try {
-      await axios.put(`https://travel-x-408k.onrender.com/dashboard/${user._id}`, {
-        firstName,
-        lastName,
-        email,
-        phone,
-        password,
-      });
+      await axios.put(
+        `https://travel-x-408k.onrender.com/dashboard/${user._id}`,
+        {
+          firstName,
+          lastName,
+          email,
+          phone,
+          password,
+        }
+      );
       alert("User updated successfully!");
       navigate("/UserDb"); // back to main admin dashboard
     } catch (err) {

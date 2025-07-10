@@ -10,6 +10,7 @@ import {
   UserHeader,
   UserSideBar,
 } from "../dashboard/component";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const Profile = () => {
   const [loading, setLoading] = useState(true);

@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { Header, SideBar } from "./component";
 import { Card } from "../../components/Card";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const ViewUserInfo = () => {
   const location = useLocation();

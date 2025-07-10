@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const SideBar = ({ toggle, setToggle }) => {
   function toggles() {

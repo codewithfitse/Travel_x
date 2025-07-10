@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 //import { Link } from "react-router-dom";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const Login = () => {
   const [err, setErr] = useState("");
@@ -26,7 +27,7 @@ export const Login = () => {
 
     axios
       .post(
-        "https://travel-x-408k.onrender.com/login",
+        `${Render}`/login`,
         { email, password },
         { withCredentials: true }
       )

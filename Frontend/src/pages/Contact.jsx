@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 const Contact = () => {
   const [firstName, setFirstName] = useState();
@@ -13,7 +14,7 @@ const Contact = () => {
   function handleClick(e) {
     e.preventDefault();
     axios
-      .post("https://travel-x-408k.onrender.com/contact", {
+      .post(`${Render}/contact`, {
         firstName,
         email,
         phone,

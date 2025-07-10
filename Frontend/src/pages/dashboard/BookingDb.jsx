@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const BookingDb = () => {
   const [data, setData] = useState([]);
@@ -142,7 +143,9 @@ export const EditBookingDb = () => {
 
   async function handleDelete(_id) {
     try {
-      await axios.delete(`https://travel-x-408k.onrender.com/dashboard/booking/${_id}`);
+      await axios.delete(
+        `https://travel-x-408k.onrender.com/dashboard/booking/${_id}`
+      );
       alert("Successfully Deleted!");
       navigate("/BookingDb");
     } catch (error) {
