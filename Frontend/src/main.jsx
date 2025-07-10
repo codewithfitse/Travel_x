@@ -19,9 +19,10 @@ import Contact from "./pages/Contact.jsx";
 import { Landing } from "./pages/Landing.jsx";
 import { SignUp } from "./pages/SignUp.jsx";
 import { Login } from "./pages/Login.jsx";
-import UserDashboard from "./pages/dashboard/UserDashboard.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import AdminDashboard from "./pages/dashboard/AdminDashboard.jsx";
 import SubDashboard from "./pages/dashboard/SubAdminDashboard.jsx";
+import UserDashboard from "./pages/dashboard/UserDashboard.jsx";
 import {
   EditUserInfo,
   ViewUserInfo,
@@ -125,6 +126,10 @@ const router = createBrowserRouter([
   {
     path: "/SignUp",
     element: <SignUp />,
+  },
+  {
+    path: "/Dashboard",
+    element: <Dashboard />,
   },
   {
     path: "/Admin",
