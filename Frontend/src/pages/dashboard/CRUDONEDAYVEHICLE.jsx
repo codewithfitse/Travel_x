@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header, SideBar, SubHeader, SubSideBar } from "./component";
 const Render = import.meta.env.VITE_BACKEND_URL;
 
-export const OneLandingVehicleAdmin = () => {
+export const AdminOneLandingVehicle = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -271,7 +271,7 @@ export const OneGet = () => {
   );
 };
 
-export const OneGetAdmin = () => {
+export const AdminOneDayVehicleGet = () => {
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState("");
