@@ -44,6 +44,12 @@ const Booking = () => {
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
       <LiveChat />
+
+      <div className="w-full h-fit flex justify-center items-center pt-20">
+        <h1 className="">Booking Steps</h1>
+        <div className=""></div>
+      </div>
+
       <div className="py-[100px] lg:px-[200px]">
         <div className="p-10 card">
           <h1 className="text-[40px] font-bold text-center font-mono">
