@@ -71,11 +71,11 @@ const OneDayBook = () => {
 
       <div className="py-[100px] lg:px-[200px]">
         <div className="p-10 card">
-          <h1 className="text-[40px] font-bold text-center font-mono">
+          <h1 className="text-[20px] lg:text-[40px] font-bold text-center font-mono">
             Transaction Account❗
           </h1>
           <div className="w-full flex justify-center items-center space-x-6">
-            <h1 className="text-[30px] font-bold text-center font-mono">
+            <h1 className="text-[20px] lg:text-[30px] font-bold text-center font-mono">
               CBE 1000574533698
             </h1>
             <button
@@ -180,7 +180,7 @@ const OneDayBook = () => {
               )}
             </div>
 
-            <div className="mt-10">
+            <div className="mt-2 lg:mt-10">
               <button
                 type="submit"
                 className="p-2 text-3xl text-black font-bold bg-[#16fe01] rounded-[10px]"
