@@ -66,7 +66,7 @@ const OneDayBook = () => {
   }
 
   return (
-    <div className="w-full h-[100%] background text-amber-50 ">
+    <div className="w-full h-[100%] background overflow-x-hidden text-amber-50 ">
       <Header />
 
       <div className="py-[100px] lg:px-[200px]">
@@ -133,7 +133,7 @@ const OneDayBook = () => {
               </div>
               <div className="w-full flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
-                  If not in Addis Ababa where is the Destination
+                  Where is the Destination
                 </label>
                 <input
                   type="text"
