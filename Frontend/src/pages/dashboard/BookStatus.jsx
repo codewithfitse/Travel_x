@@ -901,7 +901,7 @@ export const UserBookStatus = () => {
                 {(data &&
                   data.map((user) => (
                     <Link to="" state={{ user }}>
-                      <div className="w-full h-auto mt-4 lg:mt-8 p-5 bg-white/30 backdrop-blur-[10px] rounded-2xl">
+                      <div className="w-full h-auto mt-4 lg:mt-8 p-5 bg-white/10 backdrop-blur-[10px] rounded-2xl">
                         <div className="w-full h-full">
                           <img
                             src={user.data.url}
@@ -929,10 +929,10 @@ export const UserBookStatus = () => {
                               </div>
                               <div className="w-4 h-4 bg-green-500 rounded-full absolute bottom-0 -right-1"></div>
                             </div>
-                            <h1 className="mt-2 text-2xl text-white text-center font-bold">
+                            <h1 className="mt-2 text-[18px] lg:text-2xl text-white text-center font-bold">
                               Customer:{user.data.customName}
                             </h1>
-                            <h1 className="mt-2 text-2xl text-white text-center font-bold">
+                            <h1 className="mt-2 text-[18px] lg:text-2xl text-white text-center font-bold">
                               Car Name:{user.data.ownerName}
                             </h1>
                             <h1 className="text-[18px] text-blue-400 text-center font-semibold">
@@ -947,7 +947,7 @@ export const UserBookStatus = () => {
                               {new Date(user.data.date).toLocaleString("en-GB")}
                             </h1>
                           </div>
-                          <div className="w-full h-full py-5 px-5 bg-gray-800">
+                          <div className="w-full h-full py-5 px-5">
                             <div className="w-full h-full">
                               <div className="border-b-2 pb-2 border-gray-400">
                                 <div className="w-full flex flex-col lg:flex-row gap-1">
