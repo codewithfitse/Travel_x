@@ -346,18 +346,12 @@ export const AdminOneDayVehicleGet = () => {
                       </p>
 
                       <div className="w-full h-fit space-x-3">
-                        <Link
-                          to="/AdminOneDayVehicleEdits"
-                          state={{ img, err }}
-                        >
+                        <Link to="/AdminOneDayVehicleEdits" state={{ img }}>
                           <button className="text-blue-300 text-2xl font-semibold">
                             Edits
                           </button>
                         </Link>
-                        <Link
-                          to="/AdminOneDayVehicleDeletes"
-                          state={{ img, err }}
-                        >
+                        <Link to="/AdminOneDayVehicleDeletes" state={{ img }}>
                           <button className="text-blue-300 text-2xl font-semibold">
                             Delete
                           </button>
