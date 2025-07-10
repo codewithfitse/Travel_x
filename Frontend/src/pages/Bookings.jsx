@@ -86,12 +86,12 @@ const OneDayBook = () => {
               className="p-3 text-white hover:text-green-400 transition-all duration-200 rounded-[10px]"
               title="Copy to clipboard"
             >
-              <i className="fa fa-copy !text-[36px]"></i>
+              <i className="fa fa-copy !text-[15px] lg:!text-[36px]"></i>
             </button>
           </div>
 
           <form onSubmit={handleClick} action="">
-            <div className="mt-2 lg:mt-8 px-20 flex flex-col justify-between space-y-5 space-x-2">
+            <div className="mt-2 lg:mt-8 px-20 flex flex-col justify-between space-y-2 lg:space-y-5 space-x-2">
               <div className="w-full flex flex-col">
                 <label
                   htmlFor=""
@@ -168,11 +168,11 @@ const OneDayBook = () => {
                   name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="h-[100px]  input"
+                  className="h-[30px] lg:h-[100px] input"
                   placeholder="Message"
                 />
               </div>
-              <div className="w-[45%] flex flex-col">
+              <div className="w-full flex flex-col">
                 <label
                   htmlFor=""
                   className="text-[15px] lg:text-[25px] font-bold"
