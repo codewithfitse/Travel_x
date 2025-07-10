@@ -614,7 +614,7 @@ export const AdminOneDayVehicleEdits = () => {
 
     try {
       await axios
-        .put(`${Render}/${img._id}`, formData, { withCredentials: true })
+        .put(`${Render}/one/${img._id}`, formData, { withCredentials: true })
         .then((res) => {
           const done = res.data?.message || "Successfully Updated!";
           alert(done);
@@ -771,7 +771,7 @@ export const OneEdits = () => {
 
     try {
       await axios
-        .put(`${Render}/${img._id}`, formData, { withCredentials: true })
+        .put(`${Render}/one/${img._id}`, formData, { withCredentials: true })
         .then((res) => {
           const done = res.data?.message || "Successfully Updated!";
           alert(done);
@@ -906,7 +906,7 @@ export const AdminOneDayVehicleDeletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`${Render}/${_id}`, {
+      .delete(`${Render}/one/${_id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -983,7 +983,7 @@ export const OneDeletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`${Render}/${_id}`, {
+      .delete(`${Render}/one/${_id}`, {
         withCredentials: true,
       })
       .then((res) => {
