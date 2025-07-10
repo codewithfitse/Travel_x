@@ -475,8 +475,8 @@ export const Pricing = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const Suv = "";
-  const MidSuv = "";
-  const FullSuv = "";
+  const user = "";
+  //const FullSuv = "";
 
   const price = location?.state?.price;
 
