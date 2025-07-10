@@ -40,15 +40,15 @@ import {
 } from "./pages/dashboard/CRUDVECHICL.jsx";
 import {
   OneLandingVehicle,
-  OneLandingVehicleAdmin,
+  AdminOneLandingVehicle,
   OneGet,
-  OneGetAdmin,
+  AdminOneDayVehicleGet,
   OnePost,
-  OneViewsAdmin,
+  AdminOneDayVehicleViews,
   OneViews,
-  OneEditsAdmin,
+  AdminOneDayVehicleEdits,
   OneEdits,
-  OneDeletesAdmin,
+  AdminOneDayVehicleDeletes,
   OneDeletes,
 } from "./pages/dashboard/CRUDONEDAYVEHICLE.jsx";
 import {
@@ -180,8 +180,8 @@ const router = createBrowserRouter([
     element: <OneLandingVehicle />,
   },
   {
-    path: "/OneLandingVehicleAdmin",
-    element: <OneLandingVehicleAdmin />,
+    path: "/AdminOneLandingVehicle",
+    element: <AdminOneLandingVehicle />,
   },
   {
     path: "/OneDayVehiclesBook",
@@ -196,28 +196,28 @@ const router = createBrowserRouter([
     element: <OneGet />,
   },
   {
-    path: "/OneGetAdmin",
-    element: <OneGetAdmin />,
+    path: "/AdminOneDayVehicleGet",
+    element: <AdminOneDayVehicleGet />,
   },
   {
     path: "/OneViews",
     element: <OneViews />,
   },
   {
-    path: "/OneViewsAdmin",
-    element: <OneViewsAdmin />,
+    path: "/AdminOneDayVehicleViews",
+    element: <AdminOneDayVehicleViews />,
   },
   {
     path: "/OneEdits",
     element: <OneEdits />,
   },
   {
-    path: "/OneEditsAdmin",
-    element: <OneEditsAdmin />,
+    path: "/AdminOneDayVehicleEdits",
+    element: <AdminOneDayVehicleEdits />,
   },
   {
-    path: "/OneDeletesAdmin",
-    element: <OneDeletesAdmin />,
+    path: "/AdminOneDayVehicleDeletes",
+    element: <AdminOneDayVehicleDeletes />,
   },
   {
     path: "/OneDeletes",
