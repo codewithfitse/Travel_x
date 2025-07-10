@@ -54,8 +54,6 @@ const Booking = () => {
       <LiveChat />
 
       <div className="w-full h-fit flex justify-center items-center pt-20">
-        <h1 className="">Booking Steps</h1>
-
         <div className="w-full h-fit mt-15 lg:mt-30 flex flex-col items-center">
           <div className="py-5 lg:py-10">
             <h1 className="text-[25px] lg:text-6xl text-center font-bold">
