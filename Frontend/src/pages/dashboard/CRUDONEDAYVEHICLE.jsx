@@ -922,9 +922,9 @@ export const AdminOneDayVehicleDeletes = () => {
       .catch((err) => {
         const errorStatus = err.response.status;
         const errorMsg = err.response?.data?.error;
-        if (errorStatus === 401) {
+        if (errorStatus === 404) {
           alert(errorMsg);
-        } else if (errorStatus === 400) {
+        } else if (errorStatus === 500) {
           alert(errorMsg);
         }
         setErr(errorMsg);
