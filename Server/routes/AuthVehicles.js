@@ -158,10 +158,10 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     }
 
     // Update other fields
-    post.name = name || post.name;
-    post.item = item || post.item;
-    post.price = price || post.price;
-    post.model = price || post.model;
+    post.name;
+    post.item;
+    post.price;
+    post.model;
 
     await post.save();
 
