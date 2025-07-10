@@ -12,7 +12,7 @@ export const Landing = () => {
         <h1 className="">Car Rental Website</h1>
         <p className="text-white text-[15px] lg:text-[25px]/8 font-bold">
           Find a variety of the car of your dreams, <br />
-          at a good price and quality
+          at a good price and quality.
         </p>
         <div className="mt-10 flex justify-center">
           <Link to="/Home">
