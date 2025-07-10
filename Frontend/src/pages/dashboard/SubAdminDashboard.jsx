@@ -12,12 +12,9 @@ const SubDashboard = () => {
   useEffect(() => {
     async function loadProfile() {
       try {
-        const res = await axios.get(
-          "https://travel-x-408k.onrender.com/profile",
-          {
-            withCredentials: true,
-          }
-        );
+        const res = await axios.get(`${Render}/profile`, {
+          withCredentials: true,
+        });
         console.log(res.data.user);
       } catch (error) {
         console.error("Error fetching profile:", error);
