@@ -202,7 +202,7 @@ const AdminDashboard = () => {
                   users?.isSubAdmin ||
                   user?.isAdmin ||
                   user?.isSubAdmin) && (
-                  <Link to="/OneLandingVehicleAdmin">
+                  <Link to="/AdminOneLandingVehicle">
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
