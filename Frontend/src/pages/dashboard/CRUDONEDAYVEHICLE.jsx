@@ -178,10 +178,9 @@ export const OneGet = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get(
-          "https://travel-x-408k.onrender.com/uploads/one",
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${Render}/uploads/one`, {
+          withCredentials: true,
+        });
         setImages(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -281,10 +280,9 @@ export const AdminOneDayVehicleGet = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get(
-          "https://travel-x-408k.onrender.com/uploads/ones",
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${Render}/uploads/one`, {
+          withCredentials: true,
+        });
         setImages(res.data);
       } catch (err) {
         setErr(err.error);
@@ -407,16 +405,12 @@ export const OnePost = () => {
     formData.append("image", image);
 
     try {
-      const res = await axios.post(
-        "https://travel-x-408k.onrender.com/uploads/one",
-        formData,
-        {
-          withCredentials: true,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const res = await axios.post(`${Render}/uploads/one`, formData, {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       fetchImages();
       setName("");
       setItem("");
@@ -727,11 +721,7 @@ export const AdminOneDayVehicleEdits = () => {
 
     try {
       await axios
-        .put(
-          `https://travel-x-408k.onrender.com/uploads/one/${img._id}`,
-          formData,
-          { withCredentials: true }
-        )
+        .put(`${Render}/${img._id}`, formData, { withCredentials: true })
         .then((res) => {
           const done = res.data?.message || "Successfully Updated!";
           alert(done);
@@ -888,11 +878,7 @@ export const OneEdits = () => {
 
     try {
       await axios
-        .put(
-          `https://travel-x-408k.onrender.com/uploads/one/${img._id}`,
-          formData,
-          { withCredentials: true }
-        )
+        .put(`${Render}/${img._id}`, formData, { withCredentials: true })
         .then((res) => {
           const done = res.data?.message || "Successfully Updated!";
           alert(done);
@@ -1027,7 +1013,7 @@ export const AdminOneDayVehicleDeletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, {
+      .delete(`${Render}/${_id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -1104,7 +1090,7 @@ export const OneDeletes = () => {
 
   async function handleDelete(_id) {
     await axios
-      .delete(`https://travel-x-408k.onrender.com/uploads/one/${_id}`, {
+      .delete(`${Render}/${_id}`, {
         withCredentials: true,
       })
       .then((res) => {
