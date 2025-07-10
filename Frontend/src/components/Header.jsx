@@ -25,7 +25,7 @@ const Header = () => {
         />
       </div>
 
-      <nav className="hidden lg:flex w-full justify-center items-center text-[25px] font-bold space-x-5.5">
+      <nav className="hidden lg:flex w-full justify-center items-center text-[25px] font-bold  space-x-5.5">
         <Link to="/Home">
           <h1 className="hover:text-lum">HOME</h1>
         </Link>
