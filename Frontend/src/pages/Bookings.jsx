@@ -91,9 +91,12 @@ const OneDayBook = () => {
           </div>
 
           <form onSubmit={handleClick} action="">
-            <div className="mt-8 px-20 flex flex-col justify-between space-y-5 space-x-2">
+            <div className="mt-2 lg:mt-8 px-20 flex flex-col justify-between space-y-5 space-x-2">
               <div className="w-full flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
+                <label
+                  htmlFor=""
+                  className="text-[15px] lg:text-[25px] font-bold"
+                >
                   Transaction Link:
                 </label>
                 <input
@@ -106,7 +109,10 @@ const OneDayBook = () => {
                 />
               </div>
               <div className="w-full flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
+                <label
+                  htmlFor=""
+                  className="text-[15px] lg:text-[25px] font-bold"
+                >
                   Amount
                 </label>
                 <input
@@ -119,7 +125,10 @@ const OneDayBook = () => {
                 />
               </div>
               <div className="w-full flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
+                <label
+                  htmlFor=""
+                  className="text-[15px] lg:text-[25px] font-bold"
+                >
                   Phone
                 </label>
                 <input
@@ -132,7 +141,10 @@ const OneDayBook = () => {
                 />
               </div>
               <div className="w-full flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
+                <label
+                  htmlFor=""
+                  className="text-[15px] lg:text-[25px] font-bold"
+                >
                   Where is the Destination.
                 </label>
                 <input
@@ -145,7 +157,10 @@ const OneDayBook = () => {
                 />
               </div>
               <div className="w-full flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
+                <label
+                  htmlFor=""
+                  className="text-[15px] lg:text-[25px] font-bold"
+                >
                   Message or More info (optional)
                 </label>
                 <input
@@ -158,7 +173,10 @@ const OneDayBook = () => {
                 />
               </div>
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px] font-bold">
+                <label
+                  htmlFor=""
+                  className="text-[15px] lg:text-[25px] font-bold"
+                >
                   Apponment date:
                 </label>
                 <input
@@ -174,7 +192,7 @@ const OneDayBook = () => {
 
             <div className="mt-10 flex justify-between space-x-2">
               {err && (
-                <h1 className="text-red-500 text-[30px] font-bold text-center ">
+                <h1 className="text-red-500 text-[15px] lg:text-[30px] font-bold text-center ">
                   {err}
                 </h1>
               )}
