@@ -50,7 +50,7 @@ import {
   OneEdits,
   OneDeletesAdmin,
   OneDeletes,
-} from "./pages/dashboard/CRUDONE.jsx";
+} from "./pages/dashboard/CRUDONEDAYVEHICLE.jsx";
 import {
   Profile,
   SubProfile,
