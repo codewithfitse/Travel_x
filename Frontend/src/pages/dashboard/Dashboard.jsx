@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Header, SideBar } from "../dashboard/component";
 import axios from "axios";
-const Render = import.meta.env.VITE_BACKEND_URL;
 
-const AdminDashboard = () => {
+const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
@@ -16,9 +15,12 @@ const AdminDashboard = () => {
     //if (!token) return;
     async function load() {
       try {
-        const result = await axios.get(`${Render}/dashboards`, {
-          withCredentials: true, // if your server uses cookies and you want to send cookies too
-        });
+        const result = await axios.get(
+          `https://travel-x-408k.onrender.com/dashboards`,
+          {
+            withCredentials: true, // if your server uses cookies and you want to send cookies too
+          }
+        );
         setData(result.data);
       } catch (error) {
         console.error("Error:", error);
@@ -28,14 +30,17 @@ const AdminDashboard = () => {
       }
     }
     load();
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     async function loadProfile() {
       try {
-        const res = await axios.get(`${Render}/profile`, {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://travel-x-408k.onrender.com/profile",
+          {
+            withCredentials: true,
+          }
+        );
         console.log(res.data.user); // for debugging
         setUsers(res.data.user);
       } catch (error) {
@@ -234,4 +239,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default Dashboard;
