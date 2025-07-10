@@ -13,7 +13,7 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="flex w-full lg:w-full h-auto py-3 px-4 justify-between items-center text-white-500 fixed z-1 container">
+    <div className="flex w-full lg:w-full h-auto py-3 px-6 justify-between items-center text-white-500 fixed z-1 container">
       <div className="w-fit pl-2 lg:pl-6 pr-36 flex justify-center items-center space-x-4 transition-all">
         <SkeletonImage
           isLoading={isLoading}
@@ -25,7 +25,7 @@ const Header = () => {
         />
       </div>
 
-      <nav className="hidden lg:flex w-full justify-center items-center text-[25px] font-bold  space-x-5.5">
+      <nav className="hidden  lg:flex w-full justify-center items-center text-[25px] font-bold space-x-5.5">
         <Link to="/Home">
           <h1 className="hover:text-lum">HOME</h1>
         </Link>
@@ -49,8 +49,8 @@ const Header = () => {
           <Link to="/Login">
             <h1 className="hover:text-lum">LOGIN</h1>
           </Link>
-          <Link to="/Demo">
-            <h1 className="hover:text-lum">DemoS</h1>
+          <Link to="/Dashboard">
+            <h1 className="hover:text-lum">Dash</h1>
           </Link>
         </div>
       </nav>
@@ -59,7 +59,7 @@ const Header = () => {
         className="flex flex-col text-center relative not-sr-only lg:sr-only"
         onClick={() => setToggle(!toggle)}
       >
-        <div className=" menu size-10 lg:size-12"></div>
+        <div className="menu size-10 lg:size-12"></div>
         {toggle && (
           <div className="w-fit py-2 px-3 flex flex-col gap-3 justify-center text-[15px] lg:text-[15px] font-bold bg-gray-800 absolute top-12 -right-4">
             <Link to="/Home">
@@ -83,7 +83,7 @@ const Header = () => {
             <Link to="/Login">
               <h1 className="hover:text-lum">LOGIN</h1>
             </Link>
-            <Link to="/UserDashboard">
+            <Link to="/Dashboard">
               <h1 className="hover:text-lum">DashBoard</h1>
             </Link>
             <Link to="/Demo">
