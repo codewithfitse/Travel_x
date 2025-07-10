@@ -133,7 +133,7 @@ const OneDayBook = () => {
               </div>
               <div className="w-full flex flex-col">
                 <label htmlFor="" className="text-[25px] font-bold">
-                  Where is the Destination
+                  Where is the Destination.
                 </label>
                 <input
                   type="text"
