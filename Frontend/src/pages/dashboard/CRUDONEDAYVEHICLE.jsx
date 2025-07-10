@@ -419,6 +419,13 @@ export const OnePost = () => {
       setImage("");
       alert("Upload Success");
     } catch (err) {
+      const errorStatus = err.response?.status;
+      const errorMsg = err.response?.data?.error;
+      if (errorStatus === 401) {
+        alert(errorMsg);
+      } else if (errorStatus === 400) {
+        alert(errorMsg);
+      }
       console.error(err);
       setErr(err);
       alert("Upload failed");
@@ -781,8 +788,13 @@ export const OneEdits = () => {
           navigate("/OneLandingVehicle");
         })
         .catch((err) => {
-          const errorMsg = err.response?.data?.error || "Something went wrong";
-          alert(errorMsg);
+          const errorStatus = err.response?.status;
+          const errorMsg = err.response?.data?.error;
+          if (errorStatus === 404) {
+            alert(errorMsg);
+          } else if (errorStatus === 400) {
+            alert(errorMsg);
+          }
           setErr(errorMsg);
           console.log(err);
         });
@@ -1002,9 +1014,9 @@ export const OneDeletes = () => {
       .catch((err) => {
         const errorStatus = err.response.status;
         const errorMsg = err.response?.data?.error;
-        if (errorStatus === 401) {
+        if (errorStatus === 404) {
           alert(errorMsg);
-        } else if (errorStatus === 400) {
+        } else if (errorStatus === 500) {
           alert(errorMsg);
         }
         alert(errorMsg);
