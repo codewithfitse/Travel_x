@@ -280,7 +280,7 @@ export const AdminOneDayVehicleGet = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get(`${Render}/uploads/one`, {
+        const res = await axios.get(`${Render}/uploads/ones`, {
           withCredentials: true,
         });
         setImages(res.data);
