@@ -621,7 +621,7 @@ export const AdminOneDayVehicleEdits = () => {
           navigate("/AdminOneLandingVehicle");
         })
         .catch((err) => {
-          const errorStatus = err.response.status;
+          const errorStatus = err.response?.status;
           const errorMsg = err.response?.data?.error;
           if (errorStatus === 404) {
             alert(errorMsg);
