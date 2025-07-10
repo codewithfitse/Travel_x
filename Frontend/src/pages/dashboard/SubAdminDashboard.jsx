@@ -25,7 +25,7 @@ const SubDashboard = () => {
     }
 
     loadProfile();
-  }, []);
+  }, [navigate]);
 
   return (
     <>
