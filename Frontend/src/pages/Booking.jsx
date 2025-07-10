@@ -8,6 +8,7 @@ import LiveChat from "../components/LiveChat";
 import SkeletonImage from "../components/Skeleton";
 
 const Booking = () => {
+  const Render = import.meta.env.VITE_BACKEND_URL;
   const [isLoading, setIsLoading] = useState(true);
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
@@ -76,7 +77,7 @@ const Booking = () => {
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">01</span>
                 <br />
-                CLICK THE RIDE: {Backend}
+                CLICK THE RIDE: {Render}
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
