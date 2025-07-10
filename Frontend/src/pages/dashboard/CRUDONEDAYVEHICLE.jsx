@@ -31,7 +31,7 @@ export const AdminOneLandingVehicle = () => {
                 </div>
 
                 <div className="flex flex-wrap flex-col gap-4">
-                  <Link to="/OneGetAdmin">
+                  <Link to="/AdminOneDayVehicleGet">
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
                         toggle
@@ -347,9 +347,17 @@ export const AdminOneDayVehicleGet = () => {
                         <strong>Quantity:</strong> {img.quantity}
                       </p>
 
-                      <Link to="/OneViewsAdmin" state={{ img, err }}>
+                      <Link to="/AdminOneDayVehicleEdits" state={{ img, err }}>
                         <button className="text-blue-300 text-2xl font-semibold">
-                          Views
+                          Edits
+                        </button>
+                      </Link>
+                      <Link
+                        to="/AdminOneDayVehicleDeletes"
+                        state={{ img, err }}
+                      >
+                        <button className="text-blue-300 text-2xl font-semibold">
+                          Delete
                         </button>
                       </Link>
 
@@ -578,7 +586,7 @@ export const OnePost = () => {
   );
 };
 
-export const OneViewsAdmin = () => {
+export const AdminOneDayVehicleViews = () => {
   //const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const img = location?.state?.img;
@@ -690,7 +698,7 @@ export const OneViews = () => {
   );
 };
 
-export const OneEditsAdmin = () => {
+export const AdminOneDayVehicleEdits = () => {
   const [err, setErr] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
@@ -727,7 +735,7 @@ export const OneEditsAdmin = () => {
         .then((res) => {
           const done = res.data?.message || "Successfully Updated!";
           alert(done);
-          navigate("/OneLandingVehicleAdmin");
+          navigate("/AdminOneLandingVehicle");
         })
         .catch((err) => {
           const errorMsg = err.response?.data?.error || "Something went wrong";
@@ -1011,7 +1019,7 @@ export const OneEdits = () => {
   );
 };
 
-export const OneDeletesAdmin = () => {
+export const AdminOneDayVehicleDeletes = () => {
   const [err, setErr] = useState();
   const location = useLocation();
   const img = location?.state?.img;
@@ -1025,7 +1033,7 @@ export const OneDeletesAdmin = () => {
       .then((res) => {
         const done = res?.data?.message || "Successfully deleted!";
         alert(done);
-        navigate("/OneGetAdmin");
+        navigate("/AdminOneDayVehicleGet");
       })
       .catch((err) => {
         const errorMsg = err.response?.data?.error;
