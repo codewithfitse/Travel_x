@@ -622,7 +622,7 @@ export const AdminOneDayVehicleEdits = () => {
         })
         .catch((err) => {
           const errorStatus = err.response?.status;
-          const errorMsg = err.response?.data?.error;
+          const errorMsg = err?.data?.error;
           if (errorStatus === 404) {
             alert(errorMsg);
           } else if (errorStatus === 400) {
