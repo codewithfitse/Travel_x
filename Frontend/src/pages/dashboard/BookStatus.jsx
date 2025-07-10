@@ -989,7 +989,7 @@ export const UserBookStatus = () => {
                                   </div>
                                   <div className="w-full h-15">
                                     <h1 className="text-gray-400">Car type</h1>
-                                    <h1 className="font-semibold">
+                                    <h1 className="font-semibold capitalize">
                                       {user.data.item}
                                     </h1>
                                   </div>

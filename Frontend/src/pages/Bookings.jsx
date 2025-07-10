@@ -198,10 +198,10 @@ const OneDayBook = () => {
               )}
             </div>
 
-            <div className="mt-2 lg:mt-10">
+            <div className="w-full flex justify-center mt-2 lg:mt-10">
               <button
                 type="submit"
-                className="ml-10 p-2 text-3xl text-black font-bold bg-lum rounded-[10px]"
+                className="p-2 text-3xl text-black font-bold bg-lum rounded-[10px]"
                 onClick={handleClick}
               >
                 {isLoading ? "Loading.." : "Submit"}
