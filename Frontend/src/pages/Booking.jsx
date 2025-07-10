@@ -59,6 +59,15 @@ const Booking = () => {
             <h1 className="text-[25px] lg:text-6xl text-center font-bold">
               EASY BOOKING STEPS
             </h1>
+            <iframe
+              src="https://assets.pinterest.com/ext/embed.html?id=49680402115719313"
+              height="256"
+              width="345"
+              frameBorder="0"
+              scrolling="no"
+              title="Booking Inspiration"
+              className="rounded-lg shadow-md"
+            ></iframe>
             <h1 className="text-[20px] lg:text-[30px] text-lum text-center mt-2 lg:mt-6">
               How to book your car with us and Start enjoying your ride
             </h1>
