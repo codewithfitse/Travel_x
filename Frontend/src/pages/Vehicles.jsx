@@ -308,10 +308,9 @@ export const OneDayVehicles = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const res = await axios.get(
-          "https://travel-x-408k.onrender.com/uploads/Ones",
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${Render}/uploads/Ones`, {
+          withCredentials: true,
+        });
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
@@ -628,10 +627,9 @@ export const OneDayVehiclesBook = () => {
     // Fetch images from backend
     const fetchImages = async () => {
       try {
-        const res = await axios.get(
-          "https://travel-x-408k.onrender.com/uploads/one",
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${Render}/uploads/one`, {
+          withCredentials: true,
+        });
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
