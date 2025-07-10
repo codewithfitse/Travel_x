@@ -6,6 +6,7 @@ import { Button } from "../components/Button";
 import axios from "axios";
 import SkeletonImage from "../components/Skeleton";
 import LiveChat from "../components/LiveChat";
+const Backend = import.meta.env.VITE_BACKEND_URL;
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
