@@ -243,8 +243,7 @@ app.post("/login", async (req, res) => {
       user: {
         id: user._id,
         email: user.email,
-        isAdmin: user.isAdmin,
-        isSubAdmin: user.isSubAdmin,
+        role: user.role,
         lastLogin: user.lastLogin,
       },
     });
