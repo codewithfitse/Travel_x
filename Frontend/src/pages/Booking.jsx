@@ -108,10 +108,8 @@ const Booking = () => {
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">03</span>
                 <br />
-                Make Sure this is the car you wannna Order,
-                <br /> Click <span className="text-lum">Order</span> if its
-                <br /> Click <span className="text-red-500">Back</span> if its
-                not.
+                Choose the Car you wanna book!
+                <br /> Click <span className="text-lum">Book Now!</span> if its
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 font-bold card">
@@ -124,8 +122,10 @@ const Booking = () => {
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">03</span>
                 <br />
-                Choose the Car you wanna book!
-                <br /> Click <span className="text-lum">Book</span> if its
+                Make Sure this is the car you wannna Order,
+                <br /> Click <span className="text-lum">Order</span> if its
+                <br /> Click <span className="text-red-500">Back</span> if its
+                not.
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 font-bold card">
