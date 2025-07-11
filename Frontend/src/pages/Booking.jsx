@@ -68,30 +68,32 @@ const Booking = () => {
 
           <div className="w-full h-fit lg:mt-5 grid lg:grid-cols-3 gap-3 justify-around text-[15px] lg:text-[20px]">
             <div className="w-full px-3 pt-3 pb-5 font-bold card">
-              <SkeletonImage
-                isLoading={isLoading}
-                src="/Book/BookSt1.jpg"
-                imgClass="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
-                skeletonClass="w-[400px] h-[300px]"
-              />
-              <h1 className="mt-2 ml-3">
-                <span className="text-lum">01</span>
-                <br />
-                Go To Vehicle:
-              </h1>
+              <div className="relative">
+                <SkeletonImage
+                  isLoading={isLoading}
+                  src="/Book/BookSt1.jpg"
+                  imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
+                  skeletonClass="w-[400px] h-[300px]"
+                />
+                <div className="w-full h-fit flex justify-center items-center absolute bottom-0 bg-black/70 py-1 rounded-[10px]">
+                  <h1 className="text-[40px]">Step1</h1>
+                </div>
+              </div>
+              <h1 className="mt-2 ml-3">Go To Vehicle:</h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5  font-bold card">
-              <SkeletonImage
-                isLoading={isLoading}
-                src="/Book/BookSt2.jpg"
-                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
-                skeletonClass="w-[400px] h-[300px]"
-              />
-              <h1 className="mt-2 ml-3">
-                <span className="text-lum">02</span>
-                <br />
-                CLICK THE ONE DAY VEHICLE
-              </h1>
+              <div className="relative">
+                <SkeletonImage
+                  isLoading={isLoading}
+                  src="/Book/BookSt2.jpg"
+                  imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
+                  skeletonClass="w-[400px] h-[300px]"
+                />
+                <div className="w-full h-fit flex justify-center items-center absolute bottom-0 bg-black/70 py-1 rounded-[10px]">
+                  <h1 className="text-[40px]">Step2</h1>
+                </div>
+              </div>
+              <h1 className="mt-2 ml-3">CLICK THE ONE DAY VEHICLE</h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 font-bold card">
               <div className="relative">
@@ -106,8 +108,6 @@ const Booking = () => {
                 </div>
               </div>
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">03</span>
-                <br />
                 Choose the Car you wanna book!
                 <br /> Click <span className="text-lum">Book Now!</span> if its
               </h1>
@@ -120,8 +120,6 @@ const Booking = () => {
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">03</span>
-                <br />
                 Make Sure this is the car you wannna Order,
                 <br /> Click <span className="text-lum">Order</span> if its
                 <br /> Click <span className="text-red-500">Back</span> if its
