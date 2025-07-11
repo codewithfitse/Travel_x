@@ -222,8 +222,9 @@ app.post("/login", async (req, res) => {
         lastName: user.lastName,
         phone: user.phone,
         email: user.email,
-        isAdmin: user.isAdmin,
-        isSubAdmin: user.isSubAdmin,
+        role: user.role,
+        //isAdmin: user.isAdmin,
+        //isSubAdmin: user.isSubAdmin,
       },
       process.env.JWT_SECRET,
       { expiresIn: "2h" }
