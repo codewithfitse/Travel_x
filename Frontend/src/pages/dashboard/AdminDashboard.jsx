@@ -79,7 +79,7 @@ const AdminDashboard = () => {
                   </div>
                 </div>
 
-                {(user?.isAdmin === true || users?.isAdmin === true) && (
+                {(user?.role || users?.role === "admin") && (
                   <Link to="/UserDb" key={user?._id}>
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
                   </Link>
                 )}
 
-                {(user?.isAdmin === true || users?.isAdmin === true) && (
+                {(user?.role || users?.role === "admin") && (
                   <Link to="/ContactDb">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
@@ -123,7 +123,7 @@ const AdminDashboard = () => {
                   </Link>
                 )}
 
-                {(user?.isAdmin === true || users?.isAdmin === true) && (
+                {(user?.role || users?.role === "admin") && (
                   <Link to="/BookingDb">
                     <div className="w-full h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl">
                       <div className="w-full px-5 flex justify-between items-center">
@@ -142,10 +142,7 @@ const AdminDashboard = () => {
                   </Link>
                 )}
 
-                {(users?.isAdmin ||
-                  users?.isSubAdmin ||
-                  user?.isAdmin ||
-                  user?.isSubAdmin) && (
+                {(user?.role || users?.role === "admin") && (
                   <Link to="/LandingVehicle">
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
@@ -170,10 +167,7 @@ const AdminDashboard = () => {
                   </Link>
                 )}
 
-                {(users?.isAdmin ||
-                  users?.isSubAdmin ||
-                  user?.isAdmin ||
-                  user?.isSubAdmin) && (
+                {(user?.role || users?.role === "admin") && (
                   <Link to="/LandingBookStatus">
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
@@ -198,10 +192,7 @@ const AdminDashboard = () => {
                   </Link>
                 )}
 
-                {(users?.isAdmin ||
-                  users?.isSubAdmin ||
-                  user?.isAdmin ||
-                  user?.isSubAdmin) && (
+                {(user?.role || users?.role === "admin") && (
                   <Link to="/AdminOneLandingVehicle">
                     <div
                       className={`h-auto mt-8 p-5 flex flex-col lg:flex-row justify-between bg-gray-800 rounded-2xl  ${
