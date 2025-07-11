@@ -77,28 +77,27 @@ export const Tutorial = () => {
             </h1>
           </div>
 
-          <div className="min-w-full h-[100vh] p-5 pb-5 flex flex-col justify-center bg-gray-900 relative">
+          <div className="w-full h-screen flex justify-center items-center bg-gray-900 relative px-5">
             {/* Background Image */}
             <div
               style={{ backgroundImage: `url(${Image[page].url})` }}
-              className="w-full h-[90%] bg-cover bg-center bg-no-repeat rounded-t-2xl"
+              className="w-full max-w-[600px] h-[80vh] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
             ></div>
 
             {/* Back Button */}
-            <div className="w-full flex justify-around mt-10">
-              <div
-                className="bg-white/50 rounded-2xl p-2 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
-                onClick={prev}
-              >
-                <h1>Back</h1>
-              </div>
-              {/* Next Button */}
-              <div
-                className="w-fit h-fit bg-white/50 rounded-2xl p-2 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
-                onClick={next}
-              >
-                <h1>Next</h1>
-              </div>
+            <div
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/50 rounded-full p-3 text-black text-xl cursor-pointer hover:bg-white/70 transition"
+              onClick={prev}
+            >
+              ←
+            </div>
+
+            {/* Next Button */}
+            <div
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/50 rounded-full p-3 text-black text-xl cursor-pointer hover:bg-white/70 transition"
+              onClick={next}
+            >
+              →
             </div>
           </div>
 
