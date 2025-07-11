@@ -79,7 +79,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="midsizesuv.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-lum font-bold">Mid Suv</h1>
@@ -101,7 +101,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="fullsuv.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-lum font-bold">Full Suv</h1>
@@ -123,7 +123,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="minivan.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-[400px] h-[300px]rounded-[10px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-lum font-bold">Mini Van</h1>
@@ -145,7 +145,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="pickup.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
@@ -168,7 +168,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="send.jpg"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
+              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-lum font-bold">
@@ -603,7 +603,6 @@ export const OneDayVehiclesBook = () => {
   const user = location.state?.img;
 
   async function handleBooking() {
-    setIsLoadings(true);
     try {
       //alert("Successfully Booked!");
       navigate("/OneDayBook", { state: { bookingDetails: user } });
