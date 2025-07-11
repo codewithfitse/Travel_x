@@ -67,7 +67,7 @@ const Booking = () => {
           </div>
 
           <div className="w-full h-fit lg:mt-5 grid lg:grid-cols-3 gap-3 justify-around">
-            <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
+            <div className="w-full px-3 pt-3 pb-5 text-[15px] lg:text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
                 src="/Book/BookSt1.jpg"
@@ -90,20 +90,42 @@ const Booking = () => {
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">02</span>
                 <br />
-                SEND A REQUEST
+                CLICK THE ONE DAY VEHICLE
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
-                src="enjoy.jpg"
-                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                src="/Book/BookSt3.jpg"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">03</span>
                 <br />
-                ENJOY THE RIDE
+                Make Sure this is the car you wannna Order,
+                <br /> Click <span className="text-lum">Order</span> if its
+                <br /> Click <span className="text-red-500">Back</span> if its
+                not.
+              </h1>
+            </div>
+            <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
+              <div className="relative">
+                <SkeletonImage
+                  isLoading={isLoading}
+                  src="/Book/BookSt4.jpg"
+                  imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
+                  skeletonClass="w-[400px] h-[300px]"
+                />
+                <div className="w-full absolute bottom-0 bg-amber-800 p-6 rounded-[10px]"></div>
+              </div>
+              <h1 className="mt-2 ml-3">
+                <span className="text-lum">03</span>
+                <br />
+                Make Sure this is the car you wannna Order,
+                <br /> Click <span className="text-lum">Order</span> if its
+                <br /> Click <span className="text-red-500">Back</span> if its
+                not.
               </h1>
             </div>
           </div>
