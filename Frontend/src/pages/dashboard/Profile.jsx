@@ -91,7 +91,7 @@ export const Profile = () => {
                         {user.firstName} {user.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {user?.isAdmin ? "Admin" : "SubAdmin"}
+                        {users?.role}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
@@ -167,7 +167,7 @@ export const Profile = () => {
                         {users?.name} {users?.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {users?.isAdmin ? "Admin" : "SubAdmin"}
+                        {users?.role}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
@@ -314,7 +314,7 @@ export const SubProfile = () => {
                             {user.firstName} {user.lastName}
                           </h1>
                           <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                            {user?.isAdmin ? "Admin" : "SubAdmin"}
+                            {users?.role}
                           </h1>
                           <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                             Member since January 15, 2023
@@ -393,7 +393,7 @@ export const SubProfile = () => {
                         {users?.name} {users?.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {users?.isAdmin ? "Admin" : "SubAdmin"}
+                        {users?.role}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
@@ -551,7 +551,7 @@ export const UserProfile = () => {
                           {user?.name || user?.firstName} {user?.lastName}
                         </h1>
                         <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                          {user?.isAdmin ? "Admin" : "SubAdmin"}
+                          {users?.role}
                         </h1>
                         <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                           Member since January 15, 2023
@@ -629,7 +629,7 @@ export const UserProfile = () => {
                         {users?.name || users?.firstName} {users?.lastName}
                       </h1>
                       <h1 className="text-[18px] text-blue-400 text-center font-semibold">
-                        {users?.isAdmin ? "Admin" : "SubAdmin"}
+                        {users?.role}
                       </h1>
                       <h1 className="text-[13px] text-gray-400 text-center font-semibold">
                         Member since January 15, 2023
