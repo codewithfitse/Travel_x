@@ -94,12 +94,17 @@ const Booking = () => {
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 font-bold card">
-              <SkeletonImage
-                isLoading={isLoading}
-                src="/Book/BookSt3.jpg"
-                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
-                skeletonClass="w-[400px] h-[300px]"
-              />
+              <div className="relative">
+                <SkeletonImage
+                  isLoading={isLoading}
+                  src="/Book/BookSt3.jpg"
+                  imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
+                  skeletonClass="w-[400px] h-[300px]"
+                />
+                <div className="w-full h-fit flex justify-center items-center absolute bottom-0 bg-black/70 py-1 rounded-[10px]">
+                  <h1 className="text-[40px]">Step4</h1>
+                </div>
+              </div>
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">03</span>
                 <br />
@@ -110,15 +115,29 @@ const Booking = () => {
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 font-bold card">
+              <SkeletonImage
+                isLoading={isLoading}
+                src="/Book/BookSt4.jpg"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
+                skeletonClass="w-[400px] h-[300px]"
+              />
+              <h1 className="mt-2 ml-3">
+                <span className="text-lum">03</span>
+                <br />
+                Choose the Car you wanna book!
+                <br /> Click <span className="text-lum">Book</span> if its
+              </h1>
+            </div>
+            <div className="w-full px-3 pt-3 pb-5 font-bold card">
               <div className="w-full h-fit relative">
                 <SkeletonImage
                   isLoading={isLoading}
-                  src="/Book/BookSt4.jpg"
+                  src="/Book/BookSt5.jpg"
                   imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px] rounded-[10px]"
                   skeletonClass="w-[400px] h-[300px]"
                 />
                 <div className="w-full h-fit flex justify-center items-center absolute bottom-0 bg-black/70 py-1 rounded-[10px]">
-                  <h1 className="text-[40px]">Step4</h1>
+                  <h1 className="text-[40px]">Step5</h1>
                 </div>
               </div>
               <h1 className="mt-2 ml-3">
