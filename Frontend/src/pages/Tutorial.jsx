@@ -77,27 +77,28 @@ export const Tutorial = () => {
             </h1>
           </div>
 
-          <div className="min-w-full h-[2700px] p-5 flex justify-center bg-gray-900 relative">
+          <div className="min-w-full h-[100vh] p-5 pb-5 flex flex-col justify-center bg-gray-900 relative">
             {/* Background Image */}
             <div
               style={{ backgroundImage: `url(${Image[page].url})` }}
-              className="w-full h-full bg-cover bg-center bg-no-repeat rounded-t-2xl"
+              className="w-full h-[90%] bg-cover bg-center bg-no-repeat rounded-t-2xl"
             ></div>
 
             {/* Back Button */}
-            <div
-              className="bg-white/50 rounded-2xl p-2 absolute top-1/2 left-10 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
-              onClick={prev}
-            >
-              <h1>Back</h1>
-            </div>
-
-            {/* Next Button */}
-            <div
-              className="bg-white/50 rounded-2xl p-2 absolute top-1/2 right-10 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
-              onClick={next}
-            >
-              <h1>Next</h1>
+            <div className="w-full flex justify-around mt-10">
+              <div
+                className="bg-white/50 rounded-2xl p-2 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
+                onClick={prev}
+              >
+                <h1>Back</h1>
+              </div>
+              {/* Next Button */}
+              <div
+                className="w-fit h-fit bg-white/50 rounded-2xl p-2 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
+                onClick={next}
+              >
+                <h1>Next</h1>
+              </div>
             </div>
           </div>
 
