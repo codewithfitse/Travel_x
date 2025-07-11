@@ -32,12 +32,8 @@ export const Login = () => {
         console.log("Response data:", data);
         console.log(result);
         //if (data.user?.isAdmin || data.user?.isSubAdmin) {
-        if (data.user?.role === "admin") {
-          navigate("/Admin");
-        } else if (data.user?.role === "subadmin") {
-          navigate("/SubAdmin");
-        } else if (data.user?.role === "user") {
-          navigate("/UserDashboard");
+        if (data.user?.role) {
+          navigate("/Dashboard");
         } else if (!data || !data.user?.role) {
           setErr("Something went wrong no data. Try again.");
           return;
@@ -79,6 +75,8 @@ export const Login = () => {
         if (user.role === "admin") {
           navigate("/Admin");
         } else if (user.role === "subadmin") {
+          navigate("/SubAdmin");
+        } else if (user.role === "user") {
           navigate("/SubAdmin");
         } else {
           navigate("/Login");

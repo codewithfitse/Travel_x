@@ -20,10 +20,12 @@ const Dashboard = () => {
         // Debug log (optional)
         console.log("Logged-in user:", user);
 
-        if (user.isAdmin) {
+        if (user?.role === "admin") {
           navigate("/Admin");
-        } else if (user.isSubAdmin) {
+        } else if (user?.role === "subadmin") {
           navigate("/SubAdmin");
+        } else if (user?.role === "user") {
+          navigate("/UserDashboard");
         } else {
           navigate("/Login");
         }
