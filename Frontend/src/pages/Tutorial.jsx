@@ -11,16 +11,31 @@ export const Tutorial = () => {
 
   const Image = [
     {
-      url: "https://unsplash.com/photos/grayscale-photo-of-person-running-in-panel-paintings-5GwLlb-_UYk",
+      url: "Book/BookSt1.jpg",
     },
     {
-      url: "https://unsplash.com/photos/a-beautiful-spiral-galaxy-swirls-in-the-vast-cosmos-kGPnWZRT7O8",
+      url: "Book/BookSt2.jpg",
     },
     {
-      url: "https://unsplash.com/photos/a-person-is-peering-through-a-wall-meE5vfcXdB4",
+      url: "Book/BookSt3.jpg",
     },
     {
-      url: "https://unsplash.com/photos/a-man-standing-in-front-of-a-mirror-in-a-bathroom-UKjx4ueL8gw",
+      url: "Book/BookSt4.jpg",
+    },
+    {
+      url: "Book/BookSt5.jpg",
+    },
+    {
+      url: "Book/BookStFail.jpg",
+    },
+    {
+      url: "Book/BookStFail1.jpg",
+    },
+    {
+      url: "Book/BookStFail2.jpg",
+    },
+    {
+      url: "Book/BookStSuccess.jpg",
     },
   ];
 
@@ -29,6 +44,22 @@ export const Tutorial = () => {
     const timer = setTimeout(() => setIsLoading(false), 4000);
     return () => clearTimeout(timer);
   }, []);
+
+  const [page, setPage] = useState(0);
+
+  function prev() {
+    const isFirstSlide = page === 0;
+    const newIndex = isFirstSlide ? Image.length - 1 : page - 1;
+
+    setPage(newIndex);
+  }
+
+  function next() {
+    const isFirstSlide = page === Image.length - 1;
+    const newIndex = isFirstSlide ? 0 : page + 1;
+
+    setPage(newIndex);
+  }
 
   return (
     <div className="w-full min-h-full bg-white/10 text-white">
@@ -44,6 +75,25 @@ export const Tutorial = () => {
             <h1 className="text-[20px] lg:text-[30px] text-lum text-center mt-2 lg:mt-6">
               How to book your car with us and Start enjoying your ride
             </h1>
+          </div>
+
+          <div className="w-full h-fit p-5 flex justify-center bg-gray-900 relative">
+            <div
+              style={{ backgroundImage: `url(${Image[page].url})` }}
+              className="w-[500px] h-[500px] rounded-t-2xl"
+            ></div>
+            <div
+              className="bg-white/50 rounded-2xl p-2 absolute top-[50%] left-10 text-black text-[30px]"
+              onClick={prev}
+            >
+              <h1 className="">Back</h1>
+            </div>
+            <div
+              className="bg-white/50 rounded-2xl p-2 absolute top-[50%] right-10 text-black text-[30px]"
+              onClick={next}
+            >
+              <h1 className="">Next</h1>
+            </div>
           </div>
 
           <div className="w-full h-fit lg:mt-5 grid lg:grid-cols-3 gap-3 justify-around text-[15px] lg:text-[20px]">
