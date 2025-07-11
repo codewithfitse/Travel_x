@@ -9,6 +9,21 @@ import LiveChat from "../components/LiveChat";
 export const Tutorial = () => {
   const [isLoading, setIsLoading] = useState(true);
 
+  const Image = [
+    {
+      url: "https://unsplash.com/photos/grayscale-photo-of-person-running-in-panel-paintings-5GwLlb-_UYk",
+    },
+    {
+      url: "https://unsplash.com/photos/a-beautiful-spiral-galaxy-swirls-in-the-vast-cosmos-kGPnWZRT7O8",
+    },
+    {
+      url: "https://unsplash.com/photos/a-person-is-peering-through-a-wall-meE5vfcXdB4",
+    },
+    {
+      url: "https://unsplash.com/photos/a-man-standing-in-front-of-a-mirror-in-a-bathroom-UKjx4ueL8gw",
+    },
+  ];
+
   useEffect(() => {
     // Simulate loading for 2 seconds
     const timer = setTimeout(() => setIsLoading(false), 4000);
@@ -36,10 +51,11 @@ export const Tutorial = () => {
               <div className="relative">
                 <SkeletonImage
                   isLoading={isLoading}
-                  src="/Book/BookSt1.jpg"
+                  src={Image[0].url}
                   imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
                   skeletonClass="w-[400px] h-[300px]"
                 />
+                <div style={"background: url()"} className=""></div>
                 <div className="w-full h-fit flex justify-center items-center absolute bottom-0 bg-black/70 py-1 rounded-[10px]">
                   <h1 className="text-[40px]">Step1</h1>
                 </div>
@@ -157,6 +173,9 @@ export const Tutorial = () => {
           </div>
         </div>
       </div>
+
+      <div className=""></div>
+
       <Footer />
     </div>
   );
