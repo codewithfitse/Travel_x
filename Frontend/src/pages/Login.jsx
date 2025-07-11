@@ -32,13 +32,13 @@ export const Login = () => {
         console.log("Response data:", data);
         console.log(result);
         //if (data.user?.isAdmin || data.user?.isSubAdmin) {
-        if (data.user?.isAdmin) {
+        if (data.user?.role === "admin") {
           navigate("/Admin");
-        } else if (data.user?.isSubAdmin) {
+        } else if (data.user?.role === "subadmin") {
           navigate("/SubAdmin");
-        } else if (data.user) {
+        } else if (data.user?.role === "user") {
           navigate("/UserDashboard");
-        } else if (!data || !data.user) {
+        } else if (!data || !data.user?.role) {
           setErr("Something went wrong no data. Try again.");
           return;
         } else {
