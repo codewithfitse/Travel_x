@@ -26,6 +26,9 @@ export const Tutorial = () => {
       url: "Book/BookSt5.jpg",
     },
     {
+      url: "Book/BookStSuccess.jpg",
+    },
+    {
       url: "Book/BookStFail.jpg",
     },
     {
@@ -33,9 +36,6 @@ export const Tutorial = () => {
     },
     {
       url: "Book/BookStFail2.jpg",
-    },
-    {
-      url: "Book/BookStSuccess.jpg",
     },
   ];
 
@@ -77,22 +77,27 @@ export const Tutorial = () => {
             </h1>
           </div>
 
-          <div className="w-full h-fit p-5 flex justify-center bg-gray-900 relative">
+          <div className="min-w-full h-[2700px] p-5 flex justify-center bg-gray-900 relative">
+            {/* Background Image */}
             <div
               style={{ backgroundImage: `url(${Image[page].url})` }}
-              className="w-[500px] h-[500px] rounded-t-2xl"
+              className="w-full h-full bg-cover bg-center bg-no-repeat rounded-t-2xl"
             ></div>
+
+            {/* Back Button */}
             <div
-              className="bg-white/50 rounded-2xl p-2 absolute top-[50%] left-10 text-black text-[30px]"
+              className="bg-white/50 rounded-2xl p-2 absolute top-1/2 left-10 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
               onClick={prev}
             >
-              <h1 className="">Back</h1>
+              <h1>Back</h1>
             </div>
+
+            {/* Next Button */}
             <div
-              className="bg-white/50 rounded-2xl p-2 absolute top-[50%] right-10 text-black text-[30px]"
+              className="bg-white/50 rounded-2xl p-2 absolute top-1/2 right-10 transform -translate-y-1/2 text-black text-[30px] cursor-pointer"
               onClick={next}
             >
-              <h1 className="">Next</h1>
+              <h1>Next</h1>
             </div>
           </div>
 
