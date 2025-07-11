@@ -55,7 +55,7 @@ export const Tutorial = () => {
                   imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
                   skeletonClass="w-[400px] h-[300px]"
                 />
-                <div style={"background: url()"} className=""></div>
+                <div className=""></div>
                 <div className="w-full h-fit flex justify-center items-center absolute bottom-0 bg-black/70 py-1 rounded-[10px]">
                   <h1 className="text-[40px]">Step1</h1>
                 </div>
