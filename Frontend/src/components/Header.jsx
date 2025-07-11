@@ -50,7 +50,7 @@ const Header = () => {
             <h1 className="hover:text-lum">LOGIN</h1>
           </Link>
           <Link to="/Tutorial">
-            <h1 className="hover:text-lum">Dash</h1>
+            <h1 className="hover:text-lum">Tutorial</h1>
           </Link>
         </div>
       </nav>
