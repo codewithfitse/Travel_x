@@ -101,7 +101,7 @@ export const Tutorial = () => {
             </div>
           </div>
 
-          <div className="w-full h-fit lg:mt-5 grid lg:grid-cols-3 gap-3 justify-around text-[15px] lg:text-[20px]">
+          {/* <div className="w-full h-fit lg:mt-5 grid lg:grid-cols-3 gap-3 justify-around text-[15px] lg:text-[20px]">
             <div className="w-full px-3 pt-3 pb-5 font-bold card">
               <div className="relative">
                 <SkeletonImage
@@ -226,7 +226,7 @@ export const Tutorial = () => {
               </h1>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className=""></div>
