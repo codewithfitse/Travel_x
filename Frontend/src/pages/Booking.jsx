@@ -70,21 +70,21 @@ const Booking = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
-                src="carlist.png"
-                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                src="/Book/BookSt1.jpg"
+                imgClass="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
                 <span className="text-lum">01</span>
                 <br />
-                Go To Vehicle: {Render}
+                Go To Vehicle:
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
-                src="send.jpg"
-                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
+                src="/Book/BookSt2.jpg"
+                imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
