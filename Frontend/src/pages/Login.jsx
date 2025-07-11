@@ -76,9 +76,9 @@ export const Login = () => {
         // Debug log (optional)
         console.log("Logged-in user:", user);
 
-        if (user.isAdmin) {
+        if (user.role === "admin") {
           navigate("/Admin");
-        } else if (user.isSubAdmin) {
+        } else if (user.role === "subadmin") {
           navigate("/SubAdmin");
         } else {
           navigate("/Login");

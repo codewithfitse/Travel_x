@@ -165,12 +165,12 @@ app.get("/", (req, res) => {
   console.log(`We are on Homepage`);
 });
 
-// i create this b/c i want too make simlify for user profile data after all the login is done and to feach it frontend!
+// i create this b/c i want too make simplify for user profile data after all the login is done and to fetch it frontend!
 app.get("/profile", authMiddleware, (req, res) => {
   res.status(200).json({ message: "Welcome Admin", user: req.user });
 });
 
-// this will feached if the middle ware is correct means if the cookie is present!
+// this will fetched if the middle ware is correct means if the cookie is present!
 app.get("/dashboards", authMiddleware, async (req, res) => {
   const data =
     (await UserLogin.find({ email: req.user.email }).select("-password")) ||
