@@ -13,19 +13,19 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="flex w-full lg:w-full h-auto py-3 px-6 justify-between items-center text-white-500 fixed z-1 container">
-      <div className="w-fit pl-2 lg:pl-6 pr-36 flex justify-center items-center space-x-4 transition-all">
+    <div className="flex w-full lg:w-full h-auto py-3 px-5 justify-between lg:justify-center items-center text-white-500 fixed z-1 container">
+      <div className="w-full h-fit pl-2 lg:pl-6 flex items-center transition-all">
         <SkeletonImage
           isLoading={isLoading}
           src="/Logo/Time_white.webp"
           alt="Time Logo"
-          imgClass="w-16 lg:w-26 h-auto"
-          skeletonAnimation="w-16 bg-gray-200 rounded-full animate-pulse"
-          skeletonClass="h-16"
+          imgClass="w-16 lg:w-20 h-auto"
+          skeletonAnimation="w-16 rounded-full"
+          skeletonClass="w-16"
         />
       </div>
 
-      <nav className="hidden  lg:flex w-full justify-center items-center text-[25px] font-bold space-x-5.5">
+      <nav className="hidden lg:flex w-fit lg:justify-center items-center text-[20px] font-bold space-x-5.5">
         <Link to="/Home">
           <h1 className="hover:text-lum">HOME</h1>
         </Link>
@@ -42,7 +42,7 @@ const Header = () => {
           <h1 className="hover:text-lum">CONTACT</h1>
         </Link>
 
-        <div className="w-fit flex pl-30 justify-center items-center text-[25px] font-bold space-x-5.5">
+        <div className="w-fit flex pl-30 justify-center items-center text-[20px] font-bold space-x-5.5">
           <Link to="/SignUp">
             <h1 className="hover:text-lum">SIGNUP</h1>
           </Link>
