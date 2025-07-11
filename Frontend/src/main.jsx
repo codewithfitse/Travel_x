@@ -65,7 +65,7 @@ import {
   SubBookStatus,
   UserBookStatus,
 } from "./pages/dashboard/BookStatus.jsx";
-import { Demo } from "./pages/dashboard/Demo.jsx";
+import { Demo } from "./pages/Demo.jsx";
 
 const router = createBrowserRouter([
   {

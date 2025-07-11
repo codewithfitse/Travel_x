@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Card } from "../../components/Card";
+import { Card } from "../components/Card";
 const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const Demo = () => {
