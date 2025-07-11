@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Card } from "../components/Card";
@@ -39,11 +39,11 @@ export const Tutorial = () => {
     },
   ];
 
-  useEffect(() => {
-    // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   // Simulate loading for 2 seconds
+  //   const timer = setTimeout(() => setIsLoading(false), 4000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const [page, setPage] = useState(0);
 
