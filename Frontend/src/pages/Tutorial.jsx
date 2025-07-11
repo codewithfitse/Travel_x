@@ -51,7 +51,7 @@ export const Tutorial = () => {
               <div className="relative">
                 <SkeletonImage
                   isLoading={isLoading}
-                  src={Image[0].url}
+                  src="Book/BookSt1.jpg"
                   imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-[600px]"
                   skeletonClass="w-[400px] h-[300px]"
                 />
