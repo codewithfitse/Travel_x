@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Card } from "../components/Card";
-const Render = import.meta.env.VITE_BACKEND_URL;
 import SkeletonImage from "../components/Skeleton";
 import LiveChat from "../components/LiveChat";
 
@@ -17,10 +16,10 @@ export const Tutorial = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-full flex items-center justify-center bg-white/10 text-white">
+    <div className="w-full min-h-full bg-white/10 text-white">
       <Header />
       <LiveChat />
-      <div className="w-full h-fit flex justify-center items-center pt-20">
+      <div className="w-full h-fit flex justify-center items-center pt-10">
         <div className="w-full h-fit mt-15 lg:mt-30 flex flex-col items-center">
           <div className="py-5 lg:py-10">
             <h1 className="text-[25px] lg:text-6xl text-center font-bold">
@@ -158,6 +157,7 @@ export const Tutorial = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
