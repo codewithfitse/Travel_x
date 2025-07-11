@@ -7,7 +7,7 @@ import SkeletonImage from "../components/Skeleton";
 import LiveChat from "../components/LiveChat";
 
 export const Tutorial = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  //const [isLoading, setIsLoading] = useState(true);
 
   const Image = [
     {
@@ -225,11 +225,9 @@ export const Tutorial = () => {
                 <br /> Then go back to booking steps😊
               </h1>
             </div>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
-
-      <div className=""></div>
 
       <Footer />
     </div>
