@@ -81,7 +81,7 @@ export const Demo = () => {
                       );
                     })
                     .map((item) => (
-                      <tbody id={item} className="w-full h-full">
+                      <tbody id={item.id} className="w-full h-full">
                         <tr className="w-full h-fit mt-1 flex justify-between">
                           <td className="w-full h-fit p-2 bg-gray-200 text-black">
                             {item.first_name}

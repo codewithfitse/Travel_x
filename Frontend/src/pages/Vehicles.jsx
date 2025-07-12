@@ -297,6 +297,7 @@ export const VehiclesTypes = () => {
 export const OneDayVehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
   ///const navigate = useNavigate();
 
   useEffect(() => {
@@ -334,13 +335,16 @@ export const OneDayVehicles = () => {
         <div className="w-full h-full flex space-x-2">
           <input
             type="text"
-            className="w-full h-full p-2 bg-amber-50 rounded-2xl placeholder:text-amber-800"
+            value={search}
+            className="w-full h-full p-2 bg-amber-50 text-black rounded-2xl placeholder:text-amber-800"
             placeholder="Search Your Type!"
+            onChange={(e) => setSearch(e.target.value)}
           />
           <button className=" w-fit h-full p-2 rounded-2xl font-bold bg-lum">
             Search
           </button>
         </div>
+
         <div className="w-full h-fit grid grid-cols-2 lg:grid-cols-4 gap-3 place-items-center">
           <Link to={"/Pricing"} state={{ price: "3k" }}>
             <div className="w-full px-3 py-2 bg-gray-900 rounded-2xl">
@@ -364,89 +368,67 @@ export const OneDayVehicles = () => {
           </Link>
         </div>
       </div>
-      {/* 
-      <div className="w-full flex">
-        <Link to={"/Pricing"} state={{ price: "3k" }}>
-          <div className="card">
-            <h1 className="text-[30px]">3K - 4K</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: "4k" }}>
-          <div className="card">
-            <h1 className="text-[30px]">5K - 6K</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: "5k" }}>
-          <div className="card">
-            <h1 className="text-[30px]">5K</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: "7k" }}>
-          <div className="card">
-            <h1 className="text-[30px]">7K</h1>
-          </div>
-        </Link>
-        <Link to={"/Pricing"} state={{ price: "8k" }}>
-          <div className="card">
-            <h1 className="text-[30px]">8K</h1>
-          </div>
-        </Link>
-      </div> */}
 
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {data.map((img) => (
-          <div
-            key={img._id}
-            className="w-full h-fit max-w-[500px] mx-auto text-white rounded-lg shadow-md overflow-hidden card"
-          >
-            <SkeletonImage
-              isLoading={isLoading}
-              src={img.url}
-              alt={img.filename}
-              imgClass="w-full h-[400px] object-cover rounded-[10px]"
-              skeletonClass="w-full h-[250px] rounded-[10px] "
-            />
+        {data
+          .filter((img) => {
+            return search.toLowerCase() === 0 ? img : img.name.includes(search);
+          })
+          .map((img) => (
+            <div
+              key={img._id}
+              className="w-full h-fit max-w-[500px] mx-auto text-white rounded-lg shadow-md overflow-hidden card"
+            >
+              <SkeletonImage
+                isLoading={isLoading}
+                src={img.url}
+                alt={img.filename}
+                imgClass="w-full h-[400px] object-cover rounded-[10px]"
+                skeletonClass="w-full h-[250px] rounded-[10px] "
+              />
 
-            <div className="p-4 space-y-1">
-              <h1 className="text-2xl font-bold text-lum capitalize">
-                {img.name}
-              </h1>
-              <h2 className="text-sm">Starting {img.price} Br</h2>
-              <h2 className="text-sm text-gray-200">{img.model} or Similar</h2>
-              <h2 className="text-sm font-semibold">
-                Vehicle Feature: {img.item}
-              </h2>
-              <ul className="list-disc list-inside text-sm mt-2 text-gray-300">
-                <li>4 Person Seat</li>
-                <li>Automatic</li>
-                <li>Perfect for in city</li>
-                <li>Pick up at airport</li>
-              </ul>
-              {img.quantity <= 0 ? (
-                <div className="w-fit mt-3 py-2 px-4 border-4 border-red-600 rounded-[10px]">
-                  <h1 className="text-red-600 text-[30px] font-bold">
-                    Sold Out
-                  </h1>
-                </div>
-              ) : (
-                <div className="mt-3">
-                  <div className="w-fit py-2 px-4 border-4 border-green-600 rounded-[10px]">
-                    <h1 className="text-green-600 text-[30px]">
-                      Available now: {img.quantity}
+              <div className="p-4 space-y-1">
+                <h1 className="text-2xl font-bold text-lum capitalize">
+                  {img.name}
+                </h1>
+                <h2 className="text-sm">Starting {img.price} Br</h2>
+                <h2 className="text-sm text-gray-200">
+                  {img.model} or Similar
+                </h2>
+                <h2 className="text-sm font-semibold">
+                  Vehicle Feature: {img.item}
+                </h2>
+                <ul className="list-disc list-inside text-sm mt-2 text-gray-300">
+                  <li>4 Person Seat</li>
+                  <li>Automatic</li>
+                  <li>Perfect for in city</li>
+                  <li>Pick up at airport</li>
+                </ul>
+                {img.quantity <= 0 ? (
+                  <div className="w-fit mt-3 py-2 px-4 border-4 border-red-600 rounded-[10px]">
+                    <h1 className="text-red-600 text-[30px] font-bold">
+                      Sold Out
                     </h1>
                   </div>
-                  <Link
-                    to="/OneDayVehiclesBook"
-                    state={{ img }}
-                    className="block mt-4"
-                  >
-                    <Button text={"Book Now!"} />
-                  </Link>
-                </div>
-              )}
+                ) : (
+                  <div className="mt-3">
+                    <div className="w-fit py-2 px-4 border-4 border-green-600 rounded-[10px]">
+                      <h1 className="text-green-600 text-[30px]">
+                        Available now: {img.quantity}
+                      </h1>
+                    </div>
+                    <Link
+                      to="/OneDayVehiclesBook"
+                      state={{ img }}
+                      className="block mt-4"
+                    >
+                      <Button text={"Book Now!"} />
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
 
       <div className="my-16 lg:my-40 px-4 lg:px-20 flex flex-col lg:flex-row justify-between items-center gap-6">
