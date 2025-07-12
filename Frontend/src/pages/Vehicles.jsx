@@ -336,7 +336,7 @@ export const OneDayVehicles = () => {
           <input
             type="text"
             value={search}
-            className="w-full h-full p-2 bg-amber-50 text-black rounded-2xl placeholder:text-amber-800 lowercase"
+            className="w-full h-full p-2 bg-amber-50 text-black rounded-2xl placeholder:text-amber-800"
             placeholder="Search Your Type!"
             onChange={(e) => setSearch(e.target.value)}
           />
