@@ -6,7 +6,7 @@ import { Card } from "../components/Card";
 import SkeletonImage from "../components/Skeleton";
 import LiveChat from "../components/LiveChat";
 
-export const Tutorial = () => {
+export const Demo = () => {
   //const [isLoading, setIsLoading] = useState(true);
 
   const Image = [
