@@ -73,9 +73,12 @@ export const Demo = () => {
                   </thead>
                   {data
                     .filter((item) => {
-                      return search === ""
-                        ? item
-                        : item.first_name.includes(search);
+                      return (
+                        (search === "" && item) ||
+                        item.first_name.includes(search) ||
+                        item.phone.includes(search) ||
+                        item.last_name.includes(search)
+                      );
                     })
                     .map((item) => (
                       <tbody id={item} className="w-full h-full">
