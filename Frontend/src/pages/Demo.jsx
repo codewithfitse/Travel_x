@@ -8,7 +8,7 @@ import LiveChat from "../components/LiveChat";
 import { data } from "../components/data";
 
 export const Demo = () => {
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState("");
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -71,24 +71,30 @@ export const Demo = () => {
                       </td>
                     </tr>
                   </thead>
-                  {data.map((item) => (
-                    <tbody id={item} className="w-full h-full">
-                      <tr className="w-full h-fit mt-1 flex justify-between">
-                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
-                          {item.first_name}
-                        </td>
-                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
-                          {item.last_name}
-                        </td>
-                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
-                          {item.email}
-                        </td>
-                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
-                          {item.phone}
-                        </td>
-                      </tr>
-                    </tbody>
-                  ))}
+                  {data
+                    .filter((item) => {
+                      return search === ""
+                        ? item
+                        : item.first_name.includes(search);
+                    })
+                    .map((item) => (
+                      <tbody id={item} className="w-full h-full">
+                        <tr className="w-full h-fit mt-1 flex justify-between">
+                          <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                            {item.first_name}
+                          </td>
+                          <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                            {item.last_name}
+                          </td>
+                          <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                            {item.email}
+                          </td>
+                          <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                            {item.phone}
+                          </td>
+                        </tr>
+                      </tbody>
+                    ))}
                 </table>
               </div>
             </div>
