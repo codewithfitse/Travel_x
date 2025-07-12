@@ -30,12 +30,12 @@ export const Demo = () => {
               How to book your car with us and Start enjoying your ride
             </h1>
 
-            <div className="w-full h-[100vh] p-5 bg-white text-black">
+            <div className="w-full h-full p-5 bg-white text-black">
               <div className="w-full h-fit flex justify-between space-x-4">
                 <form
                   action=""
                   onSubmit={handleClick}
-                  className="w-full h-fit flex justify-between space-x-4"
+                  className="w-full h-fit mb-5 flex justify-between space-x-4"
                 >
                   <input
                     type="text"
@@ -53,26 +53,44 @@ export const Demo = () => {
                 </form>
               </div>
 
-              {data.map((item) => {
-                <div id={item} className="w-full h-full text-black">
-                  <thead className="w-full h-fit">
-                    <tr className="w-full h-fit flex justify-between">
-                      <td className="w-full h-fit">First Name</td>
-                      <td className="w-full h-fit">Last Name</td>
-                      <td className="w-full h-fit">Email</td>
-                      <td className="w-full h-fit">Phone</td>
+              <div className="">
+                <table className="w-full h-full font-bold">
+                  <thead className="w-full h-fit text-white">
+                    <tr className="w-full h-fit flex justify-between space-x-1">
+                      <td className="w-full h-fit p-2 bg-gray-600 rounded-[5px]">
+                        First Name
+                      </td>
+                      <td className="w-full h-fit p-2 bg-gray-600 rounded-[5px]">
+                        Last Name
+                      </td>
+                      <td className="w-full h-fit p-2 bg-gray-600 rounded-[5px]">
+                        Email
+                      </td>
+                      <td className="w-full h-fit p-2 bg-gray-600 rounded-[5px]">
+                        Phone
+                      </td>
                     </tr>
                   </thead>
-                  <tbody className="w-full h-full">
-                    <tr className="w-full h-fit flex justify-between">
-                      <td className="w-full h-fit">{item.first_name}</td>
-                      <td className="w-full h-fit">{item.last_name}</td>
-                      <td className="w-full h-fit">{item.email}</td>
-                      <td className="w-full h-fit">{item.phone}</td>
-                    </tr>
-                  </tbody>
-                </div>;
-              })}
+                  {data.map((item) => (
+                    <tbody id={item} className="w-full h-full">
+                      <tr className="w-full h-fit mt-1 flex justify-between">
+                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                          {item.first_name}
+                        </td>
+                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                          {item.last_name}
+                        </td>
+                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                          {item.email}
+                        </td>
+                        <td className="w-full h-fit p-2 bg-gray-200 text-black">
+                          {item.phone}
+                        </td>
+                      </tr>
+                    </tbody>
+                  ))}
+                </table>
+              </div>
             </div>
           </div>
         </div>
