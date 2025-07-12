@@ -59,10 +59,10 @@ const OneDayBook = () => {
     } finally {
       setIsLoading(false);
     }
-    setDate("");
-    setPhone("");
-    setDestination("");
-    setMessage("");
+    // setDate("");
+    // setPhone("");
+    // setDestination("");
+    // setMessage("");
   }
 
   return (
