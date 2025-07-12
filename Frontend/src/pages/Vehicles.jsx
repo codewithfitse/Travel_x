@@ -373,8 +373,7 @@ export const OneDayVehicles = () => {
         {data
           .filter((img) => {
             return (
-              (search && search === "" && img) ||
-              img ||
+              (search && search.toLowerCase() === "" && img) ||
               img.name.includes(search) ||
               img.price.includes(search) ||
               img.model.includes(search) ||
