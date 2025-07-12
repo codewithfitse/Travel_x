@@ -297,7 +297,7 @@ export const VehiclesTypes = () => {
 export const OneDayVehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState("");
   ///const navigate = useNavigate();
 
   useEffect(() => {
@@ -375,7 +375,7 @@ export const OneDayVehicles = () => {
             return (
               (search && search.toLowerCase() === "" && img) ||
               img.name.toLowerCase().includes(search) ||
-              img.price.includes(search) ||
+              img.price.number().includes(search) ||
               img.model.includes(search) ||
               img.item.toLowerCase().includes(search)
             );
