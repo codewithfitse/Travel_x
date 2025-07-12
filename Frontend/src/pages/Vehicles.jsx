@@ -373,7 +373,7 @@ export const OneDayVehicles = () => {
         {data
           .filter((img) => {
             return (
-              (search && search.toLowerCase() === "" && img) ||
+              (search.toLowerCase() === "" && img) ||
               img.name.toLowerCase().includes(search.toLowerCase()) ||
               img.model.includes(search) ||
               img.item.toLowerCase().includes(search.toLowerCase())
