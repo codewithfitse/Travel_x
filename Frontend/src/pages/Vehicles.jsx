@@ -372,7 +372,14 @@ export const OneDayVehicles = () => {
       <div className="pt-10 px-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data
           .filter((img) => {
-            return search.toLowerCase() === 0 ? img : img.name.includes(search);
+            return (
+              (search && search.toLowerCase() === 0) ||
+              img ||
+              img.name.includes(search) ||
+              img.price.includes(search) ||
+              img.model.includes(search) ||
+              img.item.includes(search)
+            );
           })
           .map((img) => (
             <div
