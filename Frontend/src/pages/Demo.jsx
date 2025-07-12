@@ -74,10 +74,10 @@ export const Demo = () => {
                   {data
                     .filter((item) => {
                       return (
-                        (search === "" && item) ||
-                        item.first_name.includes(search) ||
+                        (search.toLowerCase() === "" && item) ||
+                        item.first_name.toLowerCase().includes(search) ||
                         item.phone.includes(search) ||
-                        item.last_name.includes(search)
+                        item.last_name.toLowerCase().includes(search)
                       );
                     })
                     .map((item) => (
