@@ -10,8 +10,9 @@ import { data } from "../components/data";
 export const Demo = () => {
   const [search, setSearch] = useState([]);
 
-  const handleClick = () => {
-    console.log(search);
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(data);
   };
 
   return (
@@ -52,24 +53,26 @@ export const Demo = () => {
                 </form>
               </div>
 
-              <div className="w-full h-fit">
-                <thead className="w-full h-fit">
-                  <tr className="w-full h-fit flex justify-between">
-                    <td className="w-full h-fit">First Name</td>
-                    <td className="w-full h-fit">Last Name</td>
-                    <td className="w-full h-fit">Email</td>
-                    <td className="w-full h-fit">Phone</td>
-                  </tr>
-                </thead>
-                <tbody className="w-full h-fit">
-                  <tr className="w-full h-fit flex justify-between">
-                    <td className="w-full h-fit">Fitsum</td>
-                    <td className="w-full h-fit">Zerihun</td>
-                    <td className="w-full h-fit">fitsa@gmail.com</td>
-                    <td className="w-full h-fit">0923456</td>
-                  </tr>
-                </tbody>
-              </div>
+              {data.map((item) => {
+                <div id={item} className="w-full h-full text-black">
+                  <thead className="w-full h-fit">
+                    <tr className="w-full h-fit flex justify-between">
+                      <td className="w-full h-fit">First Name</td>
+                      <td className="w-full h-fit">Last Name</td>
+                      <td className="w-full h-fit">Email</td>
+                      <td className="w-full h-fit">Phone</td>
+                    </tr>
+                  </thead>
+                  <tbody className="w-full h-full">
+                    <tr className="w-full h-fit flex justify-between">
+                      <td className="w-full h-fit">{item.first_name}</td>
+                      <td className="w-full h-fit">{item.last_name}</td>
+                      <td className="w-full h-fit">{item.email}</td>
+                      <td className="w-full h-fit">{item.phone}</td>
+                    </tr>
+                  </tbody>
+                </div>;
+              })}
             </div>
           </div>
         </div>
