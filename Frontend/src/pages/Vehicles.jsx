@@ -297,7 +297,7 @@ export const VehiclesTypes = () => {
 export const OneDayVehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(null);
   ///const navigate = useNavigate();
 
   useEffect(() => {
