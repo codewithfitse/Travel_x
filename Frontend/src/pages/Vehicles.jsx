@@ -123,7 +123,7 @@ const Vehicles = () => {
               isLoading={isLoading}
               src="minivan.png"
               imgClass="w-full h-auto rounded-[20px]"
-              skeletonClass="w-[400px] h-[300px]rounded-[10px]"
+              skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-lum font-bold">Mini Van</h1>
