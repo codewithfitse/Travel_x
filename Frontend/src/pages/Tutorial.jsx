@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { Card } from "../components/Card";
 import SkeletonImage from "../components/Skeleton";
 import LiveChat from "../components/LiveChat";
+import { Carousel } from "flowbite-react";
 
 export const Tutorial = () => {
   //const [isLoading, setIsLoading] = useState(true);
@@ -77,28 +78,26 @@ export const Tutorial = () => {
             </h1>
           </div>
 
-          <div className="w-full h-[1000px] flex justify-center items-center bg-gray-900 relative px-5">
-            {/* Background Image */}
-            <div
-              style={{ backgroundImage: `url(${Image[page].url})` }}
-              className="w-full max-w-[600px] h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
-            ></div>
-
-            {/* Back Button */}
-            <div
-              className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-white/50 rounded-full p-3 text-black text-xl cursor-pointer hover:bg-white/70 transition"
-              onClick={prev}
-            >
-              ←
-            </div>
-
-            {/* Next Button */}
-            <div
-              className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-white/50 rounded-full p-3 text-black text-xl cursor-pointer hover:bg-white/70 transition"
-              onClick={next}
-            >
-              →
-            </div>
+          <div className="w-full h-[1000px] sm:h-64 xl:h-80 2xl:h-96">
+            <Carousel>
+              <img
+                className="w-full max-w-[600px] h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
+                src="Book/BookSt1.jpg"
+                alt="..."
+              />
+              <img
+                className="w-full max-w-[600px] h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
+                src="Book/BookSt2.jpg"
+                alt="..."
+              />
+              <img
+                className="w-[300px] max-w-[600px] h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
+                src="Book/BookSt3.jpg"
+                alt="..."
+              />
+              <img src="Book/BookSt4.jpg" alt="..." />
+              <img src="Book/BookSt5.jpg" alt="..." />
+            </Carousel>
           </div>
         </div>
       </div>
