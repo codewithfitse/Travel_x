@@ -149,7 +149,7 @@ app.get(
         return res.redirect("https://travel-x-kappa.vercel.app/SubAdmin");
       }
 
-      return res.redirect("https://travel-x-kappa.vercel.app/Dashboard");
+      return res.redirect("https://travel-x-kappa.vercel.app/UserDashboard");
     });
   }
 );
