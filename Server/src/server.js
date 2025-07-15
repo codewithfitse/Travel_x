@@ -138,10 +138,16 @@ app.get(
     }
 
     req.session.save(() => {
-      const { _id, isAdmin, isSubAdmin } = req.user;
+      const { _id, role } = req.user;
 
       console.log("✅ Logged in user:", req.user);
       console.log("💾 Session:", req.session);
+
+      if (role === "admin") {
+        return res.redirect("https://travel-x-kappa.vercel.app/Admin");
+      } else if (role === "subadmin") {
+        return res.redirect("https://travel-x-kappa.vercel.app/SubAdmin");
+      }
 
       return res.redirect("https://travel-x-kappa.vercel.app/Dashboard");
     });
