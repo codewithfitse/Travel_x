@@ -52,7 +52,7 @@ const Footer = () => {
                 <h1>Phone: +251 912 347 874</h1>
               </div>
               <div className="w-[130px] py-1 lg:py-2 px-2 text-[8px] lg:text-[18px] font-bold lg:w-[280px] box">
-                <h1>Adress: Jemo1 Ruta build. 1st floor</h1>
+                <h1>Adress: Jemo-1 Hawdiy build. 1st floor</h1>
               </div>
               <div className="w-[130px] py-1 lg:py-2 px-2 text-[8px] lg:text-[18px] font-bold lg:w-[280px] box">
                 <h1>Mail: abelzerihun@gmail.com</h1>
