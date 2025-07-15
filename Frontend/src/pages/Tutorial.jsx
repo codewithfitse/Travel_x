@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+//import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Card } from "../components/Card";
@@ -46,21 +46,21 @@ export const Tutorial = () => {
   //   return () => clearTimeout(timer);
   // }, []);
 
-  const [page, setPage] = useState(0);
+  // const [page, setPage] = useState(0);
 
-  function prev() {
-    const isFirstSlide = page === 0;
-    const newIndex = isFirstSlide ? Image.length - 1 : page - 1;
+  // function prev() {
+  //   const isFirstSlide = page === 0;
+  //   const newIndex = isFirstSlide ? Image.length - 1 : page - 1;
 
-    setPage(newIndex);
-  }
+  //   setPage(newIndex);
+  // }
 
-  function next() {
-    const isFirstSlide = page === Image.length - 1;
-    const newIndex = isFirstSlide ? 0 : page + 1;
+  // function next() {
+  //   const isFirstSlide = page === Image.length - 1;
+  //   const newIndex = isFirstSlide ? 0 : page + 1;
 
-    setPage(newIndex);
-  }
+  //   setPage(newIndex);
+  // }
 
   return (
     <div className="w-full min-h-full bg-white/10 overflow-x-hidden text-white">
