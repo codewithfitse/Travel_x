@@ -67,7 +67,7 @@ const OneDayBook = () => {
   }
 
   return (
-    <div className="w-full h-[100%] background overflow-x-hidden text-amber-50 ">
+    <div className="w-full h-[100%] background overflow-x-hidden text-amber-50">
       <Header />
 
       <div className="py-[70px] lg:py-[100px] lg:px-[200px]">
