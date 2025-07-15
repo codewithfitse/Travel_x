@@ -179,13 +179,12 @@ const OneDayBook = () => {
                 >
                   Apponment date:
                 </label>
-                <input
+                <Datepicker
+                  inline
                   type="date"
                   name="date"
-                  value={date}
+                  value={date} // Set the value to the selected date
                   onChange={(e) => setDate(e.target.value)}
-                  className="input"
-                  placeholder="destination"
                 />
               </div>
             </div>
