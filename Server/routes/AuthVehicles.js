@@ -4,6 +4,7 @@ import UserPost from "../models/UserPost.js";
 import UserPostOne from "../models/UserPostOne.js";
 import multer from "multer";
 import authMiddleware from "../middleware/tokenMiddleware.js";
+import { validateMIMEType } from "validate-image-type";
 
 const router = express.Router();
 
