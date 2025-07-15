@@ -3,23 +3,12 @@ import mongoose from "mongoose";
 const ImageSchema = new mongoose.Schema(
   {
     userId: String,
-    images: {
-      type: [
-        {
-          url: {
-            type: String,
-            required: [true, "Cloudinary public ID is required"],
-          },
-          public_id: {
-            type: String,
-            required: [true, "Cloudinary public ID is required"],
-          },
-          filename: {
-            type: String,
-            required: [true, "Cloudinary public ID is required"],
-          },
-        },
-      ],
+    public_id: String,
+    filename: {
+      type: String,
+    },
+    url: {
+      type: String,
     },
     name: {
       type: String,
@@ -39,7 +28,6 @@ const ImageSchema = new mongoose.Schema(
     },
     quantity: {
       type: Number,
-      min: [1, "Quantity must be at least 1"],
     },
   },
   { timestamps: true }
