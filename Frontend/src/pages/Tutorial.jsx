@@ -78,7 +78,7 @@ export const Tutorial = () => {
             </h1>
           </div>
 
-          <div className="w-full h-[1000px] sm:h-64 xl:h-80 2xl:h-96">
+          <div className="w-full h-[1000px] lg:h-[2000px] sm:h-64 xl:h-80 2xl:h-96">
             <Carousel>
               <img
                 className="w-full max-w-[600px] h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
