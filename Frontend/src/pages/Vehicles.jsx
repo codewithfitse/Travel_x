@@ -614,22 +614,6 @@ export const OneDayVehiclesBook = () => {
         </div>
       </div>
 
-      <div className="my-[40px] lg:mt-[200px] px-5 lg:px-20 flex justify-between items-center">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-[15px] lg:text-[40px] font-bold">
-            COME & TRY OUR <span className="text-lum">SERVICES</span>
-          </h1>
-          <h2 className="text-[10px] lg:text-[20px] text-2xl">
-            We Always Have The Best Customer Services In Town
-          </h2>
-        </div>
-        <div className="lg:mt-7 flex justify-center items-center">
-          <Link to={"/Booking"}>
-            <Button text={"Book Now!"} />
-          </Link>
-        </div>
-      </div>
-
       <Footer />
     </div>
   );
