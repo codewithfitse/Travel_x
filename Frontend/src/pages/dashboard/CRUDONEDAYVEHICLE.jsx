@@ -536,6 +536,7 @@ export const OnePost = () => {
               onChange={(e) => setImages(Array.from(e.target.files))}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose File"
+              multiple
             />
           </div>
           {err && <h1 className="text-[30px] text-red-500 font-bold">{err}</h1>}
