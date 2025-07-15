@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useState, useEffect } from "react";
 import { Link } from "react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 import SkeletonImage from "../components/Skeleton";
 const LiveChat = lazy(() => import("../components/LiveChat"));
 
@@ -42,7 +42,7 @@ const Home = () => {
                 <Button text={"Contact Us"} />
               </Link>
               <Link to={"/Booking"}>
-                <Button text={"Our Services"} />
+                <Button text={"Our Services"} color={"green"} />
               </Link>
             </div>
           </div>

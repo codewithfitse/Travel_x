@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
 import SkeletonImage from "../components/Skeleton";
