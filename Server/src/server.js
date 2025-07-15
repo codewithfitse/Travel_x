@@ -143,13 +143,13 @@ app.get(
       console.log("✅ Logged in user:", req.user);
       console.log("💾 Session:", req.session);
 
-      if (role === "admin") {
-        return res.redirect("https://travel-x-kappa.vercel.app/Admin");
-      } else if (role === "subadmin") {
-        return res.redirect("https://travel-x-kappa.vercel.app/SubAdmin");
-      }
+      // if (role === "admin") {
+      //   return res.redirect("https://travel-x-kappa.vercel.app/Admin");
+      // } else if (role === "subadmin") {
+      //   return res.redirect("https://travel-x-kappa.vercel.app/SubAdmin");
+      // }
 
-      return res.redirect("https://travel-x-kappa.vercel.app/UserDashboard");
+      return res.redirect("https://travel-x-kappa.vercel.app/Dashboard");
     });
   }
 );
