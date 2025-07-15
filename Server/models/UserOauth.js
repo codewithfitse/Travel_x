@@ -5,8 +5,11 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   avatar: String,
-  isAdmin: { type: Boolean, default: false },
-  isSubAdmin: { type: Boolean, default: false },
+  role: {
+    type: String,
+    enum: ["admin", "subadmin", "user"],
+    default: "user",
+  },
 });
 
 export default mongoose.model("UserOauth", userSchema);
