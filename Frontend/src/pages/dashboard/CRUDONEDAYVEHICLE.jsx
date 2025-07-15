@@ -404,7 +404,7 @@ export const OnePost = () => {
     formData.append("image", image);
 
     try {
-      const res = await axios.post(`${Render}/uploads/one`, formData, {
+      await axios.post(`${Render}/uploads/one`, formData, {
         withCredentials: true,
         headers: {
           "Content-Type": "multipart/form-data",
@@ -531,12 +531,11 @@ export const OnePost = () => {
             </label>
             <input
               type="file"
-              name="images"
+              name="image"
               accept="image/*"
-              onChange={(e) => setImages(Array.from(e.target.files))}
+              onChange={(e) => setImage(e.target.files[0])}
               className="w-[80%] h-fit py-2 px-3 text-gray-800 bg-amber-50 rounded-[10px]"
               placeholder="Choose File"
-              multiple
             />
           </div>
           {err && <h1 className="text-[30px] text-red-500 font-bold">{err}</h1>}
