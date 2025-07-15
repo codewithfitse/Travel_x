@@ -81,7 +81,7 @@ export const Tutorial = () => {
             {/* Background Image */}
             <div
               style={{ backgroundImage: `url(${Image[page].url})` }}
-              className="w-full max-w-[600px] h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
+              className="w-full max-w-full h-full bg-cover bg-no-repeat rounded-2xl shadow-lg"
             ></div>
 
             {/* Back Button */}
