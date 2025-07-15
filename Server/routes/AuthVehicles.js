@@ -262,8 +262,10 @@ router.post("/one", authMiddleware, upload.array("image"), async (req, res) => {
       price: Number(price),
       model,
       quantity: Number(quantity),
-      url: req.file.path,
-      public_id: req.file.filename,
+      images: {
+        url: req.file.path,
+        public_id: req.file.filename,
+      },
     });
 
     await savedPost.save();
