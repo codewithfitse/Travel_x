@@ -246,19 +246,6 @@ router.post(
   "/one",
   authMiddleware,
   upload.single("image"),
-  asyncWrapper(async (req, res, next) => {
-    const validationResult = await validateMIMEType(req.file.path, {
-      originalFilename: req.file.originalname,
-      allowMimeTypes: ["image/gif", "image/png"],
-    });
-    console.log("validationResult", validationResult);
-    if (!validationResult.ok) {
-      return res.status(500).json({ error: "Bad File" });
-    }
-    // uploading task
-    // ...
-    next();
-  }),
   async (req, res) => {
     const { name, item, price, model, quantity } = req.body;
     const userId = req.user?._id || req.user?.id;
