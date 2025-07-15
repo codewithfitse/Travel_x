@@ -15,7 +15,7 @@ const Footer = () => {
           </h2>
         </div>
         <div className="lg:mt-7 flex justify-center items-center">
-          <Link to={"/Booking"}>
+          <Link to={"/Vehicles"}>
             <Button text={"Book Now!"} />
           </Link>
         </div>
