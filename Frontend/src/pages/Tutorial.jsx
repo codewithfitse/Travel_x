@@ -66,7 +66,7 @@ export const Tutorial = () => {
       <Header />
       <LiveChat />
       <div className="w-full h-full flex justify-center items-center pt-10">
-        <div className="w-full h-full mt-15 lg:mt-30 flex flex-col items-center">
+        <div className="w-full h-full mt-10 lg:mt-30 flex flex-col items-center">
           <div className="py-5 lg:py-10">
             <h1 className="text-[25px] lg:text-6xl text-center font-bold">
               EASY BOOKING STEPS
