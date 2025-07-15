@@ -425,8 +425,6 @@ export const OnePost = () => {
         alert(errorMsg);
       } else if (errorStatus === 400) {
         alert(errorMsg);
-      } else {
-        alert(errorMsg);
       }
       console.error(err);
       setErr(err);
