@@ -404,20 +404,6 @@ export const OneDayVehicles = () => {
           ))}
       </div>
 
-      <div className="my-16 lg:my-40 px-4 lg:px-20 flex flex-col lg:flex-row justify-between items-center gap-6">
-        <div className="text-center lg:text-left">
-          <h1 className="text-xl lg:text-4xl font-bold">
-            COME & TRY OUR <span className="text-lum">SERVICES</span>
-          </h1>
-          <h2 className="text-sm lg:text-xl">
-            We Always Have The Best Customer Services In Town
-          </h2>
-        </div>
-        <Link to="/Booking">
-          <Button text={"Book Now!"} />
-        </Link>
-      </div>
-
       <Footer />
     </div>
   );
