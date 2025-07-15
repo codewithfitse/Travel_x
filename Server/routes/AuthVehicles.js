@@ -235,63 +235,52 @@ router.get("/suvOne", async (req, res) => {
   }
 });
 
-const asyncWrapper = (fn) => {
-  return (req, res, next) => {
-    return fn(req, res, next).catch(next);
-  };
-};
-
 // I make this Post to upload to cloudeary cloud storage!
-router.post(
-  "/one",
-  authMiddleware,
-  upload.single("image"),
-  async (req, res) => {
-    const { name, item, price, model, quantity } = req.body;
-    const userId = req.user?._id || req.user?.id;
+router.post("/one", authMiddleware, upload.array("image"), async (req, res) => {
+  const { name, item, price, model, quantity } = req.body;
+  const userId = req.user?._id || req.user?.id;
 
-    // Add these debug logs:
-    console.log("📥 Incoming POST to /one");
-    console.log("🧑‍💻 User ID:", userId);
-    console.log("📦 Body:", req.body);
-    console.log("📁 File:", req.file);
+  // Add these debug logs:
+  console.log("📥 Incoming POST to /one");
+  console.log("🧑‍💻 User ID:", userId);
+  console.log("📦 Body:", req.body);
+  console.log("📁 File:", req.file);
 
-    if (!userId) {
-      return res.status(401).json({ error: "Unauthorized: No user ID" });
-    }
-
-    if (!req.file) {
-      return res.status(400).json({ error: "No file uploaded" });
-    }
-
-    try {
-      const savedPost = new UserPostOne({
-        userId,
-        name,
-        item,
-        price: Number(price),
-        model,
-        quantity: Number(quantity),
-        url: req.file.path,
-        public_id: req.file.filename,
-      });
-
-      await savedPost.save();
-
-      res.status(200).json({
-        msg: "Uploaded and saved to DB!",
-        imageUrl: req.file.path,
-      });
-    } catch (error) {
-      console.error("❌ Error saving post:", error.message);
-      return res.status(500).json({
-        error: "Upload failed",
-        message: error.message,
-        stack: error.stack,
-      });
-    }
+  if (!userId) {
+    return res.status(401).json({ error: "Unauthorized: No user ID" });
   }
-);
+
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
+  try {
+    const savedPost = new UserPostOne({
+      userId,
+      name,
+      item,
+      price: Number(price),
+      model,
+      quantity: Number(quantity),
+      url: req.file.path,
+      public_id: req.file.filename,
+    });
+
+    await savedPost.save();
+
+    res.status(200).json({
+      msg: "Uploaded and saved to DB!",
+      imageUrl: req.file.path,
+    });
+  } catch (error) {
+    console.error("❌ Error saving post:", error.message);
+    return res.status(500).json({
+      error: "Upload failed",
+      message: error.message,
+      stack: error.stack,
+    });
+  }
+});
 
 // Update route - Update image and/or text
 router.put(
