@@ -235,11 +235,29 @@ router.get("/suvOne", async (req, res) => {
   }
 });
 
+const asyncWrapper = (fn) => {
+  return (req, res, next) => {
+    return fn(req, res, next).catch(next);
+  };
+};
+
 // I make this Post to upload to cloudeary cloud storage!
 router.post(
   "/one",
   authMiddleware,
   upload.single("image"),
+  asyncWrapper(async (req, res, next) => {
+    const validationResult = await validateMIMEType(req.file.path, {
+      originalFilename: req.file.originalname,
+      allowMimeTypes: ["image/gif", "image/png"],
+    });
+    console.log("validationResult", validationResult);
+    if (!validationResult.ok) {
+      return res.status(500).json({ error: "Bad File" });
+    }
+    // uploading task
+    // ...
+  }),
   async (req, res) => {
     const { name, item, price, model, quantity } = req.body;
     const userId = req.user?._id || req.user?.id;
