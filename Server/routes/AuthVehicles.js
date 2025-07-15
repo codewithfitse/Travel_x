@@ -257,6 +257,7 @@ router.post(
     }
     // uploading task
     // ...
+    next();
   }),
   async (req, res) => {
     const { name, item, price, model, quantity } = req.body;
