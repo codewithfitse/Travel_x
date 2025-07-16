@@ -1,15 +1,14 @@
 import React from "react";
-import { Button } from "flowbite-react";
+//import { Button } from "flowbite-react";
 
-const Buttons = ({ text, color }) => {
+const Buttons = ({ text }) => {
   return (
-    <Button
-      color={color}
+    <button
       outline
-      className="w-full h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold"
+                      className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
     >
       {text}
-    </Button>
+    </button>
   );
 };
 
