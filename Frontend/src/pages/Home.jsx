@@ -42,7 +42,7 @@ const Home = () => {
                 <Button text={"Contact Us"} />
               </Link>
               <Link to={"/Booking"}>
-                <Button text={"Our Services"} color={"green"} />
+                <Button text={"Our Services"} />
               </Link>
             </div>
           </div>
