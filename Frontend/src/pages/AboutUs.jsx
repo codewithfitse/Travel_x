@@ -15,7 +15,7 @@ const AboutUs = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="w-full h-fit background text-amber-50">
+    <div className="w-full h-fit background overflow-x-hidden text-amber-50">
       <Header />
       <LiveChat />
       <div className="pt-[100px] lg:pt-[150px] flex flex-col items-center">
@@ -48,7 +48,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="mt-[100px] flex flex-col lg:flex-row lg:justify-center lg:items-center">
+      <div className="w-full mt-[100px] flex flex-col lg:flex-row lg:justify-center lg:items-center">
         <div className="w-full lg:w-[30%] mb-5 lg:mb-0">
           <div className="w-full h-full px-6">
             <SkeletonImage
@@ -59,7 +59,7 @@ const AboutUs = () => {
             />
           </div>
         </div>
-        <div className="w-full lg:w-[70%]">
+        <div className="w-full lg:w-[70%] mr-10">
           <h1 className="text-[12px] lg:text-[22px]  pl-10 pr-1.5">
             <span className="text-[20px] lg:text-[40px] text-lum font-bold ">
               We
@@ -68,8 +68,8 @@ const AboutUs = () => {
             consuming task. At TIME Rental we always try to make it easier by
             providing detailed information.
           </h1>
-          <div className="mt-10 grid lg:grid-cols-2 gap-2">
-            <div className="w-full h-[200px] pl-5 flex items-center space-x-5 card">
+          <div className="mt-10 grid lg:grid-cols-2 gap-1">
+            <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
               <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
@@ -78,15 +78,18 @@ const AboutUs = () => {
                   srcset=""
                 />
               </div>
-              <div className="w-[70%] flex flex-col justify-center">
-                <h1 className="text-[30px] font-bold">Lowest price</h1>
+              <div className="w-[90%] h-fit flex flex-col justify-center">
+                <h1 className="text-[30px] font-bold">Quality & Variety</h1>
                 <p>
-                  We promise to give you the lowest price rate in town for the
-                  car you choose.
+                  Discover our diverse range of meticulously maintained
+                  vehicles, ensuring you always drive in style. From sleek
+                  sedans to rugged SUVs, our fleet offers the perfect ride for
+                  every occasion. We meticulously maintain each vehicle to the
+                  highest standards.
                 </p>
               </div>
             </div>
-            <div className="w-full h-[200px] pl-5 flex items-center space-x-5 card">
+            <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
               <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
@@ -95,15 +98,19 @@ const AboutUs = () => {
                   srcset=""
                 />
               </div>
-              <div className="w-[70%] flex flex-col justify-center">
-                <h1 className="text-[30px] font-bold">We love serving</h1>
-                <p className="w-[95%]">
-                  We want you to be a happy customer. With us it is not a one
-                  time deal.
+              <div className="w-[90%] flex flex-col justify-center">
+                <h1 className="text-[30px] font-bold">Affordable Rates</h1>
+                <p>
+                  We believe that luxury travel should be accessible to all. We
+                  offer competitive prices without hidden fees, giving you the
+                  freedom to experience the comfort and style of our premium
+                  vehicles without breaking the bank. We’re committed to
+                  providing affordable luxury for your travels. With us it is
+                  not a one time deal.
                 </p>
               </div>
             </div>
-            <div className="w-full h-[250px] pl-5 flex items-center space-x-5 card">
+            <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
               <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
@@ -112,16 +119,19 @@ const AboutUs = () => {
                   srcset=""
                 />
               </div>
-              <div className="w-[70%] flex flex-col justify-center">
-                <h1 className="text-[30px] font-bold">Professional</h1>
+              <div className="w-[90%] flex flex-col justify-center">
+                <h1 className="text-[30px] font-bold">Easy Booking</h1>
                 <p>
-                  Our friendly and knowledgeable staff will give you a tour with
-                  all the information to make your visit of Addis Ababa and
-                  other parts of Ethiopia a memorable experience.
+                  Reserving your dream car is a breeze with Drivoxe. Our
+                  user-friendly online platform and mobile app make the booking
+                  process straightforward and efficient. In just a few clicks,
+                  you can secure your choice of vehicle and hit the road,
+                  ensuring a seamless and hassle-free experience from start to
+                  finish.
                 </p>
               </div>
             </div>
-            <div className="w-full h-[250px] pl-5 flex items-center space-x-5 card">
+            <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
               <div className="p-3 flex items-center bg-lum rounded-full">
                 <img
                   src="Icons/car.png"
@@ -130,11 +140,18 @@ const AboutUs = () => {
                   srcset=""
                 />
               </div>
-              <div className="w-[70%] flex flex-col justify-center">
-                <h1 className="text-[30px] font-bold">Lowest price</h1>
+              <div className="w-[90%] flex flex-col justify-center">
+                <h1 className="text-[30px] font-bold">
+                  {" "}
+                  Customer Satisfaction
+                </h1>
                 <p>
-                  We promise to give you the lowest price rate in town for the
-                  car you choose.
+                  Our loyal customers trust Drivoxe for the excellence of our
+                  service and the exquisite selection in our fleet. From the
+                  moment you book to the final mile of your journey, we are
+                  dedicated to providing top-notch service. We pride ourselves
+                  on our responsive customer support, available 24/7 to assist
+                  you. Your satisfaction is our ultimate reward.
                 </p>
               </div>
             </div>
