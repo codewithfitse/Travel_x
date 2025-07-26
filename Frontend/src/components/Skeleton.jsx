@@ -14,7 +14,7 @@ export const SkeletonImage = ({
       {isLoading ? (
         <div className={`${skeletonAnimation} ${skeletonClass}`}></div>
       ) : (
-        <img src={src} alt={alt} className={imgClass} />
+        <img src={src} alt={alt} className={imgClass} fetchPriority="high" />
       )}
     </div>
   );
