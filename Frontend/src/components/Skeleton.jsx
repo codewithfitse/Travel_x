@@ -6,7 +6,7 @@ export const SkeletonImage = ({
   alt = "Logo",
   className = "", // Optional outer wrapper styling
   imgClass = "",
-  skeletonAnimation = "bg-white/10 backdrop-blur-[10px] animate-pulse rounded-[10px]",
+  skeletonAnimation = "bg-white/10 backdrop-blur-[10px] animate-pulse rounded-[10px] transition-all duration-300",
   skeletonClass = "",
 }) => {
   return (
