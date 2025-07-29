@@ -13,7 +13,7 @@ const Vehicles = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 6000);
+    const timer = setTimeout(() => setIsLoading(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
