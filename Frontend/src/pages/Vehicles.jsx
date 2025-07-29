@@ -32,7 +32,7 @@ const Vehicles = () => {
           <div className="w-full h-auto py-5 card">
             <SkeletonImage
               isLoading={isLoading}
-              src="economy2.png"
+              src="economy2.webp"
               imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
@@ -55,7 +55,7 @@ const Vehicles = () => {
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
-              src="standard.png"
+              src="standard.webp"
               imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] rounded-[20px]"
             />
@@ -77,7 +77,7 @@ const Vehicles = () => {
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
-              src="midsizesuv.png"
+              src="midsizesuv.webp"
               imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
@@ -99,7 +99,7 @@ const Vehicles = () => {
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
-              src="fullsuv.png"
+              src="fullsuv.webp"
               imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
@@ -121,7 +121,7 @@ const Vehicles = () => {
           <div className="w-full py-5 card">
             <SkeletonImage
               isLoading={isLoading}
-              src="minivan.png"
+              src="minivan.webp"
               imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
@@ -143,7 +143,7 @@ const Vehicles = () => {
           <div className="w-full py-8 card">
             <SkeletonImage
               isLoading={isLoading}
-              src="pickup.png"
+              src="pickup.webp"
               imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />

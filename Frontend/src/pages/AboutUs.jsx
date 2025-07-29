@@ -53,7 +53,7 @@ const AboutUs = () => {
           <div className="w-full h-full px-6">
             <SkeletonImage
               isLoading={isLoading}
-              src="Abel.jpg"
+              src="Abel.webp"
               imgClass="w-full h-auto rounded-[20px]"
               skeletonClass="w-[400px] h-[600px] rounded-[10px]"
             />
