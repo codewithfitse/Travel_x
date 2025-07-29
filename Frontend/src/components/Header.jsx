@@ -9,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    const timer = setTimeout(() => setIsLoading(false), 100);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -20,7 +20,7 @@ const Header = () => {
           src="/Logo/Time_white.webp"
           alt="Time Logo"
           imgClass="w-16 lg:w-20 h-auto"
-          skeletonAnimation="w-16 rounded-full"
+          skeletonAnimation="w-16 rounded-full bg-gray-300 rounded-[10px] animate-pulse"
           skeletonClass="w-16"
         />
       </div>
@@ -92,9 +92,9 @@ const Header = () => {
             <Link to="/Tutorial">
               <h1 className="hover:text-lum">Tutorial</h1>
             </Link>
-          <Link to="/Demo">
-            <h1 className="hover:text-lum">Demo</h1>
-          </Link>
+            <Link to="/Demo">
+              <h1 className="hover:text-lum">Demo</h1>
+            </Link>
           </div>
         )}
       </div>
