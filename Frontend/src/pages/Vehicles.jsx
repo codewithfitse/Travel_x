@@ -6,6 +6,7 @@ import Button from "../components/Button";
 import axios from "axios";
 import SkeletonImage from "../components/Skeleton";
 import LiveChat from "../components/LiveChat";
+import { useQuery } from "@tanstack/react-query";
 const Render = import.meta.env.VITE_BACKEND_URL;
 
 const Vehicles = () => {
@@ -264,7 +265,7 @@ export const VehiclesTypes = () => {
 
 export const OneDayVehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   ///const navigate = useNavigate();
 
@@ -274,20 +275,25 @@ export const OneDayVehicles = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const res = await axios.get(`${Render}/uploads/Ones`, {
-          withCredentials: true,
-        });
-        setData(res.data);
-      } catch (err) {
-        console.error("Error fetching images:", err);
-      }
-    };
+  const { data } = useQuery("data", async () => {
+    return await axios
+      .get(`${Render}/uploads/Ones`, {
+        withCredentials: true,
+      })
+      .then((response) => response.json());
+  });
 
-    fetchImages();
-  }, []);
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     try {
+  //       const res = await axios.get(`${Render}/uploads/Ones`, {
+  //         withCredentials: true,
+  //       });
+  //       setData(res.data);
+  //     } catch (err) {
+  //       console.error("Error fetching images:", err);
+  //     }
+  //   };
 
   return (
     <div className="w-full min-h-screen background text-amber-50">

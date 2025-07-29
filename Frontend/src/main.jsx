@@ -68,6 +68,10 @@ import {
 import { Tutorial } from "./pages/Tutorial.jsx";
 import { Demo } from "./pages/Demo.jsx";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -291,7 +295,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router}>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
     </RouterProvider>
   </StrictMode>
 );
