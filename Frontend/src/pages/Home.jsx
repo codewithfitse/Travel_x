@@ -50,7 +50,7 @@ const Home = () => {
           <div className="w-[100%] mt-10 lg:w-[100%] flex justify-center">
             <SkeletonImage
               isLoading={isLoading}
-              src="mercedis.png"
+              src="mercedis.webp"
               imgClass="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
               skeletonClass="w-[380px] lg:w-[550px]  h-[350px] rounded-[10px]"
@@ -82,7 +82,7 @@ const Home = () => {
           <div className="w-[100%] lg:w-[100%] flex justify-center">
             <SkeletonImage
               isLoading={isLoading}
-              src="MersedisFront.png"
+              src="MersedisFront.webp"
               imgClass="w-[300px] mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
             />
@@ -93,7 +93,7 @@ const Home = () => {
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              src="compact.png"
+              src="compact.webp"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
@@ -108,7 +108,7 @@ const Home = () => {
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              src="economy.png"
+              src="economy.webp"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit transition-all"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
@@ -123,7 +123,7 @@ const Home = () => {
           <div className="w-[100%] h-fit pt-10 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              src="midsuv.png"
+              src="midsuv.webp"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
@@ -138,7 +138,7 @@ const Home = () => {
           <div className="w-[100%] h-fit py-3 pb-5 flex flex-col items-center card">
             <SkeletonImage
               isLoading={isLoading}
-              src="minivan.png"
+              src="minivan.webp"
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
@@ -166,7 +166,7 @@ const Home = () => {
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
               <SkeletonImage
                 isLoading={isLoading}
-                src="carlist.png"
+                src="carlist.webp"
                 imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
                 skeletonClass="w-[400px] h-[300px]"
               />
