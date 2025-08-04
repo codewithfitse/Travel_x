@@ -66,7 +66,7 @@ import {
   UserBookStatus,
 } from "./pages/dashboard/BookStatus.jsx";
 import { Tutorial } from "./pages/Tutorial.jsx";
-import { Demo } from "./pages/Demo.jsx";
+import  Demo  from "./pages/Demo.jsx";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -77,6 +77,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Landing />,
     errorElement: <NotFound />,
+  },
+  {
+    path: "/Demo",
+    element: <Demo />,
   },
   {
     path: "/Demo",
