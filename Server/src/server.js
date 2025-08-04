@@ -22,7 +22,7 @@ import authMiddleware from "../middleware/tokenMiddleware.js";
 const RENDER_URL = "https://travel-x-408k.onrender.com";
 
 setInterval(() => {
-  console.log(`[PING] ${new Date().toISOString()} - ${res.status}`)
+  console.log(`[PING.] ${new Date().toISOString()} - ${res.status}`)
 }, 10 * 60 * 1000); // Ping every 10 minutes
 
 const app = express();
