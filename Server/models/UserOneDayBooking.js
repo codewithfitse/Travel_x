@@ -1,0 +1,54 @@
+import mongoose from "mongoose";
+
+const ImageSchema = new mongoose.Schema({
+  vehicleId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "oneImages", // This should match the name of your car model
+    required: true,
+  },
+  userId: String,
+  transactionId: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
+  data: {
+    url: String,
+    ownerName: String,
+    customName: String,
+    avatar: String,
+    email: String,
+    phone: {
+      type: String,
+      required: true,
+    },
+    item: {
+      type: String,
+      required: true,
+    },
+    price: Number,
+    model: String,
+    date: Date,
+    quantity: {
+      type: Number,
+      default: 1,
+    },
+    message: String,
+    destination: {
+      type: String,
+      required: true,
+    },
+    status: {
+      type: String,
+      default: "pending",
+    },
+  },
+  createdAt: { type: Date, default: Date.now },
+});
+
+const UserOneDay = mongoose.model("oneDayBook", ImageSchema);
+export default UserOneDay;
