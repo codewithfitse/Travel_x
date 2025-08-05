@@ -568,11 +568,11 @@ export const OneDayVehiclesBook = () => {
     }
   }
 
-  useEffect(() => {
-    // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 9000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   // Simulate loading for 2 seconds
+  //   const timer = setTimeout(() => setIsLoading(false), 9000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   useEffect(() => {
     // Fetch images from backend
@@ -584,6 +584,8 @@ export const OneDayVehiclesBook = () => {
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
+      } finally {
+        setIsLoading(false)
       }
     };
 
