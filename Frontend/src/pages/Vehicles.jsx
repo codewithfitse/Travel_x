@@ -39,7 +39,9 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="w-full pl-5">
-              <h1 className="text-[40px] text-lum font-bold">{t("economy_vehicle")}</h1>
+              <h1 className="text-[40px] text-lum font-bold">
+                {t("economy_vehicle")}
+              </h1>
               <h2>{t("starting_price")} $60</h2>
               <h2>{t("toyota_vitz")}</h2>
               <h2>{t("vehicle_feature")}</h2>
@@ -62,7 +64,9 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[20px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">{t("standard_vehicle")}</h1>
+              <h1 className="text-[40px] text-lum font-bold">
+                {t("standard_vehicle")}
+              </h1>
               <h2>{t("starting_price")} $60</h2>
               <h2>{t("toyota_vitz")}</h2>
               <h2>{t("vehicle_feature")}</h2>
@@ -84,7 +88,9 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">{t("mid_suv_vehicle")}</h1>
+              <h1 className="text-[40px] text-lum font-bold">
+                {t("mid_suv_vehicle")}
+              </h1>
               <h2>{t("starting_price")} 1,400,000 - 5,500,000Br</h2>
               <h2>Hyundai Tucson or Similar</h2>
               <h2>{t("vehicle_feature")}</h2>
@@ -106,7 +112,9 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">{t("full_suv_vehicle")}</h1>
+              <h1 className="text-[40px] text-lum font-bold">
+                {t("full_suv_vehicle")}
+              </h1>
               <h2>{t("starting_price")} 1,200,000 - 37,000,000Br</h2>
               <h2>Jetour X70 or Similar</h2>
               <h2>{t("vehicle_feature")}</h2>
@@ -128,7 +136,9 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">{t("mini_van_vehicle")}</h1>
+              <h1 className="text-[40px] text-lum font-bold">
+                {t("mini_van_vehicle")}
+              </h1>
               <h2>{t("starting_price")} 900,000 to 7,250,000Br</h2>
               <h2>Toyota Hiace or Similar</h2>
               <h2>{t("vehicle_feature")}</h2>
@@ -150,7 +160,9 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold">{t("pickup_vehicle")}</h1>
+              <h1 className="text-[40px] text-[#16fe01] font-bold">
+                {t("pickup_vehicle")}
+              </h1>
               <h2>{t("starting_price")} 1,200,000 to 9,000,000Br</h2>
               <h2>Toyota Revo or Similar</h2>
               <h2>{t("vehicle_feature")}</h2>
@@ -245,9 +257,13 @@ export const VehiclesTypes = () => {
               <h1 className="text-[40px] text-lum font-bold capitalize">
                 {img.name}
               </h1>
-              <h2>{t("starting_price")} ${img.price}</h2>
+              <h2>
+                {t("starting_price")} ${img.price}
+              </h2>
               <h2>{t("toyota_vitz")}</h2>
-              <h2>{t("vehicle_feature")} {img.item}</h2>
+              <h2>
+                {t("vehicle_feature")} {img.item}
+              </h2>
               <ul>
                 <li>° 4 {t("person_seat")}</li>
                 <li>° {t("automatic")}</li>
@@ -288,7 +304,7 @@ export const OneDayVehicles = () => {
       } catch (err) {
         console.error("Error fetching images:", err);
       } finally {
-        isLoading(false)
+        setIsLoading(false);
       }
     };
 
@@ -370,7 +386,9 @@ export const OneDayVehicles = () => {
                 <h1 className="text-2xl font-bold text-lum capitalize">
                   {img.name}
                 </h1>
-                <h2 className="text-sm">{t("starting_price")} {img.price} Br</h2>
+                <h2 className="text-sm">
+                  {t("starting_price")} {img.price} Br
+                </h2>
                 <h2 className="text-sm text-gray-200">
                   {img.model} or Similar
                 </h2>
@@ -490,7 +508,9 @@ export const Pricing = () => {
               />
               <div className="w-full pl-5">
                 <h1 className="text-[40px] text-lum font-bold">{user?.name}</h1>
-                <h2>{t("starting_price")} {user?.price}Br</h2>
+                <h2>
+                  {t("starting_price")} {user?.price}Br
+                </h2>
                 <h2>{user?.model} or Similar</h2>
                 <h2>{t("vehicle_feature")}</h2>
                 <ul>
@@ -593,9 +613,13 @@ export const OneDayVehiclesBook = () => {
             <h1 className="text-[40px] text-lum font-bold capitalize">
               {user.name}
             </h1>
-            <h2>{t("starting_price")} ${user.price}</h2>
+            <h2>
+              {t("starting_price")} ${user.price}
+            </h2>
             <h2>{user.model} or Similar</h2>
-            <h2>{t("vehicle_feature")} {user.item}</h2>
+            <h2>
+              {t("vehicle_feature")} {user.item}
+            </h2>
             <ul>
               <li>° 4 {t("person_seat")}</li>
               <li>° {t("automatic")}</li>
