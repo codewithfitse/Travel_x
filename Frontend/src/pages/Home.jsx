@@ -49,6 +49,8 @@ const Home = () => {
 
           <div className="w-[100%] mt-10 lg:w-[100%] flex justify-center">
 
+
+
             <img
               loading="lazy"
               //isLoading={isLoading}

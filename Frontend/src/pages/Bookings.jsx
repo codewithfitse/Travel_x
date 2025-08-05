@@ -174,9 +174,9 @@ const OneDayBook = () => {
                 />
               </div>
               <div className="w-full flex flex-col">
-                <input 
-                  type="date" 
-                  name="date" 
+                <input
+                  type="date"
+                  name="date"
                   value={date}
                   className="h-[30px] lg:h-[100px] input"
                   onChange={(e) => setDate(e.target.value)}
