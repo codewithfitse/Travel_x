@@ -272,11 +272,11 @@ export const OneDayVehicles = () => {
   const { t } = useLanguage();
   ///const navigate = useNavigate();
 
-  useEffect(() => {
-    // Simulate loading for 2 seconds
-    const timer = setTimeout(() => setIsLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  //useEffect(() => {
+  //  // Simulate loading for 2 seconds
+  //  const timer = setTimeout(() => setIsLoading(false), 1000);
+  //  return () => clearTimeout(timer);
+  //}, []);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -287,6 +287,8 @@ export const OneDayVehicles = () => {
         setData(res.data);
       } catch (err) {
         console.error("Error fetching images:", err);
+      } finally {
+        isLoading(false)
       }
     };
 

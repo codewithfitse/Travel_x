@@ -48,12 +48,13 @@ const Home = () => {
           </div>
 
           <div className="w-[100%] mt-10 lg:w-[100%] flex justify-center">
-            <SkeletonImage
-              isLoading={isLoading}
+
+            <img
+              loading="lazy"
+              //isLoading={isLoading}
               src="mercedis.webp"
               imgClass="w-[600px] lg:w-[700px] h-fit lg:absolute lg:right-[10px] hover:scale-102 hover:transition-1s"
               alt="Mercedis"
-              skeletonClass="w-[380px] lg:w-[550px]  h-[350px] rounded-[10px]"
             />
           </div>
         </div>
