@@ -108,7 +108,7 @@ const Contact = () => {
             </div>
 
 
-            <div className="mt-5 lg:mt-10">
+            <div className="mt-5 lg:mt-10 ">
               <button
                 type="submit"
                 className="w-full h-fit py-2 px-10 lg:py-3 lg:px-5 text-[13px] lg:text-[40px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
