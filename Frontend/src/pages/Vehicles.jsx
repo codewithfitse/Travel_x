@@ -6,11 +6,12 @@ import Button from "../components/Button";
 import axios from "axios";
 import SkeletonImage from "../components/Skeleton";
 import LiveChat from "../components/LiveChat";
-import { useQuery } from "@tanstack/react-query";
+import useLanguage from "./useLanguage";
 const Render = import.meta.env.VITE_BACKEND_URL;
 
 const Vehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -24,7 +25,7 @@ const Vehicles = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> Cars
+          <span className="text-lum ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -38,15 +39,15 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="w-full pl-5">
-              <h1 className="text-[40px] text-lum font-bold">Economy</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
-              <h2>Vehicle Feature</h2>
+              <h1 className="text-[40px] text-lum font-bold">{t("economy_vehicle")}</h1>
+              <h2>{t("starting_price")} $60</h2>
+              <h2>{t("toyota_vitz")}</h2>
+              <h2>{t("vehicle_feature")}</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
-                <li>° Pick up at airport</li>
+                <li>° 4 {t("person_seat")}</li>
+                <li>° {t("automatic")}</li>
+                <li>° {t("perfect_city")}</li>
+                <li>° {t("pickup_airport")}</li>
               </ul>
             </div>
           </div>
@@ -61,15 +62,15 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[20px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">Standard</h1>
-              <h2>Starting $60</h2>
-              <h2>Toyota VITZ or Similar</h2>
-              <h2>Vehicle Feature</h2>
+              <h1 className="text-[40px] text-lum font-bold">{t("standard_vehicle")}</h1>
+              <h2>{t("starting_price")} $60</h2>
+              <h2>{t("toyota_vitz")}</h2>
+              <h2>{t("vehicle_feature")}</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
-                <li>° Pick up at airport</li>
+                <li>° 4 {t("person_seat")}</li>
+                <li>° {t("automatic")}</li>
+                <li>° {t("perfect_city")}</li>
+                <li>° {t("pickup_airport")}</li>
               </ul>
             </div>
           </div>
@@ -83,15 +84,15 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">Mid Suv</h1>
-              <h2>Starting 1,400,000 - 5,500,000Br</h2>
+              <h1 className="text-[40px] text-lum font-bold">{t("mid_suv_vehicle")}</h1>
+              <h2>{t("starting_price")} 1,400,000 - 5,500,000Br</h2>
               <h2>Hyundai Tucson or Similar</h2>
-              <h2>Vehicle Feature</h2>
+              <h2>{t("vehicle_feature")}</h2>
               <ul>
-                <li>° 5 to 7 Person Seat</li>
-                <li>° Automatic and Manual</li>
-                <li>° Perfect for in Family + City</li>
-                <li>° Pick up at airport</li>
+                <li>° 5 to 7 {t("person_seat")}</li>
+                <li>° {t("automatic_manual")}</li>
+                <li>° {t("perfect_family_city")}</li>
+                <li>° {t("pickup_airport")}</li>
               </ul>
             </div>
           </div>
@@ -105,15 +106,15 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">Full Suv</h1>
-              <h2>Starting 1,200,000 - 37,000,000Br</h2>
+              <h1 className="text-[40px] text-lum font-bold">{t("full_suv_vehicle")}</h1>
+              <h2>{t("starting_price")} 1,200,000 - 37,000,000Br</h2>
               <h2>Jetour X70 or Similar</h2>
-              <h2>Vehicle Feature</h2>
+              <h2>{t("vehicle_feature")}</h2>
               <ul>
-                <li>° 7 to 8 Person Seat</li>
-                <li>° Automatic and Manual </li>
-                <li>° Perfect for in city, More Cargo</li>
-                <li>° Pick up at airport</li>
+                <li>° 7 to 8 {t("person_seat")}</li>
+                <li>° {t("automatic_manual")} </li>
+                <li>° {t("perfect_city")}, More Cargo</li>
+                <li>° {t("pickup_airport")}</li>
               </ul>
             </div>
           </div>
@@ -127,15 +128,15 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">Mini Van</h1>
-              <h2>Starting 900,000 to 7,250,000Br</h2>
+              <h1 className="text-[40px] text-lum font-bold">{t("mini_van_vehicle")}</h1>
+              <h2>{t("starting_price")} 900,000 to 7,250,000Br</h2>
               <h2>Toyota Hiace or Similar</h2>
-              <h2>Vehicle Feature</h2>
+              <h2>{t("vehicle_feature")}</h2>
               <ul>
-                <li>° 10 to 15 Person Seat</li>
-                <li>° Automatic And Manual</li>
-                <li>° Perfect for Trip + Cargo Palace</li>
-                <li>° Pick up at airport </li>
+                <li>° 10 to 15 {t("person_seat")}</li>
+                <li>° {t("automatic_manual")}</li>
+                <li>° {t("perfect_trip_cargo")}</li>
+                <li>° {t("pickup_airport")} </li>
               </ul>
             </div>
           </div>
@@ -149,15 +150,15 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-[#16fe01] font-bold">Pick Up</h1>
-              <h2>Starting 1,200,000 to 9,000,000Br</h2>
+              <h1 className="text-[40px] text-[#16fe01] font-bold">{t("pickup_vehicle")}</h1>
+              <h2>{t("starting_price")} 1,200,000 to 9,000,000Br</h2>
               <h2>Toyota Revo or Similar</h2>
-              <h2>Vehicle Feature</h2>
+              <h2>{t("vehicle_feature")}</h2>
               <ul>
-                <li>° 2 to 5 Person Seat</li>
-                <li>° Automatic And Manual</li>
-                <li>° Perfect for Heavy Duty + Utility</li>
-                <li>° Pick up at airport</li>
+                <li>° 2 to 5 {t("person_seat")}</li>
+                <li>° {t("automatic_manual")}</li>
+                <li>° {t("perfect_heavy_duty")}</li>
+                <li>° {t("pickup_airport")}</li>
               </ul>
             </div>
           </div>
@@ -173,16 +174,16 @@ const Vehicles = () => {
             />
             <div className="pl-5">
               <h1 className="text-[40px] text-lum font-bold">
-                One Day with Driver!
+                {t("one_day_driver")}
               </h1>
-              <h2>Starting 2200Br - 5000Br</h2>
-              <h2>Toyota VITZ or Similar</h2>
-              <h2>Vehicle Feature</h2>
+              <h2>{t("starting_price")} 2200Br - 5000Br</h2>
+              <h2>{t("toyota_vitz")}</h2>
+              <h2>{t("vehicle_feature")}</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
-                <li>° Pick up at airport</li>
+                <li>° 4 {t("person_seat")}</li>
+                <li>° {t("automatic")}</li>
+                <li>° {t("perfect_city")}</li>
+                <li>° {t("pickup_airport")}</li>
               </ul>
             </div>
           </div>
@@ -201,6 +202,7 @@ export const VehiclesTypes = () => {
   const [images, setImages] = useState([]);
   const location = useLocation();
   const type = location?.state?.type;
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -226,7 +228,7 @@ export const VehiclesTypes = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> Cars
+          <span className="text-lum ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
@@ -243,16 +245,16 @@ export const VehiclesTypes = () => {
               <h1 className="text-[40px] text-lum font-bold capitalize">
                 {img.name}
               </h1>
-              <h2>Starting ${img.price}</h2>
-              <h2>Toyota VITZ or Similar</h2>
-              <h2>Vehicle Feature {img.item}</h2>
+              <h2>{t("starting_price")} ${img.price}</h2>
+              <h2>{t("toyota_vitz")}</h2>
+              <h2>{t("vehicle_feature")} {img.item}</h2>
               <ul>
-                <li>° 4 Person Seat</li>
-                <li>° Automatic</li>
-                <li>° Perfect for in city</li>
-                <li>° Pick up at airport</li>
+                <li>° 4 {t("person_seat")}</li>
+                <li>° {t("automatic")}</li>
+                <li>° {t("perfect_city")}</li>
+                <li>° {t("pickup_airport")}</li>
               </ul>
-              <Link to="/Home">Home</Link>
+              <Link to="/Home">{t("home")}</Link>
             </div>
           </div>
         ))}
@@ -267,6 +269,7 @@ export const OneDayVehicles = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
+  const { t } = useLanguage();
   ///const navigate = useNavigate();
 
   useEffect(() => {
@@ -296,7 +299,7 @@ export const OneDayVehicles = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum">Our</span> Cars
+          <span className="text-lum">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -306,11 +309,11 @@ export const OneDayVehicles = () => {
             type="text"
             value={search}
             className="w-full h-full p-2 bg-amber-50 text-black rounded-2xl placeholder:text-amber-800"
-            placeholder="Search Your Type!"
+            placeholder={t("search_type")}
             onChange={(e) => setSearch(e.target.value)}
           />
           <button className=" w-fit h-full p-2 rounded-2xl font-bold bg-lum">
-            Search
+            {t("search")}
           </button>
         </div>
 
@@ -365,30 +368,30 @@ export const OneDayVehicles = () => {
                 <h1 className="text-2xl font-bold text-lum capitalize">
                   {img.name}
                 </h1>
-                <h2 className="text-sm">Starting {img.price} Br</h2>
+                <h2 className="text-sm">{t("starting_price")} {img.price} Br</h2>
                 <h2 className="text-sm text-gray-200">
                   {img.model} or Similar
                 </h2>
                 <h2 className="text-sm font-semibold">
-                  Vehicle Feature: {img.item}
+                  {t("vehicle_feature")}: {img.item}
                 </h2>
                 <ul className="list-disc list-inside text-sm mt-2 text-gray-300">
-                  <li>4 Person Seat</li>
-                  <li>Automatic</li>
-                  <li>Perfect for in city</li>
-                  <li>Pick up at airport</li>
+                  <li>4 {t("person_seat")}</li>
+                  <li>{t("automatic")}</li>
+                  <li>{t("perfect_city")}</li>
+                  <li>{t("pickup_airport")}</li>
                 </ul>
                 {img.quantity <= 0 ? (
                   <div className="w-fit mt-3 py-2 px-4 border-4 border-red-600 rounded-[10px]">
                     <h1 className="text-red-600 text-[30px] font-bold">
-                      Sold Out
+                      {t("sold_out")}
                     </h1>
                   </div>
                 ) : (
                   <div className="mt-3">
                     <div className="w-fit py-2 px-4 border-4 border-green-600 rounded-[10px]">
                       <h1 className="text-green-600 text-[30px]">
-                        Available now: {img.quantity}
+                        {t("available_now")} {img.quantity}
                       </h1>
                     </div>
                     <Link
@@ -396,7 +399,7 @@ export const OneDayVehicles = () => {
                       state={{ img }}
                       className="block mt-4"
                     >
-                      <Button text={"Book Now!"} />
+                      <Button text={t("book_now")} />
                     </Link>
                   </div>
                 )}
@@ -418,6 +421,7 @@ export const Pricing = () => {
   const navigate = useNavigate();
   const Suv = "";
   const user = "";
+  const { t } = useLanguage();
   //const FullSuv = "";
 
   const price = location?.state?.price;
@@ -428,7 +432,7 @@ export const Pricing = () => {
       //alert("Successfully Booked!");
       navigate("/OneDayBook", { state: { bookingDetails: user } });
     } catch (error) {
-      alert("You forgot to login bro");
+      alert(t("forgot_login"));
       navigate("/Login");
       console.log(error);
     } finally {
@@ -467,7 +471,7 @@ export const Pricing = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> Cars
+          <span className="text-lum ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -484,28 +488,28 @@ export const Pricing = () => {
               />
               <div className="w-full pl-5">
                 <h1 className="text-[40px] text-lum font-bold">{user?.name}</h1>
-                <h2>Starting {user?.price}Br</h2>
+                <h2>{t("starting_price")} {user?.price}Br</h2>
                 <h2>{user?.model} or Similar</h2>
-                <h2>Vehicle Feature</h2>
+                <h2>{t("vehicle_feature")}</h2>
                 <ul>
-                  <li>° 4 Person Seat</li>
-                  <li>° Automatic</li>
-                  <li>° Perfect for in city</li>
-                  <li>° Pick up at airport</li>
+                  <li>° 4 {t("person_seat")}</li>
+                  <li>° {t("automatic")}</li>
+                  <li>° {t("perfect_city")}</li>
+                  <li>° {t("pickup_airport")}</li>
                 </ul>
                 <div className="flex mt-3 lg:mt-5 space-x-5">
                   <button
                     className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
                     onClick={handleBooking}
                   >
-                    {isLoadings ? "Ordering..." : "Order"}
+                    {isLoadings ? t("ordering") : t("order")}
                   </button>
                   <Link to="/Vehicles">
                     <button
                       className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
                       onClick={handleBooking}
                     >
-                      Back
+                      {t("back")}
                     </button>
                   </Link>
                 </div>
@@ -527,13 +531,14 @@ export const OneDayVehiclesBook = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const user = location.state?.img;
+  const { t } = useLanguage();
 
   async function handleBooking() {
     try {
       //alert("Successfully Booked!");
       navigate("/OneDayBook", { state: { bookingDetails: user } });
     } catch (error) {
-      alert("You forgot to login bro");
+      alert(t("forgot_login"));
       navigate("/Login");
       console.log(error);
     } finally {
@@ -569,7 +574,7 @@ export const OneDayVehiclesBook = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold ">
-          <span className="text-lum ">Our</span> Cars
+          <span className="text-lum ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -586,28 +591,28 @@ export const OneDayVehiclesBook = () => {
             <h1 className="text-[40px] text-lum font-bold capitalize">
               {user.name}
             </h1>
-            <h2>Starting ${user.price}</h2>
+            <h2>{t("starting_price")} ${user.price}</h2>
             <h2>{user.model} or Similar</h2>
-            <h2>Vehicle Feature {user.item}</h2>
+            <h2>{t("vehicle_feature")} {user.item}</h2>
             <ul>
-              <li>° 4 Person Seat</li>
-              <li>° Automatic</li>
-              <li>° Perfect for in city</li>
-              <li>° Pick up at airport</li>
+              <li>° 4 {t("person_seat")}</li>
+              <li>° {t("automatic")}</li>
+              <li>° {t("perfect_city")}</li>
+              <li>° {t("pickup_airport")}</li>
             </ul>
             <div className="flex mt-3 lg:mt-5 space-x-5">
               <button
                 className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
                 onClick={handleBooking}
               >
-                {isLoadings ? "Ordering..." : "Order"}
+                {isLoadings ? t("ordering") : t("order")}
               </button>
               <Link to="/Vehicles">
                 <button
                   className="w-fit h-fit py-2 px-4 lg:py-2 lg:px-3 text-[17px] lg:text-[30px] text-white font-bold bg-gradient-to-r from-red-500 to-red-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
                   onClick={handleBooking}
                 >
-                  Back
+                  {t("back")}
                 </button>
               </Link>
             </div>

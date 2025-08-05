@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
+import useLanguage from "./useLanguage";
 const Render = import.meta.env.VITE_BACKEND_URL;
 
 const Contact = () => {
@@ -10,6 +11,7 @@ const Contact = () => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [message, setMessage] = useState();
+  const { t } = useLanguage();
 
   function handleClick(e) {
     e.preventDefault();
@@ -35,7 +37,7 @@ const Contact = () => {
       <div className="py-[100px] px-5 lg:px-[200px]">
         <div className="p-5 lg:p-10 card">
           <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
-            Contact Us Now❗
+            {t("contact_us_now")}
           </h1>
           <form onSubmit={handleClick} action="">
             <div className="mt-8 flex flex-col justify-between space-y-4">
@@ -44,7 +46,7 @@ const Contact = () => {
                   htmlFor=""
                   className="text-[18px] font-bold lg:text-[25px]"
                 >
-                  First Name
+                  {t("first_name")}
                 </label>
                 <input
                   type="text"
@@ -52,7 +54,7 @@ const Contact = () => {
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   className="input"
-                  placeholder="Enter First Name"
+                  placeholder={t("enter_first_name")}
                 />
               </div>
               <div className="w-[90%] flex flex-col">
@@ -60,7 +62,7 @@ const Contact = () => {
                   htmlFor=""
                   className="text-[18px] font-bold lg:text-[25px]"
                 >
-                  Email
+                  {t("email")}
                 </label>
                 <input
                   type="text"
@@ -68,7 +70,7 @@ const Contact = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="input"
-                  placeholder="Enter Email"
+                  placeholder={t("enter_email")}
                 />
               </div>
               <div className="w-[90%] flex flex-col">
@@ -76,7 +78,7 @@ const Contact = () => {
                   htmlFor=""
                   className="text-[18px] font-bold lg:text-[25px]"
                 >
-                  Phone
+                  {t("phone")}
                 </label>
                 <input
                   type="number"
@@ -84,7 +86,7 @@ const Contact = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="input"
-                  placeholder="Enter Phone"
+                  placeholder={t("enter_phone")}
                 />
               </div>
               <div className="flex flex-col">
@@ -92,7 +94,7 @@ const Contact = () => {
                   htmlFor=""
                   className="text-[18px] font-bold lg:text-[25px]"
                 >
-                  Message(feedback)
+                  {t("message_feedback")}
                 </label>
                 <textarea
                   type="text"
@@ -100,7 +102,7 @@ const Contact = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-[90%] h-[100px] input"
-                  placeholder="Message.."
+                  placeholder={t("message_placeholder")}
                 />
               </div>
             </div>
@@ -110,7 +112,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full h-fit py-2 px-10 lg:py-3 lg:px-5 text-[13px] lg:text-[40px] font-bold bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg"
               >
-                Submit
+                {t("submit")}
               </button>
             </div>
           </form>

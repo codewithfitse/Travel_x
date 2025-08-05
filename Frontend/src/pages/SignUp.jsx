@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
+import useLanguage from "./useLanguage";
 const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const SignUp = () => {
@@ -15,6 +16,7 @@ export const SignUp = () => {
   const [password, setPassword] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   function handleClick(e) {
     e.preventDefault();
@@ -48,9 +50,9 @@ export const SignUp = () => {
       <div className="lg:mt-20 flex flex-col items-center justify-center min-h-screen p-4">
         <div className="bg-zinc-900 p-6 rounded-xl max-w-sm w-full space-y-6 shadow-lg">
           <div>
-            <h2 className="text-2xl font-bold">Create an account</h2>
+            <h2 className="text-2xl font-bold">{t("create_account")}</h2>
             <p className="text-sm text-zinc-400 mt-1">
-              Enter your email below to create your account
+              {t("enter_email_create")}
             </p>
           </div>
 
@@ -61,7 +63,7 @@ export const SignUp = () => {
             >
               {/* GitHub Icon */}
               <i className="fa fa-github p-1 !text-[26px] text-black bg-white rounded-full "></i>
-              GitHub
+              {t("github")}
             </button>
             <button
               className="flex-1 flex items-center justify-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-md hover:bg-zinc-700"
@@ -69,17 +71,17 @@ export const SignUp = () => {
             >
               {/* Google Icon */}
               <i className="fa fa-google p-1 !text-[26px] text-red-600 bg-white rounded-full "></i>
-              Google
+              {t("google")}
             </button>
           </div>
 
           <div className="text-center text-xs text-zinc-400">
-            OR CONTINUE WITH
+            {t("or_continue")}
           </div>
 
           <form className="space-y-4" onSubmit={handleClick}>
             <div>
-              <label className="block text-sm font-medium">First Name</label>
+              <label className="block text-sm font-medium">{t("first_name")}</label>
               <input
                 type="text"
                 className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
@@ -89,7 +91,7 @@ export const SignUp = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Last Name</label>
+              <label className="block text-sm font-medium">{t("last_name")}</label>
               <input
                 type="text"
                 className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
@@ -99,7 +101,7 @@ export const SignUp = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Email</label>
+              <label className="block text-sm font-medium">{t("email")}</label>
               <input
                 type="email"
                 className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
@@ -109,7 +111,7 @@ export const SignUp = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Phone</label>
+              <label className="block text-sm font-medium">{t("phone")}</label>
               <input
                 type="number"
                 className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
@@ -119,7 +121,7 @@ export const SignUp = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Password</label>
+              <label className="block text-sm font-medium">{t("password")}</label>
               <input
                 type="password"
                 className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
@@ -133,9 +135,9 @@ export const SignUp = () => {
               className="w-full bg-white text-black font-semibold py-2 rounded-md hover:bg-zinc-200 transition"
             >
               {isLoading ? (
-                <p className="text-center">Loading...</p>
+                <p className="text-center">{t("loading")}</p>
               ) : (
-                "Create account"
+                t("create_account_button")
               )}
             </button>
           </form>

@@ -1,8 +1,11 @@
 import React from 'react'
+import useLanguage from './useLanguage'
 
 const NotFound = () => {
+  const { t } = useLanguage();
+  
   return (
-    <div>404 Not found!</div>
+    <div>{t("not_found")}</div>
   )
 }
 

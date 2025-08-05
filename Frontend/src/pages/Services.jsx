@@ -4,18 +4,21 @@ import Footer from "../components/Footer";
 import { Link } from "react-router";
 import Button from "../components/Button";
 import LiveChat from "../components/LiveChat";
+import useLanguage from "./useLanguage";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="w-full h-[100%] background text-amber-50">
       <Header />
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> SERVICES
+          <span className="text-lum ">Our</span> {t("services_title")}
         </h1>
         <h2 className="text-[20px] lg:text-[40px] text-center">
-          WHAT WE DO BEST AT ADDIS CAR RENTAL
+          {t("services_subtitle")}
         </h2>
       </div>
 
@@ -27,11 +30,9 @@ const Services = () => {
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px] text-lum font-bold">CAR RENTAL</h1>
+            <h1 className="pb-1 text-[40px] text-lum font-bold">{t("car_rental_title")}</h1>
             <h2 className="w-[90%]">
-              Car Rentals in Addis Ababa with Daily, Weekly, and Monthly rates
-              for your Business, Visit, or Pleasure travel plans in Ethiopia.
-              See our selections here.
+              {t("car_rental_description")}
             </h2>
           </div>
         </div>
@@ -47,11 +48,9 @@ const Services = () => {
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px] text-lum font-bold">CITY TOUR</h1>
+            <h1 className="pb-1 text-[40px] text-lum font-bold">{t("city_tour_title")}</h1>
             <h2 className="w-[90%]">
-              Full or Half Day Tours of Ethiopia’s capital city Addis Ababa on a
-              budget-friendly excursion. Visit religious and cultural sites with
-              us.
+              {t("city_tour_description")}
             </h2>
           </div>
         </div>
@@ -63,12 +62,10 @@ const Services = () => {
           </div>
           <div className="pl-1 w-[80%]">
             <h1 className="pb-1 text-[40px]/10 text-lum line-clamp-2 font-bold">
-              TRAVEL CONSULTING
+              {t("travel_consulting_title")}
             </h1>
             <h2 className="w-[90%]">
-              Are you planning to travel to Ethiopia and do you have some
-              questions? Contact with our travel experts for a free
-              consultation.
+              {t("travel_consulting_description")}
             </h2>
           </div>
         </div>
@@ -76,7 +73,7 @@ const Services = () => {
 
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> Promise
+          <span className="text-lum ">Our</span> {t("our_promise_title")}
         </h1>
       </div>
 
@@ -94,7 +91,7 @@ const Services = () => {
           </div>
           <div className="pl-1 pt-1 flex justify-center">
             <h1 className="pt-2 text-[30px]/8 text-center font-bold">
-              Good Price & Quality Service
+              {t("good_price_quality")}
             </h1>
           </div>
         </div>
@@ -111,7 +108,7 @@ const Services = () => {
           </div>
           <div className="pl-1 pt-1 flex justify-center">
             <h1 className="pt-2 text-[30px]/8 text-center font-bold">
-              Constantly Maintaiend Cars
+              {t("constantly_maintained")}
             </h1>
           </div>
         </div>
@@ -128,7 +125,7 @@ const Services = () => {
           </div>
           <div className="pl-1 pt-1 flex justify-center">
             <h1 className="pt-2 text-[30px]/8 text-center font-bold">
-              Unlimited Mileage
+              {t("unlimited_mileage")}
             </h1>
           </div>
         </div>
@@ -145,7 +142,7 @@ const Services = () => {
           </div>
           <div className="pl-1 pt-1 flex justify-center">
             <h1 className="pt-2 text-[30px]/8 text-center font-bold">
-              Reliable Customer Support
+              {t("reliable_customer_support")}
             </h1>
           </div>
         </div>

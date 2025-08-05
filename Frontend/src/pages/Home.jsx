@@ -4,10 +4,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import SkeletonImage from "../components/Skeleton";
+import useLanguage from "./useLanguage";
 const LiveChat = lazy(() => import("../components/LiveChat"));
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -30,19 +32,17 @@ const Home = () => {
               <span className="text-[40px] lg:text-[60px] text-lum font-bold font-serif">
                 Time
               </span>{" "}
-              CAR RENTAL <br />
-              SERVICE IN ETHIOPIA.
+              {t("hero_title")}
             </h1>
             <p className="text-[20px]/7 lg:text-[30px]/10 my-3 lg:my-6">
-              Daily or Weekly Car Rentals for <br />
-              Your Business or Visiting Travel Plans
+              {t("hero_subtitle")}
             </p>
             <div className="flex  mt-5 lg:mt-10 space-x-2.5">
               <Link to={"/Contact"}>
-                <Button text={"Contact Us"} />
+                <Button text={t("contact_us")} />
               </Link>
               <Link to={"/Booking"}>
-                <Button text={"Our Services"} />
+                <Button text={t("our_services")} />
               </Link>
             </div>
           </div>
@@ -61,21 +61,17 @@ const Home = () => {
         <div className="w-full mt-20 lg:mt-50 grid lg:grid-cols-2 justify-between">
           <div className="w-[100%] lg:w-[100%] px-[20px] lg:pl-10">
             <h1 className="text-[25px] lg:text-[40px] text-center font-bold">
-              WELCOME TO THE BEST CAR RENTAL SERVICE IN TOWN.
+              {t("welcome_title")}
             </h1>
             <h1 className="text-[18px] text-center lg:text-[22px] text-lum py-2">
-              The Quality Customer Service You Deserve
+              {t("welcome_subtitle")}
             </h1>
             <p className="text-[15px] text-center lg:text-[18px]">
-              We care for our customers and make sure their stay in Ethiopia is
-              smooth and memorable. From the time we pick you up from the
-              Airport or Hotel to the entire time of your stay in the country,
-              we will help you to enjoy your travel in Addis Ababa and other
-              tourist destination locations.
+              {t("welcome_description")}
             </p>
             <div className="mt-3 lg:mt-7 flex justify-center">
               <Link to={"/Booking"}>
-                <Button text={"CHOOSE YOUR RIDE"} />
+                <Button text={t("choose_your_ride")} />
               </Link>
             </div>
           </div>
@@ -97,11 +93,11 @@ const Home = () => {
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
-            <h1 className="text-[50px] text-white font-bold">Compact</h1>
-            <p className="text-[25px] text-white ">From $1560 a Day</p>
+            <h1 className="text-[50px] text-white font-bold">{t("compact")}</h1>
+            <p className="text-[25px] text-white ">{t("from_day")}1560{t("a_day")}</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
               <Link to={"/Booking"}>
-                <Button text={"Book Now!"} />
+                <Button text={t("book_now")} />
               </Link>
             </div>
           </div>
@@ -112,11 +108,11 @@ const Home = () => {
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit transition-all"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
-            <h1 className="text-[50px] text-white font-bold">Economy</h1>
-            <p className="text-[25px] text-white ">From $2070 a Day</p>
+            <h1 className="text-[50px] text-white font-bold">{t("economy")}</h1>
+            <p className="text-[25px] text-white ">{t("from_day")}2070{t("a_day")}</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
               <Link to={"/Booking"}>
-                <Button text={"Book Now!"} />
+                <Button text={t("book_now")} />
               </Link>
             </div>
           </div>
@@ -127,11 +123,11 @@ const Home = () => {
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
-            <h1 className="text-[50px] text-white font-bold">Mid Suv</h1>
-            <p className="text-[25px] text-white ">From $1770 a Day</p>
+            <h1 className="text-[50px] text-white font-bold">{t("mid_suv")}</h1>
+            <p className="text-[25px] text-white ">{t("from_day")}1770{t("a_day")}</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
               <Link to={"/Booking"}>
-                <Button text={"Book Now!"} />
+                <Button text={t("book_now")} />
               </Link>
             </div>
           </div>
@@ -142,11 +138,11 @@ const Home = () => {
               imgClass="w-full mt-13 lg:mt-5 lg:w-[400px] h-fit"
               skeletonClass="w-[400px] lg:w-[300px] h-[300px]"
             />
-            <h1 className="text-[50px] text-white font-bold">Mini Van</h1>
-            <p className="text-[25px] text-white ">From $2570 a Day</p>
+            <h1 className="text-[50px] text-white font-bold">{t("mini_van")}</h1>
+            <p className="text-[25px] text-white ">{t("from_day")}2570{t("a_day")}</p>
             <div className="mt-3 lg:mt-7 flex justify-center">
               <Link to={"/Booking"}>
-                <Button text={"Book Now!"} />
+                <Button text={t("book_now")} />
               </Link>
             </div>
           </div>
@@ -155,10 +151,10 @@ const Home = () => {
         <div className="w-full h-fit mt-15 lg:mt-30 flex flex-col items-center">
           <div className="py-5 lg:py-10">
             <h1 className="text-[25px] lg:text-6xl text-center font-bold">
-              EASY BOOKING STEPS
+              {t("easy_booking_title")}
             </h1>
             <h1 className="text-[20px] lg:text-[30px] text-lum text-center mt-2 lg:mt-6">
-              How to book your car with us and Start enjoying your ride
+              {t("easy_booking_subtitle")}
             </h1>
           </div>
 
@@ -171,9 +167,9 @@ const Home = () => {
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">01</span>
+                <span className="text-lum">{t("step_01")}</span>
                 <br />
-                CLICK THE RIDE
+                {t("click_ride")}
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
@@ -184,9 +180,9 @@ const Home = () => {
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">02</span>
+                <span className="text-lum">{t("step_02")}</span>
                 <br />
-                SEND A REQUEST
+                {t("send_request")}
               </h1>
             </div>
             <div className="w-full px-3 pt-3 pb-5 text-[30px] font-bold card">
@@ -197,9 +193,9 @@ const Home = () => {
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">03</span>
+                <span className="text-lum">{t("step_03")}</span>
                 <br />
-                ENJOY THE RIDE
+                {t("enjoy_ride")}
               </h1>
             </div>
           </div>

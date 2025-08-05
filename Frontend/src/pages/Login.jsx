@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 //import { Link } from "react-router-dom";
 import axios from "axios";
 import LiveChat from "../components/LiveChat";
+import useLanguage from "./useLanguage";
 const Render = import.meta.env.VITE_BACKEND_URL;
 
 export const Login = () => {
@@ -13,6 +14,7 @@ export const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   function handleClick(e) {
     e.preventDefault();
@@ -20,7 +22,7 @@ export const Login = () => {
     setErr("");
 
     if (!email || !password) {
-      setErr("Please fill in both email and password.");
+      setErr(t("fill_both"));
       setIsLoading(false);
       return;
     }
@@ -35,21 +37,21 @@ export const Login = () => {
         if (data.user?.role) {
           navigate("/Dashboard");
         } else if (!data || !data.user?.role) {
-          setErr("Something went wrong no data. Try again.");
+          setErr(t("no_data"));
           return;
         } else {
-          setErr("Something went wrong. Go check it again!");
+          setErr(t("something_wrong"));
         }
       })
       .catch((err) => {
         const msg = err.response?.data?.message;
         console.log("Login Error:", msg);
         if (msg === "User not found") {
-          setErr("Email doesn't exist. Try signing up.");
+          setErr(t("email_not_exist"));
         } else if (msg === "Incorrect password") {
-          setErr("Incorrect password. Try again.");
+          setErr(t("incorrect_password"));
         } else {
-          setErr("Something went wrong. Try again later.");
+          setErr(t("something_wrong"));
         }
       })
       .finally(() => {
@@ -91,9 +93,9 @@ export const Login = () => {
       <div className="lg:mt-10 flex flex-col items-center justify-center min-h-screen p-4">
         <div className="bg-zinc-900 p-6 rounded-xl max-w-sm w-full space-y-6 shadow-lg">
           <div>
-            <h2 className="text-2xl font-bold">Login an account</h2>
+            <h2 className="text-2xl font-bold">{t("login_account")}</h2>
             <p className="text-sm text-zinc-400 mt-1">
-              Enter your email below to Login your account
+              {t("enter_email_login")}
             </p>
           </div>
 
@@ -104,7 +106,7 @@ export const Login = () => {
             >
               {/* GitHub Icon */}
               <i className="fa fa-github p-1 !text-[26px] text-black bg-white rounded-full "></i>
-              GitHub
+              {t("github")}
             </button>
             <button
               className="flex-1 flex items-center justify-center gap-2 bg-zinc-800 text-white px-4 py-2 rounded-md hover:bg-zinc-700"
@@ -112,17 +114,17 @@ export const Login = () => {
             >
               {/* Google Icon */}
               <i className="fa fa-google p-1 !text-[26px] text-red-600 bg-white rounded-full "></i>
-              Google
+              {t("google")}
             </button>
           </div>
 
           <div className="text-center text-xs text-zinc-400">
-            OR CONTINUE WITH
+            {t("or_continue")}
           </div>
 
           <form className="space-y-4" onSubmit={handleClick}>
             <div>
-              <label className="block text-sm font-medium">Email</label>
+              <label className="block text-sm font-medium">{t("email")}</label>
               <input
                 type="email"
                 className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
@@ -132,7 +134,7 @@ export const Login = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Password</label>
+              <label className="block text-sm font-medium">{t("password")}</label>
               <input
                 type="password"
                 className="w-full mt-1 px-3 py-2 bg-zinc-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-500"
@@ -148,7 +150,7 @@ export const Login = () => {
               type="submit"
               className="w-full bg-white text-black font-semibold py-2 rounded-md hover:bg-zinc-200 transition"
             >
-              {isLoading ? <p className="text-center">Loading...</p> : "Submit"}
+              {isLoading ? <p className="text-center">{t("loading")}</p> : t("submit")}
             </button>
           </form>
         </div>
