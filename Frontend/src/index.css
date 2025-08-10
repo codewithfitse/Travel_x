@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+  background: #000;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+  background-image: url(../public/bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.landingBg {
+  width: 100%;
+  height: auto;
+  background-image: url(../public/landing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu {
+  background-image: url(../public/Icons/list.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.btn {
+  padding: 1px 15px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  background: #2A7B9B;
+  background: linear-gradient(90deg, #2a7b9b 5%, #297f98 33%, #20c967 76%);  
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 10px #fff;
+  scale: 1.03;
+}
+
+.skeleton {
+  opacity: .7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background: #a3b8c2;
+  }
+  100% {
+    background: #f0f3f5;
+  }
+}
+
+@theme {
+  --color-lum: #16fe01;
+}
+
+
+@layer card {
+  .card {
+    @apply w-full p-4 border-white/20 border bg-white/3 backdrop-filter backdrop-blur-[4px] rounded-4xl shadow-lg;
+  }
+  .box {
+    @apply bg-gradient-to-r from-emerald-500 to-emerald-900 rounded-[10px] hover:shadow-emerald-500/80 hover:shadow-lg hover:scale-102
+  }
+  .container {
+    @apply backdrop-blur-[6px];
+  }
+  .input {
+    @apply py-2 px-3 text-2xl text-black font-bold bg-white rounded-[10px] placeholder:text-[20px] placeholder:text-gray-500 hover:border-4 hover:border-amber-400;
+  }
+  .btn {
+    @apply w-fit h-fit flex gap-2 text-black items-center justify-center text-[30px] font-bold py-2 px-4 rounded-lg;
+  }
+  .btnDanger {
+    @apply text-white bg-red-600 shadow-red-400/40;
+  }
+}
