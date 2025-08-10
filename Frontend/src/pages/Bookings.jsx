@@ -84,7 +84,7 @@ const OneDayBook = () => {
                 navigator.clipboard.writeText("1000574533698");
                 alert("Copied to clipboard!");
               }}
-              className="p-3 text-white hover:text-lum transition-all duration-200 rounded-[10px]"
+              className="p-3 text-white hover:text-accent transition-all duration-200 rounded-[10px]"
               title="Copy to clipboard"
             >
               <i className="fa fa-copy !text-[15px] lg:!text-[36px]"></i>
@@ -201,7 +201,7 @@ const OneDayBook = () => {
             <div className="w-full flex justify-center mt-2 lg:mt-10">
               <button
                 type="submit"
-                className="p-2 text-3xl text-black font-bold bg-lum rounded-[10px]"
+                className="p-2 text-3xl text-black font-bold bg-accent rounded-[10px]"
                 onClick={handleClick}
               >
                 {isLoading ? "Loading.." : "Submit"}

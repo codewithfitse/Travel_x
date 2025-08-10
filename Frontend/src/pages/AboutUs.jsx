@@ -54,7 +54,7 @@ const AboutUs = () => {
           </h1>
           <div className="mt-10 grid lg:grid-cols-2 gap-1">
             <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-lum rounded-full">
+              <div className="p-3 flex items-center bg-accent rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"
@@ -70,7 +70,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-lum rounded-full">
+              <div className="p-3 flex items-center bg-accent rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"
@@ -86,7 +86,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-lum rounded-full">
+              <div className="p-3 flex items-center bg-accent rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"
@@ -102,7 +102,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="w-full h-[300px] pl-5 flex items-center space-x-5 card">
-              <div className="p-3 flex items-center bg-lum rounded-full">
+              <div className="p-3 flex items-center bg-accent rounded-full">
                 <img
                   src="Icons/car.png"
                   className="w-10 h-10"

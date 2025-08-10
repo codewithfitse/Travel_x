@@ -25,7 +25,7 @@ const Vehicles = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> {t("vehicles_title")}
+          <span className="text-accent ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -39,7 +39,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="w-full pl-5">
-              <h1 className="text-[40px] text-lum font-bold">
+              <h1 className="text-[40px] text-accent font-bold">
                 {t("economy_vehicle")}
               </h1>
               <h2>{t("starting_price")} $60</h2>
@@ -64,7 +64,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[20px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">
+              <h1 className="text-[40px] text-accent font-bold">
                 {t("standard_vehicle")}
               </h1>
               <h2>{t("starting_price")} $60</h2>
@@ -88,7 +88,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">
+              <h1 className="text-[40px] text-accent font-bold">
                 {t("mid_suv_vehicle")}
               </h1>
               <h2>{t("starting_price")} 1,400,000 - 5,500,000Br</h2>
@@ -112,7 +112,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">
+              <h1 className="text-[40px] text-accent font-bold">
                 {t("full_suv_vehicle")}
               </h1>
               <h2>{t("starting_price")} 1,200,000 - 37,000,000Br</h2>
@@ -136,7 +136,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">
+              <h1 className="text-[40px] text-accent font-bold">
                 {t("mini_van_vehicle")}
               </h1>
               <h2>{t("starting_price")} 900,000 to 7,250,000Br</h2>
@@ -185,7 +185,7 @@ const Vehicles = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold">
+              <h1 className="text-[40px] text-accent font-bold">
                 {t("one_day_driver")}
               </h1>
               <h2>{t("starting_price")} 2200Br - 5000Br</h2>
@@ -240,7 +240,7 @@ export const VehiclesTypes = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> {t("vehicles_title")}
+          <span className="text-accent ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
       <div className="pt-[40px] px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 space-y-3">
@@ -254,7 +254,7 @@ export const VehiclesTypes = () => {
               skeletonClass="w-[400px] h-[300px] rounded-[10px]"
             />
             <div className="pl-5">
-              <h1 className="text-[40px] text-lum font-bold capitalize">
+              <h1 className="text-[40px] text-accent font-bold capitalize">
                 {img.name}
               </h1>
               <h2>
@@ -317,7 +317,7 @@ export const OneDayVehicles = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum">Our</span> {t("vehicles_title")}
+          <span className="text-accent">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -330,7 +330,7 @@ export const OneDayVehicles = () => {
             placeholder={t("search_type")}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button className=" w-fit h-full p-2 rounded-2xl font-bold bg-lum">
+          <button className=" w-fit h-full p-2 rounded-2xl font-bold bg-accent">
             {t("search")}
           </button>
         </div>
@@ -383,7 +383,7 @@ export const OneDayVehicles = () => {
               />
 
               <div className="p-4 space-y-1">
-                <h1 className="text-2xl font-bold text-lum capitalize">
+                <h1 className="text-2xl font-bold text-accent capitalize">
                   {img.name}
                 </h1>
                 <h2 className="text-sm">
@@ -491,7 +491,7 @@ export const Pricing = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> {t("vehicles_title")}
+          <span className="text-accent ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -507,7 +507,7 @@ export const Pricing = () => {
                 skeletonClass="w-[400px] h-[300px] bg-gray-300 rounded-[10px] animate-pulse"
               />
               <div className="w-full pl-5">
-                <h1 className="text-[40px] text-lum font-bold">{user?.name}</h1>
+                <h1 className="text-[40px] text-accent font-bold">{user?.name}</h1>
                 <h2>
                   {t("starting_price")} {user?.price}Br
                 </h2>
@@ -598,7 +598,7 @@ export const OneDayVehiclesBook = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold ">
-          <span className="text-lum ">Our</span> {t("vehicles_title")}
+          <span className="text-accent ">Our</span> {t("vehicles_title")}
         </h1>
       </div>
 
@@ -612,7 +612,7 @@ export const OneDayVehiclesBook = () => {
             skeletonClass="w-full h-[250px] rounded-[10px]"
           />
           <div className="pl-5">
-            <h1 className="text-[40px] text-lum font-bold capitalize">
+            <h1 className="text-[40px] text-accent font-bold capitalize">
               {user.name}
             </h1>
             <h2>

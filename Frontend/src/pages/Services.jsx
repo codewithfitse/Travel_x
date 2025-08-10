@@ -15,7 +15,7 @@ const Services = () => {
       <LiveChat />
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> {t("services_title")}
+          <span className="text-accent ">Our</span> {t("services_title")}
         </h1>
         <h2 className="text-[20px] lg:text-[40px] text-center">
           {t("services_subtitle")}
@@ -25,12 +25,12 @@ const Services = () => {
       <div className="mt-[60px] py-2 px-2 w-full grid lg:grid-cols-3 place-items-center gap-3 container">
         <div className="w-full flex items-center py-5">
           <div className="w-[20%] flex justify-center">
-            <div className="p-3 bg-lum rounded-full">
+            <div className="p-3 bg-accent rounded-full">
               <img src="Icons/car.png" className="w-10 h-10" alt="" srcset="" />
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px] text-lum font-bold">{t("car_rental_title")}</h1>
+            <h1 className="pb-1 text-[40px] text-accent font-bold">{t("car_rental_title")}</h1>
             <h2 className="w-[90%]">
               {t("car_rental_description")}
             </h2>
@@ -38,7 +38,7 @@ const Services = () => {
         </div>
         <div className="w-full flex items-center py-5">
           <div className="w-[20%] flex justify-center">
-            <div className="p-3 bg-lum rounded-full">
+            <div className="p-3 bg-accent rounded-full">
               <img
                 src="Icons/binoculars.png"
                 className="w-10 h-10"
@@ -48,7 +48,7 @@ const Services = () => {
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px] text-lum font-bold">{t("city_tour_title")}</h1>
+            <h1 className="pb-1 text-[40px] text-accent font-bold">{t("city_tour_title")}</h1>
             <h2 className="w-[90%]">
               {t("city_tour_description")}
             </h2>
@@ -56,12 +56,12 @@ const Services = () => {
         </div>
         <div className="w-full flex items-center py-5">
           <div className="w-[20%] flex justify-center">
-            <div className="p-3 bg-lum rounded-full">
+            <div className="p-3 bg-accent rounded-full">
               <img src="Icons/map.png" className="w-10 h-10" alt="" srcset="" />
             </div>
           </div>
           <div className="pl-1 w-[80%]">
-            <h1 className="pb-1 text-[40px]/10 text-lum line-clamp-2 font-bold">
+            <h1 className="pb-1 text-[40px]/10 text-accent line-clamp-2 font-bold">
               {t("travel_consulting_title")}
             </h1>
             <h2 className="w-[90%]">
@@ -73,14 +73,14 @@ const Services = () => {
 
       <div className="pt-[100px]">
         <h1 className="text-[40px] lg:text-[80px] text-center font-bold">
-          <span className="text-lum ">Our</span> {t("our_promise_title")}
+          <span className="text-accent ">Our</span> {t("our_promise_title")}
         </h1>
       </div>
 
       <div className="mt-[60px] py-6 px-2 w-full grid lg:grid-cols-4 place-items-center gap-3 space-y-3 container">
-        <div className="w-full flex flex-col items-center border-l-5 border-l-lum py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-accent py-5">
           <div className="flex justify-center">
-            <div className="p-2 bg-lum rounded-full">
+            <div className="p-2 bg-accent rounded-full">
               <img
                 src="Icons/verified.png"
                 className="w-10 h-10"
@@ -95,9 +95,9 @@ const Services = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center border-l-5 border-l-lum py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-accent py-5">
           <div className="flex justify-center">
-            <div className="p-2 bg-lum rounded-full">
+            <div className="p-2 bg-accent rounded-full">
               <img
                 src="Icons/tools.png"
                 className="w-10 h-10"
@@ -112,9 +112,9 @@ const Services = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center border-l-5 border-l-lum py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-accent py-5">
           <div className="flex  justify-center">
-            <div className="p-2 bg-lum rounded-full">
+            <div className="p-2 bg-accent rounded-full">
               <img
                 src="Icons/infinity.png"
                 className="w-10 h-10"
@@ -129,9 +129,9 @@ const Services = () => {
             </h1>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center border-l-5 border-l-lum py-5">
+        <div className="w-full flex flex-col items-center border-l-5 border-l-accent py-5">
           <div className="flex  justify-center">
-            <div className="p-2 bg-lum rounded-full">
+            <div className="p-2 bg-accent rounded-full">
               <img
                 src="Icons/deal.png"
                 className="w-10 h-10"

@@ -73,7 +73,7 @@ export const Tutorial = () => {
               EASY BOOKING STEPS
             </h1>
 
-            <h1 className="text-[20px] lg:text-[30px] text-lum text-center mt-2 lg:mt-6">
+            <h1 className="text-[20px] lg:text-[30px] text-accent text-center mt-2 lg:mt-6">
               How to book your car with us and Start enjoying your ride
             </h1>
           </div>
