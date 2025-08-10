@@ -5,7 +5,7 @@ function Demo() {
   const { currentLanguage, changeLanguage, t, availableLanguages } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
+    <div className="min-h-screen bg-gray-100 py-8 px-4 ">
       <div className="max-w-4xl mx-auto">
         {/* Language Selection   */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
