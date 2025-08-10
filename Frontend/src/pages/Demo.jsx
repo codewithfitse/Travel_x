@@ -1,40 +1,75 @@
 import React from 'react';
+import { FiGlobe, FiCheckCircle, FiChevronRight } from 'react-icons/fi';
 import useLanguage from './useLanguage';
+import Header from '../components/Header';
 
 function Demo() {
   const { currentLanguage, changeLanguage, t, availableLanguages } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4 ">
-      <div className="max-w-4xl mx-auto">
-        {/* Language Selection   */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Language Selection</h2>
-          <div className="flex gap-3">
-            {availableLanguages.map((lang) => (
-              <button
-                key={lang}
-                onClick={() => changeLanguage(lang)}
-                className={`px-4 py-2 rounded-md font-medium transition-colors ${
-                  currentLanguage === lang
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
-              >
-                {lang.toUpperCase()}
-              </button>
-            ))}
+    <div className="w-full min-h-screen flex flex-col items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+      <Header />
+      <div className="max-w-5xl mx-auto mt-[100px] px-4 py-12">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="p-2.5 rounded-xl bg-white/10 ring-1 ring-white/10">
+            <FiGlobe className="w-6 h-6 text-teal-400" />
           </div>
-          <p className="text-sm text-gray-600 mt-2">
-            Current Language: <span className="font-semibold">{currentLanguage.toUpperCase()}</span>
-          </p>
+          <div>
+            <h1 className="text-2xl font-semibold tracking-tight">Language & Preview</h1>
+            <p className="text-sm text-white/60">Switch languages to preview localized content.</p>
+          </div>
         </div>
 
-        {/* Content  */}
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('title')}</h1>
-          <p className="text-lg text-gray-600 leading-relaxed">{t('description')}</p>
-          <p className="text-lg text-gray-600 leading-relaxed">{t('description2')}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur px-6 py-5 shadow-lg">
+            <h2 className="text-lg font-medium text-white mb-4">Language Selection</h2>
+
+            <div className="flex flex-wrap gap-2">
+              {availableLanguages.map((lang) => {
+                const isActive = currentLanguage === lang;
+                return (
+                  <button
+                    key={lang}
+                    onClick={() => changeLanguage(lang)}
+                    aria-pressed={isActive}
+                    className={`group inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 ${
+                      isActive
+                        ? 'bg-teal-500 text-slate-950 shadow ring-1 ring-teal-400'
+                        : 'bg-white/10 text-white/90 hover:bg-white/15 ring-1 ring-white/10'
+                    }`}
+                  >
+                    <span>{lang.toUpperCase()}</span>
+                    {isActive && <FiCheckCircle className="w-4 h-4" />}
+                  </button>
+                );
+              })}
+            </div>
+
+            <p className="text-xs text-white/60 mt-3">
+              Current Language: <span className="font-semibold text-white">{currentLanguage.toUpperCase()}</span>
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur px-6 py-6 shadow-lg">
+            <div className="flex items-start gap-3">
+              <div className="p-2 rounded-lg bg-teal-500/10 ring-1 ring-teal-500/30">
+                <FiGlobe className="w-5 h-5 text-teal-400" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-2">{t('title')}</h3>
+                <p className="text-base leading-relaxed text-white/80">{t('description')}</p>
+                <p className="text-base leading-relaxed text-white/80 mt-2">{t('description2')}</p>
+
+                <button
+                  type="button"
+                  className="inline-flex items-center mt-5 px-4 py-2 rounded-lg bg-teal-500 text-slate-950 font-medium hover:bg-teal-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300"
+                >
+                  Explore
+                  <FiChevronRight className="ml-1 w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
