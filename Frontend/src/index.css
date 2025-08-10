@@ -5,6 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-accent: #ad8330;
+  --color-primary: #fff;
+  --color-secondary: #000;
+}
+
+
+
 body {
   overflow-x: hidden;
   min-height: 100vh;
@@ -73,8 +81,9 @@ body {
 }
 
 @theme {
-  --color-lum: #ad8330;
-  --color-gold: #16fe01;
+  --color-accent: #ad8330;
+  --color-primary: #fff;
+  --color-secondary: #000;
 }
 
 

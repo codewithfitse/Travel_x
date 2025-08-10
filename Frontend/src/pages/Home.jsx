@@ -29,7 +29,7 @@ const Home = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 pt-[100px] lg:pt-[150px] pl-[20px] lg:pl-[40px] relative">
           <div className="w-full lg:w-[100%]">
             <h1 className="text-[30px] lg:text-[45px] font-semibold">
-              <span className="text-[40px] lg:text-[60px] text-lum font-bold font-serif">
+              <span className="text-[40px] lg:text-[60px] text-accent font-bold font-serif">
                 Time
               </span>{" "}
               {t("hero_title")}
@@ -66,7 +66,7 @@ const Home = () => {
             <h1 className="text-[25px] lg:text-[40px] text-center font-bold">
               {t("welcome_title")}
             </h1>
-            <h1 className="text-[18px] text-center lg:text-[22px] text-lum py-2">
+            <h1 className="text-[18px] text-center lg:text-[22px] text-accent py-2">
               {t("welcome_subtitle")}
             </h1>
             <p className="text-[15px] text-center lg:text-[18px]">
@@ -156,7 +156,7 @@ const Home = () => {
             <h1 className="text-[25px] lg:text-6xl text-center font-bold">
               {t("easy_booking_title")}
             </h1>
-            <h1 className="text-[20px] lg:text-[30px] text-lum text-center mt-2 lg:mt-6">
+            <h1 className="text-[20px] lg:text-[30px] text-accent text-center mt-2 lg:mt-6">
               {t("easy_booking_subtitle")}
             </h1>
           </div>
@@ -170,7 +170,7 @@ const Home = () => {
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">{t("step_01")}</span>
+                <span className="text-accent">{t("step_01")}</span>
                 <br />
                 {t("click_ride")}
               </h1>
@@ -183,7 +183,7 @@ const Home = () => {
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">{t("step_02")}</span>
+                <span className="text-accent">{t("step_02")}</span>
                 <br />
                 {t("send_request")}
               </h1>
@@ -196,7 +196,7 @@ const Home = () => {
                 skeletonClass="w-[400px] h-[300px]"
               />
               <h1 className="mt-2 ml-3">
-                <span className="text-lum">{t("step_03")}</span>
+                <span className="text-accent">{t("step_03")}</span>
                 <br />
                 {t("enjoy_ride")}
               </h1>

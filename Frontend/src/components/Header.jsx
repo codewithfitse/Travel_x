@@ -28,6 +28,7 @@ const Header = () => {
     const timer = setTimeout(() => setIsLoading(false), 100);
     return () => clearTimeout(timer);
   }, []);
+
   return (
     <div className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-7xl">
@@ -51,8 +52,8 @@ const Header = () => {
             className={({ isActive }) =>
               `relative px-1 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 ${
                 isActive
-                  ? "text-lum underline decoration-lum underline-offset-8 decoration-2"
-                  : "text-white/90 hover:text-lum"
+                  ? "text-accent underline decoration-accent underline-offset-8 decoration-2"
+                  : "text-white/90 hover:text-accent"
               }`
             }
             end
@@ -69,8 +70,8 @@ const Header = () => {
               className={({ isActive }) =>
                 `relative px-1 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 ${
                   isActive
-                    ? "text-lum underline decoration-lum underline-offset-8 decoration-2"
-                    : "text-white/90 hover:text-lum"
+                    ? "text-accent underline decoration-accent underline-offset-8 decoration-2"
+                    : "text-white/90 hover:text-accent"
                 }`
               }
               end
@@ -99,7 +100,7 @@ const Header = () => {
                 onClick={() => setToggle(false)}
                 className={({ isActive }) =>
                   `block rounded-lg px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 ${
-                    isActive ? "text-lum bg-white/10" : "hover:text-lum hover:bg-white/5"
+                    isActive ? "text-accent bg-white/10" : "hover:text-accent hover:bg-white/5"
                   }`
                 }
                 end
