@@ -10,9 +10,20 @@ export default {
       },
       colors: {
         lum: "#16fe01",
-      },
-      colors: {
         reds: "#eee",
+      },
+      backgroundSize: {
+        "200%": "200% 200%",
+      },
+      keyframes: {
+        "gradient-move": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+      },
+      animation: {
+        "gradient-slow": "gradient-move 18s ease-in-out infinite",
       },
     },
   },

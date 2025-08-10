@@ -7,25 +7,34 @@
 
 body {
   overflow-x: hidden;
-  background: #000;
+  min-height: 100vh;
+  background-image: radial-gradient(1200px 700px at 15% 20%, rgba(255, 215, 0, 0.32), rgba(0,0,0,0)),
+                    radial-gradient(1050px 600px at 85% 30%, rgba(192, 192, 192, 0.26), rgba(0,0,0,0)),
+                    radial-gradient(900px 550px at 30% 75%, rgba(255, 215, 0, 0.18), rgba(0,0,0,0)),
+                    radial-gradient(900px 650px at 50% 80%, rgba(255,255,255,0.12), rgba(0,0,0,0)),
+                    linear-gradient(120deg, #0a0a0a, #0b0b0b, #0e0e0e);
+  background-size: 200% 200%;
+  animation: gradient-move 9s ease-in-out infinite;
+  will-change: background-position;
 }
 
-.background {
-  width: 100%;
-  height: auto;
-  background-image: url(../public/bg.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
+/* Replace heavy images with GPU-accelerated animated gradient */
+.bg-animated-dark,
+.background,
 .landingBg {
-  width: 100%;
-  height: auto;
-  background-image: url(../public/landing.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-image: radial-gradient(1200px 700px at 15% 20%, rgba(255, 215, 0, 0.32), rgba(0,0,0,0)),
+                    radial-gradient(1050px 600px at 85% 30%, rgba(192, 192, 192, 0.26), rgba(0,0,0,0)),
+                    radial-gradient(900px 550px at 30% 75%, rgba(255, 215, 0, 0.18), rgba(0,0,0,0)),
+                    radial-gradient(900px 650px at 50% 80%, rgba(255,255,255,0.12), rgba(0,0,0,0)),
+                    linear-gradient(120deg, #0a0a0a, #0b0b0b, #0e0e0e);
+  background-size: 200% 200%;
+  animation: gradient-move 9s ease-in-out infinite;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .menu {

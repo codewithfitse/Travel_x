@@ -10,7 +10,7 @@ const Services = () => {
   const { t } = useLanguage();
   
   return (
-    <div className="w-full h-[100%] background text-amber-50">
+    <div className="w-full min-h-screen bg-animated-dark text-amber-50">
       <Header />
       <LiveChat />
       <div className="pt-[100px]">

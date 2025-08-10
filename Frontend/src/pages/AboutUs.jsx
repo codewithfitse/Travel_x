@@ -17,7 +17,7 @@ const AboutUs = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="w-full h-fit background overflow-x-hidden text-amber-50">
+    <div className="w-full h-fit bg-animated-dark overflow-x-hidden text-amber-50">
       <Header />
       <LiveChat />
       <div className="pt-[100px] lg:pt-[150px] flex flex-col items-center">

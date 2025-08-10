@@ -23,8 +23,9 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full h-auto lg:mb-0 lg:mt-30 py-10 lg:py-5 container">
-        <div className="flex pb-3 lg:pb-6 px-5 lg:px-10 justify-between items-center">
+      <div className="w-full h-auto lg:mb-0 lg:mt-30 py-10 lg:py-12">
+        <div className="mx-auto max-w-7xl rounded-3xl border border-white/10 bg-white/5 backdrop-blur px-5 lg:px-10 py-6">
+        <div className="flex pb-3 lg:pb-6 justify-between items-center">
           <div className="py-2 lg:py-5">
             <h1 className="text-[12px] lg:text-[28px] font-bold">
               {t('footer_newsletter_title')}
@@ -33,12 +34,13 @@ const Footer = () => {
               {t('footer_newsletter_subtitle')}
             </h2>
           </div>
-          <div>
+          <div className="flex items-center gap-2">
             <input
               type="text"
               placeholder={t('footer_email_placeholder')}
-              className=" py-1 px-2 lg:py-2 lg:px-3 w-[140px] lg:w-[400px] bg-gray-200 rounded-3xl placeholder:text-black"
+              className="py-2 px-3 w-[160px] lg:w-[380px] bg-white/10 text-white placeholder:text-white/60 rounded-2xl ring-1 ring-white/15 focus:outline-none focus:ring-2 focus:ring-teal-300"
             />
+            <button className="px-4 py-2 rounded-xl bg-teal-500 text-slate-950 text-sm font-semibold hover:bg-teal-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 transition-colors">Subscribe</button>
           </div>
         </div>
         <div className="flex justify-around items-start">
@@ -96,6 +98,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>

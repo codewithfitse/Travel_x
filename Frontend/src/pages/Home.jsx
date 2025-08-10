@@ -18,7 +18,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="w-full overflow-x-hidden h-[100%] background text-amber-50">
+      <div className="w-full overflow-x-hidden min-h-screen bg-animated-dark text-amber-50">
         <Suspense fallback={<div>Loading...</div>}>
           <Header />
         </Suspense>

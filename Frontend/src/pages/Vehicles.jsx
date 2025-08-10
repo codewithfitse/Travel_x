@@ -20,7 +20,7 @@ const Vehicles = () => {
   }, []);
 
   return (
-    <div className="w-full h-[100%] background text-amber-50">
+    <div className="w-full min-h-screen bg-animated-dark text-amber-50">
       <Header />
       <LiveChat />
       <div className="pt-[100px]">
@@ -235,7 +235,7 @@ export const VehiclesTypes = () => {
     fetchImages();
   }, []);
   return (
-    <div className="w-full h-[100%] background text-amber-50">
+    <div className="w-full min-h-screen bg-animated-dark text-amber-50">
       <Header />
       <LiveChat />
       <div className="pt-[100px]">
@@ -486,7 +486,7 @@ export const Pricing = () => {
   }, [price]); // ✅ Add 'price' here
 
   return (
-    <div className="w-full h-[100%] background text-amber-50">
+    <div className="w-full min-h-screen bg-animated-dark text-amber-50">
       <Header />
       <LiveChat />
       <div className="pt-[100px]">
