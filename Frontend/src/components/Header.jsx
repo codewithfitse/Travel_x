@@ -1,12 +1,27 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SkeletonImage from "./Skeleton";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  const primaryLinks = [
+    { to: "/Home", label: "HOME", },
+    { to: "/AboutUS", label: "ABOUTUS" },
+    { to: "/Services", label: "SERVICES" },
+    { to: "/Vehicles", label: "VEHICLES" },
+    { to: "/Contact", label: "CONTACT" },
+  ];
+
+  const secondaryLinks = [
+    { to: "/SignUp", label: "SIGNUP" },
+    { to: "/Login", label: "LOGIN" },
+    { to: "/Tutorial", label: "Tutorial" },
+    { to: "/Demo", label: "Lang" },
+  ];
 
   useEffect(() => {
     // Simulate loading for 2 seconds
@@ -29,35 +44,40 @@ const Header = () => {
       </div>
 
       <nav className="hidden lg:flex w-fit lg:justify-center items-center text-[16px] font-semibold space-x-6">
-        <Link to="/Home">
-          <h1 className="hover:text-lum transition-colors">HOME</h1>
-        </Link>
-        <Link to="/AboutUs">
-          <h1 className="hover:text-lum transition-colors">ABOUTUS</h1>
-        </Link>
-        <Link to="/Services">
-          <h1 className="hover:text-lum transition-colors">SERVICES</h1>
-        </Link>
-        <Link to="/Vehicles">
-          <h1 className="hover:text-lum transition-colors">VEHICLES</h1>
-        </Link>
-        <Link to="/Contact">
-          <h1 className="hover:text-lum transition-colors">CONTACT</h1>
-        </Link>
+        {primaryLinks.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            className={({ isActive }) =>
+              `relative px-1 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 ${
+                isActive
+                  ? "text-lum underline decoration-lum underline-offset-8 decoration-2"
+                  : "text-white/90 hover:text-lum"
+              }`
+            }
+            end
+          >
+            {item.label}
+          </NavLink>
+        ))}
 
         <div className="w-fit flex pl-20 justify-center items-center text-[16px] font-semibold space-x-6">
-          <Link to="/SignUp">
-            <h1 className="hover:text-lum transition-colors">SIGNUP</h1>
-          </Link>
-          <Link to="/Login">
-            <h1 className="hover:text-lum transition-colors">LOGIN</h1>
-          </Link>
-          <Link to="/Tutorial">
-            <h1 className="hover:text-lum transition-colors">Tutorial</h1>
-          </Link>
-          <Link to="/Demo">
-            <h1 className="hover:text-lum transition-colors">Lang</h1>
-          </Link>
+          {secondaryLinks.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `relative px-1 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 ${
+                  isActive
+                    ? "text-lum underline decoration-lum underline-offset-8 decoration-2"
+                    : "text-white/90 hover:text-lum"
+                }`
+              }
+              end
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </div>
       </nav>
 
@@ -71,17 +91,22 @@ const Header = () => {
           {toggle ? <FiX className="size-6" /> : <FiMenu className="size-6" />}
         </button>
         {toggle && (
-          <div className="w-48 mt-3 py-3 px-3 flex flex-col gap-3 text-[14px] font-semibold bg-black/70 backdrop-blur-md border border-white/10 rounded-xl absolute top-12 right-0 shadow-xl">
-            <Link to="/Home" className="hover:text-lum">HOME</Link>
-            <Link to="/AboutUs" className="hover:text-lum">ABOUTUS</Link>
-            <Link to="/Services" className="hover:text-lum">SERVICES</Link>
-            <Link to="/Vehicles" className="hover:text-lum">VEHICLES</Link>
-            <Link to="/Contact" className="hover:text-lum">CONTACT</Link>
-            <Link to="/SignUp" className="hover:text-lum">SIGNUP</Link>
-            <Link to="/Login" className="hover:text-lum">LOGIN</Link>
-            <Link to="/Dashboard" className="hover:text-lum">DashBoard</Link>
-            <Link to="/Tutorial" className="hover:text-lum">Tutorial</Link>
-            <Link to="/Demo" className="hover:text-lum">Lang</Link>
+          <div className="w-56 mt-3 py-3 px-3 flex flex-col gap-2 text-[14px] font-semibold bg-black/70 backdrop-blur-md border border-white/10 rounded-xl absolute top-12 right-0 shadow-xl">
+            {[...primaryLinks, ...secondaryLinks].map((item) => (
+              <NavLink
+                key={`m-${item.to}`}
+                to={item.to}
+                onClick={() => setToggle(false)}
+                className={({ isActive }) =>
+                  `block rounded-lg px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300 ${
+                    isActive ? "text-lum bg-white/10" : "hover:text-lum hover:bg-white/5"
+                  }`
+                }
+                end
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </div>
         )}
       </div>
