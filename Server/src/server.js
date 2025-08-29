@@ -15,15 +15,20 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import session from "express-session";
 import UserOauth from "../models/UserOauth.js";
-import fetch from "node-fetch";
 import axios from "axios";
 import authMiddleware from "../middleware/tokenMiddleware.js";
 
 const RENDER_URL = "https://travel-x-408k.onrender.com";
 
-setInterval(() => {
-  console.log(`[PING.] ${new Date().toISOString()} - ${res.status}`)
-}, 10 * 60 * 1000); // Ping every 10 minutes
+setInterval(async () => {
+  try {
+    const res = await axios.get(RENDER_URL);
+    console.log(`[PING] ${new Date().toISOString()} - Status: ${res.status}`);
+  } catch (error) {
+    console.error(`[PING ERROR] ${new Date().toISOString()} - ${error.message}`);
+  }
+}, 10 * 60 * 1000);
+
 
 const app = express();
 app.use(
